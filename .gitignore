@@ -1,0 +1,18 @@
+# Private working files
+00-Inbox/
+08-Journal/
+_templates/
+SYSTEM.md
+CLAUDE_CODE_SYSTEM_PROMPT.md
+.cursorrules
+
+# Obsidian config
+.obsidian/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
