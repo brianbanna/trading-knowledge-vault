@@ -60,13 +60,13 @@ Strong seasonal pattern driven by West African main crop harvest (Oct to Mar). P
 
 ## Key data and reports
 
-- ICCO (International Cocoa Organization): quarterly grinding statistics, production forecasts
-- Ivory Coast arrivals data: weekly port arrival figures from Abidjan and San Pedro
-- Ghana COCOBOD purchases: cumulative seasonal purchases
-- European, Asian, and North American quarterly grindings data
-- ICE certified stocks: deliverable inventory in exchange warehouses
+- [[ICCO]] (International Cocoa Organization): quarterly grinding statistics, production forecasts
+- [[West African Port Arrivals]]: weekly port arrival figures from Abidjan and San Pedro
+- Ghana COCOBOD purchases: cumulative seasonal purchases (see [[West African Port Arrivals]])
+- European, Asian, and North American quarterly grindings data (see [[ICCO]])
+- [[ICE Cocoa Stocks]]: deliverable inventory in exchange warehouses
 - Rainfall data: West African growing regions
-- Commitment of Traders: managed money positioning
+- [[COT Positioning]]: managed money positioning
 
 ## Curve structure
 
@@ -74,7 +74,7 @@ Cocoa frequently trades in [[Backwardation]] during supply scares because physic
 
 ## Key spreads and relative value
 
-- **ICE US / ICE London (NY/London) arb:** the differential between USD priced and GBP priced cocoa. Reflects origin quality differences (West African vs other), FX (GBP/USD), and regional demand. A key [[Relative Value Trade]] in softs.
+- **[[Cocoa NY-London Spread|ICE US / ICE London (NY/London) arb]]:** the differential between USD priced and GBP priced cocoa. Reflects origin quality differences (West African vs other), FX (GBP/USD), and regional demand. A key [[Relative Value Trade]] in softs.
 - **Cocoa calendar spreads:** front month vs deferred. Signals physical tightness. The most actively traded spread in cocoa.
 - **Cocoa/Sugar ratio:** both are tropical agricultural products from overlapping regions. Sugar competes for land with cocoa in some areas.
 - **Cocoa/Coffee ratio:** both are tropical softs with concentrated supply. Useful for relative value within the softs complex.

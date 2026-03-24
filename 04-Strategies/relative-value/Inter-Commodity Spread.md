@@ -86,6 +86,12 @@ The 3:2:1 [[Crack Spread]] using [[WTI Crude Oil]], RBOB gasoline, and ULSD: WTI
 - [[Crack Spread]]
 - [[Brent-WTI Spread]]
 - [[Location Arbitrage]]
+- [[Arabica-Robusta Spread]]
+- [[Cocoa NY-London Spread]]
+- [[Gold-Copper Ratio]]
+- [[Platinum-Palladium Spread]]
+- [[Soybean-Corn Spread]]
+- [[Henry Hub-TTF Spread]]
 
 ## Related Concepts
 - [[Correlation]]

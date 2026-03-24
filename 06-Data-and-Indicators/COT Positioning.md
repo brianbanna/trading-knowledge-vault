@@ -27,7 +27,8 @@ COT positioning is the most widely used contrarian indicator in commodity and FX
   - Below 10th percentile: crowded short, monitor for contrarian buy signal upon positive catalyst
   - 25th to 75th percentile: neutral zone, positioning is less informative
 - **Z score approach:** Z = (Current net - Mean) / Standard deviation. Values above +2 or below -2 are statistically extreme.
-- **Key markets for COT analysis:** Crude oil (WTI), natural gas (HH), gold, copper, corn, soybeans, wheat, sugar, EUR/USD, JPY, AUD
+- **Key markets for COT analysis:** Crude oil (WTI), natural gas (HH), gold, copper, corn, soybeans, wheat, cocoa, coffee, sugar, EUR/USD, JPY, AUD
+- **Cocoa specific notes:** Cocoa COT data is uniquely informative because the market is small (open interest typically 200,000 to 400,000 lots) relative to crude oil (2M+ lots), so large managed money positions represent a bigger share of the market and have more price impact. During the 2024 to 2025 cocoa crisis, managed money net long reached extreme levels (95th+ percentile) while commercials were heavily short (hedging production). The commercial short position becoming unsustainably large (COCOBOD forward sale defaults, producer margin calls) was a structural feature that amplified the rally. Watch the commercial/managed money ratio more closely in cocoa than in larger, more liquid markets.
 - **Data lag:** Tuesday measurement, Friday publication. The 3 day lag is minimal for position and swing trading horizons (weeks to months).
 
 ## Prerequisites

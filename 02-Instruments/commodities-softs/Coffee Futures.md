@@ -64,7 +64,7 @@ Arabica frequently shifts between [[Contango]] and [[Backwardation]] depending o
 
 ## Key spreads and relative value
 
-- **Arabica/Robusta spread:** the core relative value trade in coffee. Widens when Arabica supply tightens or specialty demand grows. Narrows when roasters substitute Robusta into blends due to high Arabica prices.
+- **[[Arabica-Robusta Spread|Arabica/Robusta spread]]:** the core relative value trade in coffee. Widens when Arabica supply tightens or specialty demand grows. Narrows when roasters substitute Robusta into blends due to high Arabica prices.
 - **Coffee calendar spreads:** front vs deferred, particularly around Brazilian frost season.
 - **Coffee/Cocoa ratio:** both tropical softs, correlated supply risks, but different geographic concentration.
 - **Coffee/Sugar ratio:** Brazilian farmers can switch land between coffee and sugarcane, creating a long run supply substitution linkage.
