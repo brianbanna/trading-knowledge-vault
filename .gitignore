@@ -2,6 +2,7 @@
 00-Inbox/
 08-Journal/
 _templates/
+!Physical commodities/_Templates/
 SYSTEM.md
 CLAUDE_CODE_SYSTEM_PROMPT.md
 .cursorrules
