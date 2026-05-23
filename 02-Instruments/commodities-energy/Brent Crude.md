@@ -11,6 +11,12 @@ date-added: "2026-03-20"
 
 Brent is the global seaborne crude benchmark, pricing about 2/3 of internationally traded crude. Originally named after a single North Sea field, the benchmark is now a basket of 5 grades (BFOET: Brent, Forties, Oseberg, Ekofisk, Troll). Light sweet: 38 API, 0.4% sulfur. Trades on ICE Futures Europe and as a cash settled contract on CME (BZ). Troll joined the basket in 2023. Platts is evaluating WTI Midland delivered into Rotterdam to preserve liquidity as North Sea output declines.
 
+## Concrete example
+
+**Concrete:** Thursday 09:00 London. Reuters headlines that Saudi Arabia and Russia will extend voluntary OPEC+ cuts of 1.0 mb/d through Q2. Brent front month (CO M6) trades $82.40/bbl. Trader buys 20 CO contracts at $82.45 anticipating short covering. Within 90 minutes spot prints $85.10 as managed money flips long and producer hedgers step back. Trader scales out half at $84.50 and the rest at $84.90. P&L: roughly ($84.70 average exit minus $82.45) × 1,000 bbl × 20 = $45,000. The M1 to M6 [[Calendar Spread]] also widened 35 cents into [[Backwardation]], confirming the tightness signal.
+
+**Simplified:** Brent is the price of 1 barrel of North Sea crude oil delivered by ship. It moves when OPEC changes output, when geopolitics threatens supply (Middle East, Russia), and when refineries or jets need more or less fuel. A trader buys or sells futures contracts on ICE. Each contract is 1,000 barrels, so a $1 move equals $1,000 per contract. Headlines move it fast.
+
 ## Contract Specifications
 
 | Field | Value |

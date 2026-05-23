@@ -19,7 +19,7 @@ During the 2024 to 2025 cocoa crisis, ICE US certified stocks fell below 1.5 mil
 
 ## Concrete example
 
-**Concrete:** ICE US certified stocks are at 2.0 million bags (~120,000 tonnes). Over 8 weeks stocks fell by 400,000 bags as physical absorbed warehouse inventory. Pending grading is only 50,000 bags (minimal new supply entering). May contract expires in 3 weeks. Trader buys May/July spread (long May, short July) at $150 premium expecting tightness to widen the spread. Stocks continue to 1.7 million bags by expiry. May premium widens to $350. Profit: $200/tonne × 10 tonnes × 10 spreads = $20,000. Counter scenario: 200,000 bags of new certifications hit the system, stocks rebound to 2.5 million bags. Spread compresses to $50. Loss: $10,000.
+**Concrete:** ICE US certified stocks are at 2.0 million bags (~120,000 tonnes). Over 8 weeks stocks fell by 400,000 bags as physical absorbed warehouse inventory. Pending grading is only 50,000 bags (minimal new supply entering). May contract expires in 3 weeks. Trader buys May/July spread (long May, short July) at $150 premium expecting tightness to widen the spread. Stocks continue to 1.7 million bags by expiry. May premium widens to $350. Profit: $200/tonne × 10 tonnes × 10 spreads = $20,000.
 
 **Simplified:** A short who holds futures into expiry must deliver real beans from an ICE approved warehouse. If those warehouses are nearly empty, shorts pay a premium to acquire physical or close out, which pushes the near contract above later contracts. Watching warehouse stock trajectory in the weeks before expiry tells you which way that pressure runs. Falling stocks plus a near expiry plus low pending grading is the classic setup for a backwardation widener.
 

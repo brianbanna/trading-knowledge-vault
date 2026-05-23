@@ -17,6 +17,12 @@ Henry Hub is the world's cheapest major gas benchmark thanks to abundant US shal
 
 Natural gas is also the most seasonal major commodity, generating predictable [[Calendar Spread]] opportunities around injection/withdrawal cycles.
 
+## Concrete example
+
+**Concrete:** Monday morning early January. NOAA 6 to 10 day forecast shifts 8 degrees colder for the Midwest and Northeast, projecting a polar vortex intrusion. NG front month (NGG6) opens $3.10/MMBtu. Trader buys 8 NG contracts at $3.12 reading the shift as a structural HDD upgrade not yet priced. Within 2 sessions spot hits $3.58 as power utilities scramble to lock in winter supply and the Feb/Mar [[Calendar Spread]] widens 18 cents. Trader exits at $3.52. P&L: ($3.52 minus $3.12) × 10,000 MMBtu × 8 = $32,000. The Thursday EIA storage report later confirms a withdrawal 35 Bcf above consensus.
+
+**Simplified:** Henry Hub is the price of 1 million BTU of natural gas delivered at a pipeline hub in Louisiana. Cold weather makes the price go up because people need to heat homes and power plants burn more gas. Hot weather also lifts it because of air conditioning. Traders watch the weather forecast and the Thursday EIA storage report. Each contract is 10,000 MMBtu, so a $0.10 move equals $1,000 per contract.
+
 ## Contract specifications
 
 | Field | Value |

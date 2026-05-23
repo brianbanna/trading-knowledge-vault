@@ -15,6 +15,12 @@ EUR/USD is the most traded currency pair in the world, accounting for ~23% of da
 
 EUR/USD is the anchor pair. Most other G10 pairs are quoted against USD, so EUR/USD movements ripple across the FX complex. For a commodity trader, EUR/USD matters because most commodities are priced in USD. A stronger dollar (lower EUR/USD) is a headwind for global commodity prices. European energy imports (particularly [[TTF Natural Gas]]) are priced in EUR, so EUR/USD directly affects the cost of European energy procurement and feeds back into [[Forward Curve]] dynamics.
 
+## Concrete example
+
+**Concrete:** Thursday 14:15 CET, ECB rate decision day. Lagarde guides toward a June cut more dovishly than expected and revises 2026 inflation forecasts down 30 bps. EURUSD was 1.0850 going in. Trader was short EUR 5M from 1.0855 sized against the dovish risk. Spot drops to 1.0720 within 40 minutes as US 2Y minus German 2Y widens 12 bps in favor of the dollar. Trader covers EUR 3M at 1.0735 and EUR 2M at 1.0710. P&L: (1.0855 minus 1.0727 average) × 5,000,000 = roughly $6,400 (128 pips, $10 per pip per million). EURJPY fell in sympathy and the [[DXY]] rallied 0.6%.
+
+**Simplified:** EURUSD is how many US dollars buy 1 euro. It is the most traded currency pair on earth. It moves on the difference between Fed and ECB policy, growth and inflation surprises on either side of the Atlantic, and risk sentiment. Traders watch ECB and FOMC meetings, CPI prints, and PMI data. In FX one pip is 0.0001, and on a standard 100K EUR lot that equals $10. A 100 pip move is $1,000 per lot.
+
 ## Contract specifications
 
 | Field | Value |

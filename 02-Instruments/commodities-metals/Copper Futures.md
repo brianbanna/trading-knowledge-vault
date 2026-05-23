@@ -17,6 +17,12 @@ Copper is a macro barometer. Rallies signal global industrial expansion, particu
 
 Copper is also a key [[Relative Value Trade]] market: copper vs aluminum, copper vs iron ore, and copper calendar spreads are actively traded by institutional desks.
 
+## Concrete example
+
+**Concrete:** Sunday night China releases a 1 trillion yuan infrastructure stimulus package targeted at grid upgrades and EV charging. LME copper 3 month was $9,200/tonne at the Friday close. COMEX HG opens Sunday Globex at $4.20/lb (~$9,260/tonne). Trader buys 6 HG contracts at $4.22. Over 3 sessions LME stocks draw 18,000 tonnes, confirming the demand signal, and spot prints $4.36/lb (~$9,610/tonne). Trader exits at $4.34. P&L: ($4.34 minus $4.22) × 25,000 lbs × 6 = $18,000. The copper/gold ratio jumped 4% and AUDUSD rallied 70 pips alongside, confirming a coordinated risk on macro move.
+
+**Simplified:** Copper is the price of 1 pound of refined copper metal. It moves on Chinese demand (China uses half the world's copper), mine disruptions in Chile and Peru, and warehouse stock levels at the LME. Traders watch Chinese PMI, property starts, and stimulus headlines. A COMEX contract is 25,000 lbs, so a 1 cent per lb move equals $250 per contract. Copper is often called the macro barometer.
+
 ## Contract specifications
 
 | Field | Value |

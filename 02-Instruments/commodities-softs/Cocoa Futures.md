@@ -15,6 +15,12 @@ Cocoa futures price raw cocoa beans, the primary chocolate ingredient. Two bench
 
 Cocoa is the most volatile soft and ran a historic supply crisis in 2023 to 2025 that sent prices to all time highs above $10,000/tonne. For a commodities trader, cocoa is the purest form of supply driven trading: demand is stable (people keep eating chocolate), but supply is geographically concentrated, weather dependent, and structurally constrained (aging tree stock, swollen shoot virus, smallholder economics). A natural laboratory for [[Convenience Yield]], [[Backwardation]], and supply shock dynamics.
 
+## Concrete example
+
+**Concrete:** Monday morning, the weekly [[West African Port Arrivals]] print from Abidjan comes in 22% below the prior 4 week pace, confirming dry Harmattan conditions are damaging the Ivorian main crop. CC front month (CCN6) was $7,850/tonne Friday close. Trader buys 8 CC contracts at $7,890 on the open. Over 4 sessions spot grinds to $8,320 as Q1 European grindings data also surprises weak (industrial buyers cutting forward demand only modestly while supply concerns dominate). Trader sells 6 at $8,280 and 2 at $8,310. P&L: average $8,290 vs $7,890 = $400 × 10 tonnes × 8 = $32,000. Front month [[Backwardation]] to deferred widened $180.
+
+**Simplified:** Cocoa is the price of 1 tonne of raw cocoa beans, the main ingredient in chocolate. About 70% comes from Ivory Coast and Ghana, so West African weather and disease drive most of the price action. Traders watch port arrival data, rainfall in growing regions, and quarterly grindings figures. Each ICE US contract is 10 tonnes, so a $10/tonne move equals $100 per contract. Cocoa is the most volatile of the softs.
+
 ## Contract specifications
 
 | Field | Value |

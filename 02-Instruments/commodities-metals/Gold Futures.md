@@ -17,6 +17,12 @@ Gold is the single most important cross asset instrument for understanding real 
 
 Central bank gold purchases have become a dominant demand driver since 2022, fundamentally altering market structure and price dynamics.
 
+## Concrete example
+
+**Concrete:** Wednesday 14:00 ET, FOMC day. Statement removes the word "patient" and the dot plot shifts to 3 cuts from 2. Gold front month (GCM6) was $2,340/oz going in. Trader was long 5 GC contracts from $2,330 sized against an expected dovish surprise. Within 8 minutes spot prints $2,378 as US 10Y real yields drop 9 bps and DXY falls 0.7%. Trader sells 3 at $2,372 and trails the rest to $2,385. P&L: ($2,372 minus $2,330) × 100 oz × 3 plus ($2,385 minus $2,330) × 100 × 2 = $12,600 plus $11,000 = $23,600. Silver moved in parallel and the gold/copper ratio jumped, both confirming the regime shift.
+
+**Simplified:** Gold is the price of 1 troy ounce of gold metal. It moves mostly on real interest rates (after inflation), the US dollar, and stress in the financial system. When the Fed signals lower rates or when markets get scared, gold rises. Traders watch FOMC meetings, US CPI, and 10 year TIPS yields. Each COMEX contract is 100 ounces, so $1 per ounce equals $100 per contract.
+
 ## Contract specifications
 
 | Field | Value |

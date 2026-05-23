@@ -11,6 +11,12 @@ date-added: "2026-03-20"
 
 TTF (Title Transfer Facility) is the main European natural gas benchmark, a virtual trading point operated by Gasunie Transport Services in the Netherlands. TTF is now the de facto European gas pricing reference, replacing UK NBP for most purposes. It is to European gas what [[Henry Hub Natural Gas|Henry Hub]] is to US gas.
 
+## Concrete example
+
+**Concrete:** Tuesday 08:30 CET. Gassco posts an unplanned outage at the Troll field in Norway, cutting roughly 60 mcm/day of pipeline flow into continental Europe for an estimated 5 days. TTF front month (TFMM6) was €32.10/MWh at the open. Trader buys 50 lots at €32.30 anticipating supply panic. Spot grinds to €40.80 over 3 sessions as utilities scramble for LNG cargoes and the [[TTF Natural Gas|TTF]] minus [[JKM LNG|JKM]] spread inverts, redirecting Pacific cargoes to Europe. Trader scales out at €39.50 average. With 1 lot = 720 MWh/month, P&L: (€39.50 minus €32.30) × 720 × 50 ≈ €259,000. The winter/summer spread widened €4.
+
+**Simplified:** TTF is the price of 1 MWh of natural gas at a virtual trading point in the Netherlands. It moves on European supply news (Norwegian pipeline flows, Russian residual flows, LNG arrivals), storage levels, and winter weather. Traders watch Norwegian outages and storage figures from GIE every day. Contracts settle in euros. A €1/MWh move on a monthly lot is about €720.
+
 ## Contract Specifications
 
 | Field | Value |

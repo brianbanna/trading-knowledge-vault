@@ -15,6 +15,12 @@ Coffee futures trade in 2 primary contracts: Arabica (ICE US, KC, USD cents/lb) 
 
 Coffee is the 2nd most traded commodity by volume after crude oil on some measures. It has extreme weather sensitivity (a single frost in Brazil can move prices 20%+ in a session), making it a prime example of [[Convenience Yield]] dynamics and supply shock trading. The Arabica/Robusta spread is one of the most actively traded [[Relative Value Trade|relative value trades]] in softs. Coffee is also a natural laboratory for how [[Seasonality]], weather risk, and inventory cycles interact.
 
+## Concrete example
+
+**Concrete:** Mid July, SOMAR Meteorologia issues a frost alert for southern Minas Gerais with temperatures forecast at minus 2C across key Arabica zones. KC front month (KCN6) was 205 cents/lb Friday. Trader buys 4 KC contracts at 208 cents on Monday open. Satellite imagery overnight confirms frost damage on roughly 8% of trees. Spot prints 242 cents by Wednesday as roasters scramble for physical and ICE certified stocks draw 12,000 bags. Trader exits at 238 cents. P&L: (238 minus 208) cents × 37,500 lbs × 4 = $45,000 (each cent is $375 per contract). Front month [[Backwardation]] to deferred deepened by 8 cents.
+
+**Simplified:** Coffee Arabica is the price of 1 pound of green coffee beans. Brazil produces about 35% of global supply, so Brazilian weather between June and August (their winter frost window) drives most of the action. A single hard frost can move the price 20% in a day. Traders watch Brazil temperature forecasts, ICE warehouse stocks, and the Brazilian Real. Each contract is 37,500 lbs, so 1 cent per lb equals $375 per contract.
+
 ## Contract specifications
 
 | Field | Value |

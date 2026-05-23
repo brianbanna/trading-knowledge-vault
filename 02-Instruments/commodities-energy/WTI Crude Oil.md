@@ -11,6 +11,12 @@ date-added: "2026-03-20"
 
 West Texas Intermediate is the primary US crude benchmark, traded on NYMEX (CME Group). Light sweet: 39.6 API, 0.24% sulfur, slightly lighter and sweeter than [[Brent Crude]]. The critical distinction: WTI is a landlocked benchmark with physical delivery at Cushing, Oklahoma, a pipeline hub with ~76 million barrels of storage. The landlocked structure creates unique pricing dynamics around storage economics and pipeline logistics that distinguish WTI from seaborne benchmarks. WTI is the most liquid crude oil futures contract in the world by volume.
 
+## Concrete example
+
+**Concrete:** Wednesday 10:30 ET. EIA Weekly Petroleum Status Report prints a Cushing draw of 3.2 million barrels vs consensus build of 0.5 mb. WTI front month (CL M6) was $78.20 going in. Trader was already long 15 CL contracts from $77.90 anticipating a draw based on Genscape satellite data the day before. Spot rips to $80.40 in 25 minutes as managed money chases. Trader sells 10 at $80.25, holds 5 for a run to $81.10 the next session. P&L: ($80.25 minus $77.90) × 1,000 × 10 plus ($81.10 minus $77.90) × 1,000 × 5 = $23,500 plus $16,000 = $39,500. The M1/M2 spread tightened 22 cents.
+
+**Simplified:** WTI is the price of 1 barrel of US crude oil delivered at a storage hub in Oklahoma called Cushing. When Cushing tanks fill up, the price drops because nobody wants to take physical delivery. When they empty, the price rises. Traders watch the weekly EIA inventory report Wednesday morning to bet on whether storage went up or down. Each futures contract is 1,000 barrels, so $1 equals $1,000 per contract.
+
 ## Contract Specifications
 
 | Field | Value |

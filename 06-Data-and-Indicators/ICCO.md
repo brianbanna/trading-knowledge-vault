@@ -17,7 +17,7 @@ Grindings is the closest proxy for cocoa demand. Unlike oil (weekly inventories)
 
 ## Concrete example
 
-**Concrete:** ICCO Q3 Bulletin forecasts a 2025/26 global deficit of 150,000 tonnes, wider than the prior 100,000 estimate. The revision is driven by lower Ivory Coast main crop (1.4M tonnes vs prior 1.55M). ICE US cocoa (CC) front month rallies $250/tonne (~3%) on the day. Curve steepens into backwardation as physical buyers chase nearby supply. Trader long 5 CC contracts gains $250 × 10 tonnes × 5 = $12,500. Counter scenario: ICCO revises deficit to 50,000 tonnes on a better Ivory Coast harvest. CC drops $200/tonne and backwardation compresses. Same long loses $10,000.
+**Concrete:** ICCO Q3 Bulletin forecasts a 2025/26 global deficit of 150,000 tonnes, wider than the prior 100,000 estimate. The revision is driven by lower Ivory Coast main crop (1.4M tonnes vs prior 1.55M). ICE US cocoa (CC) front month rallies $250/tonne (~3%) on the day. Curve steepens into backwardation as physical buyers chase nearby supply. Trader long 5 CC contracts gains $250 × 10 tonnes × 5 = $12,500.
 
 **Simplified:** Cocoa supply comes mostly from Ivory Coast and Ghana. The ICCO publishes a quarterly tally of how much cocoa was made vs how much was consumed. If the deficit grows, prices rise and nearby contracts trade above later ones (backwardation) because users compete for scarce beans. If the deficit shrinks or flips to surplus, the opposite. The release itself is a scheduled event; you trade the gap between the new number and what was already priced in.
 
