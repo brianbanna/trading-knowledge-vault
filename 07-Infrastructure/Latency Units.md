@@ -9,15 +9,15 @@ date-added: "2026-03-27"
 
 ## Definition
 
-Latency units are the time measurements used to describe how fast trading systems operate. The 3 key units are: millisecond (ms, 1 thousandth of a second, 10^-3), microsecond (us, 1 millionth of a second, 10^-6), and nanosecond (ns, 1 billionth of a second, 10^-9). Modern electronic trading operates across all 3 scales. Understanding which unit applies to which part of the system is essential for identifying bottlenecks and setting realistic performance targets.
+Latency units are the time measurements used to describe trading system speed. The 3 key units are millisecond (ms, 10^-3 sec), microsecond (us, 10^-6 sec), and nanosecond (ns, 10^-9 sec). Modern electronic trading operates across all 3 scales. Knowing which unit applies to which part of the system is essential for identifying bottlenecks and setting realistic performance targets.
 
 ## Why it matters (commodities and FX)
 
-An FX market maker's [[Tick to Trade]] latency determines whether quotes are fresh or [[Stale Quote|stale]]. Knowing that "50 microseconds" is fast for a quoting engine but "50 milliseconds" is dangerously slow prevents miscommunication and bad architecture decisions. When evaluating [[Co-location]] providers, API vendors, or execution platforms, the units tell you whether you are comparing apples to apples.
+An FX market maker's [[Tick to Trade]] latency decides whether quotes are fresh or [[Stale Quote|stale]]. Knowing "50 microseconds" is fast for a quoting engine but "50 milliseconds" is dangerous prevents miscommunication and bad architecture. When evaluating [[Co-location]] providers, API vendors, or execution platforms, units tell you whether you are comparing apples to apples.
 
 ## Concrete example
 
-A desk builds an [[EUR USD]] quoting system and measures latency at each stage:
+**Concrete:** Desk builds an [[EUR USD]] quoting system and measures latency at each stage:
 
 | Stage | Latency | Unit |
 |-------|---------|------|
@@ -28,9 +28,9 @@ A desk builds an [[EUR USD]] quoting system and measures latency at each stage:
 | Order encoding + send | 1.5 | microseconds |
 | **Total [[Tick to Trade]]** | **~15** | **microseconds** |
 
-**Success case:** At 15 microseconds, the desk updates quotes before competitors can [[Sniping|snipe]] stale prices. [[Stale Quote]] events are near zero.
+At 15 microseconds, the desk updates quotes before competitors can [[Sniping|snipe]] stale prices. [[Stale Quote]] events approach zero. A logging library adding a 2 ms (2,000 us) GC pause on the [[Hot Path]] is 130x the entire T2T budget. During the pause, 3 stale quotes get sniped for $28,000.
 
-**Failure case:** A logging library adds a 2 millisecond (2,000 microsecond) GC pause on the [[Hot Path]]. This is 130x the entire tick to trade budget. During the pause, 3 stale quotes are sniped for a $28,000 loss.
+**Simplified:** A millisecond is 1,000 microseconds. A microsecond is 1,000 nanoseconds. CPU cache and memory operate in nanoseconds. Network hops within a data center operate in microseconds. Internet round trips operate in milliseconds. Adding a few "milliseconds" to a system measured in microseconds is adding hundreds of times the existing budget.
 
 ## Key mechanics and formulas
 
@@ -64,20 +64,20 @@ A desk builds an [[EUR USD]] quoting system and measures latency at each stage:
 
 ## Related concepts (learn next)
 
-- [[Tick to Trade]] for the end to end latency metric that these units measure
-- [[Hot Path]] for identifying which code paths must operate at microsecond or nanosecond scale
-- [[Cache Miss]] for understanding why nanosecond level memory access patterns matter
-- [[Cache Locality]] for how data layout affects access times at the nanosecond scale
-- [[Garbage Collection]] for a common source of millisecond scale latency spikes
-- [[Jitter]] for why variance in these timing units matters as much as the average
+- [[Tick to Trade]] for the end to end latency metric these units measure
+- [[Hot Path]] for identifying which code paths operate at microsecond or nanosecond scale
+- [[Cache Miss]] for why nanosecond memory access patterns matter
+- [[Cache Locality]] for how data layout affects access times at nanosecond scale
+- [[Garbage Collection]] for a common source of millisecond scale spikes
+- [[Jitter]] for why variance in these units matters as much as the average
 
 ## Common misconceptions
 
-1. **"Milliseconds and microseconds are basically the same."** A millisecond is 1,000 microseconds. In trading, that is the difference between a competitive quoting engine and one that gets sniped constantly. Never conflate the two.
+1. **"Milliseconds and microseconds are basically the same."** A millisecond is 1,000 microseconds. In trading, that is the difference between a competitive engine and one constantly sniped. Never conflate the two.
 
-2. **"Only HFT cares about microseconds."** Any electronic market maker on a competitive venue cares about microseconds. Even a desk targeting 100 microsecond latency needs to think in microsecond terms to stay within budget.
+2. **"Only HFT cares about microseconds."** Any electronic market maker on a competitive venue cares. Even a desk at 100 microsecond target must think in microseconds to stay within budget.
 
-3. **"Nanoseconds only matter for hardware."** Software choices (data structures, memory layout, branch patterns) create nanosecond level differences that compound across millions of operations per second.
+3. **"Nanoseconds only matter for hardware."** Software choices (data structures, memory layout, branch patterns) create nanosecond differences that compound across millions of operations per second.
 
 ## Sources
 

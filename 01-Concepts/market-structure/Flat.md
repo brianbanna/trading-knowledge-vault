@@ -8,22 +8,23 @@ date-added: "2026-03-27"
 # Flat
 
 ## Definition
-Flat means you have no [[Position]]. You are neither [[Long]] nor [[Short]] in a given instrument. "I'm flat EUR/USD" means you have zero exposure to that [[Currency Pair]]. Going flat is the act of closing out an existing position entirely. On a trading desk, "squaring up" or "getting flat" before the weekend or a major event is common practice. Being flat is itself a decision, choosing not to have risk on.
+Flat means you have no [[Position]]. Neither [[Long]] nor [[Short]]. "I'm flat EUR/USD" means zero exposure to that [[Currency Pair]]. Going flat is closing out an existing position entirely. On a desk, "squaring up" or "getting flat" before the weekend or a major event is standard practice. Being flat is a decision: choosing not to have risk on.
 
 ## Why it matters (commodities and FX)
-In FX and commodities, the decision to be flat is as important as the decision to be [[Long]] or [[Short]]. Before major data releases (NFP, CPI, OPEC meetings), many traders go flat to avoid the binary risk of a surprise outcome. FX desks that run 24 hour books must decide at handover whether to carry positions or go flat. Commodities traders with physical exposure are almost never truly flat because they hold inventory, but they can be flat on a delta adjusted, hedged basis. Knowing when to be flat, rather than always having a position, separates disciplined traders from gamblers.
+In FX and commodities, the choice to be flat is as important as choosing to go [[Long]] or [[Short]]. Before major releases (NFP, CPI, OPEC meetings), many traders go flat to avoid binary risk. 24 hour FX desks must decide at handover whether to carry or go flat. Commodity traders with physical exposure are rarely truly flat because they hold inventory, but can be flat on a delta adjusted basis. Knowing when to be flat separates disciplined traders from gamblers.
 
 ## Concrete example
-**Win scenario (flat saves you):** You were [[Long]] 3 million USD/JPY at 149.50, up 30 [[Pip]]s. The Bank of Japan meeting is tomorrow and you suspect intervention risk. You close the position at 149.80 and go flat, locking in [[Realized PnL]] of 3,000,000 x 0.0030 / 149.80 = approximately 60,000 USD. Overnight, the BOJ intervenes and USD/JPY drops 300 pips to 146.80. Being flat saved you from a 600,000 USD loss.
 
-**Fail scenario (flat costs you):** You go flat on crude oil before an OPEC meeting, closing your [[Long]] 50 lots at 80.00. OPEC announces a surprise 2 million barrel per day cut and oil gaps to 85.00 at the open. You missed 50 x 1,000 x 5.00 = 250,000 USD of profit. Being flat protected your downside but also eliminated your upside.
+**Concrete:** [[Long]] USD 3 million USD/JPY at 149.50, up 30 pips. BOJ meeting tomorrow with intervention risk. Close at 149.80 and go flat, locking in 3,000,000 × 0.0030 / 149.80 = ~$60,000. Overnight, BOJ intervenes; USD/JPY drops 300 pips to 146.80. Being flat saved a $600,000 loss. Failure mirror: go flat on crude before an OPEC meeting, closing [[Long]] 50 lots at $80.00. OPEC announces a surprise 2 mbpd cut, oil gaps to $85.00 at the open. Missed $250,000 of profit. Flat protected downside but eliminated upside.
+
+**Simplified:** Flat means no position. Going flat closes whatever you held and removes you from the market. Traders go flat before major news to avoid binary outcomes, or at end of day to sleep without overnight risk. It is not a passive state, it is an active decision to not have a view at the moment.
 
 ## Key mechanics and formulas
 - Flat position value = 0
 - Flat PnL exposure = 0 (no gain or loss from market moves)
-- To go flat from [[Long]]: sell the entire position (quantity sold = quantity held)
-- To go flat from [[Short]]: buy back the entire position (quantity bought = quantity owed)
-- Transaction cost of going flat = [[Bid-Ask Spread]] x [[Notional]] + commissions
+- To go flat from [[Long]]: sell the entire position
+- To go flat from [[Short]]: buy back the entire position
+- Transaction cost of going flat = [[Bid-Ask Spread]] × [[Notional]] + commissions
 
 ## Prerequisites
 - [[Position]]
@@ -31,17 +32,20 @@ In FX and commodities, the decision to be flat is as important as the decision t
 - [[Short]]
 
 ## Related concepts (learn next)
-- [[Position]] , the holding that you eliminate when going flat
-- [[Realized PnL]] , which is booked when you close a position to go flat
-- [[Risk Management]] , where going flat is a key tool for reducing exposure
-- [[Margin]] , which is freed up when you go flat
-- [[Bid-Ask Spread]] , the cost you pay to close a position and go flat
-- [[Hedging]] , an alternative to going flat, where you offset risk without closing
+- [[Position]] , the holding you eliminate when going flat
+- [[Realized PnL]] , booked when you close to go flat
+- [[Risk Management]] , where going flat is a key tool
+- [[Margin]] , freed up when you go flat
+- [[Bid-Ask Spread]] , the cost you pay to close
+- [[Hedging]] , an alternative that offsets risk without closing
 
 ## Common misconceptions
-- **Flat does not mean safe.** If you should be [[Long]] because your mandate requires a hedge, being flat means you are actually exposed. A commodity producer with no futures hedge is not "safe," they are exposed to falling prices.
-- **Flat book does not mean flat risk.** A trader can have offsetting [[Long]] and [[Short]] positions in correlated instruments (long Brent, short WTI) that net to flat notional but still carry significant [[Basis Risk]].
-- **Going flat always costs money.** Crossing the [[Bid-Ask Spread]] to close a position is a real cost. Repeatedly going flat and re entering positions erodes [[PnL]] through transaction costs.
+
+**Flat does not mean safe.** If your mandate requires a hedge, flat means actually exposed. A commodity producer with no futures hedge is not safe; they are exposed to falling prices.
+
+**Flat book does not mean flat risk.** Offsetting [[Long]] and [[Short]] positions in correlated instruments (long Brent, short WTI) net to flat notional but carry significant [[Basis Risk]].
+
+**Going flat always costs money.** Crossing the [[Bid-Ask Spread]] to close is a real cost. Repeatedly going flat and re entering erodes PnL through transaction costs.
 
 ## Sources
 - Taleb, N.N. *Dynamic Hedging*, Chapter 1

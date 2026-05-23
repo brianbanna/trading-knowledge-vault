@@ -10,11 +10,11 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The set of futures prices across all available delivery dates for a single commodity or instrument, plotted on a chart with time on the x axis and price on the y axis. It shows what the market is willing to pay for delivery at different points in the future.
+The set of futures prices across all available delivery dates for a single commodity or instrument, plotted with time on the x axis and price on the y axis. It shows what the market will pay for delivery at different forward dates.
 
 ## Why It Matters (Commodities / FX)
 
-The forward curve IS the market's pricing of time. Every [[Relative Value Trade|relative value trade]] in commodities is a bet on some aspect of the forward curve: its level, slope, curvature, or shape. Reading the curve is the most fundamental skill in commodity trading.
+The forward curve is the market's pricing of time. Every [[Relative Value Trade|relative value trade]] in commodities bets on some aspect of the curve: level, slope, curvature, or shape. Reading the curve is the most fundamental skill in commodity trading.
 
 ## Prerequisites
 

@@ -11,23 +11,21 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Real interest rates are nominal interest rates adjusted for inflation. They represent the true cost of borrowing or the true return on saving after accounting for the erosion of purchasing power. The most commonly traded expression is the US 10 year TIPS (Treasury Inflation Protected Securities) yield, which directly quotes the real yield on US government debt. Real rates are the single most important macro variable for cross asset allocation because they determine the opportunity cost of holding non yielding assets like [[Gold Futures|gold]] and affect the discount rate applied to all future cash flows.
+Real interest rates are nominal interest rates adjusted for inflation. They represent the true cost of borrowing or true return on saving after accounting for purchasing power erosion. The most commonly traded expression is the US 10 year TIPS (Treasury Inflation Protected Securities) yield, which directly quotes the real yield on US government debt. Real rates are the single most important macro variable for cross asset allocation because they set the opportunity cost of holding non yielding assets like [[Gold Futures|gold]] and the discount rate applied to all future cash flows.
 
 ## Why it matters (commodities and FX)
 
-Real rates are the dominant driver of [[Gold Futures|gold]] prices. Gold produces no income, so its opportunity cost is the real return available on safe assets (TIPS). When real rates are negative (inflation exceeds nominal yields), holding gold has zero or positive relative carry compared to bonds. When real rates are positive and rising, gold faces a headwind because bonds offer a real return that gold cannot.
+Real rates are the dominant driver of [[Gold Futures|gold]]. Gold produces no income, so its opportunity cost is the real return available on safe assets (TIPS). When real rates are negative (inflation exceeds nominal yields), gold has zero or positive relative carry compared to bonds. When real rates are positive and rising, gold faces a headwind because bonds offer a real return gold cannot.
 
-For FX, real rate differentials between countries drive capital flows and exchange rates. A country with higher real rates attracts capital, strengthening its currency. This is the real rate version of the [[Carry Trade]]: what matters is not nominal rate differentials but real rate differentials after adjusting for inflation expectations.
+For FX, real rate differentials drive capital flows and exchange rates. A country with higher real rates attracts capital, strengthening its currency. This is the real rate version of the [[Carry Trade]]: real rate differentials matter more than nominal, after adjusting for inflation expectations.
 
-For commodities broadly, real rates affect the [[Cost of Carry]] (the "r" in the carry formula) and the discount rate applied to future production investment, influencing supply decisions.
+For commodities broadly, real rates affect [[Cost of Carry]] (the "r" in the carry formula) and the discount rate on future production investment, influencing supply decisions.
 
 ## Concrete example
 
-US 10 year nominal yield: 4.5%. US 10 year breakeven inflation: 2.3%. US 10 year real yield (TIPS): 2.2%.
+**Concrete:** US 10 year nominal yield 4.5%. US 10 year breakeven inflation 2.3%. US 10 year real yield (TIPS) 2.2%. From 2020 to 2021, the 10 year TIPS yield fell to -1.0%. Gold rallied from $1,500 to $2,070. From 2022 to 2023, the Fed hiked aggressively, pushing real yields to +2.5%. Gold initially fell to $1,620 (Oct 2022). Gold then rallied despite high real rates due to massive [[Central Bank Policy|central bank buying]] (China, India, Turkey), breaking the historical real rate/gold correlation. This is a [[Structural Break]] traders must recognize. In FX: US real rates rose above European real rates by ~200bp in 2022, driving EUR/USD from 1.15 to 0.96. The real rate differential explained the bulk of the move.
 
-From 2020 to 2021, the 10 year TIPS yield fell to negative 1.0%. Gold rallied from $1,500 to $2,070. From 2022 to 2023, the Fed hiked aggressively, pushing real yields to +2.5%. Gold initially fell to $1,620 (Oct 2022). However, gold subsequently rallied despite high real rates due to massive [[Central Bank Policy|central bank buying]] (China, India, Turkey), breaking the historical real rate/gold correlation. This is a [[Structural Break]] in the relationship that traders must recognize.
-
-In FX: US real rates rose above European real rates by ~200bp in 2022, driving EUR/USD from 1.15 to 0.96. The real rate differential explained the bulk of the move.
+**Simplified:** Subtract expected inflation from the nominal interest rate. That is what your bond actually earns in purchasing power. When that number is negative, cash and bonds lose value, and gold (which earns nothing) looks attractive by comparison. When it goes positive, bonds beat gold on yield, so gold falls. Currencies follow the same logic: capital flows to wherever real yields are highest.
 
 ## Key mechanics and formulas
 
@@ -40,10 +38,10 @@ In FX: US real rates rose above European real rates by ~200bp in 2022, driving E
 **Breakeven inflation:**
 `Breakeven = Nominal Treasury Yield - TIPS Yield`
 
-The market's implied inflation expectation. If the 10Y UST yields 4.5% and the 10Y TIPS yields 2.2%, breakeven inflation is 2.3%.
+The market's implied inflation expectation. If the 10Y UST yields 4.5% and the 10Y TIPS yields 2.2%, breakeven is 2.3%.
 
 **Gold/real rate relationship (approximate):**
-Historically, a 100bp increase in 10 year real yields has been associated with a ~$100 to $150/oz decline in gold. This sensitivity (the "beta") has weakened since 2022 due to central bank demand.
+Historically, a 100bp rise in 10 year real yields was associated with a ~$100 to $150/oz decline in gold. Sensitivity weakened since 2022 due to central bank demand.
 
 **Real rate differential (FX):**
 `Real Rate Differential = (Nominal_A - Inflation_A) - (Nominal_B - Inflation_B)`
@@ -56,20 +54,20 @@ Positive differential favors currency A appreciation.
 - [[Carry Trade]]
 
 ## Related concepts (learn next)
-- [[Gold Futures]] - the asset most directly and inversely correlated with real rates. Understanding this relationship is the foundation of gold trading.
+- [[Gold Futures]] - the asset most directly and inversely correlated with real rates. The foundation of gold trading.
 - [[Safe Haven Assets]] - gold and US Treasuries are both safe havens, but they respond differently to real rate changes.
-- [[Carry Trade]] - real rate differentials are a better predictor of FX carry returns than nominal rate differentials.
-- [[Central Bank Policy]] - central banks set the nominal rate. Inflation expectations set the real rate. Both matter.
-- [[Risk-On Risk-Off]] - real rates influence risk appetite. Very negative real rates = financial repression = pushes capital into risk assets.
-- [[Commodity Currencies]] - EM commodity currencies are sensitive to US real rates through capital flow effects (higher US real rates attract capital away from EM).
+- [[Carry Trade]] - real rate differentials are a better predictor of FX carry returns than nominal differentials.
+- [[Central Bank Policy]] - CBs set the nominal rate. Inflation expectations set the real rate. Both matter.
+- [[Risk-On Risk-Off]] - real rates influence risk appetite. Very negative real rates = financial repression = capital into risk assets.
+- [[Commodity Currencies]] - EM commodity currencies are sensitive to US real rates through capital flow effects.
 
 ## Common misconceptions
 
-**"Nominal rates are what matter for gold."** No. Gold rallied from 2019 to 2020 even as nominal rates fell, because inflation expectations rose faster, pushing real rates deeply negative. It is real rates, not nominal, that drive gold.
+**"Nominal rates are what matter for gold."** No. Gold rallied 2019 to 2020 even as nominal rates fell, because inflation expectations rose faster, pushing real rates deeply negative. Real rates drive gold, not nominal.
 
-**"Higher real rates are always bearish for commodities."** Higher real rates increase the cost of carry and discount rate, which is bearish at the margin. But real rates often rise because the economy is strong, which is bullish for industrial commodity demand. The net effect depends on which force dominates.
+**"Higher real rates are always bearish for commodities."** Higher real rates raise cost of carry and discount rate, bearish at the margin. But real rates often rise because the economy is strong, bullish for industrial demand. Net effect depends on which force dominates.
 
-**"The TIPS yield is a clean measure of real rates."** TIPS have their own supply/demand dynamics (Fed QE buying, pension fund demand, TIPS breakeven trading). The TIPS yield can diverge from "true" real rates, especially during periods of QE or QT.
+**"The TIPS yield is a clean measure of real rates."** TIPS have their own supply/demand dynamics (Fed QE buying, pension demand, breakeven trading). TIPS yields can diverge from "true" real rates, especially during QE or QT.
 
 ## Sources
 

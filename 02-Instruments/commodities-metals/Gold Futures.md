@@ -9,13 +9,13 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Gold is the most liquid precious metal and the only commodity that functions primarily as a monetary asset rather than an industrial input. It trades on COMEX (CME Group), LBMA (London OTC), and Shanghai Gold Exchange. Gold serves as a store of value, inflation hedge, central bank reserve asset, and safe haven during market stress.
+Gold is the most liquid precious metal and the only commodity that functions primarily as a monetary asset rather than an industrial input. Trades on COMEX (CME Group), LBMA (London OTC), and Shanghai Gold Exchange. Gold serves as a store of value, inflation hedge, central bank reserve asset, and safe haven during market stress.
 
 ## Why it matters (commodities and FX)
 
-Gold is the single most important cross asset instrument for understanding the relationship between real interest rates, inflation expectations, and currency valuation. For an FX trader, gold IS a currency (XAU). Its price movements reflect real rate expectations, USD strength/weakness, and global risk appetite simultaneously. A commodity trader who does not understand gold cannot understand cross asset macro flows.
+Gold is the single most important cross asset instrument for understanding real interest rates, inflation expectations, and currency valuation. For an FX trader, gold IS a currency (XAU). Price action reflects real rate expectations, USD strength/weakness, and global risk appetite simultaneously. A commodity trader without a gold framework cannot read cross asset macro flows.
 
-Central bank gold purchases have become a dominant demand driver since 2022, fundamentally altering the gold market structure and price dynamics.
+Central bank gold purchases have become a dominant demand driver since 2022, fundamentally altering market structure and price dynamics.
 
 ## Contract specifications
 
@@ -36,50 +36,50 @@ Micro Gold (MGC): 10 oz contract, same mechanics.
 ## Fundamentals
 
 ### Supply drivers
-- Mine production: approximately 3,600 tonnes/year. China, Australia, Russia, Canada top producers
-- Recycled gold (scrap): approximately 1,200 tonnes/year, price sensitive
+- Mine production: ~3,600 tonnes/year. China, Australia, Russia, Canada top producers
+- Recycled gold (scrap): ~1,200 tonnes/year, price sensitive
 - Central bank selling (historically) or buying (current regime since 2022)
-- Total above ground gold stock: approximately 210,000 tonnes. Annual mine supply adds only ~1.7%
+- Total above ground gold stock: ~210,000 tonnes. Annual mine supply adds only ~1.7%
 
 ### Demand drivers
-- Investment demand: ETFs (GLD, IAU), bars, coins. Most volatile demand component
-- Central bank purchases: China, India, Turkey, Poland, emerging market central banks building reserves
-- Jewelry: India and China account for ~50% of jewelry demand. Price sensitive
+- Investment demand: ETFs (GLD, IAU), bars, coins. Most volatile component
+- Central bank purchases: China, India, Turkey, Poland, EM central banks building reserves
+- Jewelry: India and China account for ~50%. Price sensitive
 - Technology/industrial: small (~7%), electronics, dentistry
 - Real interest rates: the dominant financial driver. Gold has no yield, so it competes with real yields
 
 ### Seasonality
-Indian wedding season (Oct to Dec) and Lunar New Year (Jan to Feb) create physical demand peaks. Q3 tends to be quieter. However, macro drivers overwhelm seasonality in gold more than in any other commodity.
+Indian wedding season (Oct to Dec) and Lunar New Year (Jan to Feb) drive physical demand peaks. Q3 is quieter. Macro drivers overwhelm seasonality in gold more than in any other commodity.
 
 ## Key data and reports
 
 - COMEX open interest and managed money positioning (COT report)
-- ETF holdings: SPDR GLD, iShares IAU (daily tonnage data)
+- ETF holdings: SPDR GLD, iShares IAU (daily tonnage)
 - LBMA clearing statistics
-- World Gold Council quarterly demand trends report
+- World Gold Council quarterly demand trends
 - US real yields (TIPS): 10 year TIPS yield is the single most important price input
 - Fed dot plot and rate expectations
-- Central bank gold reserves (IMF IFS data, monthly with lag)
-- DXY (US Dollar Index)
+- Central bank gold reserves (IMF IFS, monthly with lag)
+- DXY
 
 ## Curve structure
 
-Gold futures trade in persistent mild [[Contango]] because gold has virtually zero [[Convenience Yield]] (there is no industrial urgency to hold physical) and significant storage/insurance costs. The contango slope closely tracks short term interest rates. Gold [[Backwardation]] is extremely rare and signals severe physical market stress (lease rate spikes).
+Gold trades in persistent mild [[Contango]] because gold has virtually zero [[Convenience Yield]] (no industrial urgency for physical) and meaningful storage/insurance costs. Contango slope tracks short term rates. Gold [[Backwardation]] is rare and signals severe physical stress (lease rate spikes).
 
 ## Key spreads and relative value
 
-- **Gold/Silver ratio:** oscillates historically between 40 and 100. Mean reversion trade when at extremes. Silver has more industrial demand, so ratio widens in recession (gold outperforms) and narrows in expansion.
-- **Gold/Copper ratio:** safe haven vs growth indicator. Rising = risk off. One of the cleanest macro signals.
-- **Gold/Platinum spread:** structural shift since 2015, gold now persistently above platinum. Automotive catalyst substitution and investment demand drive divergence.
-- **Gold/Real rates:** not a spread trade per se, but the core relationship. Negative real rates are bullish gold.
-- **COMEX/LBMA EFP (Exchange for Physical):** the spread between COMEX futures and London spot. Widened dramatically during COVID (March 2020). Monitors arbitrage between the 2 primary markets.
+- **Gold/Silver ratio:** historically oscillates between 40 and 100. Mean reversion at extremes. Silver has more industrial demand, so the ratio widens in recession (gold outperforms) and narrows in expansion.
+- **Gold/Copper ratio:** safe haven vs growth. Rising = risk off. One of the cleanest macro signals.
+- **Gold/Platinum spread:** structural shift since 2015, gold persistently above platinum. Auto catalyst substitution and investment demand drive divergence.
+- **Gold/Real rates:** not a spread per se, but the core relationship. Negative real rates are bullish.
+- **COMEX/LBMA EFP (Exchange for Physical):** spread between COMEX futures and London spot. Widened dramatically during COVID (March 2020). Monitors arbitrage between the 2 primary markets.
 
 ## Important relationships
 
 - Strong inverse correlation with US 10 year real yields (TIPS)
-- Inverse correlation with [[DXY]] (USD strength)
+- Inverse correlation with [[DXY]]
 - Positive correlation with inflation expectations (breakevens)
-- Safe haven correlation: spikes during equity selloffs, geopolitical events
+- Safe haven: spikes during equity selloffs and geopolitical events
 - Positive correlation with other precious metals, particularly [[Silver Futures|silver]]
 - Complex relationship with [[Copper Futures|copper]]: gold/copper ratio is a macro regime indicator
 

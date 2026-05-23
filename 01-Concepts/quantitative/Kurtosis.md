@@ -10,44 +10,36 @@ date-added: "2026-03-24"
 
 ## Definition
 
-Kurtosis measures how fat the tails of a return distribution are compared to a normal distribution. A normal distribution has a kurtosis of 3 (excess kurtosis of 0). Financial returns almost always have kurtosis well above 3, meaning extreme events happen far more often than the bell curve predicts. Think of it this way: if [[Skewness]] tells you which direction the surprises come from, kurtosis tells you how OFTEN and how EXTREME the surprises are, regardless of direction. A distribution with high kurtosis (leptokurtic) has a sharp peak around the mean (many small, boring days) AND fat tails (occasional massive moves). The boring days lull you into complacency; the fat tails destroy your risk model.
+Kurtosis is how fat the tails of a return distribution are compared to a normal distribution. Normal has kurtosis 3 (excess kurtosis 0). Financial returns almost always sit well above 3: extreme events happen far more often than the bell curve predicts. If [[Skewness]] tells you which direction surprises come from, kurtosis tells you how OFTEN and how EXTREME the surprises are. A leptokurtic distribution has a sharp peak around the mean (many small days) AND fat tails (occasional massive moves). The boring days breed complacency; the fat tails destroy the risk model.
 
 ## Why it matters (commodities and FX)
 
-Kurtosis is the reason that standard risk models fail for commodities. Every formula that assumes normally distributed returns, including parametric [[Value at Risk]], portfolio optimization, and option pricing via [[Black-Scholes]], systematically underestimates the probability of large moves.
+Kurtosis is why standard risk models fail for commodities. Every formula assuming normal returns (parametric [[Value at Risk]], portfolio optimization, [[Black-Scholes]] pricing) understates the probability of large moves.
 
-**The numbers are stark:** A 4 sigma daily move in a normal distribution should occur once every 126 years. In crude oil, 4+ sigma daily moves have occurred roughly once every 2 years. In natural gas, roughly once a year. In cocoa during 2024, multiple 5+ sigma daily moves occurred in a single quarter. If your risk model uses a normal distribution, it tells you these events are "impossible" right up until they wipe out your account.
+**The numbers are stark:** A 4 sigma daily move in a normal distribution should occur once every 126 years. In crude oil, 4+ sigma daily moves have occurred roughly once every 2 years. In natural gas, roughly once a year. In cocoa during 2024, multiple 5+ sigma daily moves occurred in a single quarter. A normal distribution risk model tells you these events are "impossible" right up until they wipe out your account.
 
-For FX, G10 pairs have moderate kurtosis (3 to 6 excess), making the normal approximation less dangerous but still flawed. EM currencies have extreme kurtosis (10 to 30+) because of devaluation events, capital controls, and central bank interventions that produce discontinuous jumps.
+For FX, G10 pairs have moderate excess kurtosis (3 to 6), making the normal approximation less dangerous but still flawed. EM currencies have extreme kurtosis (10 to 30+) from devaluations, capital controls, and central bank interventions producing discontinuous jumps.
 
-The practical implication: position sizes based on normal distribution assumptions are too large. Margin buffers based on normal VaR are too thin. Option prices based on Black-Scholes (which assumes normality) systematically underprice OTM options, which is why the [[Volatility Smile]] exists.
+Practical implication: positions sized to normal distribution assumptions are too large. Margin buffers based on normal VaR are too thin. Black-Scholes prices systematically underprice OTM options, which is why the [[Volatility Smile]] exists.
 
 ## Concrete example
 
-A risk manager is evaluating 2 commodity strategies. Both have annualized returns of 12% and annualized volatility of 15%, giving an identical Sharpe ratio of 0.80.
+**Concrete:** Risk manager evaluates 2 commodity strategies, both 12% annualized return, 15% annualized vol, Sharpe 0.80. Strategy A: diversified trend following, excess kurtosis 2, worst 5 year daily loss 2.8 sigma. Strategy B: concentrated cocoa and coffee carry, excess kurtosis 12, worst 5 year daily loss 6.2 sigma. Both look identical mean/variance. Strategy A's 99% parametric VaR = $2.33M on $100M; actual worst 1% days average $2.8M. Close. Strategy B's 99% parametric VaR = $2.33M (same formula); actual worst 1% days average $5.5M. Model understates risk 2.4x. An allocator ignoring kurtosis sizes them equally. An allocator accounting for it gives Strategy B half the capital or requires 2.5x the margin buffer.
 
-**Strategy A (low kurtosis):** Diversified commodity trend following. Excess kurtosis of daily returns: 2. Return distribution is close to normal. The worst daily loss in 5 years was 2.8 sigma.
-
-**Strategy B (high kurtosis):** Concentrated cocoa and coffee carry. Excess kurtosis of daily returns: 12. Return distribution has extreme tails. The worst daily loss in 5 years was 6.2 sigma.
-
-Both look identical on a mean/variance basis. But:
-- Strategy A's 99% parametric VaR = $2.33 million (on a $100M book). Actual worst 1% days average $2.8 million. The model is close.
-- Strategy B's 99% parametric VaR = $2.33 million (same formula). Actual worst 1% days average $5.5 million. The model understates risk by 2.4x.
-
-An allocator who ignores kurtosis would size both strategies equally. An allocator who accounts for kurtosis would give Strategy B half the capital, or require it to maintain 2.5x the margin buffer.
+**Simplified:** Two strategies can have the same average return and the same volatility yet completely different worst case days. Kurtosis is the gap. High kurtosis means most days are normal, but the occasional day is far worse than your math predicts. Risk models built on normal distributions are blind to this. The result: position sizes look safe on paper, then one bad day takes more than the model says is possible. Always check kurtosis before sizing.
 
 ## Key mechanics and formulas
 
 ### Kurtosis Formula
 
 **Sample kurtosis:**
-`Kurt = [n(n+1) / ((n-1)(n-2)(n-3))] x sum[(x_i - mean)^4] / sigma^4`
+`Kurt = [n(n+1) / ((n-1)(n-2)(n-3))] × sum[(x_i - mean)^4] / sigma^4`
 
 **Excess kurtosis = kurtosis - 3**
 
-The subtraction of 3 normalizes so that a normal distribution has excess kurtosis of 0. Positive excess kurtosis = fatter tails than normal.
+Subtracting 3 normalizes so normal has excess kurtosis 0. Positive excess kurtosis = fatter than normal.
 
-The 4th power of deviations means extreme observations dominate the calculation. A single 6 sigma day can shift kurtosis dramatically.
+The 4th power means extreme observations dominate the calculation. A single 6 sigma day shifts kurtosis dramatically.
 
 ### Typical Excess Kurtosis by Asset (daily returns)
 
@@ -67,21 +59,21 @@ The 4th power of deviations means extreme observations dominate the calculation.
 
 **Cornish-Fisher VaR adjustment:**
 
-`z_adjusted = z + (z^2 - 1) x skew/6 + (z^3 - 3z) x kurtosis/24 - (2z^3 - 5z) x skew^2/36`
+`z_adjusted = z + (z^2 - 1) × skew/6 + (z^3 - 3z) × kurtosis/24 - (2z^3 - 5z) × skew^2/36`
 
-This adjusts the standard z score for non-normality. For a 99% VaR with excess kurtosis of 10 and skew of 0:
+Adjusts the z score for non-normality. For 99% VaR with excess kurtosis 10 and skew 0:
 - Normal z = 2.33
-- Adjusted z = approximately 3.2
-- The adjusted VaR is 37% higher than the parametric estimate
+- Adjusted z ≈ 3.2
+- Adjusted VaR is 37% higher than parametric
 
-**Rule of thumb:** For each unit of excess kurtosis, increase your parametric VaR by approximately 3 to 5%. Excess kurtosis of 10 suggests VaR should be 30 to 50% higher than the normal estimate.
+**Rule of thumb:** Each unit of excess kurtosis raises parametric VaR by 3 to 5%. Excess kurtosis of 10 suggests VaR should be 30 to 50% higher than the normal estimate.
 
 ### Kurtosis Clustering
 
-Kurtosis is not constant. It clusters: periods of low kurtosis (calm markets, normal distribution works well) alternate with periods of high kurtosis (crises, regime shifts, model failure). This temporal clustering means that:
-- Measuring kurtosis over long windows averages across regimes, potentially underestimating current tail risk.
-- Short lookback windows capture the current regime but may miss structural tails.
-- GARCH type models that allow time varying kurtosis perform better than static estimates.
+Kurtosis is not constant. It clusters: low kurtosis periods (calm, normal works) alternate with high kurtosis periods (crises, regime shifts, model failure). This temporal clustering means:
+- Long windows average across regimes and understate current tail risk.
+- Short windows capture the current regime but miss structural tails.
+- GARCH type models with time varying kurtosis outperform static estimates.
 
 ## Prerequisites
 
@@ -91,22 +83,22 @@ Kurtosis is not constant. It clusters: periods of low kurtosis (calm markets, no
 
 ## Related concepts (learn next)
 
-- [[Skewness]] because skewness and kurtosis together describe how a distribution differs from normal. Skewness = direction of tails. Kurtosis = fatness of tails.
-- [[Tail Risk]] because high kurtosis IS the quantitative measure of tail risk. A kurtosis of 15 means you live in a world where 5+ sigma events are not theoretical.
-- [[Value at Risk]] because parametric VaR assumes kurtosis of 0 (normal distribution) and therefore systematically understates risk for high kurtosis assets.
-- [[Expected Shortfall]] because ES naturally captures the fat tail severity that kurtosis describes.
-- [[Volatility Smile]] because the smile exists to price kurtosis. ATM options reflect the center of the distribution. OTM options reflect the tails. High kurtosis means expensive OTM options.
-- [[Implied Volatility]] because the gap between ATM implied vol and realized vol partly reflects the kurtosis risk premium: sellers of OTM options demand compensation for fat tail exposure.
+- [[Skewness]] because skewness and kurtosis together describe how a distribution deviates from normal. Skewness = direction of tails. Kurtosis = fatness.
+- [[Tail Risk]] because high kurtosis IS the quantitative measure. Kurtosis 15 means 5+ sigma events are not theoretical.
+- [[Value at Risk]] because parametric VaR assumes kurtosis 0 and understates risk for fat tailed assets.
+- [[Expected Shortfall]] because ES captures the tail severity that kurtosis describes.
+- [[Volatility Smile]] because the smile exists to price kurtosis. ATM options reflect the center, OTM options reflect tails. High kurtosis means expensive OTM options.
+- [[Implied Volatility]] because the gap between ATM implied and realized vol partly reflects kurtosis risk premium.
 
 ## Common misconceptions
 
-**"High kurtosis means high volatility."** Kurtosis and volatility are independent. A distribution can have low volatility (small average daily moves) but extreme kurtosis (rare days with enormous moves). Natural gas in a calm summer has low vol but still extreme kurtosis because the next polar vortex could produce a 20% daily move.
+**"High kurtosis means high volatility."** Independent. A distribution can have low vol (small average moves) and extreme kurtosis (rare huge moves). Natural gas in a calm summer has low vol but high kurtosis because the next polar vortex could produce a 20% daily move.
 
-**"Kurtosis is driven by a few outliers."** While individual extreme observations heavily influence the kurtosis statistic, the property of fat tails is structural in financial markets, not an artifact of outliers. Removing the most extreme observations and recalculating still produces excess kurtosis well above zero. The fat tails are real, not data artifacts.
+**"Kurtosis is driven by a few outliers."** Removing the most extreme observations and recalculating still produces excess kurtosis well above zero. The fat tails are structural, not artifacts.
 
-**"Student's t distribution solves the kurtosis problem."** Student's t with low degrees of freedom captures symmetric fat tails, which is better than normal. But it cannot capture skewed fat tails, time varying kurtosis, or the jump behavior seen in commodity markets. It is an improvement, not a solution.
+**"Student's t distribution solves the kurtosis problem."** Student's t with low df captures symmetric fat tails, better than normal. It cannot capture skewed fat tails, time varying kurtosis, or jump behavior. Improvement, not solution.
 
-**"Monthly returns have lower kurtosis, so use monthly data."** Aggregating to monthly reduces kurtosis (central limit theorem), but this does NOT reduce the actual risk. It just hides it in the statistics. Your daily margin call does not care that your monthly return distribution looks better behaved.
+**"Monthly returns have lower kurtosis, so use monthly data."** Aggregation reduces kurtosis (central limit theorem) but does NOT reduce actual risk. Your daily margin call does not care that the monthly distribution looks better.
 
 ## Sources
 

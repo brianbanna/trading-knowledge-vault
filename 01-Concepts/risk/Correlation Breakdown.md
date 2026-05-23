@@ -9,21 +9,23 @@ date-added: "2026-03-20"
 # Correlation Breakdown
 
 ## Definition
-Correlation breakdown occurs when the historical correlations between asset classes shift dramatically, typically during periods of financial stress, causing portfolios that appeared well-diversified to suffer simultaneous losses across supposedly uncorrelated positions. The classic example is the stock-bond correlation: from 2000 to 2020, stocks and bonds were negatively correlated (bonds rallied when stocks fell), providing a natural hedge. In 2022, both stocks and bonds fell together as inflation forced central banks to hike rates aggressively, breaking the negative correlation and causing the worst combined stock-bond drawdown in decades. Correlation breakdown is the fundamental risk that undermines diversification-based strategies like [[Risk Parity]] and [[Modern Portfolio Theory]]. It is not a random event but is systematically linked to [[macro regime]] transitions, liquidity crises, and forced deleveraging by leveraged participants.
+Correlation breakdown is a sudden shift in cross asset correlations, usually during financial stress, that causes diversified portfolios to suffer simultaneous losses across supposedly uncorrelated positions. The textbook case is the stock bond correlation: from 2000 to 2020, stocks and bonds were negatively correlated, providing a natural hedge. In 2022, both fell together as inflation forced aggressive hikes, producing the worst combined stock bond drawdown in decades. Correlation breakdown is the fundamental risk that undermines [[Risk Parity]] and [[Modern Portfolio Theory]]. It is not random: it is systematically linked to [[macro regime]] transitions, liquidity crises, and forced deleveraging.
 
 ## Why it matters (commodities and FX)
-Correlation breakdown is the primary tail risk for multi-asset portfolios that include commodities and FX. In normal times, commodities are modestly correlated with equities (approximately 0.2 to 0.4) and negatively correlated with the USD (approximately -0.3 to -0.5). During a liquidity crisis, all risky assets (including commodities and high-beta FX) sell off simultaneously as participants liquidate positions to raise cash, pushing correlations toward 1.0. The March 2020 COVID crash saw crude oil, equities, credit, EM currencies, and even gold decline simultaneously for several days. For FX carry traders, correlation breakdown is devastating: in 2008, AUDJPY fell 40% in 3 months as all carry trades unwound at once, with previously uncorrelated carry pairs all declining together. Understanding that correlations are regime-dependent (not constant) is essential for building robust risk models, sizing positions, and designing hedges that work when they are needed most.
+Correlation breakdown is the primary tail risk for multi asset portfolios that hold commodities and FX. In calm regimes, commodities correlate modestly with equities (0.2 to 0.4) and negatively with USD (−0.3 to −0.5). In a liquidity crisis, every risky asset (commodities, high beta FX) sells off together as participants liquidate to raise cash, pushing correlations toward 1.0. March 2020 saw crude, equities, credit, EM FX, and even gold decline simultaneously for several days. For FX carry traders, breakdown is devastating: in 2008, AUDJPY fell 40% in 3 months as all carry pairs unwound together. Correlations are regime dependent, not constant. Sizing and hedging must reflect this.
 
 ## Concrete example
-A risk parity fund holds equities, bonds, commodities, and gold with equal risk contribution, assuming the following correlation matrix: equity-bond = -0.3, equity-commodity = 0.3, equity-gold = 0.0, bond-commodity = -0.1. In September 2022, the Fed hikes rates by 75 bps and signals more to come. The realized correlations over the next month shift to: equity-bond = +0.7, equity-commodity = +0.6, equity-gold = +0.5, bond-commodity = +0.4. The portfolio, designed for a diversified regime, now behaves as if it were 80% invested in a single correlated risk factor. The fund loses 12% in a month, versus an expected worst-case monthly loss of 5% under normal correlations. Separately, an FX carry portfolio holding long AUDUSD, NZDUSD, and MXNUSD against short JPYUSD suddenly sees all 3 long positions decline by 5 to 10% as global risk aversion spikes and all carry currencies fall in unison. The historical pairwise correlation of 0.4 between these positions jumps to 0.9, turning what appeared to be 3 diversified bets into effectively 1 concentrated bet.
+**Concrete:** A risk parity fund holds equities, bonds, commodities, and gold with equal risk contribution, assuming correlations of equity bond −0.3, equity commodity 0.3, equity gold 0.0, bond commodity −0.1. In September 2022, the Fed hikes 75 bps and signals more. Realized correlations shift to equity bond +0.7, equity commodity +0.6, equity gold +0.5, bond commodity +0.4. The portfolio now behaves like 80% in one correlated factor. It loses 12% in a month versus an expected worst case of 5%. Separately, an FX book long AUDUSD, NZDUSD, MXNUSD against short JPYUSD sees all 3 longs fall 5 to 10% as risk aversion spikes. Pairwise correlation jumps from 0.4 to 0.9 — 3 diversified bets collapse into 1 concentrated bet.
+
+**Simplified:** Diversification depends on assets moving independently. In a crisis, they stop. Forced selling, margin calls, and de-risking push every risky asset down together. Hedges built on the prior correlation matrix fail at the exact moment they are needed. A portfolio designed for diversification suddenly behaves like one concentrated bet. The breakdown reverses once forced flows are done, but the damage during the panic phase is what matters.
 
 ## Key mechanics and formulas
-- **Conditional correlation**: Corr(X, Y | stress) > Corr(X, Y | calm); correlations increase during high-volatility regimes
-- **DCC model (Dynamic Conditional Correlation)**: a time-varying correlation model: H(t) = D(t) x R(t) x D(t), where D(t) is a diagonal volatility matrix and R(t) is a time-varying correlation matrix
-- **Copula tail dependence**: measures the probability that 2 assets crash simultaneously; normal (Gaussian) copulas underestimate tail dependence, leading to false diversification confidence
-- **Correlation surprise**: Surprise = realized correlation (stressed period) - expected correlation (from model); large positive surprises signal breakdown
-- **Portfolio variance under breakdown**: Var(portfolio) = sum(w(i)^2 x var(i)) + sum(w(i) x w(j) x cov_stressed(i,j)); substituting stressed covariance can double or triple expected portfolio variance
-- **Diversification ratio**: DR = (sum of w(i) x vol(i)) / portfolio volatility; DR > 1 indicates diversification benefit; DR approaches 1 during correlation breakdown
+- **Conditional correlation:** Corr(X, Y | stress) > Corr(X, Y | calm)
+- **DCC (Dynamic Conditional Correlation):** H(t) = D(t) × R(t) × D(t), time varying correlation
+- **Copula tail dependence:** probability of joint crash. Gaussian copulas understate this, producing false diversification confidence
+- **Correlation surprise:** realized stressed correlation − expected correlation; large positive values flag breakdown
+- **Portfolio variance under breakdown:** Var = Σ w_i² × var_i + Σ w_i × w_j × cov_stressed_ij; substituting stressed covariance doubles or triples expected variance
+- **Diversification ratio:** DR = (Σ w_i × vol_i) / portfolio vol; DR > 1 indicates diversification benefit, DR → 1 indicates breakdown
 
 ## Prerequisites
 - [[Correlation]]
@@ -32,19 +34,19 @@ A risk parity fund holds equities, bonds, commodities, and gold with equal risk 
 - [[Risk Management]]
 
 ## Related concepts (learn next)
-- [[Risk Parity]]: the strategy most vulnerable to correlation breakdown because its entire premise is stable cross-asset diversification.
-- [[Macro Regime]]: regime transitions (especially to Stagflation) are the primary driver of correlation regime changes.
-- [[Positioning Signal]]: crowded positioning in the same direction amplifies correlation breakdown as everyone exits simultaneously.
-- [[CTA]]: CTA deleveraging during trend reversals contributes to cross-asset correlation spikes.
-- [[Carry Cross Asset]]: carry trade unwinding is a classic correlation breakdown scenario where all carry positions decline together.
-- [[Momentum Cross Asset]]: momentum strategies can both suffer from and adapt to correlation breakdowns.
-- [[DXY Correlation]]: the USD often strengthens during correlation breakdowns as a safe haven, amplifying commodity and EM FX losses.
+- [[Risk Parity]]: the strategy most exposed to breakdown since its premise is stable cross asset diversification.
+- [[Macro Regime]]: regime transitions (especially to stagflation) drive correlation regime change.
+- [[Positioning Signal]]: crowded same direction positioning amplifies breakdown as everyone exits at once.
+- [[CTA]]: CTA deleveraging during trend reversals contributes to cross asset correlation spikes.
+- [[Carry Cross Asset]]: carry unwinds are a classic breakdown scenario.
+- [[Momentum Cross Asset]]: momentum strategies can both suffer from and adapt to breakdown.
+- [[DXY Correlation]]: USD strengthens during breakdown as a safe haven, amplifying commodity and EM FX losses.
 
 ## Common misconceptions
-1. **"Diversification always works"**: Diversification reduces risk in normal times but partially fails during the exact scenarios where risk reduction is most needed. The phrase "correlations go to 1 in a crisis" is an exaggeration but captures a real asymmetry.
-2. **"Using a longer correlation lookback window solves the problem"**: A 5 year lookback will blend calm and stressed periods, producing an average that underestimates tail risk. Regime-conditional correlation models or stress testing with crisis-period correlations are necessary.
-3. **"Gold is always a safe haven"**: Gold sometimes acts as a safe haven (2008, 2020 post-initial crash), but in acute liquidity crises, even gold can sell off as participants sell anything liquid to meet margin calls. The March 2020 initial selloff saw gold drop 12% before recovering.
-4. **"Correlation breakdown is unpredictable"**: While the exact timing is unpredictable, the conditions that create correlation breakdown are identifiable: high leverage, crowded positioning, macro regime uncertainty, and central bank policy inflection points.
+1. **"Diversification always works."** It reduces risk in normal regimes but partially fails in the exact scenarios when risk reduction matters most. "Correlations go to 1 in a crisis" is an exaggeration but captures the real asymmetry.
+2. **"A longer lookback window solves it."** A 5 year window blends calm and stressed periods, averaging out tail risk. Regime conditional models or stress testing with crisis correlations are required.
+3. **"Gold is always a safe haven."** Gold helps in 2008 and post initial 2020, but in acute liquidity crises it sells off as participants raise cash. March 2020 saw gold drop 12% before recovering.
+4. **"Breakdown is unpredictable."** Timing is, but the conditions are identifiable: high leverage, crowded positioning, macro regime uncertainty, policy inflection points.
 
 ## Sources
 - Longin, Francois, Solnik, Bruno, "Extreme Correlation of International Equity Markets," Journal of Finance (2001)

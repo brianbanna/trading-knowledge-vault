@@ -10,39 +10,37 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Seasonality refers to recurring, predictable patterns in commodity prices and spreads that repeat at roughly the same time each year, driven by weather, agricultural cycles, consumer behavior, or industrial schedules. Unlike random price fluctuations, seasonal patterns have identifiable physical causes: heating demand rises in winter, gasoline demand peaks in summer, harvest pressure depresses grain prices in autumn. Seasonality is one of the most exploitable patterns in commodity markets because it is driven by physics and biology, not sentiment.
+Seasonality refers to recurring, predictable patterns in commodity prices and spreads that repeat at roughly the same time each year, driven by weather, agricultural cycles, consumer behavior, or industrial schedules. Unlike random fluctuations, seasonal patterns have identifiable physical causes: heating demand rises in winter, gasoline peaks in summer, harvest depresses grain prices in autumn. Seasonality is one of the most exploitable patterns in commodities because it is driven by physics and biology, not sentiment.
 
 ## Why it matters (commodities and FX)
 
-Seasonal patterns are the baseline against which commodity traders measure "normal" vs "abnormal." A [[Calendar Spread]] that looks cheap might simply reflect the seasonal norm. A supply draw that looks bullish might be the standard winter pattern. Without seasonal context, you cannot distinguish a genuine signal from noise. Professional commodity desks maintain seasonal charts for every spread they trade and calibrate entries/exits relative to the seasonal average, not the absolute level. In FX, seasonality is weaker but exists in flows (year end repatriation, fiscal year patterns in JPY, EM current account cycles).
+Seasonal patterns are the baseline against which commodity traders measure normal versus abnormal. A [[Calendar Spread]] that looks cheap may reflect the seasonal norm. A supply draw that looks bullish may be the standard winter pattern. Without seasonal context, signal cannot be distinguished from noise. Professional desks maintain seasonal charts for every spread and calibrate entries/exits relative to the seasonal average, not the absolute level. FX seasonality is weaker but exists in flows (year end repatriation, fiscal year patterns in JPY, EM current account cycles).
 
 ## Concrete example
 
-**Natural gas (Henry Hub):** The classic seasonal commodity. Winter demand for heating creates a predictable price premium for winter months (Nov to Mar) vs shoulder months (Apr, Oct). The Oct/Mar spread (short Oct, long Mar) captures winter heating premium. Over the past 20 years, this spread has been positive approximately 85% of the time. A trader buys the winter/summer spread in early autumn when the seasonal premium begins to build, and exits by February.
+**Concrete:** Natural gas Oct/Mar spread. Trader puts on long Mar, short Oct in early September at +$0.85/MMBtu (winter premium). Over 20 years this spread has been positive about 85% of the time, averaging +$1.20 by January as winter demand approaches. By late November, NOAA outlook turns colder than normal, spread runs to +$1.45. Trader exits at +$1.40, gaining $0.55/MMBtu on 50 contracts = $275,000. Reverse case: warm winter 2011/12, spread collapsed from +$1.10 to +$0.20, killing seasonal longs.
 
-**Gasoline (RBOB):** Demand peaks in US driving season (Memorial Day to Labor Day). Refinery turnaround season (Feb to Apr) reduces gasoline supply just as demand begins to ramp. The RBOB [[Crack Spread]] typically peaks in May to June. Traders go long the gasoline crack in March and exit by June.
-
-**Soybeans:** US harvest pressure in September to November creates seasonal lows. South American harvest (Mar to May) creates a second supply wave. The Nov/Jul soybean spread captures old crop vs new crop dynamics.
+**Simplified:** Some commodities have demand patterns that repeat every year. Winter needs heat, summer needs gasoline, autumn means crops getting harvested. These patterns show up in spreads between contract months. You buy the spread before the seasonal pressure hits and exit when the pattern plays out. It works most years because the cause is physical. It fails in years when weather or supply deviates from the norm.
 
 ## Key mechanics and formulas
 
 **Seasonal index:**
 `Seasonal Index(month) = Average price in month / Average annual price`
 
-A seasonal index of 1.05 for March means prices in March are typically 5% above the annual average.
+A seasonal index of 1.05 for March means March prices average 5% above the annual average.
 
 **Deseasonalized price:**
 `Deseasonalized = Actual Price / Seasonal Index`
 
-Used to strip seasonal effects and identify genuine supply/demand signals.
+Strips seasonal effects to identify genuine supply/demand signals.
 
 **Seasonal spread Z-score:**
 `Z = (Current spread - Seasonal average for this date) / Seasonal standard deviation for this date`
 
-This is the correct way to assess whether a spread is rich or cheap: compare it to where it usually is at the same point in the year, not to a flat annual average.
+The correct way to assess whether a spread is rich or cheap: compare to where it usually is at the same point in the year, not to a flat annual average.
 
 **Win rate and expectancy:**
-For any seasonal trade: `Expected Value = (Win Rate x Avg Win) - (Loss Rate x Avg Loss)`. Most seasonal trades have win rates of 65 to 80% but require stop losses because the 20 to 35% of losing years can produce outsized losses (polar vortex blowing up a short natgas winter spread).
+`Expected Value = (Win Rate x Avg Win) - (Loss Rate x Avg Loss)`. Seasonal trades have 65 to 80% win rates but require stops because losing years produce outsized losses (polar vortex blowing up a short natgas winter spread).
 
 ## Prerequisites
 - [[Forward Curve]]
@@ -51,20 +49,20 @@ For any seasonal trade: `Expected Value = (Win Rate x Avg Win) - (Loss Rate x Av
 - [[Backwardation]]
 
 ## Related concepts (learn next)
-- [[Calendar Spread]] - the primary instrument for expressing seasonal views. Seasonal trades are almost always calendar spreads.
+- [[Calendar Spread]] - primary instrument for expressing seasonal views. Seasonal trades are almost always calendar spreads.
 - [[Storage Economics]] - storage injection/withdrawal cycles are the physical mechanism behind energy seasonality.
 - [[Convenience Yield]] - seasonal tightness drives convenience yield spikes, which drive calendar spread moves.
-- [[Weather Risk]] - temperature drives natgas and power seasonality. Deviations from normal weather are the primary catalyst for seasonal trade P&L.
-- [[Supply Shock]] - anti seasonal events (a hurricane in August disrupting refining, a drought during growing season) create the biggest trading opportunities.
+- [[Weather Risk]] - temperature drives natgas and power seasonality. Deviations from normal weather are the primary catalyst for seasonal P&L.
+- [[Supply Shock]] - anti seasonal events (August hurricane disrupting refining, drought during growing season) create the biggest opportunities.
 - [[Mean Reversion]] - seasonal patterns are a form of mean reversion with a known time component.
 
 ## Common misconceptions
 
-**"Seasonality is a guaranteed trade."** It is not. Seasonal patterns have high win rates but individual years can deviate sharply. A warm winter destroys the natgas seasonal. A bumper crop eliminates harvest pressure. Size for the loss scenario, not the average.
+**"Seasonality is a guaranteed trade."** Not guaranteed. High win rates, but individual years deviate sharply. A warm winter kills the natgas seasonal. A bumper crop eliminates harvest pressure. Size for the loss scenario.
 
-**"You can use the same seasonal window every year."** The timing shifts. Spring turnaround season might start 2 weeks early or late depending on refinery maintenance schedules. The seasonal is a guide, not a calendar alarm.
+**"Use the same seasonal window every year."** Timing shifts. Spring turnaround season can start 2 weeks early or late depending on refinery maintenance schedules. The seasonal is a guide, not a calendar alarm.
 
-**"Seasonal patterns are arbed away."** They persist because they are driven by physical constraints (weather, crop biology, industrial scheduling) that cannot be arbitraged. The magnitude may compress as more participants trade them, but the direction persists.
+**"Seasonal patterns are arbed away."** They persist because they are driven by physical constraints that cannot be arbitraged. Magnitude may compress as more participants trade them, direction persists.
 
 ## Sources
 

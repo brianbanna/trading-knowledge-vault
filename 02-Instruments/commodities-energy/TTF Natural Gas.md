@@ -9,7 +9,7 @@ date-added: "2026-03-20"
 
 ## Overview
 
-TTF (Title Transfer Facility) is the main European natural gas benchmark. It is a virtual trading point operated by Gasunie Transport Services in the Netherlands. TTF has become the de facto European gas pricing reference, replacing the older UK NBP benchmark for most purposes. It is to European gas what [[Henry Hub Natural Gas|Henry Hub]] is to US gas.
+TTF (Title Transfer Facility) is the main European natural gas benchmark, a virtual trading point operated by Gasunie Transport Services in the Netherlands. TTF is now the de facto European gas pricing reference, replacing UK NBP for most purposes. It is to European gas what [[Henry Hub Natural Gas|Henry Hub]] is to US gas.
 
 ## Contract Specifications
 
@@ -28,31 +28,31 @@ TTF (Title Transfer Facility) is the main European natural gas benchmark. It is 
 ## Fundamentals
 
 ### Supply Drivers
-- Pipeline gas from Norway (largest source post Russian supply reduction)
+- Norwegian pipeline gas (largest source post Russian supply reduction)
 - LNG imports (US, Qatar, West Africa, Australia)
 - Russian pipeline flows (Turkstream, residual flows)
 - Storage injection/withdrawal cycles
 - Renewable generation displacing gas demand (indirect supply effect)
 
 ### Demand Drivers
-- Power generation (gas fired plants, especially peaker plants)
+- Power generation (gas fired plants, especially peakers)
 - Industrial use (chemicals, fertilizer, ceramics, glass)
 - Residential heating (seasonal, weather dependent)
 - Export demand (pipeline to neighboring countries)
 
 ### Seasonality
-Strong seasonal pattern: prices tend to rise into winter (Oct to Mar) as heating demand increases and storage draws accelerate. Summer prices reflect injection season (Apr to Sep) when storage refills. The winter/summer spread is a key [[Relative Value Trade|relative value trade]].
+Strong seasonal pattern: prices rise into winter (Oct to Mar) as heating demand increases and storage draws accelerate. Summer prices reflect injection season (Apr to Sep) when storage refills. Winter/summer spread is a key [[Relative Value Trade|relative value trade]].
 
 ## Key Data and Reports
-- GIE (Gas Infrastructure Europe): storage levels across Europe, updated daily
+- GIE (Gas Infrastructure Europe): European storage levels, daily
 - ENTSOG: flow data across European pipelines
-- ICE Endex: open interest and volume data
-- Weather forecasts: critical driver, especially in heating season
-- LNG cargo tracking: Kpler, Vortexa for LNG arrivals
+- ICE Endex: open interest and volume
+- Weather forecasts: critical in heating season
+- LNG cargo tracking: Kpler, Vortexa
 
 ## Curve Structure
 
-TTF curve behavior depends heavily on supply security and storage levels. Post 2022 energy crisis, the curve has exhibited extreme backwardation during supply scares and contango during comfortable storage periods. Seasonal spreads (winter vs summer) are the most actively traded spread structure.
+TTF curve depends on supply security and storage levels. Post 2022 energy crisis, the curve has shown extreme backwardation during supply scares and contango during comfortable storage. Seasonal spreads (winter vs summer) are the most actively traded structure.
 
 ## Key Spreads and Relative Value
 - **TTF Winter/Summer:** core seasonal spread
@@ -63,7 +63,7 @@ TTF curve behavior depends heavily on supply security and storage levels. Post 2
 - **TTF Calendar spreads:** monthly rolls, quarterly spreads
 
 ## Important Relationships
-- Inversely correlated with European storage levels
+- Inverse correlation with European storage levels
 - Correlated with LNG spot prices globally
 - Influenced by EUR/USD (contract is EUR denominated)
 - Power price linkage (gas sets marginal power price in many European markets)

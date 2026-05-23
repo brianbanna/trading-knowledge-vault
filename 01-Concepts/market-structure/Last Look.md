@@ -9,21 +9,24 @@ date-added: "2026-03-20"
 # Last Look
 
 ## Definition
-Last look is a practice in FX markets where a liquidity provider (typically a bank on a [[Single Dealer Platform]]) retains the right to accept or reject a client's trade request for a brief window after the client submits the order. This window typically lasts 50 to 200 milliseconds. During that time, the dealer checks whether the market has moved against them; if it has moved beyond a threshold, the trade is rejected and the client must re-submit at a new (worse) price. Last look was originally designed to protect dealers from latency arbitrage by high-frequency traders who could exploit stale quotes. However, it has become controversial because some dealers use it asymmetrically: rejecting trades that would be unprofitable while accepting trades that have moved in the dealer's favor (a practice called "asymmetric last look" or "last look with price improvement skew"). Regulators and industry codes (notably the FX Global Code of 2017) have pushed for greater transparency around last look practices.
+Last look is the dealer's right to accept or reject a client trade request during a brief window (50 to 200 ms) after submission. During that window the dealer checks if the market moved against them; if it crossed a threshold, the trade is rejected and the client must resubmit at a worse price. Originally designed to protect dealers from latency arbitrage by HFTs exploiting stale quotes, the practice became controversial because some dealers apply it asymmetrically: rejecting losing trades while accepting winning ones. The FX Global Code (2017) pushed for transparency.
 
 ## Why it matters (commodities and FX)
-Last look is one of the largest hidden costs in FX execution, and failing to account for it leads to systematically underestimating [[transaction costs]]. For commodity hedge funds that execute large FX hedges through bank [[Single Dealer Platform]]s, last look rejection can add 0.5 to 2 pips to effective execution cost. The issue compounds for momentum or trend-following strategies (like those run by [[CTA]]s) because these strategies tend to trade in the direction of recent price moves, which means their orders are more likely to be moving in the same direction as the market during the last look window and thus more likely to be rejected. In commodities OTC markets, analogous "firm vs. indicative" pricing distinctions exist, where dealers quote indicative prices on metals or energy swaps that they can withdraw before execution.
+Last look is one of the largest hidden costs in FX execution. Ignoring it understates [[transaction costs]] systematically. For commodity funds executing large FX hedges through [[Single Dealer Platform]]s, rejections add 0.5 to 2 pips to effective cost. The drag compounds for momentum strategies and [[CTA]]s: their orders trade with recent moves, so the market is more likely to be running against the dealer during the last look window, raising rejection rates. In commodities OTC, the analogous distinction is "firm vs indicative" pricing, where dealers can withdraw indicative metals or energy swap quotes before execution.
 
 ## Concrete example
-A systematic macro fund running a [[momentum]] strategy detects a GBPUSD breakout and sends a buy order for 50 million to a bank's SDP at 1.26500. The bank applies a 100 millisecond last look window. During those 100 milliseconds, GBPUSD moves up 0.8 pips to 1.26508. The bank's algorithm rejects the trade because the price moved in the client's favor (i.e., against the bank) by more than the 0.5 pip threshold. The fund re-submits and gets filled at 1.26510, paying 1 pip more than the original price. Over a year, the fund's [[transaction cost analysis]] reveals a 15% rejection rate and an average post-rejection slippage of 0.7 pips, adding an annualized drag of approximately 12 basis points to strategy performance. Meanwhile, a corporate treasurer hedging a known receivable (uninformed, non-directional flow) experiences a 2% rejection rate on the same platform because the bank classifies this flow as low-[[toxicity]].
+
+**Concrete:** A systematic macro fund running [[momentum]] detects a GBPUSD breakout and sends a 50M buy to a bank SDP at 1.26500. The bank applies a 100 ms last look. During those 100 ms, GBPUSD ticks up 0.8 pips to 1.26508. The bank rejects because the price moved against them past the 0.5 pip threshold. The fund resubmits and fills at 1.26510, paying 1 pip more. Over a year, TCA shows a 15% rejection rate and 0.7 pips average post rejection slippage, dragging strategy performance by 12 bps annualized. A corporate treasurer hedging a known receivable on the same platform sees a 2% rejection rate: the bank flags that flow as low [[toxicity]].
+
+**Simplified:** You send the bank an order. The bank waits 100 ms before saying yes or no. If the price moved in your favor in that window, the bank says no and you must trade again at a worse price. If the price moved their way, they say yes. Either way, the bank wins the optionality during the wait. That free option is the hidden cost.
 
 ## Key mechanics and formulas
-- **Last look window**: typically 50 to 200 milliseconds (some venues allow up to 500 ms)
-- **Rejection threshold**: the minimum adverse price movement (in pips) that triggers rejection; set by the dealer
-- **Asymmetric last look cost**: Cost = rejection rate x average slippage on rejected trades
-- **Effective spread with last look**: Effective spread = displayed spread + (rejection rate x post-rejection slippage) + (hold time cost if dealer delays acceptance)
-- **Symmetry test**: Compare fill rate when price moves in client's favor vs. fill rate when price moves in dealer's favor. Equal rates = symmetric last look. Unequal rates = asymmetric (potentially predatory).
-- **Hold time**: some dealers delay acceptance (not just rejection) to capture additional favorable price movement; this "hold time" adds implicit cost even on accepted trades
+- **Last look window:** 50 to 200 ms (some venues up to 500 ms)
+- **Rejection threshold:** minimum adverse move (pips) that triggers rejection
+- **Asymmetric last look cost:** Cost = rejection rate × average slippage on rejected trades
+- **Effective spread:** displayed spread + (rejection rate × post rejection slippage) + hold time cost
+- **Symmetry test:** compare fill rate when price moves client favor vs dealer favor. Equal = symmetric. Unequal = asymmetric (potentially predatory).
+- **Hold time:** some dealers delay acceptance (not just rejection) to capture additional favorable movement, an implicit cost on accepted trades
 
 ## Prerequisites
 - [[Single Dealer Platform]]
@@ -32,18 +35,21 @@ A systematic macro fund running a [[momentum]] strategy detects a GBPUSD breakou
 - [[Market Making]]
 
 ## Related concepts (learn next)
-- [[Single Dealer Platform]]: the primary venue where last look is applied.
-- [[Internalization]]: banks that internalize flow may apply last look less aggressively since they profit from the spread rather than hedging.
-- [[ECN]]: most ECNs operate on a firm-quote basis without last look, though some ECN-style platforms have introduced "speed bumps."
-- [[Flow Signals]]: last look gives dealers a free option on client flow information during the rejection window.
-- [[Toxicity]]: the classification that determines how aggressively last look is applied to a given client.
-- [[Transaction Cost Analysis]]: proper TCA must measure rejection rates and post-rejection slippage.
-- [[Sweep]]: aggressive orders are more likely to face last look rejection because they signal informed directional intent.
+- [[Single Dealer Platform]]: the primary venue where last look applies.
+- [[Internalization]]: banks that internalize flow apply last look less aggressively since they profit from spread.
+- [[ECN]]: most ECNs operate firm quote without last look, though some use speed bumps.
+- [[Flow Signals]]: last look gives dealers a free option on client flow information.
+- [[Toxicity]]: the classification that determines how aggressively last look applies to a client.
+- [[Transaction Cost Analysis]]: proper TCA must measure rejection rates and post rejection slippage.
+- [[Sweep]]: aggressive orders face more rejection because they signal informed intent.
 
 ## Common misconceptions
-1. **"Last look only protects against stale quotes"**: While the original justification was latency protection, in practice last look gives dealers an informational advantage. They observe the client's order, see how the market moves, and then decide whether to accept. This is economically equivalent to a free option on the client's flow.
-2. **"Low rejection rates mean fair execution"**: A dealer can accept all trades but systematically delay fills when the price is moving in the client's favor and execute immediately when the price is moving in the dealer's favor. The rejection rate is 0%, but the execution is still asymmetric.
-3. **"The FX Global Code eliminated last look abuse"**: The 2017 FX Global Code discourages asymmetric last look but is voluntary and not legally binding. Enforcement relies on market participants refusing to trade with non-compliant dealers.
+
+**"Last look only protects against stale quotes."** Original justification was latency, but in practice the dealer observes the order, watches the market move, then decides. That is a free option on client flow.
+
+**"Low rejection rates mean fair execution."** A dealer can accept all trades but delay favorable fills and accelerate unfavorable ones. Rejection rate 0%, execution still asymmetric.
+
+**"The FX Global Code eliminated last look abuse."** The 2017 Code discourages asymmetry but is voluntary and not legally binding. Enforcement relies on participants refusing non compliant dealers.
 
 ## Sources
 - Global Foreign Exchange Committee, "FX Global Code" (2017, updated 2021)

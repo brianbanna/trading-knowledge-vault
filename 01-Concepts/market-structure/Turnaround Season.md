@@ -10,29 +10,31 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Turnaround season refers to the periods of scheduled refinery maintenance that occur primarily in spring (March to May) and fall (September to October). During a turnaround, refineries shut down individual processing units (catalytic crackers, hydrotreaters, cokers) for inspection, repair, and catalyst replacement. These shutdowns are planned months or years in advance and are timed to coincide with periods of relatively lower product demand: after winter heating season ends and before summer driving season begins (spring), and after summer driving ends and before winter heating ramps (fall). Turnarounds temporarily reduce crude oil demand and refined product output, creating predictable but variable seasonal patterns in inventories and spreads.
+Turnaround season is the periods of scheduled refinery maintenance occurring primarily in spring (Mar to May) and fall (Sep to Oct). During a turnaround, refineries shut down individual processing units (catalytic crackers, hydrotreaters, cokers) for inspection, repair, and catalyst replacement. Shutdowns are planned months or years in advance, timed to coincide with relatively lower product demand: after winter heating ends and before summer driving (spring), and after summer driving ends and before winter heating (fall). Turnarounds reduce crude demand and product output, creating predictable but variable seasonal patterns in inventories and spreads.
 
 ## Why it matters (commodities and FX)
 
-Turnaround season is one of the most consistent seasonal patterns in energy trading. During spring turnarounds, [[Refinery Utilization]] drops to 85 to 89%, crude inventories build (less crude being processed), and product inventories draw (less output). This creates a specific spread environment: crude [[Calendar Spread]]s tend to weaken (more contango) while product cracks can be supported by tighter supply. The magnitude of the turnaround varies year to year depending on how many refineries schedule maintenance simultaneously. A lighter than expected turnaround season means refineries process more crude than expected, which is bullish for crude demand. A heavier turnaround (more capacity offline) is bearish for crude but can support product prices.
+Turnaround season is one of the most consistent seasonal patterns in energy. During spring turnarounds, [[Refinery Utilization]] drops to 85 to 89%, crude inventories build (less crude processed), product inventories draw (less output). This creates a specific spread environment: crude [[Calendar Spread]]s weaken (more contango) while product cracks can be supported by tighter supply. Magnitude varies year to year. A lighter than expected turnaround means refineries process more crude than expected: bullish crude demand. Heavier (more capacity offline) is bearish crude but supports product prices.
 
 ## Concrete example
 
-In March 2026, approximately 2.5 million barrels per day of US refinery capacity is offline for spring turnaround (heavier than the 5 year average of 2.0 million). Crude inventories build by 15 million barrels over 3 weeks. A trader shorts the WTI M1/M2 [[Calendar Spread]] expecting the crude builds to widen contango. The spread moves from $0.30 contango to $0.80 contango, earning $0.50/bbl. If the turnaround had been lighter (only 1.5 million offline), crude draws might have continued and the spread tightened, resulting in a loss.
+**Concrete:** March 2026: ~2.5M b/d of US capacity offline for spring turnaround (heavier than 5 year average of 2.0M). Crude inventories build 15M barrels over 3 weeks. A trader shorts WTI M1/M2 [[Calendar Spread]] expecting builds to widen contango. The spread moves from $0.30 contango to $0.80, earning $0.50/bbl. Had the turnaround been lighter (only 1.5M offline), crude draws might have continued and the spread tightened, generating a loss. The trade rests on accurate turnaround calendar tracking via IIR Energy or similar.
+
+**Simplified:** Twice a year (spring and fall), refineries shut units for maintenance. Less crude gets processed, more crude piles up in storage, less product gets made. Predictable in aggregate, variable in magnitude. Trade the calendar spreads around it.
 
 ## Key mechanics and formulas
 
 **Typical turnaround schedule:**
-- Spring: March to May (primary turnaround, larger)
-- Fall: September to October (secondary turnaround, smaller)
+- Spring: March to May (primary, larger)
+- Fall: September to October (secondary, smaller)
 
-**Capacity offline:** US turnarounds typically take 1.5 to 3.0 million barrels per day offline. Europe and Asia have their own schedules.
+**Capacity offline:** US turnarounds typically take 1.5 to 3.0M b/d offline. Europe and Asia have their own schedules.
 
-**Duration:** Individual unit turnarounds last 2 to 6 weeks. Full refinery turnarounds can take 30 to 60 days.
+**Duration:** individual unit turnarounds last 2 to 6 weeks. Full refinery turnarounds 30 to 60 days.
 
 **Seasonal inventory impact (US):**
-- Spring turnaround: crude builds 10 to 25 million barrels; product draws 5 to 15 million
-- Fall turnaround: similar but usually smaller magnitude
+- Spring: crude builds 10 to 25M barrels; product draws 5 to 15M
+- Fall: similar but usually smaller
 
 ## Prerequisites
 
@@ -43,20 +45,20 @@ In March 2026, approximately 2.5 million barrels per day of US refinery capacity
 
 ## Related concepts (learn next)
 
-- [[Refinery Utilization]] because turnaround season is the primary driver of utilization troughs.
-- [[Crack Spread]] because product prices can be supported during turnarounds even as crude weakens.
-- [[Seasonality]] because turnarounds are the most predictable seasonal event in energy markets.
-- [[Calendar Spread]] because turnaround induced inventory builds directly affect spread shape.
-- [[Contango]] because crude builds during turnarounds push the front of the curve into contango.
-- [[Gasoline Crack]] because spring turnarounds coincide with pre summer gasoline stock building.
+- [[Refinery Utilization]]: turnaround is the primary driver of utilization troughs
+- [[Crack Spread]]: product prices can be supported during turnarounds while crude weakens
+- [[Seasonality]]: turnarounds are the most predictable seasonal event in energy
+- [[Calendar Spread]]: turnaround driven builds directly shape spread structure
+- [[Contango]]: crude builds push the front of the curve into contango
+- [[Gasoline Crack]]: spring turnarounds coincide with pre summer gasoline stock building
 
 ## Common misconceptions
 
-**"Turnaround season is perfectly predictable."** While scheduled in advance, turnarounds can be delayed, extended, or accelerated. Unplanned maintenance during turnaround season compounds the impact.
+**"Turnaround season is perfectly predictable."** Scheduled in advance but turnarounds can be delayed, extended, or accelerated. Unplanned maintenance during the season compounds the impact.
 
-**"Turnarounds are always bearish for crude."** The crude build during turnarounds is temporary and expected. Markets often look through the turnaround to post maintenance demand recovery. If the build is smaller than expected, it can actually be bullish.
+**"Turnarounds are always bearish for crude."** The build is temporary and expected. Markets often look through to post maintenance demand recovery. A smaller than expected build is actually bullish.
 
-**"Spring and fall turnarounds are equal."** Spring turnarounds are typically larger and more impactful because more units require annual inspection. Fall turnarounds tend to be shorter and involve fewer refineries.
+**"Spring and fall turnarounds are equal."** Spring is typically larger and more impactful because more units need annual inspection. Fall is shorter and involves fewer refineries.
 
 ## Sources
 

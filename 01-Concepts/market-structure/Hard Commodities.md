@@ -10,15 +10,17 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Hard commodities are natural resources that are mined or extracted from the earth. The category includes energy products (crude oil, natural gas, coal), metals (gold, silver, copper, aluminum, iron ore), and sometimes industrial minerals. The defining features: production involves extraction with significant capital expenditure and long lead times (mines take 5 to 10 years to develop, oil fields 3 to 7 years), the products can be stored indefinitely without degradation, and supply responds to price with a significant lag. This contrasts with [[Soft Commodities]], which are grown, weather dependent, and often perishable.
+Hard commodities are natural resources mined or extracted from the earth: energy (crude oil, natural gas, coal), metals (gold, silver, copper, aluminum, iron ore), and sometimes industrial minerals. Defining features: extraction involves significant capex with long lead times (mines take 5 to 10 years to develop, oil fields 3 to 7 years), products store indefinitely without degradation, and supply responds to price with significant lag. Contrasts with [[Soft Commodities]], which are grown, weather dependent, and perishable.
 
 ## Why it matters (commodities and FX)
 
-Hard commodities are the foundation of global industrial activity and macro analysis. Crude oil is the most important commodity in the world by trade value. Copper is called "Dr. Copper" because its demand is a leading indicator of global growth. Gold is the primary monetary metal and safe haven. Because hard commodities can be stored indefinitely, their [[Forward Curve]] dynamics are more directly governed by the [[Cost of Carry]] model than softs. The long production lead times create boom/bust investment cycles: high prices attract investment in new mines and fields, but the supply response takes years, leading to persistent oversupply once it arrives. Understanding these cycle dynamics is essential for medium to long term commodity positioning.
+Hard commodities are the foundation of global industrial activity and macro analysis. Crude oil is the most important commodity by trade value. Copper is called "Dr. Copper" because its demand leads global growth. Gold is the primary monetary metal and safe haven. Because hard commodities store indefinitely, their [[Forward Curve]] dynamics are more directly governed by [[Cost of Carry]] than softs. Long production lead times create boom/bust cycles: high prices attract new mine and field investment, but supply response takes years, leading to persistent oversupply once it arrives. Cycle dynamics are essential for medium to long term positioning.
 
 ## Concrete example
 
-Copper mine development: a new copper deposit is discovered. Feasibility studies take 2 to 3 years. Permitting takes 2 to 5 years (longer in environmentally sensitive areas). Construction takes 2 to 4 years. Total from discovery to first production: 7 to 12 years. If copper prices spike to $12,000/tonne in 2026, the new supply response will not arrive until 2033 to 2038. This lag means high copper prices can persist for years (a "super cycle") until investment catches up. Conversely, mines built during high price periods continue producing even when prices fall below full cost, because marginal cash costs are well below total costs, creating a price floor.
+**Concrete:** Copper mine development. New copper deposit discovered. Feasibility studies 2 to 3 years. Permitting 2 to 5 years (longer in environmentally sensitive areas). Construction 2 to 4 years. Discovery to first production: 7 to 12 years. If copper spikes to $12,000/tonne in 2026, new supply response will not arrive until 2033 to 2038. This lag means high prices can persist for years (a "super cycle") until investment catches up. Conversely, mines built during high prices continue producing even when prices fall below full cost, because marginal cash costs sit well below total costs, creating a floor.
+
+**Simplified:** Hard commodities come out of the ground. Mines and oil fields take years to build, so when prices rise, new supply does not arrive for years. That delay creates long cycles where high prices linger until enough new production finally comes online, then the market goes into surplus. Different from agricultural commodities, which respond to price within a season. Storage is also easier because metals and oil do not rot.
 
 ## Key mechanics and formulas
 
@@ -27,12 +29,12 @@ Energy: 3 to 7 years (conventional oil), 6 to 12 months (US shale)
 Base metals: 5 to 12 years (greenfield mine)
 Precious metals: 5 to 10 years (gold mine)
 
-**Marginal cost of production:** The cost of the highest cost producer needed to meet demand. Acts as a long run price floor/ceiling:
+**Marginal cost of production:** Cost of the highest cost producer needed to meet demand. Acts as a long run floor/ceiling:
 - Crude oil: $40 to $60/bbl (US shale breakeven)
-- Copper: $6,000 to $8,000/tonne (depending on quartile)
+- Copper: $6,000 to $8,000/tonne (by quartile)
 - Gold: $1,200 to $1,500/oz (AISC for top quartile producers)
 
-**Reserves to production ratio:** `Proven Reserves / Annual Production`. Higher = longer supply runway. Oil: ~50 years. Copper: ~40 years. Lithium: rapidly evolving.
+**Reserves to production ratio:** `Proven Reserves / Annual Production`. Higher = longer supply runway. Oil ~50 years. Copper ~40 years. Lithium rapidly evolving.
 
 ## Prerequisites
 - [[Forward Curve]]
@@ -40,20 +42,20 @@ Precious metals: 5 to 10 years (gold mine)
 - [[Storage Economics]]
 
 ## Related concepts (learn next)
-- [[Soft Commodities]] - the counterpart. Different supply dynamics, storage, and price behavior.
-- [[Commodity Currencies]] - AUD (iron ore, copper), CAD (oil), ZAR (gold, platinum), CLP (copper) are directly linked to hard commodity prices.
-- [[Supply Shock]] - production disruptions in hard commodities can be sudden (mine collapse, pipeline sabotage) but supply recovery is slow.
+- [[Soft Commodities]] - the counterpart. Different supply dynamics, storage, price behavior.
+- [[Commodity Currencies]] - AUD (iron ore, copper), CAD (oil), ZAR (gold, platinum), CLP (copper) linked directly to hard commodity prices.
+- [[Supply Shock]] - disruptions can be sudden (mine collapse, pipeline sabotage); recovery is slow.
 - [[Backwardation]] - hard commodity backwardation signals physical tightness and high [[Convenience Yield]].
-- [[Seasonality]] - less pronounced in hard commodities than softs, but exists (winter heating demand for natgas, construction season for metals).
-- [[Geopolitical Risk]] - hard commodity supply is concentrated in politically unstable regions (Middle East oil, DRC cobalt, Russian nickel/palladium).
+- [[Seasonality]] - less pronounced than softs, but exists (winter heating natgas, construction season metals).
+- [[Geopolitical Risk]] - hard commodity supply concentrates in unstable regions (Middle East oil, DRC cobalt, Russian nickel/palladium).
 
 ## Common misconceptions
 
-**"Hard commodity supply responds quickly to price."** US shale is the exception. Most hard commodity supply takes years to respond. This is why commodity cycles exist: the price signal travels instantly but the supply response is delayed by geology and capital expenditure timelines.
+**"Hard commodity supply responds quickly to price."** US shale is the exception. Most hard commodity supply takes years. Commodity cycles exist because the price signal is instant but the supply response is delayed by geology and capex timelines.
 
-**"Hard commodities can always be stored."** Technically yes (metals do not degrade, oil can sit in tanks), but storage has capacity limits ([[Storage Economics]]). When storage is full, the "store indefinitely" advantage disappears.
+**"Hard commodities can always be stored."** Technically yes, but storage has capacity limits ([[Storage Economics]]). When storage fills, the "store indefinitely" advantage disappears.
 
-**"All hard commodities move together."** Energy, base metals, precious metals, and ferrous metals have distinct demand drivers. Gold moves on real rates and risk appetite. Copper moves on industrial growth. Oil moves on OPEC decisions and geopolitics. Cross commodity [[Correlation]] varies significantly by regime.
+**"All hard commodities move together."** Energy, base metals, precious metals, and ferrous metals have distinct demand drivers. Gold moves on real rates and risk appetite. Copper moves on industrial growth. Oil moves on OPEC and geopolitics. Cross commodity [[Correlation]] varies by regime.
 
 ## Sources
 

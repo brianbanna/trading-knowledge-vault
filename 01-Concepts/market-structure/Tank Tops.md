@@ -9,15 +9,17 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Tank tops is the condition where crude oil storage facilities are nearly full, with no more capacity available to absorb additional supply. When tanks approach their operational maximum (typically 85 to 90% of nameplate capacity, since some buffer is needed for operations), the market enters a crisis mode. Producers who cannot find storage must either shut in production (physically stop pumping), sell at deeply discounted prices to force placement, or divert oil onto tankers ([[Floating Storage]]). The term gained widespread attention during the April 2020 COVID crisis when Cushing, Oklahoma, the delivery point for [[WTI Crude Oil]] futures, approached tank tops, briefly driving WTI to negative $37.63/bbl.
+Tank tops is the condition where crude oil storage is nearly full with no capacity to absorb additional supply. When tanks approach the operational max (85 to 90% of nameplate, since some buffer is needed for operations), the market enters crisis mode. Producers who cannot find storage must shut in production, sell at deep discounts to force placement, or divert to tankers ([[Floating Storage]]). The term gained attention in April 2020 when Cushing, Oklahoma, the [[WTI Crude Oil]] delivery point, approached tank tops, driving WTI briefly to minus $37.63/bbl.
 
 ## Why it matters (commodities and FX)
 
-Tank tops is the most extreme bearish signal in oil markets. When physical storage fills, the market loses its ability to buffer excess supply, and prices must adjust to force production shut ins. This creates non linear, catastrophic price moves: the 2020 negative WTI price was a direct result of Cushing approaching tank tops while the May futures contract was about to expire and holders faced physical delivery they had no storage for. For traders, monitoring storage utilization at key hubs (Cushing, Rotterdam ARA, Fujairah, Saldanha Bay) is essential. Rising utilization toward tank tops is a leading signal for extreme contango widening and potential price collapse.
+Tank tops is the most extreme bearish signal in oil. When physical storage fills, the market loses its ability to buffer excess supply, and prices must adjust to force production shut ins. This creates non linear, catastrophic moves: the 2020 negative WTI print was a direct result of Cushing approaching tank tops while the May contract was about to expire with holders facing physical delivery and no storage. Monitor storage utilization at key hubs (Cushing, Rotterdam ARA, Fujairah, Saldanha Bay). Rising utilization toward tank tops is a leading signal for extreme contango widening and potential price collapse.
 
 ## Concrete example
 
-In April 2020, Cushing crude inventories rise from 35 million barrels to 65 million barrels in 8 weeks, approaching the ~76 million barrel capacity. The WTI May contract is expiring in 3 days, and holders who cannot take delivery must sell at any price. With no available storage at Cushing, the May contract trades to minus $37.63/bbl as sellers effectively pay buyers to take the oil off their hands. A trader who was short the May/June WTI calendar spread at $5 profits enormously as it blows out to over $50. If Cushing had been at 40% utilization instead, the spread would have barely moved.
+**Concrete:** April 2020: Cushing inventories rose from 35M to 65M barrels in 8 weeks, approaching ~76M capacity. The WTI May contract expiring in 3 days. Holders who could not take delivery had to sell at any price. With no storage at Cushing, May traded to minus $37.63/bbl as sellers paid buyers to take the oil. A trader short the May/June WTI calendar spread at $5 profited enormously as it blew out past $50. Had Cushing been at 40% utilization, the spread would have moved a few cents. Storage utilization was the dominant variable.
+
+**Simplified:** No more room in the tanks. Producers cannot stop pumping fast enough, buyers cannot take delivery anywhere, and prices crash to whatever it costs to make someone take the oil off your hands. Negative prices happen here. Watch storage utilization at delivery hubs to anticipate.
 
 ## Key mechanics and formulas
 
@@ -30,9 +32,9 @@ In April 2020, Cushing crude inventories rise from 35 million barrels to 65 mill
 - Above 85%: near tank tops, extreme market stress
 
 **Key storage hubs:**
-- Cushing, Oklahoma: ~76 million barrels (WTI delivery point)
-- Rotterdam/ARA: ~45 million barrels (European hub)
-- Fujairah: ~15 million barrels (Middle East hub)
+- Cushing, Oklahoma: ~76M barrels (WTI delivery point)
+- Rotterdam/ARA: ~45M barrels (European hub)
+- Fujairah: ~15M barrels (Middle East hub)
 - LOOP (Louisiana Offshore Oil Port): direct pipeline, less storage constraint
 
 ## Prerequisites
@@ -44,20 +46,20 @@ In April 2020, Cushing crude inventories rise from 35 million barrels to 65 mill
 
 ## Related concepts (learn next)
 
-- [[Floating Storage]] because oil moves onto tankers when onshore storage fills.
-- [[Contango]] because approaching tank tops drives extreme contango as the market pays for deferred delivery.
-- [[Storage Economics]] because storage costs and availability are the constraint.
-- [[Calendar Spread]] because tank tops creates extreme contango in front spreads.
-- [[Delivery]] because the link between futures and physical delivery is where tank tops creates the crisis.
-- [[Spare Capacity]] because storage capacity is the demand side equivalent of production spare capacity.
+- [[Floating Storage]]: oil moves onto tankers when onshore fills
+- [[Contango]]: approaching tank tops drives extreme contango as the market pays for deferred delivery
+- [[Storage Economics]]: storage costs and availability are the constraint
+- [[Calendar Spread]]: tank tops create extreme front spread contango
+- [[Delivery]]: the futures/physical link is where tank tops triggers the crisis
+- [[Spare Capacity]]: the demand side equivalent of production spare capacity
 
 ## Common misconceptions
 
-**"Tank tops only happened in 2020."** Storage has been tight at various times historically (1998, 2008, 2014 to 2016). 2020 was extreme because the demand shock was unprecedented, but the dynamic recurs in less dramatic form.
+**"Tank tops only happened in 2020."** Storage has been tight at various points (1998, 2008, 2014 to 2016). 2020 was extreme because the demand shock was unprecedented, but the dynamic recurs in less dramatic form.
 
-**"Negative oil prices are impossible."** They are possible when physical delivery is mandatory and storage is unavailable. The price reflects the cost of disposal, not the value of oil.
+**"Negative oil prices are impossible."** They are possible when physical delivery is mandatory and storage is unavailable. The price reflects disposal cost, not the value of oil.
 
-**"Storage capacity is fixed."** Operational capacity can be expanded marginally by adjusting tank utilization limits, and floating storage provides a pressure valve. But these take time and cost money.
+**"Storage capacity is fixed."** Operational capacity expands marginally by adjusting tank utilization limits, and floating storage provides a pressure valve. But these take time and cost money.
 
 ## Sources
 

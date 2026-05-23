@@ -9,28 +9,30 @@ date-added: "2026-03-20"
 
 ## Definition
 
-A physical premium is the price paid above the exchange benchmark (e.g., [[LME]] or [[COMEX]]) for actual delivery of a physical commodity at a specific location. It covers freight, insurance, local taxes/duties, and the local supply/demand balance for physical material. Every physical metal transaction involves two components: the benchmark futures price and the premium. The premium varies by region, product form, and delivery terms. For example, copper [[Cathode]] delivered to Shanghai may command a $150/tonne premium over LME, while the same cathode in Rotterdam may carry only a $60/tonne premium. Premiums are assessed by price reporting agencies (Platts, Fastmarkets, CRU) and negotiated bilaterally.
+A physical premium is the price paid above the exchange benchmark ([[LME]], [[COMEX]]) for delivery of physical commodity at a specific location. Covers freight, insurance, duties, and local supply/demand balance. Every physical metal trade has 2 components: benchmark futures price plus premium. Copper [[Cathode]] in Shanghai may carry a $150/tonne premium over LME while the same cathode in Rotterdam carries $60. Premiums are assessed by Platts, Fastmarkets, CRU and negotiated bilaterally.
 
 ## Why it matters (commodities and FX)
 
-Physical premiums reveal information that futures prices cannot capture. A rising premium in one region signals local physical tightness even if the LME benchmark is flat or falling. Conversely, collapsing premiums signal local oversupply. For physical traders, premium differentials between regions create arbitrage opportunities: buy where premiums are low, ship where premiums are high. For financial traders, tracking premium trends provides a leading indicator of demand shifts. When Chinese copper premiums spike, it often precedes a rally in LME copper because it signals restocking demand.
+Premiums reveal information futures cannot. A rising premium in one region signals local physical tightness even when LME is flat. Collapsing premiums signal oversupply. Physical traders arbitrage premium differentials across regions: buy where low, ship where high. Financial traders use premium trends as leading demand indicators. Chinese copper premium spikes precede LME copper rallies because they signal restocking.
 
 ## Concrete example
 
-LME aluminum is at $2,400/tonne. The US Midwest premium spikes from $200 to $450/tonne due to Section 232 tariffs and domestic supply constraints. A US manufacturer now pays $2,850/tonne for physical aluminum vs $2,400 on the LME. A trader goes long the Midwest premium (via CME Midwest premium futures) at $300. As tariffs bite and domestic supply tightens, the premium rises to $500, earning $200/tonne. If tariffs are relaxed or imports surge, the premium could drop to $150, losing $150/tonne.
+**Concrete:** LME aluminum at $2,400/tonne. US Midwest premium jumps from $200 to $450/tonne on Section 232 tariffs and domestic supply constraints. A US manufacturer pays $2,850/tonne for physical aluminum vs $2,400 LME. Trader goes long the Midwest premium via CME Midwest premium futures at $300. Tariffs bite, premium rises to $500, earning $200/tonne. If tariffs ease or imports surge, premium drops to $150, losing $150/tonne.
+
+**Simplified:** The exchange price is only one piece. To get physical metal at a port, you add a regional premium for freight, duties, and local tightness. The premium itself trades. When one region runs short, its premium climbs even if the global benchmark stays flat. Traders buy where premiums are cheap and sell where they are rich.
 
 ## Key mechanics and formulas
 
 **Delivered price:** `Physical Price = Exchange Benchmark + Regional Premium`
 
 **Premium components:**
-- Freight (shipping cost from producer to delivery point)
+- Freight from producer to delivery point
 - Insurance and handling
 - Import duties and tariffs
 - Local supply/demand balance
-- Product form premium (e.g., wire rod vs cathode)
+- Product form premium (wire rod vs cathode)
 
-**Premium hedging:** CME lists futures on several physical premiums (US Midwest aluminum, European duty paid aluminum, Shanghai copper premium).
+**Premium hedging:** CME lists futures on US Midwest aluminum, European duty paid aluminum, Shanghai copper premium.
 
 ## Prerequisites
 
@@ -49,11 +51,11 @@ LME aluminum is at $2,400/tonne. The US Midwest premium spikes from $200 to $450
 
 ## Common misconceptions
 
-**"The exchange price is the market price."** For physical metal, the exchange price is only the benchmark. Total cost always includes a premium that can be 5 to 20% of the base price.
+**"The exchange price is the market price."** For physical metal, the exchange price is the benchmark only. Total cost includes a premium that runs 5 to 20% of the base price.
 
-**"Premiums move with the exchange price."** Premiums can move independently of or even opposite to the exchange price. LME can fall while local premiums rise during regional tightness.
+**"Premiums move with the exchange price."** Premiums move independently of, and often opposite to, the exchange price. LME falls while local premiums rise during regional tightness.
 
-**"All premiums are transparent."** Many premiums are negotiated privately between producer and consumer. Published assessments are indicative but may not capture all bilateral deals.
+**"All premiums are transparent."** Many are negotiated bilaterally. Published assessments are indicative and miss private deals.
 
 ## Sources
 

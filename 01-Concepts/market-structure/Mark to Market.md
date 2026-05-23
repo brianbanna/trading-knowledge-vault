@@ -8,24 +8,25 @@ date-added: "2026-03-27"
 # Mark to Market
 
 ## Definition
-Mark to market is the process of revaluing your [[Position]] at the current market price, rather than the price you originally traded at. If you are [[Long]] 10 lots of crude at 80 USD and the market is now at 82 USD, your mark to market [[PnL]] is positive 20,000 USD (10 x 1,000 x 2). This revaluation happens daily on futures exchanges, where gains are credited and losses are debited from your [[Margin]] account. It ensures that [[PnL]] is recognized in real time, not just when the trade closes.
+Mark to market is the process of revaluing your [[Position]] at the current market price rather than the original trade price. Long 10 lots of crude at 80 USD with the market at 82 USD gives MTM [[PnL]] of +20,000 USD (10 × 1,000 × 2). This revaluation happens daily on futures exchanges: gains credited, losses debited from your [[Margin]] account. It forces real time [[PnL]] recognition rather than waiting until the trade closes.
 
 ## Why it matters (commodities and FX)
-Daily mark to market is the mechanism that prevents credit risk from building up in futures markets. Every day at settlement, the exchange calculates each participant's MTM PnL. Winners receive cash, losers pay cash. This is why futures require [[Margin]]: if your mark to market loss exceeds your maintenance margin, you get a margin call and must post more cash or face forced liquidation. In FX, mark to market is done internally by banks and prime brokers for bilateral trades. For commodities traders holding physical inventory, marking inventory to market determines the value of the business and drives hedging decisions.
+Daily MTM is what stops credit risk from accumulating in futures markets. Each day at settlement the exchange calculates every participant's MTM PnL. Winners receive cash, losers pay. This is why futures need [[Margin]]: if MTM loss exceeds maintenance margin, you get a margin call and must post more cash or be liquidated. In FX, banks and prime brokers handle MTM internally for bilateral trades. For physical commodity traders, marking inventory to market drives hedging decisions and reveals true business value.
 
 ## Concrete example
-**Win scenario:** You go [[Long]] 20 lots of LME aluminum at 2,300 USD per tonne on Monday (each lot = 25 tonnes). Tuesday's settlement price is 2,340. Your daily MTM [[PnL]] = 20 x 25 x (2,340 minus 2,300) = 20,000 USD. This cash is credited to your margin account. Wednesday, aluminum settles at 2,370. Another 20 x 25 x 30 = 15,000 USD credited. You close on Wednesday, and your cumulative MTM gain of 35,000 USD matches your [[Realized PnL]].
 
-**Fail scenario:** You go [[Long]] 100 lots of WTI crude at 75.00 on a Friday. Over the weekend, geopolitical tensions ease and Monday's settlement is 72.00. Your MTM loss = 100 x 1,000 x (72.00 minus 75.00) = negative 300,000 USD. This is debited from your margin account. If your margin falls below the maintenance level, the broker issues a margin call by Tuesday morning. If you cannot post additional funds, your [[Position]] is liquidated at whatever price is available via [[Market Order]], which could be even worse due to [[Slippage]].
+**Concrete:** You go [[Long]] 20 lots of LME aluminum at 2,300 USD/tonne on Monday (25 tonnes per lot). Tuesday settlement is 2,340. Daily MTM = 20 × 25 × 40 = 20,000 USD credited. Wednesday settles at 2,370: another 20 × 25 × 30 = 15,000 USD credited. You close Wednesday and the cumulative 35,000 USD matches [[Realized PnL]]. Failure case: long 100 lots of WTI at 75.00 Friday. Over the weekend tensions ease, Monday settles at 72.00. MTM loss = 100 × 1,000 × 3.00 = 300,000 USD debited. Margin falls below maintenance, broker issues a call Tuesday. Cannot post: forced liquidation at whatever the [[Market Order]] gets, often worse via [[Slippage]].
+
+**Simplified:** Every day the exchange asks "what is your position worth right now?" If it went up, cash hits your account. If it went down, cash leaves. Settled daily, not at trade close. That is why a losing futures position bleeds you every night until you close it or top up margin.
 
 ## Key mechanics and formulas
-- Daily MTM PnL = Position Size x (Today's Settlement Price minus Yesterday's Settlement Price)
-  - Position Size: number of units (contracts x multiplier)
-  - Settlement Price: the official closing price set by the exchange
-- Cumulative MTM PnL = Position Size x (Today's Settlement Price minus Original Entry Price)
-- Margin call trigger: Account equity < Maintenance margin requirement
+- Daily MTM PnL = Position Size × (Today's Settlement minus Yesterday's Settlement)
+  - Position Size: contracts × multiplier
+  - Settlement Price: official exchange close
+- Cumulative MTM PnL = Position Size × (Today's Settlement minus Original Entry)
+- Margin call trigger: Account equity < Maintenance margin
   - Account equity = Initial margin + Cumulative MTM PnL
-- Variation margin = Cash flow from daily MTM settlement (positive or negative)
+- Variation margin = cash flow from daily MTM settlement (positive or negative)
 
 ## Prerequisites
 - [[Position]]
@@ -34,18 +35,18 @@ Daily mark to market is the mechanism that prevents credit risk from building up
 - [[Notional]]
 
 ## Related concepts (learn next)
-- [[Realized PnL]] , which is the final MTM when the position is closed
-- [[Unrealized PnL]] , which equals the current MTM gain or loss on open positions
-- [[Margin]] , the collateral account that absorbs daily MTM gains and losses
-- [[Settlement Price]] , the official price used for daily MTM calculations
-- [[Variation Margin]] , the daily cash flow from marking to market
-- [[Liquidity]] , which affects whether settlement prices reflect true market value
-- [[Cash Settlement]] , where the final MTM at expiry replaces physical delivery
+- [[Realized PnL]], the final MTM at position close
+- [[Unrealized PnL]], equals current MTM gain or loss on open positions
+- [[Margin]], the collateral account absorbing daily MTM
+- [[Settlement Price]], official price used for MTM
+- [[Variation Margin]], daily cash flow from marking to market
+- [[Liquidity]], which affects whether settlement reflects real exit value
+- [[Cash Settlement]], where final MTM at expiry replaces physical delivery
 
 ## Common misconceptions
-- **MTM gains are real cash, not just accounting.** On futures exchanges, daily settlement means actual money moves between accounts. This is not a hypothetical revaluation.
-- **MTM does not mean you closed the trade.** Your [[Position]] is still open. The MTM process resets your effective entry price to today's settlement, so tomorrow's PnL is calculated from today's close.
-- **Illiquid markets make MTM unreliable.** If an instrument trades infrequently, the last traded price may not reflect where you could actually exit. This is a major issue for exotic commodities and [[EM Currencies]] during stress periods.
+- **MTM gains are real cash, not accounting.** On futures, daily settlement means actual money moves between accounts. Not hypothetical.
+- **MTM does not mean you closed the trade.** The position stays open. MTM resets your effective entry to today's settlement; tomorrow's PnL is calculated from there.
+- **Illiquid markets make MTM unreliable.** If an instrument trades rarely, the last price may not reflect real exit price. Big issue for exotic commodities and [[EM Currencies]] under stress.
 
 ## Sources
 - Hull, J. *Options, Futures, and Other Derivatives*, 11th ed., Chapter 2

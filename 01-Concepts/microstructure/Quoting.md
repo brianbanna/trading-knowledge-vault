@@ -9,40 +9,36 @@ date-added: "2026-03-27"
 
 ## Definition
 
-Quoting is the act of continuously showing [[Bid]] and [[Ask]] prices to the market, signaling willingness to buy and sell. It is the core activity of a [[Market Order|market maker]]. A quoting engine takes inputs like [[Mid Price]], [[Inventory]], [[Volatility]], and [[Adverse Selection]] estimates, then computes a [[Two Way Price]] and publishes it to one or more venues. The quotes must be updated constantly as conditions change, often hundreds or thousands of times per second in electronic markets.
+Quoting is continuously showing [[Bid]] and [[Ask]] prices to the market, signaling willingness to buy and sell. It is the core activity of a [[Market Order|market maker]]. A quoting engine takes [[Mid Price]], [[Inventory]], [[Volatility]], and [[Adverse Selection]] estimates, computes a [[Two Way Price]], and publishes it to one or more venues. Quotes update constantly as conditions change, hundreds or thousands of times per second in electronic markets.
 
 ## Why it matters (commodities and FX)
 
-In FX, major dealers quote continuously on platforms like EBS, Refinitiv, Bloomberg, and their own [[Single Dealer Platform|SDPs]]. The ability to quote tighter than competitors while managing risk determines profitability. In commodities, LME ring dealers quote two way prices on base metals. The speed, accuracy, and intelligence of the quoting engine is the most important piece of technology a market maker owns.
+In FX, major dealers quote continuously on EBS, Refinitiv, Bloomberg, and their own [[Single Dealer Platform|SDPs]]. Quoting tighter than competitors while managing risk determines profitability. In commodities, LME ring dealers quote two way prices on base metals. The speed, accuracy, and intelligence of the quoting engine is the most important technology a market maker owns.
 
 ## Concrete example
 
-A bank's FX desk runs a quoting engine on [[EUR USD]]. The engine observes the current [[Mid Price]] at 1.08500 and the desk's target [[Half Spread]] of 0.3 [[Pip|pips]].
+**Concrete:** Bank FX desk runs a quoting engine on [[EUR USD]]. Engine observes mid 1.08500 with target [[Half Spread]] 0.3 [[Pip|pips]]. Normal: quotes 1.08497 / 1.08503. Clients trade. Desk earns spread per [[Round Trip]]. Daily revenue ~$80,000. Inventory builds: large client buys 50M EUR, pushing desk [[Long]] 50M. Engine applies [[Skew Microstructure|skew]], shifting quotes to 1.08494 / 1.08500, making the [[Ask]] more attractive to attract sells reducing inventory. Failure: ECB surprise rate cut, [[Volatility]] spikes. Engine widens to 1.08470 / 1.08530 (6 pips) but latency causes 200ms delay updating. Fast algo hits the [[Stale Quote|stale]] tight quote before the update arrives, costing the desk $35,000 on a single trade.
 
-**Normal conditions:** The engine quotes 1.08497 / 1.08503. Clients trade against these prices. The desk earns the spread on each [[Round Trip]]. Daily revenue from quoting is approximately $80,000.
-
-**Inventory builds:** A large client buys 50 million EUR, pushing the desk [[Long]] 50M. The engine applies [[Skew Microstructure|skew]], shifting quotes to 1.08494 / 1.08500, making the [[Ask]] more attractive to encourage sells that reduce inventory.
-
-**Failure case:** During an ECB surprise rate cut, [[Volatility]] spikes. The engine widens the spread to 1.08470 / 1.08530 (6 pips wide) but latency causes a 200 millisecond delay in updating. A fast algo hits the [[Stale Quote|stale]] tight quote before the update arrives, costing the desk $35,000 on a single trade.
+**Simplified:** Quoting means continuously broadcasting buy and sell prices. The engine adjusts those prices for inventory, volatility, and client identity. Done right, the desk earns the spread on each round trip while keeping inventory manageable. Done wrong, you give away free options to fast counterparties.
 
 ## Key mechanics and formulas
 
-**Basic quoting formula (Avellaneda Stoikov framework):**
+**Basic quoting formula (Avellaneda Stoikov):**
 
-Bid = [[Reservation Price]] minus [[Half Spread]]
+Bid = [[Reservation Price]] - [[Half Spread]]
 Ask = [[Reservation Price]] + [[Half Spread]]
 
 Where:
-- [[Reservation Price]] = [[Mid Price]] minus gamma * sigma^2 * q * (T minus t)
+- [[Reservation Price]] = [[Mid Price]] - gamma * sigma^2 * q * (T - t)
 - gamma = risk aversion parameter
 - sigma = [[Volatility]]
 - q = current [[Inventory]] (positive = long, negative = short)
-- T minus t = time remaining
+- T - t = time remaining
 
 **Key quoting parameters:**
 - Spread width: wider in volatile or illiquid conditions
 - Skew: shifts quotes based on inventory
-- Quote size: how much volume shown at each price
+- Quote size: how much volume shown per price
 - Update frequency: how often quotes refresh
 - [[Last Look]] window: time to reject after client hits
 
@@ -57,20 +53,20 @@ Where:
 ## Related concepts (learn next)
 
 - [[Skew Microstructure]] for how inventory drives asymmetric quote placement
-- [[Reservation Price]] for the theoretical fair value adjusted for inventory and risk
+- [[Reservation Price]] for the inventory and risk adjusted fair value
 - [[Adverse Selection]] for why some client flow is unprofitable to quote against
 - [[Client Tiering]] for showing different spreads to different clients
 - [[Stale Quote]] for the danger of not updating fast enough
 - [[Kill Switch]] for emergency mechanisms to stop quoting instantly
-- [[Internalization]] for matching flow internally rather than quoting externally
+- [[Internalization]] for matching flow internally instead of quoting externally
 
 ## Common misconceptions
 
-1. **"Quoting means always showing the tightest spread."** Tight spreads attract volume but also attract [[Toxic Flow]]. Smart quoting widens for informed counterparties and tightens for uninformed ones via [[Client Tiering]].
+1. **"Quoting means showing the tightest spread."** Tight spreads attract volume and [[Toxic Flow]]. Smart quoting widens for informed counterparties and tightens for uninformed ones via [[Client Tiering]].
 
-2. **"A quoting engine just adds a spread around mid."** Real engines incorporate inventory skew, volatility scaling, adverse selection estimates, venue specific behavior, and dozens of other signals. The spread around mid is the starting point, not the answer.
+2. **"A quoting engine just adds a spread around mid."** Real engines incorporate inventory skew, vol scaling, adverse selection estimates, venue specific behavior, and dozens of other signals. The spread around mid is the start, not the answer.
 
-3. **"More quotes means more profit."** Excessive quoting without [[Latency]] advantages leads to being adversely selected. Each quote is a free option given to the market. Quoting must be paired with the ability to cancel or update fast enough.
+3. **"More quotes means more profit."** Excessive quoting without [[Latency]] advantages gets adversely selected. Each quote is a free option to the market. Quoting must pair with the ability to cancel or update fast enough.
 
 ## Sources
 

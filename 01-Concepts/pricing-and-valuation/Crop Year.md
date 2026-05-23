@@ -8,24 +8,24 @@ date-added: "2026-03-20"
 # Crop Year
 
 ## Definition
-A crop year (also called a marketing year) is the 12 month period that defines the production and consumption cycle for a specific agricultural commodity, beginning approximately when the new harvest enters the market and ending just before the next harvest. Unlike the calendar year, crop years vary by commodity and by hemisphere, reflecting when supply physically becomes available. For US [[Corn]] and [[Soybeans]], the crop year runs from September 1 to August 31; for US [[Wheat]], it runs from June 1 to May 31. Southern Hemisphere producers like Brazil and Argentina operate on different crop years reflecting their opposite growing seasons (e.g., Brazilian soybeans roughly February to January). The crop year framework is essential because all [[WASDE]] balance sheet data, including beginning stocks, production, and ending stocks, is organized on a crop year basis. Understanding which crop year a futures contract references determines whether it is [[Old Crop New Crop|old crop or new crop]].
+A crop year (marketing year) is the 12 month window defining production and consumption for one commodity, starting when the new harvest enters the market. Crop years vary by commodity and hemisphere. US [[Corn]] and [[Soybeans]]: September 1 to August 31. US [[Wheat]]: June 1 to May 31. Brazilian soybeans: roughly February to January. All [[WASDE]] balance sheet data (beginning stocks, production, ending stocks) is organized on a crop year basis. The crop year a futures contract references determines whether it is [[Old Crop New Crop|old crop or new crop]].
 
 ## Why it matters (commodities and FX)
-The crop year defines the time horizon for all supply and demand analysis: a deficit in the 2025/26 crop year means tightness from September 2025 through August 2026 for corn. Traders who confuse calendar year and crop year data will miscalculate [[Stocks to Use Ratio]] and produce flawed fundamental conclusions. Spread trades between contracts straddling crop year boundaries ([[Old Crop New Crop]] spreads) are among the highest conviction and most actively traded structures in agricultural markets. FX flows tied to agricultural exports (e.g., Brazilian real strength during Brazil's soybean export season from March to June) follow crop year timing rather than calendar year timing.
+The crop year defines the time horizon for supply and demand analysis. A deficit in the 2025/26 corn crop year means tightness from September 2025 through August 2026. Mixing calendar and crop year data corrupts [[Stocks to Use Ratio]] math. [[Old Crop New Crop]] spreads straddling the boundary are among the highest conviction trades in agricultural markets. FX flows tied to ag exports (BRL strength during Brazil's March to June soybean window) follow crop year timing, not calendar year.
 
 ## Concrete example
-**Success case:** A trader in March 2021 noticed that the US 2020/21 corn crop year (Sep 2020 to Aug 2021) had ending stocks projected at only 1.1 billion bushels, a [[Stocks to Use Ratio]] of 7.4%. They bought July 2021 (old crop) corn at $5.00/bu and sold December 2021 (new crop) corn at $4.60/bu, trading the old crop premium. By May, the July/December spread widened to $1.80, netting $0.80/bu profit or $4,000 per spread.
+**Concrete:** March 2021. US 2020/21 corn ending stocks projected at 1.1 billion bushels, [[Stocks to Use Ratio]] of 7.4%. Trader buys July 2021 (old crop) at $5.00/bu, sells December 2021 (new crop) at $4.60/bu. By May the July/December spread widens to $1.80, netting $0.80/bu or $4,000 per spread.
 
-**Failure case:** A trader in October 2018 assumed that strong US corn demand would tighten the 2018/19 crop year. They went long March 2019 corn at $3.75/bu. However, the 2018 harvest was a record 14.4 billion bushels, and ending stocks ballooned to 2.1 billion bushels. Corn fell to $3.55/bu by January, a $1,000 per contract loss. The lesson: a massive harvest at the start of a crop year can overwhelm even strong demand growth.
+**Simplified:** The supply year for corn runs September to August, not January to December. If this year's harvest is small, prices for delivery before next harvest stay high while prices after the new harvest stay lower. Trading that gap is the old crop vs new crop spread. Using calendar year stats instead of crop year stats gives you the wrong picture of how much grain is actually available.
 
 ## Key mechanics and formulas
-- **US Corn crop year:** September 1 to August 31
-- **US Soybeans crop year:** September 1 to August 31
-- **US Wheat crop year:** June 1 to May 31
-- **Brazil Soybeans crop year:** approximately February 1 to January 31
-- **Balance sheet mapping:** Beginning stocks (crop year start) + Production + Imports = Total supply; Total supply - Domestic use - Exports = Ending stocks (crop year end)
-- **Crop year alignment:** To compare global supply, analysts must reconcile different national crop years into a single aggregate. [[WASDE]] uses a "local marketing year" approach for each country.
-- **Futures to crop year:** US corn September futures = last month of old crop; December futures = first major contract of new crop
+- **US Corn:** September 1 to August 31
+- **US Soybeans:** September 1 to August 31
+- **US Wheat:** June 1 to May 31
+- **Brazil Soybeans:** approximately February 1 to January 31
+- **Balance sheet:** Beginning stocks + Production + Imports = Supply; Supply − Domestic use − Exports = Ending stocks
+- **Aggregation:** [[WASDE]] uses local marketing year per country, then reconciles to global totals
+- **Futures mapping:** US corn September = last old crop month; December = first new crop month
 
 ## Prerequisites
 - [[Grains]]
@@ -39,13 +39,16 @@ The crop year defines the time horizon for all supply and demand analysis: a def
 - [[Stocks to Use Ratio]] is calculated on a crop year basis to properly assess supply tightness.
 - [[Weather Premium]] is most relevant during the growing season portion of the crop year.
 - [[Contango Roll Cost]] can differ across contracts within versus straddling crop years.
-- [[Backwardation Roll Gain]] tends to be strongest in late crop year months when old crop supplies are tightest.
-- [[Basis Risk]] can shift seasonally within a crop year as local supply and demand patterns evolve with harvest and logistics.
+- [[Backwardation Roll Gain]] is strongest in late crop year months when old crop supplies are tightest.
+- [[Basis Risk]] shifts seasonally within a crop year as local supply and demand patterns evolve.
 
 ## Common misconceptions
-- **"Crop year and calendar year are interchangeable."** Using calendar year data to analyze a commodity priced on a September to August crop year will produce incorrect supply/demand conclusions and flawed [[Stocks to Use Ratio]] calculations.
-- **"All grains share the same crop year."** Wheat, corn, and soybeans each have different crop year start dates, and Southern Hemisphere crop years are offset by roughly 6 months from their Northern Hemisphere equivalents.
-- **"The crop year is fixed globally."** Even within a single commodity, the US, EU, Brazil, and Australia crop years can differ by months, complicating global balance sheet aggregation and requiring careful alignment in models.
+
+**"Crop year and calendar year are interchangeable."** Calendar year data on a September to August commodity produces wrong supply conclusions and broken [[Stocks to Use Ratio]] math.
+
+**"All grains share the same crop year."** Wheat, corn, and soybeans start on different dates. Southern Hemisphere crop years are offset 6 months from Northern Hemisphere equivalents.
+
+**"The crop year is fixed globally."** US, EU, Brazil, and Australia crop years differ by months even for the same commodity. Global balance sheet aggregation requires explicit alignment.
 
 ## Sources
 - USDA Economic Research Service, "Commodity Marketing Year Definitions"

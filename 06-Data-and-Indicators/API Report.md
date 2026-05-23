@@ -9,23 +9,25 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The API Weekly Statistical Bulletin is an unofficial petroleum inventory report published every Tuesday at 4:30 PM Eastern Time by the American Petroleum Institute, an industry trade group. It covers US crude oil, gasoline, and distillate inventories, providing a preview of the official [[EIA Report]] released the following Wednesday morning. The API collects its data from voluntary submissions by refiners and pipeline operators, whereas the EIA uses a mandatory survey. Because the API report arrives approximately 18 hours before the EIA, it serves as the market's first look at the week's inventory changes and can move prices significantly in after hours trading.
+The API Weekly Statistical Bulletin is an unofficial petroleum inventory report published every Tuesday at 4:30 PM ET by the American Petroleum Institute, an industry trade group. It covers US crude, gasoline, and distillate inventories and previews the official [[EIA Report]] released Wednesday morning. API data comes from voluntary refiner and pipeline submissions; EIA uses a mandatory survey. The API arrives roughly 18 hours before the EIA, making it the market's first read on weekly inventory changes and a frequent mover of after hours prices.
 
 ## Why it matters (commodities and FX)
 
-Traders use the API report to position ahead of the EIA. If the API shows a large surprise draw, traders may go long overnight expecting the EIA to confirm the bullish reading. However, the API and EIA frequently diverge because of different survey methodologies. When the API and EIA readings conflict (API shows a draw but EIA shows a build, or vice versa), it creates intraday volatility as positions established after the API are reversed on the EIA. This divergence pattern itself is a tradeable dynamic for short term energy traders.
+Traders position into the EIA on the API number. A large surprise draw triggers overnight longs anticipating EIA confirmation. API and EIA frequently diverge because of survey differences. Conflicting prints (API draw, EIA build) generate sharp intraday reversals as overnight positions unwind. The divergence pattern itself is tradable for short term energy desks.
 
 ## Concrete example
 
-On Tuesday evening, the API reports a crude draw of 6 million barrels against expectations of a 1.5 million barrel draw. WTI rallies $0.80 in electronic trading after the release. A trader goes long based on the large API draw. Wednesday morning, the [[EIA Report]] confirms with a 5.5 million barrel draw. WTI rallies another $0.70 and the trader profits $1.50/bbl total. In an alternative scenario, the EIA only shows a 500,000 barrel draw (contradicting the API), WTI gives back the overnight gains and drops $0.50 below the pre API level, and the trader loses $1.30/bbl.
+**Concrete:** Tuesday 4:30 PM ET. API prints a 6.0 million barrel crude draw vs consensus 1.5 million draw. WTI front month rallies $0.80 in electronic trading. Trader buys 10 lots at $78.20 overnight. Wednesday 10:30 AM ET, EIA confirms with a 5.5 million draw. WTI rallies another $0.70. Trader exits at $79.70 for $1.50/bbl or $15,000. Counter scenario: EIA prints only a 0.5 million draw. WTI gives back overnight gains and drops $0.50 below entry. Loss: $1.30/bbl or $13,000.
+
+**Simplified:** API gives a Tuesday night preview of Wednesday's official oil inventory number. If the API shows a surprise drawdown, prices jump overnight. If the EIA the next morning agrees, the rally extends. If the EIA disagrees, the overnight move reverses. Trading API alone is a coin flip with edge; waiting for EIA confirmation is safer.
 
 ## Key mechanics and formulas
 
-**Release schedule:** Tuesday 4:30 PM ET (delayed by 1 day if Monday is a federal holiday).
+**Release schedule:** Tuesday 4:30 PM ET, delayed 1 day if Monday is a federal holiday.
 
-**API vs EIA correlation:** Historically, the directional signal (build vs draw) agrees approximately 70 to 75% of the time for crude oil. The magnitude often differs significantly.
+**API vs EIA correlation:** Directional agreement (build vs draw) on crude historically 70 to 75%. Magnitude often differs.
 
-**Trading window:** API at 4:30 PM ET creates a ~18 hour trading window before EIA at 10:30 AM ET. Liquidity is thinner in this overnight window, so price moves can be amplified.
+**Trading window:** API to EIA is ~18 hours of thinner overnight liquidity, amplifying price moves.
 
 ## Prerequisites
 
@@ -34,19 +36,19 @@ On Tuesday evening, the API reports a crude draw of 6 million barrels against ex
 
 ## Related concepts (learn next)
 
-- [[EIA Report]] because it is the official version of the data the API previews.
-- [[Contango]] because persistent inventory builds (confirmed by both API and EIA) steepen contango.
+- [[EIA Report]] is the official version of the data the API previews.
+- [[Contango]] because persistent inventory builds confirmed by both reports steepen contango.
 - [[Backwardation]] because draws tighten the curve.
 - [[Calendar Spread]] because short term inventory surprises drive spread volatility.
-- [[Implied Volatility]] because the API/EIA release cycle creates predictable vol patterns around weekly data.
+- [[Implied Volatility]] because the API/EIA cycle creates predictable vol patterns around weekly data.
 
 ## Common misconceptions
 
-**"The API report is unreliable."** While less precise than the EIA, the API has significant predictive value. The directional signal is correct roughly 3/4 of the time.
+**"The API report is unreliable."** Less precise than EIA but directionally correct roughly 3 in 4 weeks. The signal has measurable predictive value.
 
-**"You should always trade the API number."** Many experienced traders wait for the EIA confirmation, using the API only to assess risk. Trading the API overnight carries the risk of EIA divergence.
+**"You should always trade the API number."** Many desks wait for EIA confirmation and use API only for risk sizing. Overnight API positions carry divergence risk.
 
-**"API and EIA always converge."** Methodology differences mean systematic divergences can persist for weeks, especially for gasoline and distillate data where coverage differs most.
+**"API and EIA always converge."** Methodology differences create systematic divergences that persist for weeks, especially in gasoline and distillate.
 
 ## Sources
 

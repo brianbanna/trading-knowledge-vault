@@ -10,40 +10,28 @@ date-added: "2026-05-23"
 
 ## Definition
 
-Veta is the second order greek that measures the rate at which [[Vega]] changes as time passes. Plain English: vega is not constant through the life of an option. As expiry approaches, vega shrinks. Veta tells you how fast. Mathematically, veta = d(Vega) / d(t) = d²(Option price) / d(σ × t). Also written as DvegaDtime.
+Veta is the rate at which [[Vega]] changes as time passes. Vega is not constant through the life of an option: as expiry approaches, vega shrinks. Veta tells you how fast. Veta = d(Vega) / d(t) = d²(Option price) / d(σ × t). Also written DvegaDtime.
 
-Veta is the "vega bleed" of an option. A 90 day ATM option may have vega 0.40. The same option 30 days later has vega 0.23. The 0.17 of vega that disappeared over 60 days is veta in action, equivalent to roughly 0.003 of vega lost per day. For [[0DTE]] options, veta is enormous and dominates the final hours of vega exposure.
+Veta is the vega bleed of an option. A 90 day ATM option may have vega 0.40. The same option 30 days later has vega 0.23. The 0.17 vega that disappeared over 60 days is veta, ~0.003 of vega lost per day. For [[0DTE]] options, veta dominates the final hours of vega exposure.
 
-Veta is typically reported as a negative number per calendar day for long option positions, since vega decays as time passes. By [[Put Call Parity]], veta of a call equals veta of a put (same strike, same expiry).
+Veta is typically reported as a negative number per calendar day for long option positions. By [[Put Call Parity]], veta of a call equals veta of a put (same strike, same expiry).
 
 ## Why it matters (commodities and FX)
 
-Veta is the greek that traps systematic vol sellers and vol buyers who do not model time evolution properly:
+Veta traps systematic vol sellers and vol buyers who do not model time evolution:
 
-- **Long volatility portfolios bleed vega.** A fund running long vol as a tail hedge (long [[VIX]] options, long deep OTM [[SPX Put|SPX puts]]) does not just lose [[Theta]] daily. The vega exposure itself decays, so the protection thins out as time passes even if vol does not move. Rolling the hedge is needed not only because options expire but because veta erodes the protective greek profile.
-- **Short vol books face vega convergence into expiry.** Selling a 30 day [[Strangle]] on [[Brent Crude]] gives initial short vega exposure. By day 25, the vega has decayed via veta to a fraction of the initial level. The trader's vol view is essentially over by then, even though the option still has 5 days of theta to collect.
-- **Vega term structure trades.** Calendar spreads (long back month vega, short front month vega) are explicitly veta trades. The front month leg loses vega faster than the back month leg, which is the source of the trade's P&L pattern as time passes.
-- **Commodity options around delivery.** [[WTI Crude Oil]] options expire roughly 3 business days before futures delivery. In the final week, vega collapses via veta even as gamma and charm explode. Risk reports that show vega without showing veta misrepresent the actual vol exposure profile going forward.
+- **Long vol portfolios bleed vega.** A fund running long vol as tail hedge (long [[VIX]] options, long deep OTM [[SPX Put|SPX puts]]) does not just lose [[Theta]] daily. The vega exposure itself decays. Protection thins as time passes even if vol does not move. Rolling the hedge is needed because options expire AND veta erodes the protective greek profile.
+- **Short vol books face vega convergence into expiry.** Selling a 30 day [[Strangle]] on [[Brent Crude]] gives initial short vega. By day 25, vega has decayed via veta to a fraction of initial. The vol view is essentially over even though 5 days of theta remain.
+- **Vega term structure trades.** Calendar spreads (long back month vega, short front month vega) are explicitly veta trades. The front month loses vega faster, which is the source of the trade's P&L pattern as time passes.
+- **Commodity options around delivery.** [[WTI Crude Oil]] options expire ~3 business days before futures delivery. In the final week, vega collapses via veta even as gamma and charm explode. Risk reports showing vega without veta misrepresent vol exposure going forward.
 
-For [[FX]] options with maturities aligned to economic releases (NFP, CPI, central bank meetings), veta determines how much vega exposure you actually have on the event day vs the day you put the trade on.
+For [[FX]] options with maturities aligned to economic releases (NFP, CPI, central bank meetings), veta determines actual vega exposure on the event day vs trade inception.
 
 ## Concrete example
 
-A volatility fund is long 500 contracts of [[VIX]] 18 strike calls expiring in 60 days. Spot VIX: 14. Implied vol on VIX options: 80% (VVIX). Initial vega per contract: 0.045.
+**Concrete:** Vol fund long 500 contracts of [[VIX]] 18 strike calls, 60 days to expiry. Spot VIX 14, VVIX 80. Initial vega per contract 0.045. Total initial vega: 500 × 0.045 × 100 (VIX multiplier) = 2,250 USD per 1 vol point. Purpose: tail hedge for a vol spike. 30 days pass with VIX unchanged at 14, no vol event. Vega per contract decayed via veta to 0.028. Total vega: 1,400 USD per vol point, 38% reduction. The fund still has 30 days of "tail protection" on paper, but vega has shrunk by more than a third. A 5 point VIX vol spike on day 35 produces 5 × 1,400 = 7,000 USD profit instead of the 5 × 2,250 = 11,250 USD at inception. Hedge is 38% weaker. If vol exploded on day 5, vega exposure was still 2,100 USD (only slight bleed). Veta punishes delayed vol events, which is the typical case.
 
-Total initial vega exposure: 500 × 0.045 × 100 (VIX multiplier) = 2,250 USD per 1 vol point change in VIX implied vol.
-
-Fund's purpose: tail hedge in case VIX spikes. Reasoning: pay 30 days of theta, hope for a vol explosion.
-
-30 days pass. Spot VIX unchanged at 14. No vol event. Vega per contract has decayed via veta to 0.028. Total vega exposure: 1,400 USD per vol point, a 38% reduction.
-
-The fund still has 30 days of "tail protection" on paper, but their vega exposure has shrunk by more than a third. If a vol event hits on day 35 instead of day 1, the same 5 point VIX vol spike now produces 5 × 1,400 = 7,000 USD profit, instead of the 5 × 2,250 = 11,250 USD it would have produced at trade inception. The hedge is 38% weaker.
-
-What if the fund had only watched vega (initial 2,250) and theta (decaying daily) but ignored veta? They would believe their tail hedge was intact. In reality, vega has bled out from underneath them at a rate of roughly 17 USD per day of vega exposure lost (2,250 × 0.038 average daily veta = ~85 USD of "vega value" lost per day even before realized vol shows up).
-
-The right answer is to roll the long vega position before veta has eroded it, typically when remaining tenor drops below 30 to 45 days for VIX type tail hedges.
-
-What if vol exploded on day 5? Vega exposure was still 2,100 USD (only slight veta bleed). The fund captures most of the move. Veta is most punishing when the vol event is delayed, which is the typical case.
+**Simplified:** Vega is not just lost when you sell out of an option. It bleeds away while you hold it. If you bought options as crash insurance and the crash does not happen this month, your insurance is weaker next month even though the option still exists. Roll long vol positions before veta has eroded them. Conversely, if you sold vol, the vega risk you carry decays in your favor, but only if nothing happens in the meantime.
 
 ## Key mechanics and formulas
 
@@ -51,12 +39,12 @@ What if vol exploded on day 5? Vega exposure was still 2,100 USD (only slight ve
 
 `Veta = -S × e^(-qT) × N'(d1) × sqrt(T) × [q + (r - q) × d1 / (σ × sqrt(T)) - (1 + d1 × d2) / (2T)]`
 
-Where N'() = standard normal PDF, q = dividend yield (or foreign rate for FX), r = risk free rate. The dominant term for typical options is -N'(d1) × d1 × d2 / (2 × sqrt(T) × σ), the time scaling component.
+N'() = standard normal PDF, q = dividend yield (or foreign rate for FX), r = risk free rate. Dominant term for typical options is -N'(d1) × d1 × d2 / (2 × sqrt(T) × σ), the time scaling component.
 
 **Useful intuition:**
-- Veta is approximately zero for deep ITM and deep OTM options (vega is already near zero)
+- Veta is ~zero for deep ITM and deep OTM options (vega already near zero)
 - Veta is largest in magnitude for ATM options
-- Veta scales roughly as 1/sqrt(T): a 30 day ATM option has veta about 1.7 times that of a 90 day ATM option
+- Veta scales roughly as 1/sqrt(T): a 30 day ATM option has veta ~1.7x that of a 90 day
 - For [[0DTE]] options, veta per hour can exceed total vega within 2 to 3 hours
 
 **Useful approximation for ATM options:**
@@ -65,16 +53,16 @@ Where N'() = standard normal PDF, q = dividend yield (or foreign rate for FX), r
 
 Differentiating: `Veta_ATM ≈ - S × N'(0) / (2 × sqrt(T) × σ_annualized)`
 
-So vega decays as 1/sqrt(T) and veta scales as 1/sqrt(T) inversely as well, meaning shorter dated options have proportionally more vega bleed per unit of time remaining.
+Vega decays as 1/sqrt(T); veta scales as 1/sqrt(T) inversely. Shorter dated options have proportionally more vega bleed per unit of time remaining.
 
 **Calendar spread P&L decomposition:**
 
-For a long back month vega / short front month vega trade:
-- Front month vega bleeds faster (via veta)
-- Net effect: total book vega grows over time (long vega position survives, short bleeds)
+For long back month vega / short front month vega:
+- Front month vega bleeds faster via veta
+- Total book vega grows over time (long survives, short bleeds)
 - This is the structural P&L of the calendar even if vol is unchanged
 
-**Aggregation:** Veta is additive at the book level. Most institutional greek reports show veta alongside theta as "time greeks" because both describe time evolution.
+**Aggregation:** Veta is additive at the book level. Institutional greek reports show veta alongside theta as "time greeks."
 
 ## Prerequisites
 - [[Vega]]
@@ -84,25 +72,25 @@ For a long back month vega / short front month vega trade:
 - [[Black Scholes Model]]
 
 ## Related concepts (learn next)
-- [[Vega]] - veta is the time derivative of vega, so understanding vega dynamics is the prerequisite.
-- [[Theta]] - theta and veta are the two time greeks. Theta is the cost of holding, veta is the decay of vol sensitivity.
-- [[Charm]] - charm is to delta what veta is to vega. Both are time bleeds of first order greeks.
-- [[Color]] - color is to gamma what veta is to vega. The full set of time bleed greeks.
-- [[Volga]] - veta interacts with volga in determining how the second order vol exposure evolves over time.
-- [[VIX]] and [[VVIX]] - VIX options used as tail hedges are dominated by veta as their primary risk decay channel.
-- [[0DTE]] - extreme veta in the final hours of 0DTE options means vega protection collapses inside a single trading session.
+- [[Vega]] - veta is the time derivative of vega.
+- [[Theta]] - theta and veta are the two time greeks. Theta is the cost of holding; veta is the decay of vol sensitivity.
+- [[Charm]] - delta analog. Both are time bleeds of first order greeks.
+- [[Color]] - gamma analog. The full set of time bleed greeks.
+- [[Volga]] - veta interacts with volga in determining how second order vol exposure evolves over time.
+- [[VIX]] and [[VVIX]] - VIX options used as tail hedges are dominated by veta as primary risk decay channel.
+- [[0DTE]] - extreme veta in the final hours means vega protection collapses inside a single session.
 
 ## Common misconceptions
 
-**"Vega is constant for the life of the option."** False. Vega is highest for ATM options around T = 0.25 years (3 months), and decays in both directions: as T → 0 vega goes to zero, and for deep OTM/ITM vega also approaches zero. Veta captures this decay.
+**"Vega is constant for the life of the option."** False. Vega is highest for ATM options around T = 0.25 years (3 months), and decays both ways: T → 0 sends vega to zero, deep OTM/ITM vega also goes to zero. Veta captures this decay.
 
-**"Theta is the only time greek I need."** Theta tells you cost of holding. Veta tells you how your vol sensitivity itself is eroding. For long vol books, ignoring veta means you think your hedge is intact when in fact it has bled out.
+**"Theta is the only time greek I need."** Theta tells you cost of holding. Veta tells you how vol sensitivity itself erodes. Ignoring veta on long vol books means thinking your hedge is intact when it has bled out.
 
-**"Veta only matters near expiry."** Close to true for short dated options, but for long dated vol books (1Y+), veta is also material because the absolute vega values are large. A 2Y vega book bleeds vega measurably even at long horizons; the bleed just looks slow in percentage terms.
+**"Veta only matters near expiry."** Close to true for short dated. For long dated vol books (1Y+), veta is also material because absolute vega values are large. A 2Y vega book bleeds vega measurably even at long horizons; the bleed looks slow in percentage terms.
 
-**"Veta and theta move together."** They are related but distinct. Theta is the cost of holding measured in dollars per day. Veta is the rate of change of vega in dollars-of-vega-exposure per day. A position can have low theta (because spot is far from any strike) but meaningful veta if it holds ATM-like vega exposure.
+**"Veta and theta move together."** Related but distinct. Theta is cost of holding in dollars per day. Veta is rate of change of vega in dollars of vega exposure per day. A position can have low theta (spot far from strikes) but meaningful veta if it holds ATM like vega.
 
-**"Calendar spreads are pure vega trades."** No. Calendar spreads are primarily veta trades, with secondary vega and theta components. The thesis "front vega bleeds faster than back vega" IS the veta thesis. Vol level changes affect both legs roughly equally; the differential decay is what creates the P&L pattern.
+**"Calendar spreads are pure vega trades."** No. Calendars are primarily veta trades with secondary vega and theta. "Front vega bleeds faster than back vega" IS the veta thesis. Vol level changes affect both legs roughly equally; differential decay creates the P&L pattern.
 
 ## Sources
 

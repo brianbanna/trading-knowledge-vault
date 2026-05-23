@@ -10,40 +10,40 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The cost of carry is the total expense of holding a physical commodity or financial asset over time. It includes storage costs, insurance, financing (interest on capital tied up), and minus any income or benefit the asset generates (like [[Convenience Yield]] for commodities or dividends for equities). The cost of carry model is the theoretical framework that links spot prices to futures prices: in a "full carry" market, the futures price equals the spot price plus the net cost of carry. It is the foundation of all [[Forward Curve]] analysis.
+Cost of carry is the total expense of holding a physical commodity or financial asset over time: storage, insurance, financing (interest on capital tied up), minus any income or benefit the asset generates ([[Convenience Yield]] for commodities, dividends for equities). The cost of carry model links spot to futures: at "full carry," futures price = spot + net cost of carry. The foundation of all [[Forward Curve]] analysis.
 
 ## Why it matters (commodities and FX)
 
-The cost of carry determines whether a commodity [[Forward Curve]] is in [[Contango]] or [[Backwardation]]. When futures trade at full carry (spot + storage + financing), there is no edge in calendar spreads because the curve shape is fully explained by carrying costs. When futures trade below full carry (backwardation), the market is signaling that [[Convenience Yield]] exceeds carrying costs, meaning physical supply is tight. When futures trade above full carry (super contango), there is a cash and carry arbitrage: buy spot, store it, sell futures, and lock in risk free profit. Understanding where the curve sits relative to full carry is the starting point for every [[Calendar Spread]] and [[Relative Value Trade]].
+Cost of carry determines whether a [[Forward Curve]] sits in [[Contango]] or [[Backwardation]]. At full carry (spot + storage + financing), the curve shape is fully explained by carrying costs and there is no calendar spread edge. Below full carry (backwardation), [[Convenience Yield]] exceeds carrying costs, signaling physical tightness. Above full carry (super contango), cash and carry arbitrage opens: buy spot, store, sell futures, lock in risk free profit. Curve position vs full carry is the starting point for every [[Calendar Spread]] and [[Relative Value Trade]].
 
 ## Concrete example
 
-[[Gold Futures]]: Gold spot trades at $2,000/oz. Storage and insurance cost approximately 0.3%/year. The risk free rate is 5%. Gold has essentially zero [[Convenience Yield]] (no industrial urgency). The 1 year futures should trade at approximately: $2,000 x e^(0.05 + 0.003) x 1 = $2,000 x 1.0546 = $2,109. If the actual 1 year gold futures trade at $2,109, the market is at full carry. No arbitrage. If they trade at $2,130 (above full carry), a trader could buy spot gold, store it for 1 year, and sell the futures at $2,130, locking in $21/oz profit above carry costs. This arbitrage would push the futures price down and/or the spot price up until full carry is restored.
+**Concrete:** [[Gold Futures]] spot $2,000/oz. Storage + insurance ~0.3%/year. Risk free rate 5%. Gold has near zero [[Convenience Yield]]. 1Y futures should ≈ $2,000 × e^(0.05 + 0.003) = $2,109. Actual at $2,109 = full carry, no arb. Actual at $2,130 (above full carry) → buy spot, store 1Y, sell future at $2,130, lock $21/oz above carry. The arb pushes futures down or spot up until full carry restores. [[WTI Crude Oil]] spot $74. Cushing storage ~$0.45/bbl/month ($5.40/year). Financing 5% = $3.70/year. Total carry $9.10/year. If 12M futures trade at $76 (only $2 above spot), backwardation vs full carry. Implied convenience yield ~$7.10/year: physical tightness.
 
-[[WTI Crude Oil]]: Spot at $74. Storage at Cushing costs approximately $0.45/bbl/month ($5.40/year). Financing at 5% = $3.70/year. Total carry = $9.10/year. If 12 month futures trade at $76 (only $2 above spot), the market is in backwardation relative to full carry. Convenience yield is approximately $7.10/year, signaling physical tightness.
+**Simplified:** To hold a barrel of oil for a year, you pay rent on a tank, pay interest on the cash tied up, and lose nothing in dividends. Add those costs to the spot price and that is roughly what a 1 year futures contract should cost. If futures cost less, the market is telling you physical barrels are precious right now. If futures cost more, somebody can make free money buying spot and selling futures, which is why it rarely happens.
 
 ## Key mechanics and formulas
 
 **General cost of carry formula:**
 
-`F(t,T) = S(t) x e^((r + c - y)(T-t))`
+`F(t,T) = S(t) × e^((r + c − y)(T−t))`
 
 Where:
 - F(t,T) = futures price at time t for delivery at T
 - S(t) = current spot price
 - r = risk free interest rate (annualized, continuously compounded)
-- c = storage cost rate (annualized, as % of spot)
-- y = [[Convenience Yield]] (annualized, as % of spot)
-- T-t = time to maturity in years
+- c = storage cost rate (annualized, % of spot)
+- y = [[Convenience Yield]] (annualized, % of spot)
+- T−t = time to maturity in years
 
-**Full carry condition:** When F = S x e^((r+c)(T-t)), the market is at full carry (y = 0). Futures reflect the full cost of storage and financing.
+**Full carry condition:** When F = S × e^((r+c)(T−t)), market at full carry (y = 0). Futures reflect full storage + financing.
 
-**Backwardation condition:** When F < S x e^((r+c)(T-t)), convenience yield exceeds carry costs. Physical supply is valued.
+**Backwardation condition:** F < S × e^((r+c)(T−t)) → convenience yield exceeds carry.
 
-**Super contango / cash and carry arb:** When F > S x e^((r+c)(T-t)), arbitrageurs buy spot, store, and sell futures for risk free profit. This caps the upside of contango.
+**Super contango / cash and carry arb:** F > S × e^((r+c)(T−t)) → arbitrageurs buy spot, store, sell futures. Caps upside of contango.
 
 **Implied convenience yield:**
-`y = r + c - ln(F/S) / (T-t)`
+`y = r + c − ln(F/S) / (T−t)`
 
 ## Prerequisites
 - [[Forward Curve]]
@@ -52,21 +52,21 @@ Where:
 - [[Basis]]
 
 ## Related concepts (learn next)
-- [[Convenience Yield]] - the "missing variable" in the carry model. Understanding when and why convenience yield spikes is the key to trading the curve.
-- [[Storage Economics]] - physical storage capacity, costs, and constraints determine the "c" in the carry model and set the bounds for contango.
-- [[Roll Yield]] - the P&L consequence of carry for anyone holding futures. Positive carry = positive roll yield.
-- [[Calendar Spread]] - directly trades the cost of carry relationship. When spreads deviate from carry, there is a tradeable opportunity.
-- [[Cash and Carry Arbitrage]] - the risk free trade that enforces the upper bound of contango. Understanding this arbitrage explains why contango cannot exceed full carry for long.
-- [[Carry Trade]] - the FX analogue. Interest rate differentials in FX are the equivalent of storage and convenience yield in commodities.
-- [[Equilibrium Price]] - cost of carry defines the equilibrium relationship between spot and futures.
+- [[Convenience Yield]] — the missing variable. When and why it spikes is the key to trading the curve.
+- [[Storage Economics]] — capacity, costs, and constraints determine "c" and set bounds for contango.
+- [[Roll Yield]] — P&L consequence of carry for futures holders.
+- [[Calendar Spread]] — trades the cost of carry relationship directly.
+- [[Cash and Carry Arbitrage]] — enforces the upper bound of contango.
+- [[Carry Trade]] — FX analogue. Rate differentials in FX are the equivalent of storage + convenience yield in commodities.
+- [[Equilibrium Price]] — cost of carry defines the equilibrium between spot and futures.
 
 ## Common misconceptions
 
-**"Full carry means the market is bearish."** Full carry simply means carrying costs explain the curve shape. The spot price can be at any level. A market at full carry with spot at $100 is not more bearish than one in backwardation with spot at $60.
+**"Full carry means the market is bearish."** Full carry means carrying costs explain the curve shape. Spot can sit at any level. Full carry with spot $100 is not more bearish than backwardation with spot $60.
 
-**"Backwardation means the market expects prices to fall."** Backwardation means convenience yield exceeds carry costs. It says nothing about directional expectations. Spot can continue rising in backwardation.
+**"Backwardation means prices will fall."** Backwardation means convenience yield exceeds carry. Says nothing about direction. Spot can keep rising.
 
-**"Storage costs are constant."** Storage costs vary dramatically with utilization. When Cushing is 90% full, storage rates spike. When it is 50% full, rates are at minimums. The "c" in the carry formula is dynamic.
+**"Storage costs are constant."** Storage costs scale with utilization. Cushing at 90% full → rates spike. At 50% → rates at minimums. "c" is dynamic.
 
 ## Sources
 

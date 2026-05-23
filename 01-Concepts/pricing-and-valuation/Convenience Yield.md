@@ -11,38 +11,39 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The non monetary benefit of holding a physical commodity rather than holding a futures contract on that commodity. It represents the option value of having the physical good available for immediate use, sale, or delivery during supply disruptions or demand spikes. It is an implicit yield that accrues to the holder of inventory, not observable directly but inferred from the relationship between spot and futures prices.
+The non monetary benefit of holding physical commodity rather than a futures contract on it. Represents the option value of having the physical good available for immediate use, sale, or delivery during supply disruptions or demand spikes. An implicit yield accruing to the inventory holder, not directly observable but inferred from the spot/futures relationship.
 
 ## Why it matters (commodities and FX)
 
-Convenience yield is the missing variable that explains why commodity [[Forward Curve|forward curves]] sometimes trade in [[Backwardation]] even when storage and financing costs are positive. Without understanding convenience yield, the [[Cost of Carry Model]] appears broken. For a trader, convenience yield signals how tight physical markets are: high convenience yield means physical holders value their inventory highly because supply is scarce or delivery risk is elevated. This is a direct indicator of market stress.
+Convenience yield is the missing variable that explains why commodity [[Forward Curve|forward curves]] trade in [[Backwardation]] even when storage and financing costs are positive. Without it, the [[Cost of Carry Model]] looks broken. High convenience yield signals physical holders value their inventory because supply is scarce or delivery risk is elevated. A direct indicator of market stress.
 
-In practice, when a commodity desk says "the curve is in steep backwardation," they are saying convenience yield is dominating storage and financing costs. This is a tradeable signal for [[Relative Value Trade|calendar spreads]].
+When a commodity desk says "the curve is in steep backwardation," they mean convenience yield is dominating storage and financing costs. A tradeable signal for [[Relative Value Trade|calendar spreads]].
 
 ## Concrete example
 
-[[Brent Crude]] spot trades at $82. The 6 month futures trade at $78. Risk free rate is 5%, storage cost is approximately $0.50/barrel/month ($3 over 6 months). Under the [[Cost of Carry Model]] without convenience yield, the 6 month futures should be approximately $82 + $3 + $2 (financing) = $87. Instead it trades at $78, which is $9 below theoretical. The implied convenience yield is roughly $9 over 6 months, or about 22% annualized. This tells you the market places enormous value on having barrels available now, typically because inventories are low and demand for immediate delivery is strong.
+**Concrete:** [[Brent Crude]] spot $82, 6 month futures $78. Risk free rate 5%, storage ~$0.50/bbl/month ($3 over 6 months). Under cost of carry without convenience yield, 6 month futures should ≈ $82 + $3 + $2 financing = $87. Actual $78 is $9 below theoretical. Implied convenience yield ≈ $9 over 6 months, or ~22% annualized. The market places enormous value on having barrels now: inventories are low and immediate delivery demand is strong.
+
+**Simplified:** A refiner running flat out cannot wait 6 months for crude. Holding physical barrels today has option value, the ability to use them now, sell them in a squeeze, or deliver against a contract. That value shows up as a yield, invisible on its own but visible when futures trade below spot plus storage. The bigger the gap, the more the market values having the physical right now.
 
 ## Key mechanics and formulas
 
 Full cost of carry with convenience yield:
 
-`F(t,T) = S(t) x e^((r + c - y)(T-t))`
+`F(t,T) = S(t) × e^((r + c − y)(T−t))`
 
 Where:
 - F = futures price at time t for delivery at T
 - S = spot price
 - r = risk free interest rate (annualized)
-- c = storage cost rate (annualized, as % of spot)
-- y = convenience yield (annualized, as % of spot)
-- T-t = time to delivery in years
+- c = storage cost rate (annualized, % of spot)
+- y = convenience yield (annualized, % of spot)
+- T−t = time to delivery in years
 
-Rearranging to solve for implied convenience yield:
+Implied convenience yield:
 
-`y = r + c - (1/(T-t)) x ln(F/S)`
+`y = r + c − (1/(T−t)) × ln(F/S)`
 
-When y > r + c, the market is in [[Backwardation]].
-When y < r + c, the market is in [[Contango]].
+When y > r + c → [[Backwardation]]. When y < r + c → [[Contango]].
 
 ## Prerequisites
 
@@ -54,21 +55,21 @@ When y < r + c, the market is in [[Contango]].
 
 ## Related concepts (learn next)
 
-- [[Storage Economics]] - physical storage capacity, injection/withdrawal rates, and seasonal patterns drive convenience yield levels. Understanding storage is understanding what makes convenience yield move.
-- [[Inventory Cycle]] - the relationship between observable inventory levels (EIA, GIE, LME warehouses) and convenience yield. Low inventories = high convenience yield.
-- [[Theory of Normal Backwardation]] - Keynes's theory that futures should trade below expected spot to compensate speculators for bearing risk. Connects convenience yield to risk premia.
-- [[Calendar Spread]] - the direct expression of convenience yield in a trade. When convenience yield rises, front month strengthens vs deferred.
-- [[Contango]] - the opposite regime. Understanding both states and what triggers transitions is essential.
-- [[Roll Yield]] - the P&L consequence of convenience yield for anyone holding futures positions through expiry rolls.
-- [[Squeeze]] - when convenience yield spikes to extreme levels because a single participant controls available supply for delivery.
+- [[Storage Economics]] — capacity, injection/withdrawal rates, and seasonal patterns drive convenience yield levels.
+- [[Inventory Cycle]] — observable inventory levels (EIA, GIE, LME warehouses) vs convenience yield. Low inventories = high convenience yield.
+- [[Theory of Normal Backwardation]] — Keynes's theory that futures trade below expected spot to compensate speculators. Connects convenience yield to risk premia.
+- [[Calendar Spread]] — direct expression of convenience yield in a trade. Rising convenience yield strengthens front vs deferred.
+- [[Contango]] — the opposite regime.
+- [[Roll Yield]] — P&L consequence of convenience yield for futures holders through rolls.
+- [[Squeeze]] — convenience yield spikes when a single participant controls available supply for delivery.
 
 ## Common misconceptions
 
-**"Convenience yield is constant."** It is highly volatile and regime dependent. It spikes during supply crises and collapses when inventories are comfortable. It can go from near zero to 50%+ annualized within weeks.
+**"Convenience yield is constant."** Highly volatile and regime dependent. Spikes during supply crises, collapses when inventories are comfortable. Can move from near zero to 50%+ annualized within weeks.
 
-**"You can directly observe convenience yield."** You cannot. It is always implied from the difference between the theoretical cost of carry futures price and the actual futures price. Different market participants may have different effective convenience yields depending on their access to physical infrastructure.
+**"You can directly observe convenience yield."** You cannot. Always implied from the gap between theoretical cost of carry futures and actual futures price. Different participants may have different effective convenience yields based on physical infrastructure access.
 
-**"Convenience yield only matters for physical traders."** Financial traders need it to understand curve shape, size calendar spread positions, and assess whether backwardation is structural or temporary.
+**"Convenience yield only matters for physical traders."** Financial traders need it to understand curve shape, size calendar spreads, and assess whether backwardation is structural or temporary.
 
 ## Sources
 

@@ -9,22 +9,23 @@ date-added: "2026-03-27"
 # Arrival Price
 
 ## Definition
-Arrival price is the [[mid price]] of an instrument at the exact moment an order is submitted to the market. It serves as the primary benchmark for measuring [[execution]] quality in [[transaction cost analysis]] (TCA). The concept was formalized by Perold (1988) as "implementation shortfall," which measures the gap between the arrival price and the actual average fill price. If a trader decides to buy when the mid is 1.0850 and eventually fills at 1.0855, the implementation shortfall is 5 pips. Arrival price captures both explicit costs ([[bid-ask spread]], commissions) and implicit costs ([[market impact]], timing cost, [[opportunity cost]]). It is the most widely used execution benchmark by institutional asset managers, hedge funds, and algorithmic trading desks.
+Arrival price is the [[mid price]] at the exact moment an order is submitted. It is the primary benchmark for [[execution]] quality in [[transaction cost analysis]] (TCA). Perold (1988) formalized the concept as "implementation shortfall," the gap between arrival price and average fill price. Decide to buy at mid 1.0850, fill at 1.0855: shortfall is 5 pips. Arrival price captures both explicit costs ([[bid-ask spread]], commissions) and implicit costs ([[market impact]], timing, [[opportunity cost]]). It is the dominant execution benchmark for institutional asset managers, hedge funds, and algo desks.
 
 ## Why it matters (commodities and FX)
-Every execution algorithm, from TWAP to VWAP to adaptive strategies, is ultimately judged against the arrival price. For a commodity trading house hedging a physical cargo, the arrival price is the market level when the hedge decision was made. If the hedge is executed poorly (high implementation shortfall), the firm gives up margin on the physical trade. In FX, arrival price benchmarking is standard for evaluating bank execution quality on [[Multi Dealer Platform]]s. Regulators (FCA, SEC) increasingly require firms to demonstrate they achieved "best execution," and arrival price is the primary metric. A systematic approach to minimizing shortfall versus arrival price is what separates professional execution from naive market orders.
+Every execution algo, from TWAP to VWAP to adaptive, is judged against arrival price. For a commodity house hedging a physical cargo, arrival price is the market level when the hedge decision was made. Poor execution (high shortfall) gives up margin on the physical trade. In FX, arrival price benchmarking is standard for evaluating bank execution on [[Multi Dealer Platform]]s. FCA and SEC now require firms to demonstrate "best execution," and arrival price is the primary metric. Systematic shortfall minimization is what separates professional execution from naive market orders.
 
 ## Concrete example
-A fund manager decides at 09:00 to sell 500 lots of ICE Brent crude futures. At 09:00, the mid price is $83.20. The desk uses a TWAP algorithm to execute over 2 hours. Fills come in at: 100 lots at $83.18, 150 lots at $83.15, 100 lots at $83.12, 150 lots at $83.10. The volume-weighted average fill price is $83.134. The implementation shortfall versus arrival price is $83.20 - $83.134 = $0.066 per barrel. On 500 lots x 1,000 barrels = 500,000 barrels, the total shortfall is $33,000.
 
-The win scenario: if the desk had used an aggressive [[IOC]] strategy at 09:00, crossing the spread to fill at $83.18, the shortfall would be only $0.02 per barrel ($10,000 total). The fail scenario: if the desk delays and starts executing at 10:00 after the market has fallen to $83.00, the "delay cost" component is $0.20 per barrel ($100,000) even before trading costs. This shows that timing relative to the arrival price often dominates spread and impact costs.
+**Concrete:** A fund manager decides at 09:00 to sell 500 lots of ICE Brent futures. Mid at 09:00 is $83.20. Desk uses TWAP over 2 hours. Fills: 100 at $83.18, 150 at $83.15, 100 at $83.12, 150 at $83.10. VWAP is $83.134. Implementation shortfall is $0.066 per barrel. On 500,000 barrels, total shortfall is $33,000. An aggressive [[IOC]] at 09:00 crossing the spread at $83.18 would have produced shortfall of $0.02 per barrel ($10,000). A 1 hour delay until the market falls to $83.00 adds $100,000 of delay cost before any trading cost. Timing relative to arrival dominates spread and impact costs in this scenario.
+
+**Simplified:** You make a trading decision when the price is at one level. By the time your order finishes filling, the price has moved. The gap between where it was when you decided and where you actually got filled is the implementation shortfall. The bigger that gap, the worse your execution. Algos try to minimize it by balancing speed (cross the spread now and pay the spread cost) against patience (work the order over time and risk the price moving away).
 
 ## Key mechanics and formulas
-- **Implementation shortfall**: IS = arrival price - average fill price (for buy orders). For sell orders, IS = average fill price - arrival price. Positive IS means the execution cost money versus the decision price.
-- **Decomposition**: IS = spread cost + market impact cost + timing cost + opportunity cost. Spread cost = half the [[bid-ask spread]]. Market impact = price movement caused by the order. Timing cost = price drift during execution. Opportunity cost = cost of any unfilled portion.
-- **Arrival price calculation**: Arrival price = (best bid + best offer) / 2 at the timestamp of order submission. The timestamp must be precise (millisecond resolution or better).
-- **Benchmark comparison**: IS_relative = IS / arrival price x 10,000 (in basis points). This normalizes across instruments with different price levels.
-- **Alpha decay**: The information embedded in a trading decision decays over time. The further the execution deviates in time from the arrival moment, the more the arrival price loses relevance as a benchmark.
+- **Implementation shortfall**: IS = arrival price − average fill price (buys). Sells: IS = average fill price − arrival price. Positive IS = execution cost money vs the decision price.
+- **Decomposition**: IS = spread cost + market impact + timing cost + opportunity cost. Spread cost = half [[bid-ask spread]]. Market impact = price move caused by the order. Timing cost = drift during execution. Opportunity cost = cost of any unfilled portion.
+- **Arrival price**: (best bid + best offer) / 2 at order submission timestamp. Millisecond resolution or better.
+- **Benchmark comparison**: IS_relative = IS / arrival price × 10,000 (in bps). Normalizes across instruments.
+- **Alpha decay**: Information in a trading decision decays over time. The longer execution lags the arrival moment, the less the arrival benchmark applies.
 
 ## Prerequisites
 - [[Mid Price]]
@@ -33,19 +34,21 @@ The win scenario: if the desk had used an aggressive [[IOC]] strategy at 09:00, 
 - [[Liquidity]]
 
 ## Related concepts (learn next)
-- [[TWAP]]: time-weighted average price algorithm, a common execution strategy benchmarked against arrival price.
-- [[VWAP]]: volume-weighted average price, an alternative benchmark that weights by market volume rather than the decision moment.
-- [[Transaction Cost Analysis]]: the systematic framework for measuring execution quality, with arrival price as the primary benchmark.
-- [[Market Impact]]: the component of implementation shortfall caused by the order itself moving the price.
-- [[Slippage]]: informal term for the gap between expected and actual fill price, formalized by the arrival price framework.
-- [[IOC]]: an order type that attempts immediate execution near the arrival price, minimizing timing cost but accepting spread cost.
-- [[Opportunity Cost]]: the cost of shares or lots that never get filled, measured as the difference between arrival price and the end-of-day price on the unfilled portion.
-- [[Reservation Price]]: the trader's internal adjusted fair value, related to but distinct from arrival price.
+- [[TWAP]]: time weighted average price algo, benchmarked against arrival.
+- [[VWAP]]: volume weighted alternative benchmark.
+- [[Transaction Cost Analysis]]: the framework for measuring execution quality.
+- [[Market Impact]]: the order's own contribution to shortfall.
+- [[Slippage]]: informal term formalized by the arrival framework.
+- [[IOC]]: minimizes timing cost, accepts spread cost.
+- [[Opportunity Cost]]: cost of unfilled portion vs end of day price.
+- [[Reservation Price]]: trader's internal fair value, distinct from arrival.
 
 ## Common misconceptions
-1. **"Arrival price is the same as the price I see on my screen"**: The arrival price must be the mid price at the precise moment of order submission, not the price displayed seconds before on a delayed feed. Stale prices can make execution look artificially good or bad.
-2. **"Beating the arrival price means good execution"**: Sometimes beating the arrival price is lucky (the market moved in your favor after submission). Consistent measurement over many trades is needed to distinguish skill from luck. A single trade's shortfall is noisy.
-3. **"Arrival price is the only benchmark that matters"**: For orders with long execution horizons (multi-day programs), VWAP or interval TWAP may be more appropriate. Arrival price penalizes slow execution even when going slowly was the right strategy to minimize [[market impact]].
+**"Arrival price is the screen price."** Arrival must be the mid at the precise submission moment, not the delayed feed shown seconds earlier. Stale prices distort TCA.
+
+**"Beating arrival means good execution."** Sometimes the market moved your way by luck. Single trades are noisy. Skill shows up over hundreds of trades, not one.
+
+**"Arrival is the only benchmark that matters."** For multi day programs, VWAP or interval TWAP is more appropriate. Arrival penalizes slow execution even when slow was correct to minimize [[market impact]].
 
 ## Sources
 - Perold, Andre, "The Implementation Shortfall: Paper Versus Reality," Journal of Portfolio Management (1988)

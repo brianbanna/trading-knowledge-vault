@@ -11,37 +11,36 @@ date-added: "2026-03-20"
 
 ## Definition
 
-A carry trade involves borrowing in a low interest rate currency and investing the proceeds in a higher interest rate currency, profiting from the interest rate differential (the "carry"). The trader earns the spread between the 2 rates as long as the exchange rate does not move against the position by more than the carry earned. It is the most fundamental strategy in FX markets and one of the oldest forms of [[Relative Value Trade]].
+A carry trade borrows in a low rate currency and invests in a higher rate currency, earning the rate differential (the "carry"). The trader pockets the spread as long as the exchange rate does not move against the position by more than the carry. The most fundamental strategy in FX and one of the oldest forms of [[Relative Value Trade]].
 
 ## Why it matters (commodities and FX)
 
-Carry is the dominant force in FX pricing over medium term horizons. Central bank rate differentials drive massive capital flows between currencies. For a commodity trader, carry matters because commodity currencies (AUD, CAD, BRL, ZAR, NOK, CLP) tend to be high yielding, and their exchange rates are driven partly by carry dynamics, partly by commodity prices. Understanding carry helps you decompose whether AUD/USD is moving because of rate expectations or because of [[Copper Futures|copper]] and [[Iron Ore Futures|iron ore]] prices.
+Carry dominates FX pricing over medium term horizons. Central bank rate differentials drive massive capital flows. Commodity currencies (AUD, CAD, BRL, ZAR, NOK, CLP) are high yielding, with exchange rates driven partly by carry dynamics and partly by commodity prices. Decomposing AUDUSD moves into rate expectations vs [[Copper Futures|copper]] and [[Iron Ore Futures|iron ore]] requires understanding carry.
 
-Carry also applies directly to commodity futures through the [[Cost of Carry Model]]: a commodity in [[Contango]] has negative carry (costs money to hold), while a commodity in [[Backwardation]] has positive carry (earns money to hold via [[Roll Yield]]).
+Carry also applies directly to commodity futures via the [[Cost of Carry Model]]: [[Contango]] means negative carry (costs money to hold); [[Backwardation]] means positive carry (earns money via [[Roll Yield]]).
 
 ## Concrete example
 
-Japanese interest rates are 0.25%. Australian interest rates are 4.35%. A trader borrows JPY and buys AUD (goes long AUD/JPY). The annualized carry is approximately 4.10% (4.35% minus 0.25%). If AUD/JPY stays flat for 1 year, the trader earns ~4.10% on the notional. However, if AUD/JPY drops by more than 4.10%, the carry is wiped out and the position loses money.
+**Concrete:** JPY rate 0.25%, AUD rate 4.35%. Trader borrows JPY, buys AUD (long AUDJPY). Annualized carry ≈ 4.10%. If AUDJPY stays flat for 1 year, the trader earns ~4.10% on notional. If AUDJPY drops more than 4.10%, carry is wiped out. Carry is collected daily through the FX swap/forward market: forward points on AUDJPY are negative (AUD at forward discount to JPY), so rolling long AUDJPY forward earns carry incrementally.
 
-In practice, carry is collected daily through the FX swap/forward market. The forward points on AUD/JPY will be negative (AUD trades at a forward discount to JPY), meaning rolling a long AUD/JPY position forward earns the carry incrementally.
+**Simplified:** Borrow cheap, lend expensive. In FX, that means borrowing yen at near zero and parking the money in Australian dollars at 4%. You earn the gap each day. The risk: if AUDJPY falls more than the carry pays, you lose. The strategy works on average but collapses when risk aversion spikes and everyone unwinds at once, dragging the high yielder down sharply against the funder.
 
 ## Key mechanics and formulas
 
 **Carry return (annualized):**
-`Carry = r_invest - r_fund`
+`Carry = r_invest − r_fund`
 
-Where r_invest is the interest rate on the currency you buy, r_fund is the rate on the currency you borrow.
+Where r_invest is the rate on the currency bought, r_fund the rate on the currency borrowed.
 
-**Total return of carry trade:**
-`Total Return = Carry + Spot Return`
-`= (r_invest - r_fund) + (S_end - S_start) / S_start`
+**Total return:**
+`Total Return = Carry + Spot Return = (r_invest − r_fund) + (S_end − S_start) / S_start`
 
 **Forward premium/discount (covered interest rate parity):**
 `F/S = (1 + r_domestic) / (1 + r_foreign)`
 
-If the foreign rate is higher, the forward trades at a discount, and the carry trade earns the difference between forward and spot when rolled.
+When the foreign rate is higher, the forward trades at a discount; the carry trade earns this differential on each roll.
 
-**Sharpe ratio of carry:** historically, FX carry strategies have delivered Sharpe ratios of 0.5 to 0.8 over long periods, but with severe left tail risk (carry crashes).
+**Sharpe ratio of carry:** historically 0.5 to 0.8 over long samples, with severe left tail risk (carry crashes).
 
 ## Prerequisites
 
@@ -52,23 +51,23 @@ If the foreign rate is higher, the forward trades at a discount, and the carry t
 
 ## Related concepts (learn next)
 
-- [[Uncovered Interest Rate Parity]] - the theoretical framework that says carry should not work because exchange rates should adjust to offset rate differentials. In practice, UIP is violated (the "forward premium puzzle"), which is WHY carry works.
-- [[FX Forward Points]] - the mechanical expression of carry in the forward market. You need to understand how forward points are calculated and quoted.
-- [[Volatility Risk Premium]] - carry strategies have option like payoff profiles. Understanding vol risk premium helps you size carry trades correctly.
-- [[FX Options]] - hedging carry positions with put options converts the trade from unlimited downside to defined risk.
-- [[Risk Parity]] - carry is one of the "risk premia" harvested in multi asset risk parity frameworks.
-- [[Dollar Smile]] - the USD tends to strengthen in both extreme risk off AND extreme US outperformance. This nonlinear behavior is critical for managing carry positions funded in USD.
-- [[Roll Yield]] - the commodity analogue of FX carry. Understanding both shows how carry is a universal concept across asset classes.
+- [[Uncovered Interest Rate Parity]] — the theory says carry should not work because spot should adjust. UIP fails empirically (the "forward premium puzzle"), which is WHY carry works.
+- [[FX Forward Points]] — the mechanical expression of carry in the forward market.
+- [[Volatility Risk Premium]] — carry has option like payoff profiles; vol risk premium drives correct sizing.
+- [[FX Options]] — hedging carry with put options converts unlimited downside to defined risk.
+- [[Risk Parity]] — carry is one of the risk premia harvested in multi asset frameworks.
+- [[Dollar Smile]] — USD strengthens in both extreme risk off and extreme US outperformance. Nonlinear behavior matters for USD funded carry.
+- [[Roll Yield]] — the commodity analogue of FX carry.
 
 ## Common misconceptions
 
-**"Carry trades are free money."** They have significant left tail risk. Carry positions get unwound violently during crises (2008 JPY carry unwind, 2020 COVID, 2022 JPY intervention). The carry compensates for this crash risk.
+**"Carry trades are free money."** Significant left tail risk. Carry unwinds violently in crises (2008 JPY unwind, 2020 COVID, 2022 JPY intervention). Carry compensates for crash risk.
 
-**"Higher carry means better trade."** The highest carry currencies (TRY, BRL, ZAR) often depreciate enough to offset the carry. Risk adjusted carry (carry per unit of volatility) is the correct metric, not raw carry.
+**"Higher carry means better trade."** Highest carry currencies (TRY, BRL, ZAR) depreciate enough to offset carry. Risk adjusted carry (carry per unit vol) is the correct metric.
 
-**"Carry only works in FX."** Carry is a universal concept. Bond carry (riding the yield curve), commodity carry ([[Roll Yield]]), volatility carry (selling options), and dividend carry (long high dividend stocks) all exploit the same principle.
+**"Carry only works in FX."** Bond carry (yield curve), commodity carry ([[Roll Yield]]), volatility carry (short options), dividend carry (high dividend equities) all exploit the same principle.
 
-**"Carry trades are always short JPY."** JPY is the traditional funding currency because of Japan's low rates, but EUR, CHF, and CNH have all been funding currencies at various points depending on relative rate levels.
+**"Carry trades are always short JPY."** JPY is the traditional funder, but EUR, CHF, and CNH have served depending on relative rate levels.
 
 ## Sources
 

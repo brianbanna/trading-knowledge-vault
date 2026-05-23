@@ -10,26 +10,28 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The International Energy Agency is a Paris based intergovernmental organization that publishes the monthly Oil Market Report (OMR), one of the most influential medium term fundamental reports in energy markets. Founded in 1974 after the Arab oil embargo, the IEA represents 31 member countries (primarily OECD nations) and provides supply/demand balances, production estimates, demand forecasts, inventory data, and refinery throughput analysis. The OMR is released around the 12th to 15th of each month and provides a comprehensive global view of oil fundamentals. The IEA also publishes the annual World Energy Outlook and the monthly Gas Market Report.
+The International Energy Agency is a Paris based intergovernmental organization that publishes the monthly Oil Market Report (OMR), the most influential medium term fundamental release in energy. Founded in 1974 after the Arab oil embargo, the IEA represents 31 OECD member countries and provides supply and demand balances, production estimates, demand forecasts, inventory data, and refinery throughput analysis. The OMR is released the 12th to 15th of each month with a global view of oil fundamentals. IEA also publishes the annual World Energy Outlook and the monthly Gas Market Report.
 
 ## Why it matters (commodities and FX)
 
-While the [[EIA Report]] drives weekly trading, the IEA OMR drives medium term fundamental positioning. Revisions to IEA demand growth forecasts or supply estimates can shift the entire back end of the [[Forward Curve]]. If the IEA raises its demand growth forecast by 200,000 bbl/d, calendar spreads 6 to 12 months out can tighten as the market reprices the balance. The IEA's call on OPEC (the volume of OPEC production needed to balance the market) is closely watched as a guide to whether [[OPEC]] needs to cut or increase output. The IEA is generally considered the demand side authority (representing consuming nations), while [[OPEC]]'s own monthly report reflects the producer perspective.
+The [[EIA Report]] drives weekly trading; the IEA OMR drives medium term positioning. Revisions to IEA demand growth forecasts or supply estimates shift the back end of the [[Forward Curve]]. A 200,000 bbl/d demand revision tightens 6 to 12 month calendar spreads as the market reprices the balance. The IEA's "call on OPEC" (volume needed to balance the market) guides expectations for whether [[OPEC]] cuts or increases output. IEA is the demand side authority (consumers); OPEC's monthly report is the producer perspective.
 
 ## Concrete example
 
-In the March 2026 IEA OMR, the agency raises its 2026 global oil demand growth forecast from 1.0 mb/d to 1.3 mb/d, citing stronger than expected Chinese economic recovery. The Dec 2026 Brent calendar spread tightens from $1.50 contango to $0.50 contango as the market prices in a tighter H2 balance. A trader who had positioned for a tighter back end (long the Dec 26/Dec 27 spread) profits $1.00/bbl. If instead the IEA had cut its forecast to 0.7 mb/d, the spread would have widened and the position lost.
+**Concrete:** March 2026 IEA OMR raises 2026 global oil demand growth from 1.0 mb/d to 1.3 mb/d, citing stronger Chinese recovery. Dec 2026 Brent calendar spread tightens from $1.50 contango to $0.50 contango as the H2 balance reprices. Trader long 20 Dec 26/Dec 27 spreads gains $1.00/bbl × 1,000 bbl × 20 = $20,000. Counter scenario: IEA cuts to 0.7 mb/d. Spread widens to $2.00 contango. Same position loses $10,000.
+
+**Simplified:** Once a month the IEA publishes its view on how much oil the world will consume and how much will be produced. If they raise demand or cut supply forecasts, future oil contracts repricing the new balance see prices firm up at the back end of the curve. The reaction is concentrated in calendar spreads (6 to 24 months out), not the front month, because the changes apply to the medium term, not next week's barrels.
 
 ## Key mechanics and formulas
 
-**Release schedule:** Monthly, typically around the 12th to 15th of each month.
+**Release schedule:** Monthly, typically 12th to 15th.
 
 **Key data points:**
 - Global oil demand and demand growth forecast
 - Non OPEC supply estimates
-- OPEC production estimates (based on secondary sources)
+- OPEC production estimates (secondary sources)
 - OECD commercial inventory levels
-- Call on OPEC: `Call on OPEC = Global Demand - Non OPEC Supply - OPEC NGLs`
+- Call on OPEC: `Call on OPEC = Global Demand − Non OPEC Supply − OPEC NGLs`
 - Implied stock change: positive = oversupply (builds), negative = deficit (draws)
 
 ## Prerequisites
@@ -41,20 +43,20 @@ In the March 2026 IEA OMR, the agency raises its 2026 global oil demand growth f
 
 ## Related concepts (learn next)
 
-- [[EIA Report]] because it provides the weekly US data, complementing the IEA's monthly global view.
-- [[OPEC]] because the IEA's call on OPEC guides expectations for production decisions.
-- [[Forward Curve]] because IEA forecast revisions move the deferred end of the curve.
-- [[WASDE]] because it is the agricultural equivalent of the IEA OMR.
+- [[EIA Report]] provides weekly US data, complementing IEA's monthly global view.
+- [[OPEC]] because the call on OPEC guides production decisions.
+- [[Forward Curve]] because IEA revisions move the deferred end.
+- [[WASDE]] is the agricultural equivalent.
 - [[Contango]] because IEA surplus/deficit estimates help explain curve shape.
-- [[Spare Capacity]] because the IEA publishes its own spare capacity estimates.
+- [[Spare Capacity]] because IEA publishes its own spare capacity estimates.
 
 ## Common misconceptions
 
-**"The IEA is an unbiased source."** The IEA represents consuming nations and has historically been more conservative on demand forecasts and more aggressive on calling for supply increases. OPEC's own Monthly Report often diverges significantly.
+**"The IEA is unbiased."** The IEA represents consumers and historically runs conservative on demand and aggressive on calling for more supply. OPEC's monthly report often diverges significantly.
 
-**"IEA forecasts are accurate."** Like all forecasters, the IEA frequently revises. Demand growth forecasts for a given year can change by 500,000 bbl/d or more between the first estimate and the final figure.
+**"IEA forecasts are accurate."** Like all forecasters, the IEA revises constantly. Annual demand growth forecasts can change by 500,000 bbl/d between the first estimate and the final figure.
 
-**"Only the headline demand number matters."** The detailed supply/demand balance tables, inventory analysis, and refinery throughput data are often more valuable for traders than the headline forecast.
+**"Only the headline demand number matters."** Detailed balance tables, inventory analysis, and refinery throughput data are often more valuable than the headline.
 
 ## Sources
 

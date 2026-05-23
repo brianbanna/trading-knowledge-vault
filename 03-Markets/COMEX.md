@@ -10,15 +10,17 @@ date-added: "2026-03-20"
 
 ## Definition
 
-COMEX (Commodity Exchange) is a division of CME Group and the world's primary exchange for precious and base metals futures. It trades gold (GC), silver (SI), [[Copper Futures|copper]] (HG), [[Platinum Futures|platinum]] (PL), and [[Palladium Futures|palladium]] (PA). COMEX gold is the most liquid gold futures contract globally, with open interest often exceeding 500,000 contracts (50 million ounces). Unlike the [[LBMA]] OTC market, COMEX is fully exchange traded, centrally cleared, and regulated by the CFTC. Settlement can be physical (delivery to COMEX approved vaults in New York) or financial (offset before expiry). COMEX operates nearly 24 hours via the CME Globex electronic platform.
+COMEX (Commodity Exchange) is a CME Group division and the world's primary exchange for precious and base metals futures. It trades gold (GC), silver (SI), [[Copper Futures|copper]] (HG), [[Platinum Futures|platinum]] (PL), and [[Palladium Futures|palladium]] (PA). COMEX gold is the most liquid gold futures contract globally, with open interest often above 500,000 contracts (50M oz). Unlike the [[LBMA]] OTC market, COMEX is exchange traded, centrally cleared, and CFTC regulated. Settlement is physical (delivery to COMEX approved NY vaults) or financial (offset before expiry). COMEX runs nearly 24 hours via CME Globex.
 
 ## Why it matters (commodities and FX)
 
-COMEX is where price discovery happens for precious metals in US trading hours. [[COT Report|Commitment of Traders]] data from COMEX shows speculative positioning (managed money, commercial hedgers), which is one of the most important sentiment indicators for gold and silver. Open interest, volume, and the COT breakdown allow traders to gauge whether a rally is driven by real money buying (sustainable) or speculative momentum (vulnerable to reversal). COMEX warehouse stocks (gold and silver held in exchange approved vaults) provide additional signals about physical market conditions. The EFP (Exchange for Physical) spread between COMEX and LBMA reflects cross Atlantic arbitrage dynamics.
+COMEX is where price discovery happens for precious metals in US hours. [[COT Report]] data from COMEX shows speculative positioning (managed money, commercial hedgers), one of the most important sentiment indicators for gold and silver. Open interest, volume, and the COT breakdown reveal whether a rally is driven by real money (sustainable) or speculative momentum (vulnerable). COMEX warehouse stocks (gold and silver in exchange approved vaults) provide additional physical market signals. The EFP (Exchange for Physical) spread between COMEX and LBMA reflects cross Atlantic arbitrage.
 
 ## Concrete example
 
-COMEX gold open interest reaches 600,000 contracts. The [[COT Report]] shows managed money net long at 250,000 contracts, the highest in 3 years. Gold is at $2,500/oz. A contrarian trader interprets this extreme positioning as vulnerable to liquidation. She goes short gold via COMEX futures. If a hawkish Fed surprise triggers managed money liquidation, gold could drop $100/oz as 50,000 contracts are dumped, earning her $100/oz. If instead geopolitical escalation triggers safe haven buying above even the crowded long positioning, gold could rally to $2,650 and the short loses $150/oz.
+**Concrete:** COMEX gold OI reaches 600,000 contracts. [[COT Report]] shows MM net long 250,000 contracts, the highest in 3 years. Gold at $2,500/oz. Contrarian trader reads extreme positioning as vulnerable to liquidation. Shorts 20 COMEX gold contracts at $2,500. Hawkish Fed surprise triggers MM liquidation. 50,000 contracts unwind in 2 weeks. Gold drops to $2,400. Gain: $100 × 100 oz × 20 = $200,000. Counter scenario: geopolitical escalation triggers safe haven flows above the crowded long. Gold rallies to $2,650. Loss: $150 × 100 × 20 = $300,000.
+
+**Simplified:** COMEX is where the gold and silver futures market lives in US hours. The most important number to watch is not the price but the COT positioning: how aggressively hedge funds are positioned. When they are extremely long, the trade is fragile; even small bad news triggers a flush. When they are extremely short, the opposite. COMEX warehouse stocks tell you the same story for the physical market: low stocks mean tight, high stocks mean loose.
 
 ## Key mechanics and formulas
 
@@ -32,10 +34,10 @@ COMEX gold open interest reaches 600,000 contracts. The [[COT Report]] shows man
 | Palladium | PA | 100 troy oz | $0.05/oz | $5 |
 
 **COMEX warehouse categories:**
-- Registered: metal eligible for delivery against futures contracts
-- Eligible: meets quality standards but not registered for delivery
+- Registered: eligible for delivery against futures
+- Eligible: meets quality standards but not registered
 
-**EFP (Exchange for Physical):** The spread between COMEX futures and LBMA spot, enabling arbitrage between the two markets.
+**EFP (Exchange for Physical):** Spread between COMEX futures and LBMA spot enabling arbitrage between the 2 markets.
 
 ## Prerequisites
 
@@ -45,20 +47,20 @@ COMEX gold open interest reaches 600,000 contracts. The [[COT Report]] shows man
 
 ## Related concepts (learn next)
 
-- [[COT Report]] because COMEX positioning data is the primary sentiment indicator.
-- [[LBMA]] because the LBMA OTC market and COMEX futures are linked through EFP trading.
-- [[Gold Futures]] because COMEX gold is the most liquid precious metals futures contract.
+- [[COT Report]] because COMEX positioning is the primary sentiment indicator.
+- [[LBMA]] because LBMA OTC and COMEX futures are linked through EFP.
+- [[Gold Futures]] because COMEX gold is the most liquid precious metals contract.
 - [[Copper Futures]] because COMEX copper is the US benchmark for base metals.
-- [[ETF Flows]] because gold ETFs often hedge via COMEX futures.
+- [[ETF Flows]] because gold ETFs hedge via COMEX futures.
 - [[Margin]] because COMEX margin requirements affect position sizing and leverage.
 
 ## Common misconceptions
 
-**"COMEX delivery means the gold market can be cornered."** COMEX delivery involves regulated vaults with strict rules. While delivery mechanics create short term dynamics, the LBMA market provides deep physical backstop.
+**"COMEX delivery means the gold market can be cornered."** COMEX delivery uses regulated vaults with strict rules. Delivery mechanics create short term dynamics, but LBMA provides a deep physical backstop.
 
-**"COMEX gold futures determine the gold price."** Price discovery is shared between COMEX (futures, most liquid during US hours) and LBMA (physical, most liquid during London hours).
+**"COMEX gold futures determine the gold price."** Price discovery is shared between COMEX (most liquid in US hours) and LBMA (most liquid in London hours).
 
-**"Open interest equals the number of traders."** Each contract has a buyer and a seller. Open interest of 500,000 contracts means 500,000 long and 500,000 short positions, held by far fewer entities.
+**"Open interest equals number of traders."** Each contract has a buyer and a seller. OI of 500,000 means 500,000 longs and 500,000 shorts, held by far fewer entities.
 
 ## Sources
 

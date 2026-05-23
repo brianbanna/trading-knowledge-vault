@@ -10,19 +10,17 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Storage economics encompasses the costs, capacity constraints, and strategic value of holding physical commodity inventories. Storage is the physical mechanism that links spot and futures prices through the [[Cost of Carry]] model. Storage costs include rental of tank space or warehouse, insurance, quality degradation (for perishables), and financing. Storage capacity is finite, and when it approaches full utilization, the market behaves very differently than when ample space is available. Inventories act as a buffer between supply and demand: when production exceeds consumption, inventories absorb the surplus; when consumption exceeds production, inventories are drawn.
+Storage economics covers the costs, capacity constraints, and strategic value of holding physical commodity inventories. Storage is the physical mechanism linking spot and futures prices through the [[Cost of Carry]] model. Costs include tank or warehouse rental, insurance, quality degradation (perishables), and financing. Capacity is finite; behavior changes drastically near full utilization. Inventories buffer supply and demand: surplus production builds stocks, surplus consumption draws them.
 
 ## Why it matters (commodities and FX)
 
-Storage is why [[Contango]] has an upper bound and why [[Backwardation]] signals real physical stress. In a contango market, the maximum spread between spot and futures is capped by the cost of renting storage, insuring the commodity, and financing the purchase (the "full carry" ceiling). If the spread exceeds full carry, arbitrageurs buy spot, store it, and sell futures for risk free profit, compressing the spread. When storage is nearly full, this arbitrage breaks down: you cannot store what you cannot store. This is when extreme contango or even negative prices emerge (WTI April 2020). Conversely, when inventories are low, [[Convenience Yield]] spikes because the option value of having physical supply is high.
+Storage is why [[Contango]] has an upper bound and why [[Backwardation]] signals real physical stress. In contango, the spot to futures spread is capped by storage rent, insurance, and financing (the full carry ceiling). Above full carry, arbitrageurs buy spot, store it, sell futures for riskless profit, compressing the spread. When storage is full, the arbitrage breaks: you cannot store what you cannot store. Extreme contango or negative prices emerge (WTI April 2020). When inventories are low, [[Convenience Yield]] spikes because the option value of physical supply is high.
 
 ## Concrete example
 
-**Cushing, Oklahoma** (WTI delivery point): approximately 76 million barrels of working storage capacity. In April 2020, Cushing inventories reached ~65 million barrels (>85% utilization). With no available storage, traders holding expiring WTI futures could not take delivery. The May 2020 WTI contract settled at negative $37.63/bbl. The contango between May and June spiked to over $50, far beyond any normal carry cost, because the physical constraint of full storage made the front contract toxic.
+**Concrete:** Cushing, Oklahoma (WTI delivery point): 76 million barrels working capacity. April 2020, Cushing inventories reached 65 million barrels (>85% utilization). With no storage available, holders of expiring WTI could not take delivery. May 2020 WTI settled at −$37.63/bbl. Contango between May and June spiked above $50, far beyond normal carry, because full storage made the front contract toxic. Contrast: late 2021, Cushing at 25 million barrels (33% utilization). WTI in steep backwardation ($2+ M1/M2) because refiners valued prompt barrels and storage was freely available.
 
-Contrast with a low inventory environment: in late 2021, Cushing inventories fell to ~25 million barrels (~33% utilization). WTI went into steep backwardation ($2+ M1/M2 premium) because refiners valued immediate barrels highly and storage was freely available for anyone willing to sell.
-
-**LME metals warehouses:** LME copper, aluminum, and zinc inventories in LME approved warehouses are reported daily. When LME copper stocks fall below 100,000 tonnes (approximately 2 days of global consumption), the market enters "low stock" territory. Backwardation steepens, and delivery squeezes become possible. When stocks exceed 500,000 tonnes, the curve trades near full carry.
+**Simplified:** Storage tanks have a maximum size. When tanks are nearly full, no one will buy more physical oil because they have nowhere to put it, so the spot price collapses. When tanks are nearly empty, anyone holding physical has something rare, so spot trades at a premium to futures. The shape of the curve and the level of prices both depend on whether the tanks are filling up or draining down.
 
 ## Key mechanics and formulas
 
@@ -30,22 +28,22 @@ Contrast with a low inventory environment: in late 2021, Cushing inventories fel
 `Max Contango = Storage Cost + Insurance + Financing`
 `F_max = S x e^((r + c)(T-t))`
 
-When futures trade above this level, cash and carry arbitrage is profitable.
+Above this, cash and carry arbitrage is profitable.
 
 **Storage utilization and cost:**
-Storage rental rates are not linear. They follow a convex function of utilization:
-- Below 50% utilization: low fixed rates, storage is a commodity itself
+Rental rates are convex in utilization:
+- Below 50%: low fixed rates, storage is a commodity itself
 - 50 to 80%: rates rise gradually
 - 80%+: rates spike nonlinearly as remaining capacity becomes scarce
-- 95%+: effectively no storage available at any price
+- 95%+: effectively no storage at any price
 
-**Inventory buffer concept:**
+**Inventory buffer:**
 `Days of Supply = Current Inventory / Daily Consumption Rate`
 
-This normalizes inventories across different markets. 30 days of supply in crude oil is comfortable. 15 days is tight. 5 days is a crisis.
+Normalizes inventories across markets. 30 days crude is comfortable, 15 is tight, 5 is a crisis.
 
 **Injection/withdrawal rates (natgas, oil):**
-Physical storage has rate constraints. A salt cavern natgas facility might inject 200 MMcf/day and withdraw 500 MMcf/day. You can draw faster than you build. This asymmetry affects curve shape: winter drawdowns can be sharper than summer builds.
+Storage has rate constraints. A salt cavern natgas facility might inject 200 MMcf/day, withdraw 500 MMcf/day. Asymmetry: draw faster than build. Winter drawdowns are sharper than summer builds.
 
 ## Prerequisites
 - [[Forward Curve]]
@@ -54,20 +52,20 @@ Physical storage has rate constraints. A salt cavern natgas facility might injec
 - [[Backwardation]]
 
 ## Related concepts (learn next)
-- [[Convenience Yield]] - the benefit of holding physical inventory vs futures. Convenience yield is the "return" on storage, and it rises when inventories are low.
-- [[Calendar Spread]] - directly trades storage economics. When storage is expensive and scarce, calendar spreads reflect it.
-- [[Supply Shock]] - storage buffers absorb supply shocks. The size of the buffer determines how much price adjustment is needed.
-- [[Cost of Carry]] - storage cost is the "c" in the carry formula. Understanding actual storage costs (not textbook estimates) is critical.
-- [[Seasonality]] - storage injection/withdrawal cycles create seasonal patterns in inventories and spreads.
-- [[Location Arbitrage]] - storage availability at different locations creates locational price differentials.
+- [[Convenience Yield]] - the benefit of holding physical inventory versus futures. Rises when inventories are low.
+- [[Calendar Spread]] - directly trades storage economics.
+- [[Supply Shock]] - storage buffers absorb shocks. Buffer size determines how much price must move.
+- [[Cost of Carry]] - storage cost is the "c" in the carry formula.
+- [[Seasonality]] - injection/withdrawal cycles create seasonal patterns in inventories and spreads.
+- [[Location Arbitrage]] - storage availability at different locations creates locational differentials.
 
 ## Common misconceptions
 
-**"Inventories only matter at extremes."** The rate of change matters more than the level. A market drawing from 40 to 30 days of supply is tightening aggressively even though 30 days is "comfortable." Traders watch the trajectory, not the snapshot.
+**"Inventories only matter at extremes."** Rate of change matters more than level. A market drawing from 40 to 30 days of supply is tightening aggressively even though 30 days is comfortable. Watch the trajectory.
 
-**"Storage is always available at the quoted rate."** Storage markets have their own supply/demand. During oversupply periods, floating storage (oil tankers used as storage at sea) emerges because onshore capacity is full. Floating storage rates are much higher than onshore, shifting the full carry ceiling.
+**"Storage is always available at the quoted rate."** Storage markets have their own supply/demand. During oversupply, floating storage (tankers used as storage at sea) emerges because onshore is full. Floating rates are much higher, shifting the full carry ceiling.
 
-**"All storage is equal."** Cushing tankage vs Gulf Coast caverns vs Rotterdam tanks have different access, costs, and delivery logistics. A trader needs to know which storage counts for benchmark delivery and which is stranded.
+**"All storage is equal."** Cushing tankage versus Gulf Coast caverns versus Rotterdam tanks have different access, costs, and delivery logistics. Know which storage counts for benchmark delivery and which is stranded.
 
 ## Sources
 

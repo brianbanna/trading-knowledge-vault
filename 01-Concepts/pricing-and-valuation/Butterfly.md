@@ -9,24 +9,24 @@ date-added: "2026-03-20"
 # Butterfly
 
 ## Definition
-The butterfly (BF) in FX options is the average of the 25 delta call and 25 delta put [[implied volatility]] minus the [[ATM]] implied volatility. It measures how much more expensive the wings (OTM options) are relative to the ATM center of the [[Vol Surface]]. A higher butterfly indicates fatter tails in the implied distribution, meaning the market prices a greater probability of large moves in either direction. As a trading strategy, a long butterfly involves buying the 25D [[Strangle]] (OTM call + OTM put) and selling the [[ATM]] [[Straddle]], isolating exposure to the curvature of the smile. The butterfly is 1 of 3 standard FX vol quotes, alongside [[ATM]] vol and [[Risk Reversal]].
+The butterfly (BF) in FX options is the average of 25 delta call and 25 delta put [[implied volatility]] minus [[ATM]] IV. It measures how much more expensive the wings (OTM options) are relative to the ATM center of the [[Vol Surface]]. A higher BF means fatter tails in the implied distribution: the market prices higher probability of large moves either way. As a trade, long butterfly = long the 25D [[Strangle]] + short the [[ATM]] [[Straddle]], isolating exposure to smile curvature. BF is 1 of 3 standard FX vol quotes, with [[ATM]] vol and [[Risk Reversal]].
 
 ## Why it matters (commodities and FX)
-The butterfly captures the market's pricing of tail risk and kurtosis. In FX, butterflies widen ahead of high impact events like central bank decisions, elections, or referendums because the market assigns higher probability to extreme outcomes. A persistently elevated butterfly on a pair like USD/TRY or USD/BRL signals ongoing structural tail risk from emerging market crises. In commodities, butterflies on [[Brent Crude]] options widen ahead of [[OPEC]] meetings and geopolitical escalations. Monitoring butterfly changes helps traders assess whether tail insurance is cheap or expensive relative to the actual frequency of large moves.
+The butterfly prices tail risk and kurtosis. In FX, BFs widen ahead of central bank decisions, elections, and referendums as the market assigns higher probability to extreme outcomes. A persistently elevated BF on USDTRY or USDBRL signals ongoing structural tail risk from EM crises. In commodities, BFs on [[Brent Crude]] widen ahead of [[OPEC]] meetings and geopolitical escalations. Monitoring BF changes tells you whether tail insurance is cheap or expensive vs the realized frequency of large moves.
 
 ## Concrete example
-**Success:** EUR/USD 1 month 25D butterfly is at 0.25 vols, historically low ahead of the French presidential election. A trader buys the butterfly: long the 25D strangle and short the ATM straddle for a net debit of 5 pips. The election produces a surprise result, and EUR/USD gaps 300 pips. The 25D strangle explodes in value while the short straddle loses less (it was closer to the money). The butterfly position profits 35 pips as the smile steepens and the BF jumps to 0.85.
+**Concrete:** EURUSD 1M 25D butterfly at 0.25 vols, historically low ahead of the French presidential election. Trader buys the BF (long 25D strangle, short ATM straddle) for 5 pips debit. Surprise result, EURUSD gaps 300 pips. The 25D strangle explodes; the short straddle loses less. BF jumps to 0.85, position gains 35 pips. Reverse case: trader buys 25D BF on GBPUSD ahead of BOE at 0.55 vols. BOE delivers in line, vol collapses evenly, smile flattens, BF drops to 0.30. Long strangle decays faster than short straddle recovers. Loss: 12 pips from [[Theta]] and vol compression.
 
-**Failure:** A trader buys the 25D butterfly on GBP/USD ahead of a Bank of England meeting, paying 0.55 vols for the structure. The BOE delivers an in line decision, vol collapses evenly across the surface, and the smile flattens. The 25D BF drops to 0.30. The long strangle decays faster than the short straddle recovers, and the position loses 12 pips from [[Theta]] and vol compression. Wings gave back their event premium without a tail move.
+**Simplified:** Buying a butterfly is buying the wings and selling the middle of the vol surface. You win if the market either does almost nothing (short straddle pays) or makes a huge move (long strangle pays). You lose in the boring middle, where moderate moves hurt the long strangle without saving the short straddle. It is a bet on the shape of the distribution, not the direction.
 
 ## Key mechanics and formulas
-- **25D Butterfly** = 0.5 × (sigma(25D call) + sigma(25D put)) minus sigma(ATM)
-- **Always positive**: because OTM options carry tail risk premium, the BF is almost always above zero
-- **Recovering wing vols**: sigma(25D call) = ATM + 0.5 × [[Risk Reversal]] + BF; sigma(25D put) = ATM minus 0.5 × RR + BF
-- **10D Butterfly** = 0.5 × (sigma(10D call) + sigma(10D put)) minus sigma(ATM), capturing deeper tail pricing
-- **Butterfly as a trade**: long BF = long 25D strangle + short ATM straddle; short BF = the reverse
-- **Vega exposure**: a long butterfly is approximately vega neutral (long wing vega offset by short ATM vega) but has significant [[Volga]] exposure
-- **P&L driver**: the position profits when realized moves are either very large or very small relative to ATM vol, and loses in the intermediate range
+- **25D Butterfly** = 0.5 × (σ(25D call) + σ(25D put)) − σ(ATM)
+- **Always positive**: OTM options carry tail risk premium, BF sits above zero
+- **Recovering wing vols**: σ(25D call) = ATM + 0.5 × [[Risk Reversal]] + BF; σ(25D put) = ATM − 0.5 × RR + BF
+- **10D Butterfly** = 0.5 × (σ(10D call) + σ(10D put)) − σ(ATM), captures deeper tail pricing
+- **As a trade**: long BF = long 25D strangle + short ATM straddle; short BF = reverse
+- **Vega exposure**: long BF is approximately vega neutral (wing vega offsets ATM vega) but has significant [[Volga]] exposure
+- **P&L driver**: profits on very large or very small realized moves vs ATM vol, loses in the middle range
 
 ## Prerequisites
 - [[ATM]]
@@ -36,18 +36,20 @@ The butterfly captures the market's pricing of tail risk and kurtosis. In FX, bu
 - [[Implied Volatility]]
 
 ## Related concepts (learn next)
-- [[Risk Reversal]]: captures skew (directional asymmetry) while butterfly captures smile curvature (kurtosis)
-- [[Volga]]: the primary greek driving butterfly P&L, as BF is essentially a volga trade
-- [[Strangle]]: the wing component of the butterfly structure
-- [[Straddle]]: the body component (ATM) of the butterfly structure
+- [[Risk Reversal]]: captures skew (directional asymmetry) while BF captures curvature (kurtosis)
+- [[Volga]]: primary greek driving BF P&L; BF is essentially a volga trade
+- [[Strangle]]: wing component of the BF structure
+- [[Straddle]]: body (ATM) component
 - [[Vol Surface]]: fully specified by ATM, RR, and BF at each tenor
-- [[Vanna]]: interacts with butterfly pricing through smile dynamics
-- [[Gamma]]: butterfly structures have complex gamma profiles that shift with spot
+- [[Vanna]]: interacts with BF through smile dynamics
+- [[Gamma]]: BF structures have complex gamma profiles that shift with spot
 
 ## Common misconceptions
-1. **"Butterfly is always a cheap trade."** While the net premium may be small, the position can bleed steadily from [[Theta]] if realized volatility is moderate. The payoff profile requires either very large or very small moves.
-2. **"A higher butterfly means the market is scared."** A higher BF means tail options are relatively expensive, but this could reflect structural demand (e.g., barrier hedging in [[Barrier Option]] markets) rather than fear.
-3. **"Butterfly and risk reversal are independent."** In practice, they interact: a large risk reversal with a small butterfly produces a heavily skewed smile, while a small RR with a large BF produces a symmetric but fat tailed distribution.
+**"Butterfly is always a cheap trade."** Net premium is small but the position bleeds from [[Theta]] in moderate realized vol. Payoff needs very large or very small moves.
+
+**"A higher butterfly means the market is scared."** Higher BF means tail options are relatively expensive, but this reflects structural demand (barrier hedging in [[Barrier Option]] markets) as much as fear.
+
+**"Butterfly and risk reversal are independent."** They interact. Large RR with small BF = heavily skewed smile. Small RR with large BF = symmetric fat tails.
 
 ## Sources
 - Wystup, Uwe. *FX Options and Structured Products*, 2nd ed.

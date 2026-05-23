@@ -8,22 +8,24 @@ date-added: "2026-03-20"
 # Forward Points
 
 ## Definition
-Forward points (also called swap points) are the number of [[Pip|pips]] added to or subtracted from the [[Spot Rate|spot rate]] to derive the forward exchange rate for a given delivery date. They reflect the [[Interest Rate Differential|interest rate differential]] between the 2 currencies in the [[Currency Pair|pair]], adjusted for the time to maturity. When the base currency has a higher interest rate than the quote currency, the forward points are negative (the base trades at a forward discount). When the base currency has a lower rate, forward points are positive (forward premium). Forward points are quoted in the market for standard tenors (overnight, 1 week, 1 month, 2 months, 3 months, 6 months, 1 year) and are the building blocks for [[FX Swap|FX swap]] and outright forward pricing.
+Forward points (swap points) are the [[Pip|pips]] added to or subtracted from the [[Spot Rate|spot rate]] to derive the forward rate for a given delivery date. They reflect the [[Interest Rate Differential|interest rate differential]] between the 2 currencies in the [[Currency Pair|pair]], adjusted for time to maturity. When the base currency has the higher rate, forward points are negative (base trades at a forward discount). When the base has the lower rate, forward points are positive (forward premium). Quoted for standard tenors (overnight, 1W, 1M, 2M, 3M, 6M, 1Y) and are the building blocks for [[FX Swap|FX swap]] and outright forward pricing.
 
 ## Why it matters (commodities and FX)
-Forward points determine the cost or benefit of hedging future FX exposures. A commodity exporter selling crude in USD who hedges by selling USD/CAD forward 6 months out receives or pays forward points that directly affect the effective hedge rate. If forward points are −80 on a 1.3600 spot, the 6 month forward is 1.3520, meaning the hedger locks in a rate 80 pips worse than spot. For carry traders, forward points represent the carry: earning positive points on a long position is equivalent to earning the interest rate differential. Understanding forward points is essential for anyone rolling FX positions, as the roll cost or benefit accrues through the swap points paid at each roll date.
+Forward points set the cost or benefit of hedging future FX exposure. A commodity exporter selling crude in USD who hedges by selling USD/CAD 6 months forward receives or pays the points, directly affecting the hedge rate. If forward points are −80 on 1.3600 spot, the 6 month forward is 1.3520: the hedger locks in 80 pips worse than spot. For carry traders, forward points are the carry. Earning positive points on a long position equals earning the rate differential. Essential for anyone rolling FX positions, since roll cost or benefit accrues through the swap points paid at each roll.
 
 ## Concrete example
-EUR/USD spot is 1.0800. US 6 month rate is 5.00%, EUR 6 month rate is 3.00%. Forward points ≈ 1.0800 × (0.03 − 0.05) × 0.5 / (1 + 0.05 × 0.5) = 1.0800 × (−0.01) / 1.025 = −0.01054, or approximately −105 pips. The 6 month forward is 1.0800 − 0.0105 = 1.0695. A European company hedging 10 million USD receivable sells USD / buys EUR forward at 1.0695 instead of spot at 1.0800, receiving 105 fewer pips per EUR. Over 1 year, this cost equals the 200 bps rate differential. If the company had not hedged and EUR/USD moved to 1.1200, the spot outcome would have been better, but the hedge provided certainty. Conversely, if EUR/USD fell to 1.0400, the forward at 1.0695 far outperformed spot.
+**Concrete:** EUR/USD spot 1.0800. US 6 month rate 5.00%, EUR 6 month rate 3.00%. Forward points ≈ 1.0800 × (0.03 − 0.05) × 0.5 / (1 + 0.05 × 0.5) = −0.01054, or ~−105 pips. 6 month forward = 1.0800 − 0.0105 = 1.0695. A European company hedging 10M USD receivable sells USD / buys EUR forward at 1.0695 instead of spot at 1.0800, receiving 105 fewer pips per EUR. Over 1 year this cost equals the 200 bps rate differential. If unhedged and EUR/USD moves to 1.1200, spot would have won. If EUR/USD falls to 1.0400, the 1.0695 forward outperforms.
+
+**Simplified:** A forward exchange rate is not a prediction. It is spot adjusted for the rate gap between the 2 currencies so no risk free arbitrage exists. If dollars pay 5% and euros pay 3%, a 6 month forward EUR/USD has to be lower than spot by roughly the rate gap. Those pips of adjustment are forward points. If you hedge by buying or selling forward, you are paying or receiving the rate differential, not predicting anything.
 
 ## Key mechanics and formulas
-- **Forward rate**: F = S × (1 + r_quote × t) / (1 + r_base × t).
-- **Forward points**: FP = F − S = S × [(r_quote − r_base) × t] / (1 + r_base × t).
-- **Sign convention**: Positive points mean the forward rate > spot (base currency at premium). Negative points mean forward < spot (base at discount).
-- **Bid/offer on points**: The forward spread is the spot spread plus the swap spread. Forward bid = Spot bid + Points bid; Forward offer = Spot offer + Points offer.
-- **Annualized carry from points**: Carry (%) ≈ (Forward points / Spot) / Time fraction × 100.
-- **Broken dates**: Non standard tenors are interpolated linearly between the 2 surrounding standard tenor points.
-- **Tom/Next (T/N)**: The 1 day forward point used to roll spot positions; accrues daily to holders of open positions.
+- **Forward rate:** F = S × (1 + r_quote × t) / (1 + r_base × t).
+- **Forward points:** FP = F − S = S × [(r_quote − r_base) × t] / (1 + r_base × t).
+- **Sign:** Positive = forward > spot (base at premium). Negative = forward < spot (base at discount).
+- **Bid/offer:** Forward bid = Spot bid + Points bid; Forward offer = Spot offer + Points offer.
+- **Annualized carry:** Carry (%) ≈ (Forward points / Spot) / Time fraction × 100.
+- **Broken dates:** Non standard tenors are interpolated linearly between surrounding standard points.
+- **Tom/Next (T/N):** 1 day forward point used to roll spot positions; accrues daily to holders.
 
 ## Prerequisites
 - [[Spot Rate]]
@@ -32,18 +34,21 @@ EUR/USD spot is 1.0800. US 6 month rate is 5.00%, EUR 6 month rate is 3.00%. For
 - [[Currency Pair]]
 
 ## Related concepts (learn next)
-- [[Covered Interest Parity]]: the theoretical foundation guaranteeing forward points equal the rate differential (up to the [[Cross Currency Basis|basis]]).
-- [[FX Swap]]: the instrument through which forward points are traded; the near leg is spot and the far leg is the forward.
-- [[Cross Currency Basis]]: the deviation from CIP embedded in actual forward points beyond the pure rate differential.
-- [[NDF]]: forward points for non deliverable currencies, where the forward is cash settled rather than physically delivered.
-- [[Carry Trade]]: forward points represent the carry earned or paid; positive points = earning carry on a long base position.
+- [[Covered Interest Parity]]: theoretical foundation that forward points equal the rate differential (up to the [[Cross Currency Basis|basis]]).
+- [[FX Swap]]: the instrument trading forward points; near leg is spot, far leg is forward.
+- [[Cross Currency Basis]]: deviation from CIP embedded in actual forward points beyond the pure rate differential.
+- [[NDF]]: forward points for non deliverable currencies, cash settled.
+- [[Carry Trade]]: forward points are the carry earned or paid.
 - [[Interest Rate Differential]]: the fundamental driver of forward points.
-- [[Uncovered Interest Parity]]: if UIP held, forward points would be an unbiased predictor of future spot; they are not.
+- [[Uncovered Interest Parity]]: if UIP held, forward points would predict future spot; empirically they do not.
 
 ## Common misconceptions
-1. **Forward points predict where spot is going**: Forward points reflect interest rate differentials, not market expectations of future spot direction. A negative 100 pip forward does not mean the market expects spot to fall 100 pips.
-2. **Forward points are a cost imposed by the broker**: Points are a mathematical consequence of interest rate differentials. They exist in the interbank market identically and are not a fee.
-3. **Larger forward points always mean worse hedging outcomes**: Negative forward points on USD (when US rates are higher) benefit USD sellers hedging forward. The sign depends on your direction: what is a cost for one party is a benefit for the other.
+
+**"Forward points predict where spot is going."** They reflect rate differentials, not directional expectations. Negative 100 pips does not mean spot will fall 100 pips.
+
+**"Forward points are a broker fee."** Points are a mathematical consequence of rate differentials. They exist identically in the interbank market and are not a fee.
+
+**"Larger forward points mean worse hedging outcomes."** Negative forward points on USD (when US rates are higher) benefit USD sellers hedging forward. Sign depends on direction: a cost for one party is a benefit for the counterparty.
 
 ## Sources
 - Hull, John C., *Options, Futures, and Other Derivatives*, 11th ed.

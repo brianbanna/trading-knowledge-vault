@@ -9,23 +9,27 @@ date-added: "2026-03-20"
 # Delta
 
 ## Definition
-Delta measures the sensitivity of an option's price to a small change in the price of the [[underlying]] asset. A call with a delta of 0.25 (25D) gains approximately 0.25 units of value for each 1 unit move in spot. Delta also serves as a rough proxy for the probability that the option expires in the money, so a 25D call has roughly a 25% chance of finishing with positive intrinsic value. In FX markets, options are quoted by delta (10D, 25D, [[ATM]]) rather than by absolute strike, which standardizes the vol surface across currency pairs. Delta is the first and most important of the [[Greeks]] because it determines the [[hedge ratio]]: to delta hedge a long call position, you sell delta units of the underlying per option.
+
+Delta is the change in option price for a $1 change in spot. A 25 delta call gains $0.25 when spot moves up $1. Delta also approximates the probability the option expires in the money: a 25 delta call has roughly a 25% chance of finishing ITM. In FX, options are quoted by delta (10D, 25D, ATM) rather than by strike, which standardizes the vol surface across pairs. To delta hedge a long option, sell `delta × notional` of the underlying.
 
 ## Why it matters (commodities and FX)
-Delta is the primary risk metric for any options book. FX dealers continuously delta hedge their portfolios, and the aggregate delta hedging flow from large option positions can move spot markets, especially near [[Expiry Pinning]] events. The 25 delta level defines the standard [[Risk Reversal]] and [[Butterfly]] quotes that characterize the [[Vol Surface]]. In commodities, delta hedging of producer put positions on [[Brent Crude]] or [[WTI Crude Oil]] creates predictable buying pressure when prices fall, amplifying moves. Understanding whether a market is "long gamma" or "short gamma" at various spot levels depends entirely on the distribution of delta across outstanding options.
+
+Delta is the first thing on a dealer's risk screen. FX dealers continuously delta hedge, and the aggregate hedge flow from large option positions moves spot, especially near [[Expiry Pinning]] events. The 25 delta level defines the standard [[Risk Reversal]] and [[Butterfly]] quotes that organize the [[Vol Surface]]. In commodities, producer put hedges on [[Brent Crude]] and [[WTI Crude Oil]] create predictable selling pressure when prices fall, as dealers delta hedge their long puts. Aggregate market delta also tells you whether dealers are net long or short [[Gamma]] at the current spot.
 
 ## Concrete example
-**Success:** A trader buys a 1 month EUR/USD 25D call (strike 1.0950, spot 1.0800) for 22 pips. Delta is 0.25, so the trader sells EUR 2.5 million against a EUR 10 million notional to be delta neutral. Spot rallies to 1.0900; the option gains approximately 25 pips from delta and additional gains from [[Gamma]]. The delta hedge lost 25 pips on the EUR 2.5 million short, but the gamma gain on the option exceeds the hedge loss. Net P&L is positive 8 pips per million notional.
 
-**Failure:** A trader is short a 25D USD/JPY put (strike 148.00, spot 151.00) with delta of negative 0.25 and has bought USD to hedge. The BOJ intervenes and spot gaps from 151.00 to 145.00 in minutes. Delta jumps from 0.25 to 0.85 instantaneously, but the trader can only rehedge at 145.00. The gap created a realized loss of approximately 250 pips per million notional that delta hedging could not capture because [[Gamma]] risk materialized as a discontinuous move.
+**Concrete:** Trader buys a 1 month EURUSD 25D call. Strike 1.0950, spot 1.0800, premium 22 pips. Delta 0.25 on EUR 10M notional. Delta hedge: sell EUR 2.5M spot. Spot rallies to 1.0900. Option gains ~25 pips from delta plus ~3 pips from gamma. Spot hedge loses 25 pips on EUR 2.5M. Net: +8 pips per million notional.
+
+**Simplified:** You buy a call. Spot goes up $1. The option is worth roughly delta × $1 more. If delta is 0.25, the option gains $0.25. To not care about the spot move at all, sell 0.25 units of the underlying for each option you own. Now spot can move and your P&L stays flat at the instant of the move. That is delta hedging.
 
 ## Key mechanics and formulas
-- **Call delta** = e^(negative foreign rate × time) × N(d1), where d1 = [ln(spot / strike) + (rate differential + 0.5 × vol²) × time] / (vol × sqrt(time))
-- **Put delta** = call delta minus e^(negative foreign rate × time), always negative
-- **Delta hedge ratio** = delta × notional; sell this amount of underlying to be delta neutral
-- **Delta as probability proxy** = N(d2) is the risk neutral probability of finishing in the money, which is close to but not identical to delta
-- **Spot delta vs. forward delta**: spot delta includes the discounting factor; forward delta strips it out. FX conventions vary by currency pair
-- **Premium adjusted delta**: in pairs where premium is paid in foreign currency (e.g., EUR/USD premium in EUR), delta is adjusted: premium adjusted delta = delta minus (option value / spot)
+
+- **Call delta** = e^(-qT) × N(d1), where d1 = [ln(S/K) + (r - q + σ²/2) × T] / (σ × sqrt(T))
+- **Put delta** = call delta − e^(-qT), always negative
+- **Hedge ratio:** sell `delta × notional` of underlying to be delta flat
+- **Delta vs ITM probability:** delta uses N(d1). The true risk neutral ITM probability is N(d2). They diverge for longer dated and higher vol options.
+- **Spot vs forward delta:** spot delta discounts, forward delta does not. FX convention varies by pair.
+- **Premium adjusted delta:** when premium is paid in the foreign ccy (EUR for EURUSD), delta is adjusted by subtracting option value / spot.
 
 ## Prerequisites
 - [[Vanilla Option]]
@@ -35,19 +39,23 @@ Delta is the primary risk metric for any options book. FX dealers continuously d
 - [[Normal Distribution]]
 
 ## Related concepts (learn next)
-- [[Gamma]]: the rate at which delta changes, critical for understanding rehedging costs
-- [[Risk Reversal]]: defined as the difference between 25D call vol and 25D put vol
-- [[Vol Surface]]: organized by delta (10D, 25D, ATM) on one axis and tenor on the other
-- [[Vega]]: like delta but for volatility; options desks manage both simultaneously
-- [[Vanna]]: the sensitivity of delta to changes in vol, a second order cross greek
-- [[Expiry Pinning]]: large delta hedging flows near expiry can pin spot to a strike
-- [[ATM]]: the delta neutral straddle strike, where call delta equals approximately 50
+- [[Gamma]]: rate of change of delta. Drives rehedging cost.
+- [[Risk Reversal]]: difference between 25D call vol and 25D put vol.
+- [[Vol Surface]]: organized by delta on one axis, tenor on the other.
+- [[Vega]]: vol sensitivity, managed alongside delta.
+- [[Vanna]]: dDelta/dVol, the second order spot/vol cross.
+- [[Expiry Pinning]]: aggregate delta hedging flow near expiry can pin spot to a strike.
+- [[ATM]]: the delta neutral straddle strike, where call delta is around 0.5.
 
 ## Common misconceptions
-1. **"Delta equals the probability of expiring in the money."** Delta approximates this probability but is not identical. The actual risk neutral probability is N(d2), not N(d1). The difference grows for longer dated or higher vol options.
-2. **"Delta hedging eliminates all risk."** Delta hedging removes only first order directional risk. [[Gamma]], [[Vega]], [[Theta]], and higher order risks remain. In gapping markets, delta hedging fails entirely.
-3. **"A 50 delta option is ATM."** In FX, the ATM convention (delta neutral straddle) produces a delta that can deviate from exactly 50 depending on the premium currency convention and interest rate differential.
-4. **"Delta is constant."** Delta changes continuously with spot ([[Gamma]]), with vol ([[Vanna]]), and with time. Managing these second order sensitivities is the core skill of options market making.
+
+**"Delta is the probability of expiring ITM."** Close, not exact. The true risk neutral probability is N(d2), not delta's N(d1). The gap widens with vol and tenor.
+
+**"Delta hedging eliminates risk."** It removes first order directional risk only. Gamma, vega, theta, and gap risk all remain. In gapping markets, delta hedging fails completely.
+
+**"50 delta is ATM."** In FX with premium adjusted conventions, the ATM strike (delta neutral straddle) can produce a delta that deviates from 0.50 depending on premium currency and rate differential.
+
+**"Delta is constant."** It moves with spot (gamma), vol (vanna), and time (charm). Managing that drift is the actual job of an options market maker.
 
 ## Sources
 - Taleb, Nassim Nicholas. *Dynamic Hedging: Managing Vanilla and Exotic Options*.

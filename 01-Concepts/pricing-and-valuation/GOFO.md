@@ -9,24 +9,26 @@ date-added: "2026-03-20"
 
 ## Definition
 
-GOFO (Gold Forward Offered Rate) is the rate at which bullion dealers are willing to lend gold on a swap basis against US dollars. Technically, it is the interest rate differential in a gold/dollar swap: the dealer lends gold and receives dollars, earning GOFO on the dollar side. GOFO is derived from: GOFO = Dollar Interest Rate minus Gold [[Lease Rate]]. When GOFO is positive (normal), it means you can earn more lending dollars than lending gold, reflecting gold's role as a low yielding asset. When GOFO turns negative (rare and significant), it means gold is more valuable to lend than dollars, signaling extreme physical gold scarcity. The LBMA published GOFO daily until 2015, when it was discontinued as a formal benchmark.
+GOFO (Gold Forward Offered Rate) is the rate at which bullion dealers lend gold on a swap basis against US dollars. It is the interest rate differential in a gold/dollar swap: the dealer lends gold and receives dollars, earning GOFO on the dollar side. GOFO = Dollar Interest Rate − Gold [[Lease Rate]]. Positive GOFO (normal) means lending dollars pays more than lending gold, reflecting gold's role as a low yielding asset. Negative GOFO (rare and significant) means gold is more valuable to lend than dollars, signaling extreme physical gold scarcity. LBMA published GOFO daily until 2015, when it was discontinued as a formal benchmark.
 
 ## Why it matters (commodities and FX)
 
-Negative GOFO is one of the rarest and most significant signals in gold markets. It has occurred only a handful of times (1999, 2001, 2008, 2013) and each instance coincided with or preceded major gold market events. Negative GOFO effectively means gold is in [[Backwardation]] against dollars: physical gold today is worth more than gold for future delivery, a condition that should not persist in theory because gold is an above ground, storable asset with no consumption. When GOFO goes negative, it signals either extreme physical demand, a breakdown in the gold lending market, or serious stress in the financial system. For traders, monitoring the implied GOFO (since the formal benchmark is discontinued) provides an important physical market signal.
+Negative GOFO is one of the rarest and most significant signals in gold. It has occurred only a handful of times (1999, 2001, 2008, 2013), each instance coinciding with or preceding a major gold market event. Negative GOFO means gold is in [[Backwardation]] vs dollars: physical gold today is worth more than gold for future delivery, a condition that should not persist for an above ground, storable, non consumed asset. Negative GOFO signals extreme physical demand, breakdown in the gold lending market, or financial system stress. Monitoring implied GOFO (since the formal benchmark is gone) provides a key physical market signal.
 
 ## Concrete example
 
-In July 2013, after gold crashed from $1,600 to $1,200, physical demand in Asia surged as bargain buyers accumulated metal. GOFO turned negative for the first time in years. One month GOFO fell to minus 0.1%. A trader interpreted this as a sign that the sell off had created genuine physical scarcity (central banks and ETFs had sold, but the metal was being absorbed by Asian buyers rather than returning to the lending pool). She went long gold. Over the next 2 months, gold stabilized and rallied to $1,400. If the physical tightness had been temporary, gold could have continued lower.
+**Concrete:** July 2013. After gold crashed from $1,600 to $1,200, physical demand in Asia surged as bargain buyers accumulated metal. GOFO turned negative for the first time in years. 1 month GOFO fell to −0.1%. A trader read this as evidence the selloff had created genuine scarcity (central banks and ETFs had sold, but the metal was being absorbed by Asian buyers rather than returning to the lending pool). She went long gold. Over 2 months gold stabilized and rallied to $1,400. If the tightness had been temporary, gold could have continued lower.
+
+**Simplified:** GOFO is the rate dealers charge to swap gold for dollars. Normally it is positive: dollars earn more than gold, so the swap pays GOFO. When GOFO goes negative, the math flips: physical gold is so scarce that lending it pays more than lending dollars. That only happens when somebody really needs the metal and there is not enough to go around. It is rare, and every time it shows up, gold has been at a turning point.
 
 ## Key mechanics and formulas
 
-**GOFO relationship:** `GOFO = Dollar Rate (SOFR/LIBOR) - Gold Lease Rate`
+**GOFO:** `GOFO = Dollar Rate (SOFR/LIBOR) − Gold Lease Rate`
 
 **Interpretation:**
-- Positive GOFO (normal): dollars are more valuable to lend than gold
-- Zero GOFO: gold and dollar lending rates are equal
-- Negative GOFO (extreme, rare): gold is more valuable to lend than dollars, gold is in backwardation
+- Positive GOFO (normal): dollars more valuable to lend than gold
+- Zero GOFO: gold and dollar lending rates equal
+- Negative GOFO (extreme, rare): gold more valuable to lend than dollars, gold in backwardation
 
 **Historical negative GOFO events:**
 - 1999: Washington Agreement surprise (central bank selling restrictions)
@@ -42,20 +44,20 @@ In July 2013, after gold crashed from $1,600 to $1,200, physical demand in Asia 
 
 ## Related concepts (learn next)
 
-- [[Lease Rate]] because GOFO and the lease rate are mathematically linked.
-- [[Backwardation]] because negative GOFO is gold backwardation against dollars.
-- [[Gold Futures]] because GOFO dynamics affect the gold forward curve.
-- [[Central Bank Buying]] because central bank lending/buying activity affects the gold swap market.
-- [[Convenience Yield]] because negative GOFO implies a positive convenience yield for physical gold.
-- [[LBMA]] because the gold swap market operates through the LBMA system.
+- [[Lease Rate]]: GOFO and the lease rate are mathematically linked.
+- [[Backwardation]]: negative GOFO is gold backwardation vs dollars.
+- [[Gold Futures]]: GOFO dynamics affect the gold forward curve.
+- [[Central Bank Buying]]: central bank lending/buying activity drives the gold swap market.
+- [[Convenience Yield]]: negative GOFO implies a positive convenience yield for physical gold.
+- [[LBMA]]: the gold swap market operates through the LBMA system.
 
 ## Common misconceptions
 
-**"GOFO is still published."** The LBMA discontinued the formal GOFO benchmark in January 2015. Traders now estimate implied GOFO from forward rates and SOFR.
+**"GOFO is still published."** LBMA discontinued the formal benchmark in January 2015. Traders estimate implied GOFO from forward rates and SOFR.
 
-**"Negative GOFO means gold will crash."** The opposite: negative GOFO signals extreme physical demand. Each historical instance coincided with or preceded a price stabilization or rally.
+**"Negative GOFO means gold will crash."** Opposite. Negative GOFO signals extreme physical demand. Each historical instance coincided with or preceded a price stabilization or rally.
 
-**"GOFO is the same as the gold lease rate."** They are related but distinct. GOFO is the gold/dollar swap rate; the lease rate is the cost of borrowing gold. GOFO = Dollar Rate minus Lease Rate.
+**"GOFO is the same as the gold lease rate."** Related but distinct. GOFO is the gold/dollar swap rate; the lease rate is the cost of borrowing gold. GOFO = Dollar Rate − Lease Rate.
 
 ## Sources
 

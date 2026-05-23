@@ -10,25 +10,27 @@ date-added: "2026-03-20"
 
 ## Definition
 
-EFS (Exchange of Futures for Swaps) is the spread between [[Brent Crude]] futures and [[Dubai Crude]] swaps. It is the mechanism that connects the two dominant global oil pricing benchmarks: Brent (the Atlantic Basin light sweet benchmark) and Dubai (the Asian medium sour benchmark). The EFS is quoted as Brent minus Dubai in dollars per barrel. A wider EFS means Brent is expensive relative to Dubai (Atlantic tighter than Asia), while a narrower EFS means Dubai is catching up (Asian demand strengthening or Atlantic supply loosening). The EFS is actively traded OTC and is one of the most important relative value indicators in global crude oil markets.
+EFS (Exchange of Futures for Swaps) is the spread between [[Brent Crude]] futures and [[Dubai Crude]] swaps. It connects the two dominant global oil benchmarks: Brent (Atlantic Basin light sweet) and Dubai (Asian medium sour). Quoted as Brent minus Dubai in $/bbl. Wider EFS = Brent expensive vs Dubai (Atlantic tighter than Asia). Narrower EFS = Dubai catching up (Asian demand strengthening or Atlantic supply loosening). Actively traded OTC and one of the most important relative value indicators in global crude.
 
 ## Why it matters (commodities and FX)
 
-The EFS determines the economics of East/West crude oil trade flows. When the EFS is wide, it is more expensive for Asian refiners to buy Atlantic Basin crude, incentivizing them to source Middle East and Asian grades instead. When the EFS narrows, Atlantic Basin crude becomes competitive for Asian import, and arbitrage cargoes flow East. For trading houses like Vitol, Trafigura, and Gunvor, the EFS is a core trade: they buy crude in one basin and sell in another when the spread exceeds freight costs. Saudi Aramco's Official Selling Prices (OSPs) for Asian customers are set relative to Dubai/Oman, so the EFS indirectly affects how much Aramco charges for its crude.
+The EFS sets the economics of East/West crude flows. Wide EFS = Atlantic crude too expensive for Asian refiners, who source Middle East and Asian grades instead. Narrow EFS = Atlantic crude becomes competitive for Asian import and arbitrage cargoes flow East. For trading houses (Vitol, Trafigura, Gunvor), the EFS is a core trade: buy in one basin, sell in another when the spread exceeds freight. Saudi Aramco's OSPs for Asian customers are set relative to Dubai/Oman, so EFS indirectly affects Aramco pricing.
 
 ## Concrete example
 
-The EFS is at $3.50/bbl. A trader calculates that freight from the North Sea to South Korea costs $2.80/bbl on an Aframax. At $3.50, Brent is too expensive relative to Dubai for Asian refiners to import North Sea crude economically. The trader expects Chinese refinery expansion to tighten Asian sour crude supply, narrowing the EFS. She sells the EFS (short Brent, long Dubai). If the EFS narrows to $1.50, she profits $2.00/bbl. If instead North Sea supply disruptions tighten the Atlantic Basin, the EFS could widen to $5.00, losing $1.50/bbl.
+**Concrete:** EFS at $3.50/bbl. Trader calculates freight from North Sea to South Korea at $2.80/bbl on an Aframax. At $3.50, Brent is too expensive vs Dubai for Asian refiners to import North Sea crude economically. Trader expects Chinese refinery expansion to tighten Asian sour crude supply and narrow the EFS. She sells the EFS (short Brent, long Dubai). If the EFS narrows to $1.50, she earns $2.00/bbl. If North Sea supply disruptions tighten the Atlantic Basin instead, EFS widens to $5.00 and she loses $1.50/bbl.
+
+**Simplified:** Brent prices Atlantic crude. Dubai prices Asian crude. The gap between them tells you whether oil should flow West to East or stay put. If the gap is bigger than freight, traders book a ship and arbitrage the difference. If the gap is smaller, no one ships. Watching the EFS tells you which basin is tight, where the arbitrage windows are, and how the global market is rebalancing.
 
 ## Key mechanics and formulas
 
-**EFS calculation:** `EFS = Brent Futures Price - Dubai Swap Price`
+**EFS:** `EFS = Brent Futures Price − Dubai Swap Price`
 
-**Arbitrage economics:** Crude flows East when: `EFS < Freight Cost (Atlantic to Asia)`
+**Arbitrage condition:** Crude flows East when `EFS < Freight (Atlantic to Asia)`
 
-**Typical EFS range:** $1 to $6/bbl, averaging around $2 to $3. Below $1 or above $6 is unusual.
+**Typical range:** $1 to $6/bbl, averaging $2 to $3. Below $1 or above $6 is unusual.
 
-**Related spread:** The EFS is closely related to the Brent/Dubai [[Quality Spread]] since Brent is light sweet and Dubai is medium sour.
+**Related spread:** EFS is closely related to the Brent/Dubai [[Quality Spread]] since Brent is light sweet and Dubai is medium sour.
 
 ## Prerequisites
 
@@ -39,19 +41,19 @@ The EFS is at $3.50/bbl. A trader calculates that freight from the North Sea to 
 
 ## Related concepts (learn next)
 
-- [[Dubai Crude]] because it is one leg of the EFS and the Asian crude benchmark.
-- [[Brent Crude]] because it is the other leg and the Atlantic/global benchmark.
-- [[Freight]] because shipping costs determine when the East/West arb opens.
-- [[Quality Spread]] because the EFS embeds both quality and location differentials.
-- [[Location Arbitrage]] because the EFS is the primary cross basin arbitrage signal in crude.
-- [[Dated Brent]] because physical Brent pricing feeds into the EFS through the paper/physical link.
-- [[OPEC]] because Middle East production decisions directly affect Dubai supply and thus the EFS.
+- [[Dubai Crude]]: one leg of the EFS and the Asian crude benchmark.
+- [[Brent Crude]]: the other leg and the Atlantic/global benchmark.
+- [[Freight]]: shipping costs determine when the East/West arb opens.
+- [[Quality Spread]]: the EFS embeds both quality and location differentials.
+- [[Location Arbitrage]]: the EFS is the primary cross basin arbitrage signal in crude.
+- [[Dated Brent]]: physical Brent pricing feeds into the EFS through the paper/physical link.
+- [[OPEC]]: Middle East production decisions affect Dubai supply and the EFS.
 
 ## Common misconceptions
 
-**"The EFS is purely a quality spread."** It also reflects location, logistics, and regional demand differences. Two identical quality crudes in different basins would still have a spread based on freight and demand.
+**"The EFS is purely a quality spread."** It also reflects location, logistics, and regional demand. Two identical quality crudes in different basins would still have a spread driven by freight and demand.
 
-**"A narrow EFS is always bullish for Asian crude demand."** It could also reflect weak Atlantic Basin crude markets or abundant Middle East supply.
+**"A narrow EFS is always bullish for Asian crude demand."** It can also reflect weak Atlantic Basin crude markets or abundant Middle East supply.
 
 **"The EFS is only relevant for physical traders."** Financial traders use the EFS as a macro signal for Asian vs Atlantic demand dynamics and as a component of cross basin relative value models.
 

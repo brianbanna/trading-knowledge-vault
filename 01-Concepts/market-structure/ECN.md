@@ -9,21 +9,24 @@ date-added: "2026-03-20"
 # ECN
 
 ## Definition
-An Electronic Communication Network (ECN) is an anonymous, automated trading venue that matches buy and sell orders from multiple participants without a central dealer intermediary. In FX, the 2 dominant interbank ECNs are [[EBS]] (now part of CME Group) and [[Reuters Matching]] (now Refinitiv Matching), which together handle the majority of interbank spot trading in major currency pairs. ECNs operate a central limit order book (CLOB) where participants post bids and offers, and the system matches orders by price-time priority. Unlike [[Single Dealer Platform]]s, ECN participants do not know who they are trading with until after execution. ECNs are the primary venue for [[price discovery]] in spot FX, meaning the "true" market price is largely determined on these platforms. Access was historically limited to banks and large institutions, but ECN-style platforms now serve hedge funds and proprietary trading firms.
+An Electronic Communication Network (ECN) is an anonymous, automated trading venue that matches buy and sell orders from multiple participants without a central dealer intermediary. The 2 dominant interbank FX ECNs are [[EBS]] (now CME Group) and [[Reuters Matching]] (now Refinitiv Matching), which together handle most interbank spot in major pairs. ECNs run a central limit order book (CLOB), matching by price time priority. Unlike [[Single Dealer Platform]]s, participants do not know who they trade with until after execution. ECNs drive [[price discovery]] in spot FX: the "true" market price is largely set on these platforms. Access was historically limited to banks and large institutions; ECN style platforms now serve hedge funds and prop firms.
 
 ## Why it matters (commodities and FX)
-ECNs are where interbank FX prices are set, and those prices propagate to every other venue, platform, and end client. The [[bid-ask spread]] on EBS for [[EURUSD]] or [[USDJPY]] represents the tightest institutional pricing available. For commodity traders who hedge FX exposure, ECN prices serve as the reference for evaluating execution quality on any platform. In commodities, analogous electronic venues (like CME Globex for futures) perform the same price discovery function. Understanding ECN dynamics is essential for building [[transaction cost analysis]] models, designing execution algorithms, and interpreting [[tick data]]. The shift from voice-brokered to ECN-based trading (which accelerated from 2000 to 2015) fundamentally changed FX market structure by enabling algorithmic market making and high-frequency trading.
+ECNs set interbank FX prices, which propagate to every other venue, platform, and end client. The [[bid-ask spread]] on EBS for [[EURUSD]] or [[USDJPY]] represents the tightest institutional pricing available. Commodity traders hedging FX use ECN prices as the reference for execution quality on any platform. In commodities, analogous venues (CME Globex for futures) play the same role. ECN dynamics matter for building [[transaction cost analysis]], designing execution algos, and interpreting [[tick data]]. The shift from voice to ECN trading (2000 to 2015) fundamentally changed FX market structure by enabling algorithmic market making and HFT.
 
 ## Concrete example
-A proprietary trading firm wants to buy 20 million EURUSD. On EBS, the current order book shows: best bid 1.08520 (10 million), next bid 1.08515 (15 million); best offer 1.08525 (8 million), next offer 1.08530 (12 million). The firm places a limit buy at 1.08525, lifting the best offer. It gets filled for 8 million at 1.08525, then the remaining 12 million either waits for new offers or, if sent as a market order, sweeps to 1.08530. The total execution cost is roughly 0.5 pips worse than mid, compared to 0.8 to 1.2 pips on a typical [[Single Dealer Platform]] with [[last look]]. However, the trade is immediately visible to all ECN participants, signaling demand. A dealer on a [[Single Dealer Platform]] could have internalized the same trade invisibly. The tradeoff: better price on ECN but more [[information leakage]].
+
+**Concrete:** A prop firm buys EUR 20 million EUR/USD. On EBS the book: best bid 1.08520 (10 million), next 1.08515 (15 million); best offer 1.08525 (8 million), next 1.08530 (12 million). The firm posts a limit buy at 1.08525, lifting the best offer. Fills 8 million at 1.08525; remaining 12 million either waits for new offers or, if market, sweeps to 1.08530. Execution cost roughly 0.5 pips worse than mid, vs 0.8 to 1.2 pips on a typical [[Single Dealer Platform]] with [[last look]]. The trade is visible to all ECN participants, signaling demand. A dealer on a [[Single Dealer Platform]] could have internalized invisibly. Tradeoff: better price on ECN, more [[information leakage]].
+
+**Simplified:** An ECN is an electronic order book where banks and large traders post bids and offers anonymously. The platform matches buyers and sellers automatically by price and time. EBS and Reuters Matching are the two big FX ECNs. Their prices set the global benchmark because they aggregate liquidity from the largest banks. Tight spreads, but anyone watching the book can see your order and react to it.
 
 ## Key mechanics and formulas
-- **Price-time priority**: orders at the same price are filled in the order they were submitted
-- **Minimum trade size**: EBS minimum is typically 1 million in base currency for major pairs
-- **Effective spread**: Effective spread = 2 x |execution price - mid price at time of execution|
-- **ECN fee structure**: typically a per-million fee (e.g., $20 to $30 per million traded)
+- **Price time priority**: same price orders fill in submission order
+- **Minimum trade size**: EBS minimum is typically 1 million base for major pairs
+- **Effective spread**: 2 × |execution price − mid at execution|
+- **ECN fee structure**: per million traded ($20 to $30/million)
 - **Primary pair coverage**: EBS dominates USDJPY, EURUSD, EURCHF; Reuters Matching dominates Commonwealth pairs (GBPUSD, AUDUSD, NZDUSD, USDCAD)
-- **Latency**: co-located participants achieve sub-millisecond order entry; non-co-located participants face 1 to 10 milliseconds
+- **Latency**: co located participants achieve sub millisecond order entry; non co located 1 to 10 ms
 
 ## Prerequisites
 - [[Bid-Ask Spread]]
@@ -32,19 +35,22 @@ A proprietary trading firm wants to buy 20 million EURUSD. On EBS, the current o
 - [[Price Discovery]]
 
 ## Related concepts (learn next)
-- [[Single Dealer Platform]]: the alternative venue model where banks stream proprietary prices to clients.
-- [[Top of Book]]: on an ECN, the top of book is the best anonymous bid and offer available.
-- [[Depth of Book]]: the full ECN order book reveals available liquidity at every price level.
-- [[Last Look]]: ECNs generally do not allow last look; execution is firm, unlike many SDPs.
-- [[Tick Data]]: ECN trade and quote data is the primary source for microstructure research.
-- [[Sweep]]: aggressive orders that take liquidity across multiple ECN price levels.
-- [[Internalization]]: banks may choose to internalize flow rather than routing it to an ECN.
-- [[FX Fix]]: ECN volume spikes dramatically during the WMR fix window.
+- [[Single Dealer Platform]]: alternative where banks stream proprietary prices.
+- [[Top of Book]]: best anonymous bid and offer on an ECN.
+- [[Depth of Book]]: full ECN book reveals liquidity at every level.
+- [[Last Look]]: ECNs generally do not allow it; execution is firm.
+- [[Tick Data]]: ECN trade and quote data drives microstructure research.
+- [[Sweep]]: aggressive orders taking liquidity across multiple ECN levels.
+- [[Internalization]]: banks may internalize rather than route to an ECN.
+- [[FX Fix]]: ECN volume spikes around the WMR fix window.
 
 ## Common misconceptions
-1. **"ECNs always offer the best price"**: While ECN spreads are tight, the total cost includes platform fees, and large orders may face more [[market impact]] on ECNs because execution is visible to all participants. A [[Single Dealer Platform]] may offer better total cost for large, information-insensitive orders.
-2. **"All ECNs are the same"**: EBS and Reuters Matching have very different liquidity pools and pair coverage. Using the wrong ECN for a given pair (e.g., trading AUDUSD on EBS instead of Reuters Matching) will result in worse execution.
-3. **"ECN trading is fully anonymous post-trade"**: While pre-trade anonymity is standard, prime broker credit relationships mean that the counterparty's prime broker identity is often known after settlement, allowing sophisticated participants to infer flow patterns.
+
+**"ECNs always offer the best price."** Spreads are tight but total cost includes platform fees, and large orders face more [[market impact]] because execution is visible. A [[Single Dealer Platform]] may offer better total cost for large, information insensitive orders.
+
+**"All ECNs are the same."** EBS and Reuters Matching have different liquidity pools and pair coverage. Wrong venue (AUDUSD on EBS) means worse execution.
+
+**"ECN trading is fully anonymous post trade."** Pre trade anonymity is standard, but prime broker credit relationships mean the counterparty's PB identity is often known after settlement, letting sophisticated participants infer flow patterns.
 
 ## Sources
 - King, Osler, Rime, "Foreign Exchange Market Structure, Players, and Evolution," Norges Bank Working Paper (2012)

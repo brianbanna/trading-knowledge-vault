@@ -9,15 +9,17 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The scrap ratio is the price of recycled (secondary) metal relative to primary (newly mined and refined) metal. It is expressed as a percentage or as a spread. For copper, scrap (No. 2 copper scrap in the US) typically trades at 85 to 95% of the LME cathode price. When primary metal prices rise, scrap becomes more attractive to fabricators as a cheaper alternative, increasing scrap collection and utilization. This creates a soft supply ceiling for base metals: as prices approach levels where scrap substitution surges, additional supply enters the market from recycling, dampening further price increases.
+The scrap ratio is the price of recycled (secondary) metal relative to primary (newly mined and refined) metal. Expressed as a percentage or spread. For copper, No. 2 scrap in the US trades at 85 to 95% of LME cathode. When primary prices rise, scrap becomes more attractive to fabricators, increasing collection and utilization. This creates a soft supply ceiling for base metals: as prices approach the level where scrap substitution surges, additional supply enters from recycling and dampens further increases.
 
 ## Why it matters (commodities and FX)
 
-The scrap ratio is a natural stabilizer for base metals prices. When primary copper rises to $10,000/tonne and scrap trades at $8,500 (85% ratio), fabricators who can use scrap instead of cathode switch to scrap, reducing primary demand. Conversely, when prices are low, scrap collection economics deteriorate (collection costs are relatively fixed), and less recycled material enters the market. For traders, the scrap ratio defines resistance zones: prices that trigger significant scrap substitution create effective ceilings. [[Lead Futures|Lead]] has the highest scrap supply share (~60% of total) while copper is approximately 30%.
+The scrap ratio is a natural stabilizer for base metals. When primary copper rises to $10,000/tonne and scrap trades at $8,500 (85% ratio), fabricators who can switch to scrap do so, reducing primary demand. At low prices, scrap collection economics deteriorate (collection costs are fixed), less recycled material enters the market. Traders use the scrap ratio to define resistance zones: prices that trigger significant substitution create effective ceilings. [[Lead Futures|Lead]] has the highest scrap share (~60%); copper is around 30%.
 
 ## Concrete example
 
-LME copper is at $10,200/tonne. No. 2 copper scrap is at $8,670 (85% ratio). Chinese wire rod producers, who can use either cathode or scrap, begin substituting aggressively toward scrap at this price level. Scrap collection surges as the high price incentivizes informal collectors. The increased scrap supply substitutes for 200,000 tonnes of annual cathode demand, and copper stalls at $10,200. A trader who recognized the scrap substitution ceiling goes short at $10,200. If fabricators switch faster than expected, copper drops to $9,500, earning $700/tonne. If a mine disruption tightens primary supply further, the scrap ceiling may temporarily break and copper reaches $10,800.
+**Concrete:** LME copper at $10,200/tonne, No. 2 scrap at $8,670 (85% ratio). Chinese wire rod producers substitute aggressively toward scrap. Scrap collection surges as informal collectors respond to the high price. Increased scrap supply displaces 200,000 tonnes of annual cathode demand, copper stalls at $10,200. Trader who recognized the ceiling shorts at $10,200. Fabricators switch faster than expected, copper drops to $9,500, earning $700/tonne. If a mine disruption tightens primary further, the ceiling temporarily breaks and copper reaches $10,800.
+
+**Simplified:** Recycled metal competes with newly mined metal. When mined copper is expensive, factories switch to cheaper scrap. People dig more scrap out of garages, scrapyards, and old wires because it pays. That extra supply caps how high primary prices can go. When mined copper is cheap, nobody bothers collecting scrap and the cap relaxes. The ratio of scrap to LME prices tells you how much pressure is building.
 
 ## Key mechanics and formulas
 
@@ -43,19 +45,19 @@ LME copper is at $10,200/tonne. No. 2 copper scrap is at $8,670 (85% ratio). Chi
 ## Related concepts (learn next)
 
 - [[Copper Futures]] because the copper scrap ratio is the most closely watched.
-- [[Aluminum Futures]] because aluminum scrap (recycling uses only 5% of primary energy) is a major competitive dynamic.
+- [[Aluminum Futures]] because aluminum scrap (5% of primary energy) is a major competitive dynamic.
 - [[Lead Futures]] because lead has the highest scrap/primary ratio of any base metal.
 - [[Physical Premium]] because scrap competition affects regional cathode premiums.
-- [[Green Metals]] because recycling is increasingly important for energy transition metal supply.
-- [[TC RC]] because smelters sometimes use scrap as feed when concentrate is tight.
+- [[Green Metals]] because recycling is critical for energy transition metal supply.
+- [[TC RC]] because smelters use scrap as feed when concentrate is tight.
 
 ## Common misconceptions
 
-**"Scrap provides unlimited supply at high prices."** Scrap availability is constrained by the installed base of metal in use, collection infrastructure, and processing capacity. It caps upside but does not eliminate it.
+**"Scrap provides unlimited supply at high prices."** Scrap availability is constrained by the installed base, collection infrastructure, and processing capacity. Caps upside but does not eliminate it.
 
-**"Scrap quality equals primary quality."** Scrap requires sorting, processing, and often has contaminants. Not all fabricators can substitute scrap for primary metal, especially for high specification applications.
+**"Scrap quality equals primary quality."** Scrap requires sorting and processing and has contaminants. High specification applications cannot substitute scrap for primary.
 
-**"The scrap ratio is constant."** It varies with collection costs, energy prices (which affect remelting costs), regional regulations, and the specific scrap grade.
+**"The scrap ratio is constant."** It varies with collection costs, energy prices (remelting cost), regional regulation, and scrap grade.
 
 ## Sources
 

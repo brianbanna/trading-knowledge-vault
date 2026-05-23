@@ -10,36 +10,34 @@ date-added: "2026-03-27"
 
 ## Definition
 
-A cancel is the withdrawal of an open order before it gets [[Fill|filled]]. When a trader sends a cancel request, the venue attempts to remove the order from the [[Central Limit Order Book|order book]]. Cancellation is not instantaneous. There is always [[Latency]] between sending the cancel and the venue confirming it. During that window, the order can still be filled. A successful cancel returns an acknowledgement; a failed cancel (because the order was already filled) is called a "cancel reject" or "too late to cancel."
+A cancel withdraws an open order before it gets [[Fill|filled]]. The cancel request travels to the venue, which attempts to remove the order from the [[Central Limit Order Book|order book]]. Cancellation is not instantaneous: there is always [[Latency]] between sending and confirmation. During that window the order can still fill. A successful cancel returns an acknowledgement; a failed cancel (order already filled) is a "cancel reject" or "too late to cancel."
 
 ## Why it matters (commodities and FX)
 
-Market makers cancel and replace orders thousands of times per second to keep quotes fresh. If cancels are slow, the risk of being filled on [[Stale Quote|stale quotes]] rises dramatically. In volatile markets (e.g., around [[EIA Weekly Petroleum Status Report|EIA]] data), the ability to cancel fast is the primary defense against [[Adverse Selection]]. For execution desks, cancelling a [[Limit Order]] that is no longer at the right price and replacing it is a core operation. Cancel latency is as important as order entry latency.
+Market makers cancel and replace orders thousands of times per second to keep quotes fresh. Slow cancels mean fills on [[Stale Quote|stale quotes]]. In volatile markets (around [[EIA Weekly Petroleum Status Report|EIA]] data), cancel speed is the primary defense against [[Adverse Selection]]. For execution desks, cancelling a [[Limit Order]] no longer at the right price and replacing it is a core operation. Cancel latency is as important as order entry latency.
 
 ## Concrete example
 
-A market maker is quoting [[WTI]] crude at $82.50 / $82.55. Breaking news: a drone strike on a Saudi oil facility. The maker immediately sends cancels for both the bid and ask.
+**Concrete:** Market maker quoting [[WTI]] at $82.50 / $82.55. News breaks: drone strike on a Saudi facility. Maker sends cancels for both sides. With 15 microsecond round trip, both orders are removed before anyone trades against them. Maker requotes $83.50 / $83.60. No losses. Failure path: cancel for the $82.55 ask takes 200 microseconds due to network [[Jitter]]. During that window, a fast algo lifts 20 lots at $82.55. Market has moved to $83.50. Maker is now [[Short]] 20 lots at $82.55 in a $83.50 market: instant loss of $0.95 × 20 × 1,000 = $19,000.
 
-**Success case:** Cancel messages reach the exchange in 15 microseconds. Both orders are removed before anyone trades against them. The maker re quotes at $83.50 / $83.60 reflecting the new reality. No losses.
-
-**Failure case:** The cancel for the ask at $82.55 takes 200 microseconds due to network [[Jitter]]. During that window, a fast algo buys 20 lots at $82.55. The market has already moved to $83.50. The maker is now [[Short]] 20 lots at $82.55 with the market at $83.50, an instant loss of $0.95 * 20 * 1,000 = $19,000.
+**Simplified:** When you cancel an order, the message has to travel to the exchange and the exchange has to act on it. In that brief window, your order is still live and someone can hit it. If news breaks and prices move, slow cancels mean you trade at the old price right when the market has shifted against you. Speed of cancel is what protects market makers from getting picked off when conditions change.
 
 ## Key mechanics and formulas
 
 **Cancel lifecycle:**
 
-1. Trader sends cancel request (includes original order ID)
+1. Trader sends cancel request (with original order ID)
 2. Message travels to venue ([[Latency]])
 3. Venue processes cancel (checks if order still live)
-4. Venue sends acknowledgement (cancel confirmed) or reject (already filled)
+4. Venue sends acknowledgement (confirmed) or reject (already filled)
 
 **Cancel rate** = cancels / (cancels + fills)
 
-Market makers typically have cancel rates above 95%, meaning most orders are cancelled and replaced before being filled. This is normal and necessary for fresh quoting.
+Market makers run cancel rates above 95%: most orders are cancelled and replaced before filling. Normal and necessary for fresh quoting.
 
 **Cancel vulnerability window** = round trip [[Latency]] to venue
 
-During this window, the order is "live but unwanted," exposed to [[Adverse Selection]].
+During this window the order is "live but unwanted," exposed to [[Adverse Selection]].
 
 ## Prerequisites
 
@@ -51,18 +49,18 @@ During this window, the order is "live but unwanted," exposed to [[Adverse Selec
 
 - [[Stale Quote]] for what happens when cancels are too slow
 - [[Sniping]] for adversaries exploiting slow cancels
-- [[IOC]] for an order type that avoids the need to cancel (auto expires)
-- [[Kill Switch]] for emergency mass cancellation of all orders
-- [[Latency]] for the critical factor determining cancel speed
-- [[FIX Protocol]] for the standard message format for sending cancels
+- [[IOC]] for an order type that avoids cancels (auto expires)
+- [[Kill Switch]] for emergency mass cancellation
+- [[Latency]] for the critical factor in cancel speed
+- [[FIX Protocol]] for the standard cancel message format
 
 ## Common misconceptions
 
-1. **"Cancel means the order is gone instantly."** There is always a round trip delay. In that window, fills can and do happen. This is a major source of risk for market makers.
+**"Cancel means the order is gone instantly."** There is always a round trip delay. Fills happen in that window. Major risk for market makers.
 
-2. **"High cancel rates mean market manipulation."** Market makers legitimately cancel 95%+ of their orders because they update quotes continuously. This is normal, not spoofing (which involves cancelling orders placed with no intent to trade).
+**"High cancel rates mean manipulation."** Market makers legitimately cancel 95%+ because they update quotes continuously. Normal, not spoofing (which involves orders placed with no intent to trade).
 
-3. **"A cancel request always succeeds."** If the order was already filled or partially filled during the latency window, the cancel will be rejected. Systems must handle cancel rejects gracefully.
+**"A cancel always succeeds."** If the order filled or partially filled during the latency window, the cancel is rejected. Systems must handle rejects.
 
 ## Sources
 

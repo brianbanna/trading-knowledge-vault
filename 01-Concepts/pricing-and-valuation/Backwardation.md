@@ -10,11 +10,11 @@ date-added: "2026-03-20"
 
 ## Definition
 
-A market condition where futures prices for later delivery dates are lower than nearer delivery dates. The forward curve slopes downward. Indicates tight near term supply or high [[Convenience Yield]] where holding the physical commodity is more valuable than holding a futures contract.
+A market condition where futures for later delivery trade below nearer delivery. The forward curve slopes downward. Signals tight near term supply or high [[Convenience Yield]], where holding physical is worth more than holding a futures contract.
 
 ## Why It Matters (Commodities / FX)
 
-Backwardation signals supply tightness. For a commodity trader, this is the market telling you inventories are low and demand for immediate delivery is high. Long positions in backwardated markets earn positive [[Roll Yield]] when rolling, creating a structural tailwind.
+Backwardation signals supply tightness. The market is telling you inventories are low and demand for immediate delivery is strong. Long positions earn positive [[Roll Yield]] on every roll, a structural tailwind.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ Backwardation signals supply tightness. For a commodity trader, this is the mark
 
 ## Common Misconceptions
 
-**"Backwardation means prices will fall."** No. Backwardation means near term prices are higher than deferred. Spot prices can continue rising in backwardation.
+**"Backwardation means prices will fall."** No. Backwardation means near term sits above deferred. Spot can keep rising in backwardation.
 
 ---
 *Status: #stub | Last reviewed: 2026-03-20*

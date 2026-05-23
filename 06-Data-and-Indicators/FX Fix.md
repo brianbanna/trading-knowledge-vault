@@ -9,21 +9,23 @@ date-added: "2026-03-20"
 # FX Fix
 
 ## Definition
-The FX Fix, formally the WM/Reuters (WMR) benchmark rate, is a set of foreign exchange reference rates published at 4PM London time each trading day. It is calculated as the median of trades and quotes observed during a 5 minute window (from 3:57:30 to 4:02:30 PM London time) across major FX platforms. Asset managers, pension funds, and index providers use the fix rate as their official conversion rate for portfolio rebalancing, [[NAV]] calculations, and index tracking. Because trillions of dollars in assets are benchmarked to this single rate, massive directional flows cluster around the fix window. The fix is the single most important recurring microstructure event in global FX markets. Understanding fix dynamics is critical for anyone trading currencies or managing cross-border portfolios.
+The FX Fix, formally the WM/Reuters (WMR) benchmark, is a set of FX reference rates published at 4PM London each trading day. It is the median of trades and quotes observed in a 5 minute window (3:57:30 to 4:02:30 PM London) across major FX platforms. Asset managers, pension funds, and index providers use the fix as their official conversion rate for portfolio rebalancing, [[NAV]] calculations, and index tracking. Because trillions in assets are benchmarked to this single rate, directional flows cluster around the window. The fix is the most important recurring microstructure event in global FX. Understanding fix dynamics is critical for FX traders and cross border portfolio managers.
 
 ## Why it matters (commodities and FX)
-The fix generates predictable, large-scale flows that move major currency pairs and, by extension, dollar-denominated [[commodities]]. When global equity indices rebalance (particularly at month end and quarter end), asset managers must buy or sell currencies to match new index weights. These flows are partially predictable using publicly available data on index changes and fund flows. Commodity producers and consumers who hedge FX exposure often benchmark to the fix, creating additional volume. For systematic FX traders, the fix window represents both an opportunity (predictable flow) and a risk (extreme short-term volatility and [[slippage]]). Banks that execute fix orders earn significant revenue but face regulatory scrutiny after the 2013 to 2015 fix manipulation scandals.
+The fix generates predictable, large scale flows that move major pairs and, by extension, dollar denominated [[commodities]]. At month and quarter ends, equity index rebalancing forces asset managers to buy or sell currencies to match new weights. These flows are partially predictable from public index changes and fund flows. Commodity producers and consumers benchmark FX hedges to the fix, adding volume. For systematic FX traders, the window is both opportunity (predictable flow) and risk (volatility, [[slippage]]). Banks that execute fix orders earn significant revenue but face regulatory scrutiny after the 2013 to 2015 manipulation scandals.
 
 ## Concrete example
-At month end, a large US pension fund must rebalance its international equity portfolio. European stocks outperformed US stocks by 3%, so the fund needs to sell approximately 2 billion USD and buy EUR to restore target weights. The fund instructs its custodian bank to execute at the 4PM London fix. The bank begins pre-positioning around 3:45 PM, buying EUR in the interbank market. EURUSD rises 15 pips in the 15 minutes before the fix window, then spikes another 10 pips during the 5 minute window itself. After 4:02:30 PM, the rate reverses 12 pips as the flow pressure dissipates. A systematic trader who predicted the direction of fix flow (using equity return differentials) bought EURUSD at 3:50 PM and sold at 4:05 PM, capturing 13 pips on 50 million notional. Conversely, a trader unaware of the fix who happened to sell EURUSD at 3:55 PM suffered a 25 pip adverse move.
+**Concrete:** Month end. US pension fund must rebalance international equity. European stocks outperformed US stocks by 3%, so the fund sells $2B USD and buys EUR. Custodian executes at the 4PM London fix. Bank pre positions from 3:45 PM buying EUR interbank. EUR/USD rises 15 pips before the window, then spikes another 10 pips within the 5 minute window. After 4:02:30 PM, EUR/USD reverses 12 pips as flow pressure dissipates. A systematic trader bought EUR/USD 50M at 3:50 PM and sold at 4:05 PM, capturing 13 pips = $65,000. A trader who sold at 3:55 PM unaware of the fix suffered a 25 pip adverse move = $125,000 mark.
+
+**Simplified:** Once a day at 4PM London, banks compute a benchmark price by taking the median of all FX trades in a 5 minute window. Pension funds and index funds use that price to convert currencies for their rebalancing. Because they all execute at the same minute and often in the same direction, you get a predictable surge of buying or selling. Trade with the flow and you make money; trade against without knowing it and you get run over.
 
 ## Key mechanics and formulas
-- **Fix window**: 3:57:30 to 4:02:30 PM London time (5 minute median)
-- **Fix flow prediction**: Expected fix flow direction = sign of (foreign equity return - domestic equity return) over the period since last rebalance
-- **Month-end signal strength**: Stronger when equity return differentials are large and when passive fund AUM is high relative to active
-- **Fix impact estimate**: Impact (pips) = (net fix flow in USD) / (average daily volume in pair) x scaling factor
-- **Key dates**: Month-end and quarter-end fixes are 3 to 5x more volatile than mid-month fixes
-- **Post-fix reversal**: Empirically, 40 to 60% of the pre-fix move reverses within 30 minutes after the fix window closes
+- **Fix window:** 3:57:30 to 4:02:30 PM London (5 minute median)
+- **Fix flow prediction:** Direction = sign of (foreign equity return − domestic equity return) since last rebalance
+- **Month end signal strength:** Stronger when equity return differentials are large and passive AUM is high
+- **Fix impact estimate:** Impact (pips) = (net fix flow USD) / (avg daily volume in pair) × scaling factor
+- **Key dates:** Month and quarter end fixes are 3 to 5x more volatile than mid month
+- **Post fix reversal:** 40 to 60% of the pre fix move reverses within 30 minutes of the window closing
 
 ## Prerequisites
 - [[FX Market Hours]]
@@ -33,18 +35,21 @@ At month end, a large US pension fund must rebalance its international equity po
 - [[Index Rebalancing]]
 
 ## Related concepts (learn next)
-- [[FX Market Hours]]: the fix occurs during the London/NY overlap, the most liquid window of the day.
-- [[Flow Signals]]: fix-related flow is one of the most studied predictable flow patterns in FX.
-- [[TWAP]]: banks typically execute fix orders using time-weighted algorithms within and around the fix window.
-- [[Internalization]]: banks may internalize fix flow against their own book rather than executing externally.
-- [[Positioning Signal]]: extreme positioning ahead of the fix can cause the post-fix reversal to overshoot.
-- [[Carry Cross Asset]]: carry trades that rebalance at the fix create additional predictable flow.
-- [[ECN]]: fix-window volume on [[EBS]] and [[Reuters Matching]] spikes 5 to 10x above normal.
+- [[FX Market Hours]]: the fix occurs during the London/NY overlap.
+- [[Flow Signals]]: fix related flow is the most studied predictable flow pattern in FX.
+- [[TWAP]]: banks typically execute fix orders via time weighted algorithms in and around the window.
+- [[Internalization]]: banks may internalize fix flow against their own book.
+- [[Positioning Signal]]: extreme positioning into the fix can cause the post fix reversal to overshoot.
+- [[Carry Cross Asset]]: carry trades rebalancing at the fix create additional predictable flow.
+- [[ECN]]: fix window volume on [[EBS]] and [[Reuters Matching]] spikes 5 to 10x normal.
 
 ## Common misconceptions
-1. **"The fix is a single price set by banks"**: Since the 2015 reforms, the fix is a transparent median of observed market transactions during a 5 minute window, not a rate set by a panel of dealers. The old methodology was vulnerable to manipulation.
-2. **"Fix flow is always predictable"**: While month-end equity rebalancing creates a directional bias, the actual fix can be dominated by idiosyncratic flows (sovereign wealth funds, corporate M&A hedging) that are not publicly predictable.
-3. **"Trading around the fix is front-running"**: Legitimate pre-positioning by banks executing client fix orders is legal; the illegal conduct in the 2013 to 2015 scandals involved collusion between dealers sharing client information and coordinating trades.
+
+**"The fix is a single price set by banks."** Since the 2015 reforms it is a transparent median of observed market transactions in a 5 minute window, not a panel rate. The old methodology was vulnerable to manipulation.
+
+**"Fix flow is always predictable."** Month end equity rebalancing creates a directional bias, but idiosyncratic flows (sovereign wealth, M&A hedging) can dominate any given fix and are not publicly visible.
+
+**"Trading around the fix is front running."** Legitimate pre positioning by banks executing client fix orders is legal. The illegal conduct in 2013 to 2015 involved collusion between dealers sharing client information and coordinating trades.
 
 ## Sources
 - Evans, Martin D.D., "FX Trading and Exchange Rate Dynamics," Journal of Finance (2002)

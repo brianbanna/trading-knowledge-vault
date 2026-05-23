@@ -9,22 +9,23 @@ date-added: "2026-03-27"
 # Multi Dealer Platform
 
 ## Definition
-A Multi Dealer Platform (MDP) is an electronic trading venue where clients can simultaneously view and compare prices streamed by multiple banks or liquidity providers. The client selects the best price from a competitive panel rather than relying on a single dealer's quote. Major MDPs in FX include Bloomberg FXGO, 360T, FXall (now part of Refinitiv), and Currenex. MDPs differ from [[ECN]]s because prices are typically bilateral (each bank streams its own price to the client) rather than consolidated into a single anonymous [[Central Limit Order Book]]. The key advantage is competitive tension: banks know they are being compared, which tightens [[bid-ask spread]]s for the client.
+A Multi Dealer Platform (MDP) is an electronic venue where clients view and compare prices streamed by multiple banks simultaneously and select the best one. Major FX MDPs: Bloomberg FXGO, 360T, FXall (Refinitiv), Currenex. MDPs differ from [[ECN]]s because prices are bilateral (each bank streams its own to the client) rather than consolidated into a single anonymous [[Central Limit Order Book]]. The advantage is competitive tension: banks know they are being compared, which tightens [[bid-ask spread]]s.
 
 ## Why it matters (commodities and FX)
-MDPs are the primary execution venue for corporate and institutional FX hedging. When a commodities firm needs to convert USD revenues from an oil sale into EUR, it will typically execute on an MDP to get competitive pricing from 5 to 15 banks simultaneously. The MDP model also extends to commodity [[swap]]s and [[forward contract]]s traded OTC, where platforms like Bloomberg and ICE allow clients to request prices from multiple dealers. Understanding MDP dynamics is essential because the pricing a client sees on an MDP is not the same as the interbank price on [[EBS]] or [[Reuters Matching]]. Banks apply [[skew]] and [[spread]] adjustments based on client profitability, flow toxicity, and inventory. A trader who does not understand this will misjudge execution quality.
+MDPs are the primary execution venue for corporate and institutional FX hedging. A commodities firm converting USD oil revenues to EUR executes on an MDP to get competitive pricing from 5 to 15 banks at once. The MDP model extends to OTC commodity [[swap]]s and [[forward contract]]s on Bloomberg and ICE, where clients request prices from multiple dealers. MDP pricing is not the same as interbank pricing on [[EBS]] or [[Reuters Matching]]: banks apply [[skew]] and spread adjustments by client profitability, flow toxicity, and inventory. Ignore this and you misjudge execution quality.
 
 ## Concrete example
-A Swiss commodity trading house needs to sell 50 million GBP/USD to hedge revenue from a metals contract. On 360T, the platform shows live streaming prices from 8 banks. The best bid is 1.26835 from Bank A, second best is 1.26830 from Bank B, and the worst is 1.26810 from Bank E. The trader clicks Bank A's bid and fills 50 million at 1.26835. The mid market on [[Reuters Matching]] at that moment is 1.26840, meaning the effective spread is 2 x (1.26840 - 1.26835) = 0.1 pips, which is excellent.
 
-The fail scenario: the trader has been identified as "toxic flow" (consistently trading in the direction of short term momentum). Banks widen their streams. The same 8 banks now show best bid of 1.26810, a full 3 pips worse than the [[ECN]] mid. The trader is getting worse prices than a less sophisticated client would. This is the [[last look]] and flow segmentation dynamic that makes MDP pricing client-specific.
+**Concrete:** A Swiss commodity trading house needs to sell 50M GBP/USD to hedge metals revenue. On 360T, 8 banks stream prices. Best bid 1.26835 from Bank A, second 1.26830 from Bank B, worst 1.26810 from Bank E. The trader clicks A and fills 50M at 1.26835. [[Reuters Matching]] mid at that moment is 1.26840: effective spread 0.1 pips, excellent. Adverse scenario: the same trader gets flagged as "toxic flow" (consistently trading with short term momentum). All 8 banks widen. Best bid drops to 1.26810, 3 pips worse than [[ECN]] mid. Less sophisticated clients get better prices. This is the [[last look]] and flow segmentation dynamic that makes MDP pricing client specific.
+
+**Simplified:** Multiple banks compete for your order in real time. You see all their quotes, you pick the best. Banks know they are being shopped, so they tighten. The catch: each bank tailors the price to who you are. If they think you trade with information, you get a worse price than the corporate next to you.
 
 ## Key mechanics and formulas
-- **Competitive spread compression**: With N dealers competing, the client's effective spread narrows as N increases, typically following a power law. Going from 1 to 5 dealers captures most of the benefit.
-- **Last look window**: Most MDP trades include a [[last look]] window of 50 to 200 milliseconds, during which the bank can reject the trade if the price has moved unfavorably.
-- **Reject rate**: Reject rate = rejected trades / total attempted trades. A rising reject rate signals that banks are tightening their [[last look]] criteria against a client's flow.
-- **Spread markup**: The price streamed to the client = interbank mid +/- (half spread + client-specific markup). The markup varies by client, pair, time of day, and trade size.
-- **RFQ mode**: Some MDPs support [[Request for Quote]] mode where the client specifies size and direction, and banks respond with firm (or indicative) prices.
+- **Competitive spread compression:** with N dealers competing, effective spread narrows roughly as a power law. Going from 1 to 5 captures most of the benefit.
+- **Last look window:** most MDP trades include a [[last look]] of 50 to 200 ms.
+- **Reject rate:** rejected / attempted. A rising reject rate signals banks tightening last look against your flow.
+- **Spread markup:** client price = interbank mid +/- (half spread + client specific markup). Markup varies by client, pair, time, size.
+- **RFQ mode:** some MDPs support [[Request for Quote]] where the client specifies size and direction and banks respond firm or indicative.
 
 ## Prerequisites
 - [[Bid-Ask Spread]]
@@ -33,18 +34,18 @@ The fail scenario: the trader has been identified as "toxic flow" (consistently 
 - [[Single Dealer Platform]]
 
 ## Related concepts (learn next)
-- [[Single Dealer Platform]]: the venue model where a client trades exclusively with one bank, which can offer tighter pricing for non-toxic flow.
-- [[Last Look]]: the rejection mechanism that allows MDP liquidity providers to back away from streamed prices after the client clicks.
-- [[Request for Quote]]: an alternative MDP workflow where the client asks for prices rather than clicking on streams.
-- [[Central Limit Order Book]]: the ECN model that consolidates all liquidity into one anonymous book, unlike the bilateral MDP model.
-- [[Transaction Cost Analysis]]: measuring whether MDP execution is actually competitive requires comparing fills against independent benchmarks.
-- [[Internalization]]: banks that win MDP trades may internalize the flow rather than hedging on an [[ECN]].
-- [[Dark Pool]]: some MDPs offer dark pool functionality where orders are matched at mid price without displaying quotes.
+- [[Single Dealer Platform]]: trade exclusively with one bank; tighter pricing for non toxic flow
+- [[Last Look]]: rejection mechanism letting LPs back away after the client clicks
+- [[Request for Quote]]: alternative workflow asking for prices rather than clicking streams
+- [[Central Limit Order Book]]: the ECN model consolidating all liquidity anonymously
+- [[Transaction Cost Analysis]]: measuring MDP competitiveness needs independent benchmarks
+- [[Internalization]]: winning banks may internalize the flow rather than hedge on an [[ECN]]
+- [[Dark Pool]]: some MDPs offer mid match dark functionality
 
 ## Common misconceptions
-1. **"The best price on the MDP is the true market price"**: MDP prices are client-specific. Two clients looking at the same MDP at the same millisecond will see different prices from the same bank. The true interbank price lives on [[EBS]] and [[Reuters Matching]].
-2. **"More dealers always means better execution"**: Beyond about 8 to 10 dealers, adding more can actually worsen execution because banks detect that they are in a large panel and widen spreads defensively, knowing their probability of winning each trade is low.
-3. **"MDP execution is firm"**: Most MDP liquidity providers retain [[last look]] rights. The price you click is not guaranteed. Rejection rates of 5% to 15% are common, and they increase during volatile periods precisely when execution matters most.
+1. **"Best price on the MDP is the true market price."** MDP prices are client specific. Two clients at the same millisecond see different prices from the same bank. True interbank lives on [[EBS]] and [[Reuters Matching]].
+2. **"More dealers always means better execution."** Above 8 to 10 dealers, more can worsen execution: banks detect a large panel, lower win probability, and widen defensively.
+3. **"MDP execution is firm."** Most MDP LPs retain [[last look]]. Rejection rates of 5 to 15% are normal and rise in volatile periods precisely when execution matters most.
 
 ## Sources
 - BIS Triennial Central Bank Survey, "FX Trading Venues and Platforms" (2022)

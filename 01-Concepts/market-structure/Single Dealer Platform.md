@@ -9,21 +9,24 @@ date-added: "2026-03-20"
 # Single Dealer Platform
 
 ## Definition
-A Single Dealer Platform (SDP) is a proprietary electronic trading system operated by a single bank to stream prices and execute trades directly with its clients. Major examples include Barclays BARX, Citi Velocity, JPMorgan Execute, Deutsche Bank Autobahn, and Goldman Sachs Marquee. Unlike [[ECN]]s where multiple participants post anonymous orders, an SDP shows one bank's prices to its specific clients, often customized by client tier, relationship, and perceived [[toxicity]] of flow. SDPs typically incorporate [[last look]] windows, giving the bank the right to reject trades after the client clicks. The bank uses its own balance sheet to [[internalization|internalize]] trades, meaning the client's order may never reach the public market. SDPs now handle approximately 60 to 70% of all spot FX volume, making them the dominant execution venue in modern FX markets.
+A Single Dealer Platform (SDP) is a proprietary electronic trading system operated by a single bank to stream prices and execute directly with its clients. Major examples: Barclays BARX, Citi Velocity, JPMorgan Execute, Deutsche Bank Autobahn, Goldman Marquee. Unlike [[ECN]]s where multiple participants post anonymous orders, an SDP shows one bank's prices to specific clients, customized by tier, relationship, and perceived [[toxicity]] of flow. SDPs incorporate [[last look]] windows, giving the bank the right to reject trades after the client clicks. The bank uses its own balance sheet to [[internalization|internalize]] trades, so the client's order may never reach the public market. SDPs handle 60 to 70% of all spot FX volume, the dominant venue in modern FX.
 
 ## Why it matters (commodities and FX)
-SDPs are where most institutional FX execution actually happens, and understanding their mechanics is essential for evaluating execution quality. A commodity fund hedging USDCAD exposure will typically execute through an SDP rather than an [[ECN]], receiving a price that may look tighter than the ECN spread but that comes with hidden costs ([[last look]] rejections, [[information leakage]] to the dealer). Banks use the flow information from SDPs to inform their own [[proprietary trading]] and [[market making]] strategies. For systematic traders, the choice between SDP and ECN execution affects both [[transaction cost analysis]] and [[alpha]] decay. In commodities, analogous structures exist where banks stream OTC prices on metals, energy, and agricultural products through proprietary platforms.
+SDPs are where most institutional FX execution happens. Understanding their mechanics is essential for evaluating execution quality. A commodity fund hedging USDCAD will execute through an SDP rather than an [[ECN]], getting a price that looks tighter than the ECN spread but comes with hidden costs ([[last look]] rejections, [[information leakage]]). Banks use SDP flow information to inform [[proprietary trading]] and [[market making]]. For systematic traders, the SDP vs ECN choice drives [[transaction cost analysis]] and [[alpha]] decay. In commodities, analogous proprietary platforms stream OTC prices on metals, energy, and agriculture.
 
 ## Concrete example
-A macro hedge fund wants to sell 100 million EURUSD. On the SDP of a top-tier bank, the displayed price is 1.08522/1.08524 (a 0.2 pip spread), tighter than the 0.5 pip spread on [[EBS]]. The fund hits the bid at 1.08522. The bank's system applies a 200 millisecond [[last look]] window. During those 200 milliseconds, the market moves 1 pip against the bank (EURUSD drops to 1.08512). The bank rejects the trade. The fund must re-submit at the new, lower price. Effective execution: 1.08512 instead of 1.08522, costing the fund 1 pip (100,000 USD on 100 million). In contrast, a pension fund selling the same amount as part of routine monthly rebalancing (uninformed flow) gets filled instantly because the bank's algorithms classify this flow as non-toxic and profitable to [[internalization|internalize]]. The bank matches the pension fund's sell against a corporate client's buy, never touching the external market and earning the full spread.
+
+**Concrete:** A macro fund sells 100M EURUSD. On a top tier bank SDP the price shows 1.08522/1.08524 (0.2 pip spread), tighter than the 0.5 pip on [[EBS]]. The fund hits the bid at 1.08522. The bank applies a 200 ms [[last look]]. During those 200 ms, EURUSD drops 1 pip to 1.08512 against the bank. The bank rejects. The fund resubmits at 1.08512. Effective fill: 1.08512 vs the displayed 1.08522, costing 100,000 USD. A pension fund selling the same 100M in monthly rebalancing fills instantly: bank algorithms class the flow as non toxic and profitable to [[internalization|internalize]], matching it against a corporate buyer and pocketing the full spread without touching the external market.
+
+**Simplified:** One bank's private trading screen for its clients. Tighter visible prices than public venues, but the bank reserves the right to back out after you click. Bank decides whether to internalize your order (match it against another client) or hedge it externally. The economics depend entirely on whether the bank thinks your flow is informed.
 
 ## Key mechanics and formulas
-- **Price construction**: SDP price = ECN mid +/- (base spread / 2) + client skew + inventory skew
-- **Client skew**: adjustment based on perceived [[toxicity]] (informed = wider, passive = tighter)
-- **Last look window**: typically 50 to 200 milliseconds; allows rejection if price moved beyond a threshold
-- **Rejection rate**: Rejection rate = (rejected trades / total attempted trades) x 100; rates of 5 to 30% are common for aggressive clients
-- **Internalization ratio**: Internalization ratio = (internally matched volume / total SDP volume) x 100; top banks internalize 60 to 80% of flow
-- **Effective spread including last look**: True cost = displayed spread + (rejection rate x average post-rejection slippage)
+- **Price construction:** SDP price = ECN mid +/- (base spread / 2) + client skew + inventory skew
+- **Client skew:** adjustment by perceived [[toxicity]] (informed = wider, passive = tighter)
+- **Last look window:** 50 to 200 ms; allows rejection if price moves past threshold
+- **Rejection rate:** rejected / attempted × 100; 5 to 30% common for aggressive clients
+- **Internalization ratio:** internally matched volume / total SDP volume × 100; top banks internalize 60 to 80%
+- **Effective spread including last look:** True cost = displayed spread + (rejection rate × average post rejection slippage)
 
 ## Prerequisites
 - [[ECN]]
@@ -32,17 +35,17 @@ A macro hedge fund wants to sell 100 million EURUSD. On the SDP of a top-tier ba
 - [[Counterparty Risk]]
 
 ## Related concepts (learn next)
-- [[Last Look]]: the mechanism that allows SDP operators to reject trades after submission.
-- [[Internalization]]: the process by which banks match client orders internally rather than hedging externally.
-- [[ECN]]: the anonymous alternative venue; SDPs and ECNs compete for order flow.
-- [[Flow Signals]]: SDPs give banks privileged access to client flow information.
-- [[Top of Book]]: SDP prices may be tighter than ECN top-of-book but carry hidden costs.
-- [[Transaction Cost Analysis]]: properly measuring SDP execution quality requires accounting for rejections and information leakage.
+- [[Last Look]]: lets SDP operators reject trades after submission
+- [[Internalization]]: banks match client orders internally rather than hedging externally
+- [[ECN]]: anonymous alternative; SDPs and ECNs compete for flow
+- [[Flow Signals]]: SDPs give banks privileged access to client flow information
+- [[Top of Book]]: SDP prices tighter than ECN top but with hidden costs
+- [[Transaction Cost Analysis]]: properly measuring SDP execution requires accounting for rejections and leakage
 
 ## Common misconceptions
-1. **"Tighter displayed spread means cheaper execution"**: SDP spreads often look tighter than ECN spreads, but when accounting for [[last look]] rejections, hold times, and information leakage, the true all-in cost can be higher. Always compare effective spread, not displayed spread.
-2. **"SDPs are just for small trades"**: SDPs handle the majority of institutional FX volume, including very large orders. Banks prefer SDP flow because it comes with client identity, allowing better risk management and internalization.
-3. **"All banks' SDPs are equivalent"**: Pricing, rejection rates, and internalization capability vary enormously across banks. A bank with a large, diverse client base can internalize more and offer tighter prices than a bank with concentrated, directional flow.
+1. **"Tighter displayed spread means cheaper execution."** SDP spreads look tighter than ECN spreads, but adding [[last look]] rejections, hold times, and information leakage often makes the all in cost higher. Compare effective spread, not displayed.
+2. **"SDPs are just for small trades."** SDPs handle the majority of institutional FX volume including very large orders. Banks prefer SDP flow: client identity enables better risk management and internalization.
+3. **"All banks' SDPs are equivalent."** Pricing, rejection rates, and internalization capability vary widely. A bank with diverse client base internalizes more and offers tighter prices than one with concentrated directional flow.
 
 ## Sources
 - Moore, Schrimpf, Sushko, "Downsized FX Markets: Causes and Implications," BIS Quarterly Review (2016)

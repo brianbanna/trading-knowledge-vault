@@ -9,21 +9,23 @@ date-added: "2026-03-20"
 # Carry Unwind
 
 ## Definition
-A carry unwind is the rapid, often violent reversal of [[Carry Trade|carry trade]] positions, where investors who had been long high yielding currencies and short low yielding ("funding") currencies are forced to close those positions simultaneously. The unwind typically occurs during sudden spikes in volatility or risk aversion: as losses mount, leveraged traders face margin calls, which trigger further selling of the high yield currency and buying of the funding currency, creating a self reinforcing feedback loop. Carry unwinds are characterized by extreme speed, sharp appreciation of funding currencies (especially JPY and CHF), and a breakdown of normal correlation structures. The process can erase months of carry income in a matter of hours or days.
+A carry unwind is the rapid reversal of [[Carry Trade|carry trade]] positions, where longs in high yielding currencies funded short in low yielding currencies close simultaneously. The trigger is usually a vol or risk aversion spike. Losses force margin calls, margin calls force more selling of the high yielder and buying of the funding currency, and the feedback loop accelerates. Unwinds are characterized by extreme speed, sharp funding currency appreciation (JPY, CHF), and correlation breakdown across previously diversified pairs. Months of carry income vanish in hours or days.
 
 ## Why it matters (commodities and FX)
-Carry unwinds create systemic risk for any portfolio exposed to high yield currencies or correlated assets. Because commodity currencies (AUD, NZD, NOK, BRL, ZAR) are popular carry longs, a carry unwind hits commodity FX portfolios especially hard. During the 2008 financial crisis and the August 2024 JPY unwind, commodity currencies fell in lockstep regardless of individual fundamentals. For risk managers, carry unwinds represent tail risk that standard volatility metrics underestimate: the distribution of carry returns is negatively skewed with fat left tails, meaning the worst day is far worse than normal models predict.
+Carry unwinds are a systemic risk for any portfolio exposed to high yield FX or correlated assets. Commodity currencies (AUD, NZD, NOK, BRL, ZAR) are popular carry longs, so unwinds hit commodity FX books hard. During the 2008 crisis and the August 2024 JPY unwind, commodity currencies fell in lockstep regardless of fundamentals. For risk managers, carry returns are negatively skewed with fat left tails: standard vol metrics understate the worst day by a wide margin.
 
 ## Concrete example
-In August 2024, the Bank of Japan unexpectedly raised rates by 15 basis points and signaled further tightening. USD/JPY, which had been a massive carry long for the global market at 162, crashed to 142 within 3 weeks. AUD/JPY fell from 109 to 93 (a 15% move) as carry traders unwound simultaneously. A hedge fund holding a 100 million AUD long against JPY with 10:1 leverage saw unrealized losses of 150 million JPY in days, triggering forced liquidation. The VIX spiked from 12 to 38 in a single session. Conversely, a trader who had positioned short AUD/JPY as a tail hedge before the event captured the entire move, but such positioning requires enduring months of negative carry.
+**Concrete:** August 2024. The BOJ raises rates 15 bps and signals further tightening. USDJPY crashes from 162 to 142 in 3 weeks. AUDJPY falls from 109 to 93 (15%) as carry traders unwind together. A fund long AUD 100M against JPY at 10x leverage shows JPY 150M unrealized losses in days, triggering forced liquidation. VIX spikes from 12 to 38 in a single session. A trader short AUDJPY as a tail hedge captures the full move, but that position required months of negative carry to hold.
+
+**Simplified:** Investors borrow a cheap currency (JPY) to buy a high yielding one (AUD). They earn the rate differential while spot stays calm. When spot moves the wrong way, leveraged positions hit margin calls. Forced selling pushes the high yielder down further and the funding currency up. Other traders running the same book get hit too, so they sell. The same cascade repeats across every carry pair simultaneously. Diversification across currencies provides no protection because every pair unwinds at once.
 
 ## Key mechanics and formulas
-- **Carry erosion speed**: In a typical unwind, spot can move 3 to 10 standard deviations in 1 to 5 days, erasing 6 to 18 months of carry income.
-- **Feedback loop**: Initial losses → margin calls → forced liquidation → further adverse spot moves → more margin calls.
-- **Correlation spike**: During unwinds, correlation among carry longs approaches 1.0 and correlation with funding currencies approaches −1.0, eliminating diversification.
-- **Skewness of carry returns**: Carry strategies typically show skewness of −1.0 to −2.0 and excess kurtosis of 5 to 15, far from normal.
-- **VIX threshold**: Historically, carry unwinds accelerate when VIX exceeds 25 to 30, as volatility triggered de risking amplifies the liquidation cycle.
-- **Recovery time**: After major unwinds (2008, 2015, 2024), carry positions can take 3 to 12 months to rebuild as traders cautiously re enter.
+- **Carry erosion speed:** spot moves 3 to 10 sigma in 1 to 5 days, erasing 6 to 18 months of carry income.
+- **Feedback loop:** losses → margin calls → forced liquidation → adverse spot → more margin calls.
+- **Correlation spike:** correlation among carry longs approaches 1.0, against funding currencies approaches −1.0.
+- **Skewness:** carry strategies show skew of −1 to −2 and excess kurtosis of 5 to 15.
+- **VIX threshold:** unwinds accelerate above VIX 25 to 30 as vol triggered de-risking amplifies liquidation.
+- **Recovery:** after major unwinds (2008, 2015, 2024), positions take 3 to 12 months to rebuild.
 
 ## Prerequisites
 - [[Carry Trade]]
@@ -32,19 +34,19 @@ In August 2024, the Bank of Japan unexpectedly raised rates by 15 basis points a
 - [[EM Currencies]]
 
 ## Related concepts (learn next)
-- [[Carry Trade]]: the strategy that generates the positions which unwind; understanding carry construction is essential to understanding its reversal.
-- [[Central Bank Intervention]]: CB actions can trigger or accelerate unwinds, as with the BOJ in 2024 or the SNB floor removal in 2015.
-- [[Cross Currency Basis]]: the basis widens sharply during unwinds as demand for USD funding surges.
-- [[Volatility]]: implied vol spikes during unwinds, making options on carry pairs extremely expensive precisely when hedging is most needed.
-- [[EM Currencies]]: EM carry positions unwind with even greater violence than G10 due to lower liquidity and wider spreads.
-- [[Monetary Policy Divergence]]: shifts in expected policy paths are the most common catalyst for carry unwinds.
-- [[FX Swap]]: roll costs spike during unwinds as swap market liquidity dries up, adding to the pain for leveraged carry holders.
+- [[Carry Trade]]: the strategy that creates the positions which unwind.
+- [[Central Bank Intervention]]: CB actions trigger or accelerate unwinds (BOJ 2024, SNB 2015).
+- [[Cross Currency Basis]]: widens sharply during unwinds as USD funding demand surges.
+- [[Volatility]]: implied vol spikes during unwinds, making hedges expensive precisely when needed.
+- [[EM Currencies]]: EM carry unwinds more violently than G10 due to thinner liquidity.
+- [[Monetary Policy Divergence]]: shifts in expected policy paths are the most common catalyst.
+- [[FX Swap]]: roll costs spike as swap liquidity dries up.
 
 ## Common misconceptions
-1. **Carry unwinds are predictable**: While elevated volatility and extreme positioning increase the probability, the timing is nearly impossible to predict. The August 2024 unwind caught most participants off guard despite months of warnings about JPY carry crowding.
-2. **Diversification protects during unwinds**: Holding 5 different carry pairs instead of 1 does not help when all carry longs sell off simultaneously. Diversification works in normal markets but fails precisely when needed most.
-3. **Carry unwinds create buying opportunities**: Sometimes, but not always. The 1998 LTCM unwind and 2008 crisis unwinds were followed by further deterioration. Trying to catch the bottom of a carry unwind is extremely dangerous because the forced liquidation dynamic can persist far beyond fundamental fair value.
-4. **Only leveraged funds are affected**: Carry unwinds affect anyone holding high yield currencies, including corporates with unhedged EM receivables, pension funds with yield seeking FX overlays, and retail traders.
+1. **Carry unwinds are predictable.** Conditions (high vol, crowded positioning) raise the probability, but timing is not predictable. August 2024 caught most participants off guard despite months of warning.
+2. **Diversification protects.** Holding 5 carry pairs instead of 1 does not help when every pair unwinds together. Diversification fails precisely when needed.
+3. **Carry unwinds create buying opportunities.** Sometimes. The 1998 LTCM and 2008 unwinds were followed by further deterioration. Forced liquidation persists well past fundamental fair value.
+4. **Only leveraged funds are affected.** Anyone long high yielders is exposed: corporates with EM receivables, pension funds with yield seeking overlays, retail.
 
 ## Sources
 - Brunnermeier, Markus K. et al., "Carry Trades and Currency Crashes," NBER Macroeconomics Annual, 2009.

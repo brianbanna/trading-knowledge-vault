@@ -8,53 +8,46 @@ date-added: "2026-03-27"
 # POV
 
 ## Definition
-Percentage of Volume (POV) is an execution algorithm that trades a specified fraction of the real time market volume. If the target participation rate is 10% and the market trades 1,000 lots in a 5 minute window, the algorithm will execute 100 lots in that same window. POV is reactive, not predictive: it speeds up when the market is active and slows down when the market is quiet. This makes it naturally adaptive to intraday volume patterns without requiring a volume forecast. The algorithm continuously monitors real time exchange volume (via trade prints or [[VWAP]] volume buckets) and adjusts its order flow to maintain the target percentage. POV is widely used for large institutional orders where the goal is to participate in the market without dominating it.
+Percentage of Volume (POV) is an execution algorithm that trades a specified fraction of real time market volume. At 10% target and 1,000 lots traded in 5 minutes, the algo executes 100 lots in that window. POV is reactive, not predictive: it speeds up when the market is active and slows down when quiet. This makes it adaptive to intraday volume without requiring a forecast. The algo monitors real time trade prints (or [[VWAP]] buckets) and adjusts order flow to hold the target percentage. POV is standard for large institutional orders where the goal is to participate without dominating.
 
 ## Why it matters (commodities and FX)
-Commodity markets have highly irregular volume patterns. Brent crude volume spikes around the 10:00 London fix, OPEC announcements, and EIA inventory reports, then dries up in the afternoon. A static execution schedule (like a naive [[TWAP]]) would over participate during quiet periods and under participate during liquid windows. POV naturally adapts: it trades aggressively during high volume periods (when [[Market Impact]] per lot is lowest) and backs off during low volume periods (when each trade moves the market more). For an FX desk unwinding a large EUR/USD position, POV ensures the execution footprint scales with available [[Liquidity]], reducing [[Slippage]] versus a fixed schedule.
+Commodity markets show highly irregular volume. Brent crude spikes around the 10:00 London fix, OPEC announcements, and EIA inventory reports, then dries up in the afternoon. A static schedule (naive [[TWAP]]) over participates in quiet periods and under participates in liquid windows. POV adapts: aggressive in high volume periods (lowest [[Market Impact]] per lot) and quiet in low volume (each trade moves the market more). For an FX desk unwinding a large EUR/USD position, POV scales execution footprint with available [[Liquidity]], cutting [[Slippage]] versus a fixed schedule.
 
 ## Concrete example
-A commodity fund needs to sell 5,000 lots of Brent crude futures (ICE) over 1 trading day. The daily average volume is 400,000 lots. The target POV is 1.25% (5,000 / 400,000).
+**Concrete:** A commodity fund needs to sell 5,000 lots of ICE Brent over 1 trading day. Daily average volume: 400,000 lots. Target POV: 1.25%.
 
-**Hour by hour execution:**
-
-| Hour (London) | Market volume | Algo sells (1.25%) |
-|---------------|--------------|-------------------|
-| 08:00 to 09:00 | 25,000 | 312 |
-| 09:00 to 10:00 | 45,000 | 562 |
-| 10:00 to 11:00 | 60,000 | 750 |
-| 11:00 to 12:00 | 40,000 | 500 |
-| 12:00 to 13:00 | 30,000 | 375 |
-| 13:00 to 14:00 | 55,000 | 687 |
-| 14:00 to 15:00 | 65,000 | 812 |
-| 15:00 to 16:00 | 50,000 | 625 |
-| 16:00 to 17:00 | 30,000 | 375 |
+| Hour (London) | Market vol | Algo sells (1.25%) |
+|---|---|---|
+| 08:00-09:00 | 25,000 | 312 |
+| 10:00-11:00 | 60,000 | 750 |
+| 14:00-15:00 | 65,000 | 812 |
+| 16:00-17:00 | 30,000 | 375 |
 | **Total** | **400,000** | **4,998** |
 
-**Win scenario:** Brent trades in a range all day. The POV algorithm concentrates 40% of its volume during the 2 most liquid hours (10:00 to 11:00 and 14:00 to 15:00), when the [[Bid-Ask Spread]] is tightest (1 tick). Average [[Slippage]] vs arrival price: 2 ticks ($20 per lot). Total cost: $100,000 on a $3.6 million notional trade. [[TCA]] shows the execution saved $35,000 versus a [[TWAP]] benchmark.
+Brent trades in a range. The algo concentrates 40% of volume in the 2 most liquid hours when the [[Bid-Ask Spread]] is tightest. Average [[Slippage]] vs arrival: 2 ticks ($20/lot). Total cost: $100,000 on $3.6M notional. [[TCA]] shows POV saved $35,000 versus a [[TWAP]] benchmark. The risk: OPEC announces a surprise cut at 13:00, volume surges to 120,000 lots/hour, and POV mechanically sells 1,500 lots into the ripping rally. Slippage balloons to 15 ticks. A human trader would have paused.
 
-**Fail scenario:** OPEC announces a surprise production cut at 13:00. Volume surges to 120,000 lots in 1 hour. The POV algorithm mechanically sells 1,500 lots (1.25%) during a ripping rally. Every fill is at a worse price than the previous one. The algorithm's strict adherence to POV means it sells heavily into the worst possible period. Average slippage vs arrival: 15 ticks ($150 per lot). A human trader would have paused execution during the news event.
+**Simplified:** Tell the algo "always be 10% of the market." When volume is heavy, it trades heavy. When the tape goes quiet, it slows down. The point is to participate where liquidity already exists rather than forcing trades through thin markets.
 
 ## Key mechanics and formulas
 **Core POV equation:**
 $$Q_{algo}(t) = \rho \times V_{market}(t)$$
 
-Where $Q_{algo}(t)$ is the algo's cumulative quantity at time $t$, $\rho$ is the target participation rate, and $V_{market}(t)$ is the cumulative market volume at time $t$.
+Where $Q_{algo}(t)$ is the algo's cumulative quantity at time $t$, $\rho$ is target participation, and $V_{market}(t)$ is cumulative market volume.
 
 **Instantaneous participation rate:**
 $$\rho_{actual}(t) = \frac{q_{algo}(t)}{v_{market}(t)}$$
 
-Where $q$ and $v$ are volumes in a short window (e.g., 1 minute). The algo adjusts order aggressiveness to keep $\rho_{actual}$ close to $\rho$.
+Where $q$ and $v$ are volumes in a short window (1 minute). The algo adjusts aggressiveness to hold $\rho_{actual}$ near $\rho$.
 
 **Completion time (estimated):**
 $$T_{complete} = \frac{Q_{total}}{\rho \times \bar{v}}$$
 
-Where $Q_{total}$ is the total quantity to execute and $\bar{v}$ is the average market volume per unit time.
+Where $Q_{total}$ is total quantity and $\bar{v}$ is average market volume per unit time.
 
 **Market impact scaling:**
 $$\text{Impact} \propto \sigma \times \sqrt{\frac{Q_{algo}}{V_{market}}} = \sigma \times \sqrt{\rho}$$
 
-[[Market Impact]] scales with the square root of the participation rate. Doubling $\rho$ from 5% to 10% increases impact by roughly 41%, not 100%.
+[[Market Impact]] scales as the square root of participation rate. Doubling $\rho$ from 5% to 10% raises impact by 41%, not 100%.
 
 ## Prerequisites
 - [[VWAP]]
@@ -64,18 +57,18 @@ $$\text{Impact} \propto \sigma \times \sqrt{\frac{Q_{algo}}{V_{market}}} = \sigm
 - [[Liquidity]]
 
 ## Related concepts (learn next)
-- [[VWAP]] is a benchmark and algorithm that uses predicted volume profiles rather than real time participation.
+- [[VWAP]] uses predicted volume profiles rather than real time participation.
 - [[TWAP]] spreads volume evenly across time, ignoring market activity.
-- [[Implementation Shortfall]] measures the total cost of the execution that POV produces.
-- [[TCA]] evaluates POV execution quality after the fact.
-- [[Market Impact]] determines the optimal participation rate: higher $\rho$ finishes faster but costs more in impact.
-- [[Smart Order Routing]] decides which venue to route each POV child order to.
-- [[Arrival Price]] is the benchmark against which POV execution is often measured.
+- [[Implementation Shortfall]] measures total cost of POV execution.
+- [[TCA]] evaluates POV quality after the fact.
+- [[Market Impact]] sets the optimal participation rate: higher $\rho$ finishes faster but costs more.
+- [[Smart Order Routing]] decides which venue receives each POV child order.
+- [[Arrival Price]] is the benchmark POV is often measured against.
 
 ## Common misconceptions
-1. **"POV guarantees low market impact."** POV at a high participation rate (e.g., 25%) will dominate the tape and cause significant impact. The algorithm is only low impact if the rate is set conservatively relative to the stock's volume.
-2. **"POV always finishes on time."** If market volume is lower than expected, POV takes longer to complete. A 10% POV order on a day with half normal volume takes twice as long to finish, potentially leaving unexecuted quantity at market close.
-3. **"POV is always better than TWAP."** In markets with very predictable volume patterns (e.g., FX during London/NY overlap), a well calibrated [[TWAP]] or [[VWAP]] can outperform POV because it can front load execution during the most liquid period rather than reacting to it.
+1. **"POV guarantees low market impact."** POV at high participation (25%) dominates the tape and causes significant impact. Low impact only holds if the rate is conservative relative to volume.
+2. **"POV always finishes on time."** If volume is lower than expected, POV runs longer. A 10% POV on a half normal volume day takes twice as long, potentially leaving unexecuted quantity at the close.
+3. **"POV is always better than TWAP."** In predictable volume markets (FX during London/NY overlap), a calibrated [[TWAP]] or [[VWAP]] beats POV by front loading the liquid period rather than reacting to it.
 
 ## Sources
 - "Algorithmic Trading and DMA" by Barry Johnson

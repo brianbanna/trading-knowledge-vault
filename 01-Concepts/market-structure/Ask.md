@@ -9,15 +9,15 @@ date-added: "2026-03-27"
 
 ## Definition
 
-The ask (also called the offer) is the price at which a seller is willing to sell an asset. In a [[Two Way Price]], the ask is always the higher number. When a market maker shows "1.08497 / 1.08503" on [[EUR USD]], 1.08503 is the ask. If you want to buy immediately, you buy at the ask. The ask represents supply: the best price someone in the market is currently willing to accept for selling.
+The ask (or offer) is the price at which a seller will sell. In a [[Two Way Price]] the ask is the higher number. On a quote of "1.08497 / 1.08503" for [[EUR USD]], 1.08503 is the ask. To buy immediately you buy at the ask. The ask represents supply: the best price someone is currently willing to accept for selling.
 
 ## Why it matters (commodities and FX)
 
-Buying at the ask means paying more than the [[Mid Price]], and that cost compounds over many trades. An FX desk executing $500 million notional per day in [[EUR USD]] with a 0.3 [[Pip]] half spread pays approximately $15,000 per day just in ask side costs. In commodities, the ask on illiquid contracts (e.g., far dated [[LNG]] forwards) can be wide, making entry expensive. Understanding ask depth helps traders estimate how much they can buy before the price runs away.
+Buying at the ask costs more than the [[Mid Price]], and that gap compounds. An FX desk doing $500 million per day in [[EUR USD]] with a 0.3 [[Pip]] half spread pays roughly $15,000 daily in ask side costs alone. In commodities, the ask on illiquid contracts (far dated [[LNG]] forwards) can be wide, making entry expensive. Reading ask depth tells you how much size you can buy before price runs away.
 
 ## Concrete example
 
-A trader wants to buy 20 lots of [[Copper Futures]] on the [[LME]]. The screen shows:
+**Concrete:** Trader buys 20 lots of [[Copper Futures]] on the [[LME]]. Book:
 
 | Level | Bid | Size | Ask | Size |
 |-------|-----|------|-----|------|
@@ -25,23 +25,23 @@ A trader wants to buy 20 lots of [[Copper Futures]] on the [[LME]]. The screen s
 | 2 | $9,243 | 10 | $9,250 | 12 |
 | 3 | $9,240 | 15 | $9,253 | 10 |
 
-**Success case:** The trader sends a [[Limit Order]] at $9,249. A seller adjusts their ask down, and the trader gets filled at $9,248 on 8 lots, then $9,249 on the remaining 12 lots. Average price: $9,248.60.
+A [[Limit Order]] at $9,249 fills 8 at $9,248 and 12 at $9,249, average $9,248.60. A [[Market Order]] sweeps: 8 at $9,248, 12 at $9,250, average $9,249.20, paying $0.60 per lot more by sweeping [[Depth of Book|depth]].
 
-**Failure case:** The trader sends a [[Market Order]] for all 20 lots. They lift the ask at $9,248 for 8 lots, $9,250 for 12 lots. Average price: $9,249.20, paying $0.60 more per lot than the best ask due to sweeping through [[Depth of Book|depth]].
+**Simplified:** The ask is what sellers want for the asset. Buy immediately and you pay the ask. If you want a better price, post a limit and wait for sellers to come to you. If you grab everything in front of you at once, you eat through the book and pay progressively worse prices for each chunk.
 
 ## Key mechanics and formulas
 
-Ask = lowest price any seller is willing to accept
+Ask = lowest price any seller will accept
 
 [[Bid-Ask Spread]] = Ask minus [[Bid]]
 
 [[Mid Price]] = ([[Bid]] + Ask) / 2
 
-**Ask depth** = total volume available at the ask price and above in the [[Central Limit Order Book|order book]]
+**Ask depth** = total volume at the ask and above in the [[Central Limit Order Book|order book]]
 
-In FX quoting convention:
-- The market maker's ask = the price at which the maker sells the base currency
-- The client's perspective: buying at the ask means paying the higher price
+FX convention:
+- Market maker's ask = price the maker sells base currency
+- Client buying at the ask pays the higher price
 
 ## Prerequisites
 
@@ -60,11 +60,11 @@ In FX quoting convention:
 
 ## Common misconceptions
 
-1. **"The ask is the fair price to buy at."** The ask includes the seller's markup. The [[Mid Price]] is a better approximation of fair value. Buying at the ask means paying half the [[Bid-Ask Spread|spread]].
+**"The ask is the fair price to buy at."** The ask embeds the seller's markup. [[Mid Price]] is closer to fair value. Buying at the ask costs half the [[Bid-Ask Spread|spread]].
 
-2. **"Offer and ask are different things."** They are identical. "Offer" is more common in voice markets and European usage. "Ask" is more common in electronic markets and US usage.
+**"Offer and ask are different."** Identical. "Offer" is voice and European usage. "Ask" is electronic and US usage.
 
-3. **"The ask only moves up in a rising market."** In a liquidity vacuum, the ask can gap up even in a falling market if sellers withdraw. The ask reflects available supply, not market direction.
+**"The ask only rises in a rising market."** In a liquidity vacuum, the ask gaps up even in a falling market when sellers withdraw. The ask reflects supply, not direction.
 
 ## Sources
 

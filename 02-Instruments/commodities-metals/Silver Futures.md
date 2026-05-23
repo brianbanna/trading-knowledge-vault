@@ -9,15 +9,17 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Silver occupies a unique position among precious metals as both an investment asset and an industrial metal. Approximately 50% of silver demand comes from industrial applications (solar panels, electronics, medical devices, water purification), while the remainder splits between investment (coins, bars, ETFs), jewelry, and silverware. Silver trades primarily on [[COMEX]] (CME Group, ticker SI, 5,000 troy ounce contracts) and the [[LBMA]] OTC market. It is quoted in USD per [[Troy Ounce]]. Silver is significantly more volatile than [[Gold Futures|gold]], often called "gold on steroids" because it amplifies gold's moves by 1.5 to 2x in both directions.
+Silver is both an investment asset and an industrial metal. About 50% of demand is industrial (solar panels, electronics, medical devices, water purification); the rest splits between investment (coins, bars, ETFs), jewelry, and silverware. Trades primarily on [[COMEX]] (CME Group, SI, 5,000 troy oz contracts) and [[LBMA]] OTC. Quoted in USD per [[Troy Ounce]]. Silver is significantly more volatile than [[Gold Futures|gold]], often called "gold on steroids" because it amplifies gold's moves 1.5 to 2x in both directions.
 
 ## Why it matters (commodities and FX)
 
-The [[Gold Silver Ratio]] is one of the oldest and most watched relative value indicators in precious metals. Silver's dual nature (precious + industrial) makes it a bridge between safe haven metals and growth sensitive commodities. In risk on environments, silver often outperforms gold because industrial demand accelerates. In risk off environments, silver can underperform gold because industrial demand weakens even as investment demand rises. Solar panel manufacturing is the fastest growing industrial demand segment, creating a structural demand story similar to [[Green Metals]] for base metals. Silver ETF flows ([[ETF Flows|SLV]]) are a key demand/supply indicator.
+The [[Gold Silver Ratio]] is one of the oldest and most watched relative value indicators in precious metals. Silver's dual nature (precious + industrial) bridges safe haven metals and growth sensitive commodities. In risk on, silver outperforms gold because industrial demand accelerates. In risk off, silver underperforms gold because industrial demand weakens even as investment demand rises. Solar panel manufacturing is the fastest growing industrial segment, creating a structural demand story similar to [[Green Metals]]. Silver ETF flows ([[ETF Flows|SLV]]) are a key demand/supply indicator.
 
 ## Concrete example
 
-The [[Gold Silver Ratio]] reaches 85 (gold at $2,500/oz, silver at $29.40/oz). A trader believes the ratio is extreme and will mean revert toward 70. She goes long silver and short gold in a ratio neutral trade. If silver outperforms and the ratio drops to 70 (silver at $35.70 with gold unchanged), the silver leg gains $6.30/oz. If instead risk off conditions push the ratio to 95 (silver at $26.30), the trade loses $3.10/oz on the silver leg while the gold short may only partially offset.
+**Concrete:** The [[Gold Silver Ratio]] reaches 85 (gold at $2,500/oz, silver at $29.40/oz). Trader believes the ratio is extreme and will mean revert toward 70. She goes long silver and short gold in a ratio neutral trade. If silver outperforms and the ratio drops to 70 (silver at $35.70 with gold unchanged), the silver leg gains $6.30/oz. If risk off pushes the ratio to 95 (silver at $26.30), the trade loses $3.10/oz on the silver leg while the gold short only partially offsets.
+
+**Simplified:** Silver moves like gold but bigger. When the gold/silver price ratio gets stretched, traders bet on it snapping back, usually by going long silver vs short gold. Works in trending bull markets, fails in deep risk off.
 
 ## Key mechanics and formulas
 
@@ -47,21 +49,21 @@ The [[Gold Silver Ratio]] reaches 85 (gold at $2,500/oz, silver at $29.40/oz). A
 
 ## Related concepts (learn next)
 
-- [[Gold Silver Ratio]] because it is the primary relative value trade for silver.
-- [[Gold Futures]] because gold drives the investment component of silver demand.
-- [[ETF Flows]] because SLV flows are a key silver demand indicator.
-- [[Green Metals]] because solar panel silver demand is structurally growing.
-- [[Real Interest Rates]] because silver responds to real rates similarly to gold.
-- [[COMEX]] because it is the primary exchange for silver futures.
-- [[COT Report]] because speculative silver positioning is a contrarian indicator.
+- [[Gold Silver Ratio]]: the primary relative value trade for silver.
+- [[Gold Futures]]: gold drives the investment component of silver demand.
+- [[ETF Flows]]: SLV flows are a key silver demand indicator.
+- [[Green Metals]]: solar panel silver demand is structurally growing.
+- [[Real Interest Rates]]: silver responds to real rates similarly to gold.
+- [[COMEX]]: the primary exchange for silver futures.
+- [[COT Report]]: speculative silver positioning is a contrarian indicator.
 
 ## Common misconceptions
 
-**"Silver moves like gold."** Silver amplifies gold moves and has additional industrial demand drivers. It can diverge from gold significantly during periods of strong or weak industrial activity.
+**"Silver moves like gold."** Silver amplifies gold moves and has additional industrial demand drivers. It diverges from gold during strong or weak industrial activity.
 
-**"Silver is always cheaper than gold on a relative basis."** The gold/silver ratio varies enormously (from 30 in 2011 to 120 in March 2020). There is no fixed "fair" ratio.
+**"Silver is always cheap relative to gold."** The ratio varies enormously (30 in 2011 to 120 in March 2020). There is no fixed "fair" ratio.
 
-**"Solar demand will make silver scarce."** While growing, solar consumes approximately 150 million ounces per year out of 1 billion ounces of total supply. Recycling and mine supply can respond.
+**"Solar demand will make silver scarce."** Solar consumes ~150 million oz per year out of 1 billion oz of total supply. Recycling and mine supply can respond.
 
 ## Sources
 

@@ -11,28 +11,26 @@ date-added: "2026-03-20"
 
 ## Definition
 
-Commodity currencies are the exchange rates of countries whose economies and export revenues are dominated by commodity production. The currency value is structurally linked to commodity prices because higher commodity prices improve the country's terms of trade, current account, fiscal balance, and economic growth. The primary G10 commodity currencies are CAD (oil, lumber), AUD (iron ore, coal, copper, LNG), NOK (oil, gas), and NZD (dairy, agriculture). Key EM commodity currencies include BRL (soybeans, coffee, sugar, iron ore), ZAR (gold, platinum, coal), CLP (copper), RUB (oil, gas), MXN (oil), and COP (oil, coffee).
+Commodity currencies are the exchange rates of countries whose economies and export revenues are dominated by commodity production. The currency is structurally linked to commodity prices because higher prices improve terms of trade, current account, fiscal balance, and growth. Primary G10 commodity currencies: CAD (oil, lumber), AUD (iron ore, coal, copper, LNG), NOK (oil, gas), NZD (dairy, agriculture). Key EM: BRL (soybeans, coffee, sugar, iron ore), ZAR (gold, platinum, coal), CLP (copper), RUB (oil, gas), MXN (oil), COP (oil, coffee).
 
 ## Why it matters (commodities and FX)
 
-Commodity currencies are the bridge between commodity markets and FX markets. They allow a commodity trader to express a commodity view through FX, and they allow an FX trader to understand why certain currencies move. If you are long [[Brent Crude]] and also long CAD or NOK, you have concentrated commodity exposure. If you are long crude and short AUD/CAD, you are expressing a relative commodity view (energy vs metals/China). Understanding these linkages is essential for portfolio construction, [[Hedging]], and identifying hidden [[Correlation]] exposures.
+Commodity currencies bridge commodity markets and FX. A commodity trader expresses a view through FX; an FX trader uses commodities to explain currency moves. Long [[Brent Crude]] and long CAD or NOK = concentrated commodity exposure. Long crude and short AUD/CAD = relative commodity view (energy vs metals/China). Understanding these linkages is essential for portfolio construction, [[Hedging]], and identifying hidden [[Correlation]] exposure.
 
-The relationship also runs in reverse: a strong USD (driven by Fed policy, [[Real Interest Rates]]) weighs on ALL commodity currencies and commodity prices simultaneously, because most commodities are priced in USD.
+The relationship runs in reverse: a strong USD (Fed policy, [[Real Interest Rates]]) weighs on ALL commodity currencies and commodity prices simultaneously, because most commodities are priced in USD.
 
 ## Concrete example
 
-**AUD/USD and iron ore:** Australia is the world's largest iron ore exporter. Iron ore is Australia's largest export (~35% of goods exports). When Chinese steel production booms and iron ore prices rise from $80/tonne to $130/tonne, Australian terms of trade improve, export revenue grows, and the RBA may face inflationary pressure. AUD/USD typically rises in tandem. The rolling 12 month [[Correlation]] between AUD/USD and iron ore prices has averaged 0.60 to 0.75 over the past decade.
+**Concrete:** AUD/USD and iron ore. Australia is the largest iron ore exporter. Iron ore is ~35% of goods exports. When Chinese steel booms and iron ore rises from $80 to $130/tonne, Australian terms of trade improve, export revenue grows, and RBA faces inflation pressure. AUD/USD typically rises. Rolling 12 month [[Correlation]] between AUD/USD and iron ore has averaged 0.60 to 0.75 over the past decade. To express a bearish iron ore view from $120 to $90, short AUD/USD instead of iron ore futures. Pros: top 5 global FX pair, 24 hour, no roll. Cons: AUD/USD also reflects rate differentials and risk sentiment, so it is a noisy proxy.
 
-Trade expression: if you believe Chinese construction will slow and iron ore will fall from $120 to $90, you can express this view by shorting AUD/USD rather than directly shorting iron ore futures. Advantages: AUD/USD is extremely liquid (top 5 global FX pair), 24 hour market, no expiry or roll. Disadvantage: AUD/USD also reflects interest rate differentials, risk sentiment, and other factors, so it is a noisy proxy.
-
-**USD/CAD and WTI:** Canada is the 4th largest oil producer. Oil and gas represent ~20% of exports. When WTI rises, CAD strengthens (USD/CAD falls). The correlation is approximately 0.50 to 0.65. A common trade: long WTI / long USD/CAD as a hedge (offsetting the commodity exposure with currency exposure). Or: long NOK/CAD as a pure Brent vs WTI expression through FX.
+**Simplified:** Some countries dig stuff up and sell it abroad. When the price of that stuff rises, the country earns more dollars, exchanges them for local currency, and the currency rises. So instead of trading the commodity directly, you can trade the country's currency. The bet is cleaner if the commodity is a big share of exports (Norway oil, Chile copper). It is noisier if other things (rates, politics) dominate.
 
 ## Key mechanics and formulas
 
 **Terms of trade effect:**
 `Terms of Trade = Export Prices / Import Prices`
 
-When commodity prices rise, a commodity exporter's terms of trade improve, attracting capital inflows and strengthening the currency.
+When commodity prices rise, an exporter's terms of trade improve, attracting capital inflows and strengthening the currency.
 
 **Key commodity/currency linkages:**
 
@@ -49,7 +47,7 @@ When commodity prices rise, a commodity exporter's terms of trade improve, attra
 **Commodity beta of FX:**
 `ΔFX ≈ α + β x ΔCommodity + ε`
 
-The beta tells you how many basis points the currency moves per 1% change in the commodity. AUD/USD beta to iron ore is approximately 0.3 to 0.4 (a 10% iron ore rally = 3 to 4% AUD appreciation).
+Beta = currency move per 1% commodity change. AUD/USD beta to iron ore ≈ 0.3 to 0.4 (10% iron ore rally = 3 to 4% AUD appreciation).
 
 ## Prerequisites
 - [[Carry Trade]]
@@ -58,20 +56,20 @@ The beta tells you how many basis points the currency moves per 1% change in the
 - [[Gold Futures]]
 
 ## Related concepts (learn next)
-- [[Brent-WTI Spread]] - different crude benchmarks link to different currencies. Brent drives NOK, WTI drives CAD. Trading NOK/CAD is an FX expression of the Brent/WTI spread.
-- [[Risk-On Risk-Off]] - commodity currencies are pro cyclical. They strengthen in risk on and weaken in risk off, amplifying commodity exposure.
-- [[Real Interest Rates]] - commodity currencies are sensitive to both commodity prices AND real rate differentials. Decomposing what is driving the currency is essential.
-- [[Safe Haven Assets]] - commodity currencies are the opposite of safe havens. In a crisis, AUD and CAD weaken while JPY and CHF strengthen.
-- [[Carry Trade]] - many commodity currencies offer high nominal yields (BRL, ZAR, MXN), making them carry trade destinations. This creates a dual driver: carry + commodity.
-- [[Inter-Commodity Spread]] - cross commodity views can be expressed through FX pairs (AUD/CAD = metals vs oil).
+- [[Brent-WTI Spread]] - different crude benchmarks link to different currencies. Brent drives NOK, WTI drives CAD. NOK/CAD = FX expression of Brent/WTI spread.
+- [[Risk-On Risk-Off]] - commodity currencies are pro cyclical. They strengthen in risk on, weaken in risk off, amplifying commodity exposure.
+- [[Real Interest Rates]] - commodity currencies are sensitive to both commodity prices AND real rate differentials. Decomposition is essential.
+- [[Safe Haven Assets]] - commodity currencies are the opposite. In crisis, AUD and CAD weaken while JPY and CHF strengthen.
+- [[Carry Trade]] - many commodity currencies offer high nominal yields (BRL, ZAR, MXN), creating dual carry + commodity exposure.
+- [[Inter-Commodity Spread]] - cross commodity views can be expressed through FX (AUD/CAD = metals vs oil).
 
 ## Common misconceptions
 
-**"AUD is a China proxy."** Partially true (China buys ~60% of Australian iron ore), but AUD also reflects domestic rates, global risk sentiment, and other exports. AUD weakened in 2022 despite strong iron ore prices because the Fed hiked faster than the RBA.
+**"AUD is a China proxy."** Partially true (China buys ~60% of Australian iron ore), but AUD also reflects domestic rates, global risk sentiment, and other exports. AUD weakened in 2022 despite strong iron ore prices because the Fed hiked faster than RBA.
 
-**"Commodity currencies perfectly track commodity prices."** The correlation is strong but not 1:1. Central bank policy, fiscal dynamics, political risk, and positioning all create divergences. Use the commodity linkage as a guide, not a rule.
+**"Commodity currencies perfectly track commodity prices."** Correlation is strong, not 1:1. Central bank policy, fiscal dynamics, political risk, and positioning create divergences. Use the linkage as a guide, not a rule.
 
-**"EM commodity currencies behave like G10 commodity currencies."** EM currencies carry additional risks: capital controls, convertibility risk, political instability, and balance of payments crises. BRL can collapse 20% even if soybeans are rallying, if fiscal concerns trigger capital flight.
+**"EM commodity currencies behave like G10."** EM currencies carry capital controls, convertibility risk, political instability, and balance of payments crises. BRL can collapse 20% even if soybeans rally, if fiscal concerns trigger capital flight.
 
 ## Sources
 

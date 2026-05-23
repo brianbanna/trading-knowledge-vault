@@ -9,25 +9,23 @@ date-added: "2026-03-27"
 
 ## Definition
 
-Jitter is the variance or inconsistency in [[Latency]] over time. If a message normally takes 50 microseconds but occasionally spikes to 500 microseconds, that 10x variation is jitter. A system with high average latency but low jitter is often more manageable than one with low average latency but unpredictable spikes. In trading, jitter can cause missed fills, stale quotes, and unreliable execution timing.
+Jitter is the variance in [[Latency]] over time. If a message normally takes 50 microseconds but occasionally spikes to 500 microseconds, that 10x variation is jitter. A system with high average latency but low jitter is often more manageable than one with low average but unpredictable spikes. Jitter causes missed fills, stale quotes, and unreliable execution timing.
 
 ## Why it matters (commodities and FX)
 
-A market maker quoting [[EUR USD]] needs predictable response times to manage [[Stale Quote]] risk. If the system jitters, quotes may linger too long during volatile moments, inviting [[Sniping]]. For commodity traders executing around data releases like the [[EIA Weekly Petroleum Status Report]], a latency spike at the wrong millisecond means the difference between capturing and missing a move. Consistent latency allows strategies to be calibrated reliably; jitter makes calibration impossible.
+A market maker quoting [[EUR USD]] needs predictable response times to manage [[Stale Quote]] risk. With jitter, quotes linger during volatile moments and invite [[Sniping]]. For commodity traders executing around the [[EIA Weekly Petroleum Status Report]], a latency spike at the wrong millisecond is the difference between capturing and missing a move. Consistent latency allows strategy calibration. Jitter destroys it.
 
 ## Concrete example
 
-A market making desk runs a quoting engine on [[Brent Crude]] futures with median [[Latency]] of 80 microseconds. During normal conditions, the 99th percentile latency is 120 microseconds, so jitter is low (40 microsecond range). The desk calibrates its [[Stale Quote]] timeout at 200 microseconds with comfortable margin.
+**Concrete:** Quoting engine on [[Brent Crude]] futures with median [[Latency]] of 80 microseconds. Normal P99: 120 microseconds (40 microsecond range, low jitter). [[Stale Quote]] timeout calibrated at 200 microseconds with comfortable margin. A garbage collection pause in a downstream logging service spikes P99 to 2,000 microseconds. Quotes go stale during volatile moments. A fast algo snipes 3 stale quotes for $45,000 combined loss before the [[Kill Switch]] triggers. With jitter controlled (pre allocated memory, pinned threads, no [[Garbage Collection]]), P99 stays at 130 microseconds. No stale quotes, no snipes.
 
-One day, a garbage collection pause in a downstream logging service causes the 99th percentile to spike to 2,000 microseconds. The quoting engine's prices become stale during volatile moments. A fast algo snipes 3 stale quotes for a combined loss of $45,000 before the [[Kill Switch]] triggers.
-
-**If jitter is controlled:** The desk pre allocates memory, pins threads to cores, and avoids [[Garbage Collection]]. The 99th percentile stays at 130 microseconds. No stale quotes, no losses from sniping.
+**Simplified:** Average latency is not the whole story. What matters is the worst case: how slow do messages get at the 99th percentile? If your engine is usually fast but occasionally freezes for a few milliseconds, those freezes are exactly when fast competitors take your money. Jitter is the freeze, latency is the speed.
 
 ## Key mechanics and formulas
 
 Jitter = P99 latency minus P50 latency (common practical measure)
 
-Standard deviation of latency samples is the statistical measure:
+Standard deviation of latency samples (statistical measure):
 
 Jitter (std dev) = sqrt((1/N) * sum((latency_i minus mean_latency)^2))
 
@@ -49,7 +47,7 @@ Where:
 
 ## Related concepts (learn next)
 
-- [[Garbage Collection]] for understanding one of the biggest sources of jitter in managed language systems
+- [[Garbage Collection]] for the biggest source of jitter in managed language systems
 - [[Cache Miss]] for how memory access patterns create micro latency spikes
 - [[Branch Prediction]] for CPU level sources of timing variance
 - [[Hot Path]] for why the critical code path must be jitter free
@@ -60,9 +58,9 @@ Where:
 
 1. **"Low average latency means low jitter."** A system averaging 20 microseconds but spiking to 5 milliseconds once per second has terrible jitter despite a great average. The tail matters more than the mean.
 
-2. **"Jitter only matters for HFT."** Even a desk with 100 millisecond target latency cares about jitter. If execution timing is unpredictable, [[Slippage]] estimates become unreliable and [[TCA]] analysis is noisy.
+2. **"Jitter only matters for HFT."** Even a desk at 100 millisecond target latency cares. Unpredictable execution timing makes [[Slippage]] estimates unreliable and [[TCA]] noisy.
 
-3. **"Adding more hardware fixes jitter."** Jitter is often caused by software issues (GC pauses, lock contention, context switches), not raw compute. A faster CPU with the same GC pauses still jitters.
+3. **"Adding more hardware fixes jitter."** Jitter is often software: GC pauses, lock contention, context switches. A faster CPU with the same GC pauses still jitters.
 
 ## Sources
 

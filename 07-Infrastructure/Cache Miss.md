@@ -8,26 +8,18 @@ date-added: "2026-03-27"
 # Cache Miss
 
 ## Definition
-A cache miss occurs when the CPU requests data that is not present in its fast cache and must fetch it from a slower level of the memory hierarchy. An L1 cache miss forces a lookup in L2 (roughly 5 nanoseconds), an L2 miss goes to L3 (roughly 10 nanoseconds), and an L3 miss goes all the way to main RAM (roughly 100 nanoseconds). Each miss stalls the CPU pipeline, meaning no useful work is done during the fetch. In high frequency and low latency trading, a single cache miss on the [[Hot Path]] can double the [[Tick to Trade]] time. Minimizing cache misses through [[Cache Locality]], data structure design, and prefetching is one of the most impactful optimizations in trading system engineering.
+A cache miss occurs when the CPU requests data not present in its fast cache and must fetch from a slower memory level. L1 miss goes to L2 (roughly 5 ns), L2 miss to L3 (roughly 10 ns), L3 miss to RAM (roughly 100 ns). Each miss stalls the pipeline, doing no useful work during the fetch. On a trading [[Hot Path]], a single miss doubles [[Tick to Trade]]. Minimizing misses through [[Cache Locality]], data structure design, and prefetching is one of the highest impact optimizations in trading system engineering.
 
 ## Why it matters (commodities and FX)
-Every tick of Brent crude on ICE or EUR/USD on EBS triggers a cascade of lookups: order book state, position, model parameters, risk limits. If any of these data structures cause a cache miss, the system stalls. A market maker that suffers 5 L3 misses per tick adds 500 nanoseconds to its response time. In a competitive environment where the top 3 firms are separated by 100 nanoseconds, those 5 cache misses move you from first in queue to last. For commodity spread traders working calendar spreads on CME natural gas, cache misses in the spread calculator can cause the system to miss the fleeting moment when the spread is mispriced.
+Every tick of Brent on ICE or EUR/USD on EBS triggers lookups: order book state, position, model parameters, risk limits. Any of these causing a cache miss stalls the system. A market maker hit by 5 L3 misses per tick adds 500 ns. Where the top 3 firms are separated by 100 ns, 5 cache misses move you from first in queue to last. For commodity spread traders working CME natural gas calendar spreads, misses in the spread calculator make the system miss the fleeting moment when the spread is mispriced.
 
 ## Concrete example
-A WTI crude oil market maker on CME processes 50,000 ticks per second during active US hours. The pricing function reads 3 data structures on every tick:
+**Concrete:** WTI market maker on CME processing 50,000 ticks per second. Per tick, the pricing function reads 3 structures: order book (256 byte contiguous array, always L1, 0 misses), position tracker (64 byte struct, occasional L2 hit, 5 ns), risk limits (heap allocated hash map, 2 L3 misses per tick, 200 ns). Total miss penalty: 200 ns, 60% of the system's 330 ns [[Tick to Trade]]. Developer replaces the risk limits hash map with a flat array indexed by instrument ID. Misses drop to 0. T2T falls 330 to 140 ns. The system wins the CME WTI queue consistently, adding $18,000 per day in spread capture.
 
-1. **Order book** (contiguous array, 256 bytes): Always in L1 cache. 0 misses.
-2. **Position tracker** (contiguous struct, 64 bytes): Usually in L1. Occasional L1 miss, hit in L2. Cost: 5 nanoseconds when missed.
-3. **Risk limits** (hash map with heap allocated nodes): Pointer chasing causes 2 L3 misses per tick on average. Cost: 200 nanoseconds per tick.
-
-**Total cache miss penalty per tick:** roughly 200 nanoseconds, which is 60% of the system's 330 nanosecond [[Tick to Trade]] time.
-
-**Win scenario (after optimization):** The developer replaces the risk limits hash map with a flat array indexed by instrument ID. Cache misses drop to 0. Tick to trade falls from 330 to 140 nanoseconds. The system now consistently wins the queue for CME WTI, adding $18,000 per day in spread capture.
-
-**Fail scenario:** The developer adds a per tick lookup into a large std::unordered_map containing 10,000 instrument parameters. The hash table is 2 MB (too large for L1/L2). Every tick triggers 3 to 5 L3 misses. Tick to trade jumps from 140 to 700 nanoseconds. The system loses queue priority on every fill.
+**Simplified:** The CPU keeps frequently used data in tiny fast memory (cache). If the data is not there, the CPU pauses up to 100 nanoseconds while fetching from RAM. Pointer chasing through linked lists and large hash tables guarantees misses. Flat arrays guarantee hits. On a hot path, this is the difference between winning and losing.
 
 ## Key mechanics and formulas
-**Memory hierarchy latencies (approximate, modern Intel Xeon):**
+**Memory hierarchy latencies (modern Intel Xeon):**
 
 | Level | Size | Latency |
 |-------|------|---------|
@@ -39,17 +31,17 @@ A WTI crude oil market maker on CME processes 50,000 ticks per second during act
 **Cache miss cost on hot path:**
 $$T_{miss\_penalty} = N_{misses} \times T_{level}$$
 
-Where $N_{misses}$ is the number of misses per tick and $T_{level}$ is the latency of the level that eventually satisfies the request.
+Where $N_{misses}$ is misses per tick and $T_{level}$ is the latency of the satisfying level.
 
 **Cache miss rate:**
 $$\text{Miss rate} = \frac{\text{cache misses}}{\text{total memory accesses}}$$
 
-Target for [[Hot Path]]: miss rate below 0.1% (fewer than 1 miss per 1,000 accesses).
+Target on [[Hot Path]]: below 0.1% (fewer than 1 miss per 1,000 accesses).
 
 **Daily cost of cache misses:**
-$$\text{Cost} = N_{ticks/day} \times T_{miss\_penalty} \times \text{opportunity cost per nanosecond}$$
+$$\text{Cost} = N_{ticks/day} \times T_{miss\_penalty} \times \text{opportunity cost per ns}$$
 
-For a CME market maker processing 500,000 ticks per day with 200 ns penalty and $0.0001 per nanosecond opportunity cost:
+For a CME market maker at 500,000 ticks per day, 200 ns penalty, $0.0001 per ns opportunity cost:
 $$\text{Cost} = 500{,}000 \times 200 \times 0.0001 = \$10{,}000 \text{ per day}$$
 
 ## Prerequisites
@@ -58,18 +50,18 @@ $$\text{Cost} = 500{,}000 \times 200 \times 0.0001 = \$10{,}000 \text{ per day}$
 - [[Latency]]
 
 ## Related concepts (learn next)
-- [[Cache Locality]] is the design principle that prevents cache misses by keeping data contiguous.
-- [[Hot Path]] performance is dominated by cache miss frequency on the critical execution path.
-- [[Memory Allocation]] using pre allocated flat buffers eliminates pointer chasing that causes misses.
-- [[Branch Prediction]] interacts with cache misses because speculative execution can prefetch data, hiding miss latency.
-- [[Garbage Collection]] compacts memory, which paradoxically can improve or destroy cache locality depending on the collector.
-- [[Co-location]] reduces network latency but cannot fix cache miss latency, which is internal to the server.
-- [[Tick to Trade]] is the end to end metric that cache miss optimization directly improves.
+- [[Cache Locality]] is the design principle that prevents misses.
+- [[Hot Path]] performance is dominated by miss frequency on the critical path.
+- [[Memory Allocation]] using pre allocated flat buffers eliminates pointer chasing.
+- [[Branch Prediction]] interacts with misses because speculative execution can prefetch, hiding miss latency.
+- [[Garbage Collection]] compacts memory, which improves or destroys cache locality depending on the collector.
+- [[Co-location]] reduces network latency but cannot fix miss latency, which is internal to the server.
+- [[Tick to Trade]] is the end to end metric that miss optimization improves.
 
 ## Common misconceptions
-1. **"L1 misses are the most important to fix."** L1 misses that hit in L2 only cost 5 nanoseconds. L3 misses that go to RAM cost 100 nanoseconds, 20x more. Focus optimization effort on eliminating RAM accesses first.
-2. **"Prefetching solves all cache miss problems."** Software prefetching can hide latency for predictable access patterns (sequential array scans) but cannot help with random access patterns like pointer chasing through linked data structures.
-3. **"Cache misses only matter for HFT firms."** Any systematic trader running a backtest over millions of ticks will see 10x to 50x speedup from cache friendly data layouts. A backtest that takes 8 hours with poor cache behavior might take 30 minutes with proper layout.
+1. **"L1 misses are the most important to fix."** L1 misses that hit L2 cost 5 ns. L3 misses to RAM cost 100 ns, 20x more. Focus on eliminating RAM accesses first.
+2. **"Prefetching solves all cache miss problems."** Software prefetching hides latency for sequential scans but cannot help with random access patterns like pointer chasing.
+3. **"Cache misses only matter for HFT firms."** Any systematic trader backtesting millions of ticks sees 10 to 50x speedup from cache friendly layouts. An 8 hour backtest with poor cache behavior runs in 30 minutes with proper layout.
 
 ## Sources
 - "What Every Programmer Should Know About Memory" by Ulrich Drepper

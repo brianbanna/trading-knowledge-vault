@@ -10,21 +10,23 @@ date-added: "2026-03-20"
 
 ## Definition
 
-The gasoline crack spread is the refining margin for gasoline, calculated as the price of gasoline minus the price of crude oil. In the US, it is expressed as RBOB Gasoline (NYMEX RB contract) minus [[WTI Crude Oil]] or [[Brent Crude]]. The gasoline crack is the most seasonal spread in energy markets, driven by the US driving season that runs from Memorial Day (late May) to Labor Day (early September). It is one of the two legs of the standard 3:2:1 [[Crack Spread]] (2 barrels gasoline + 1 barrel diesel from 3 barrels crude). The crack widens when gasoline demand is strong relative to supply and narrows when demand fades or inventories build.
+The gasoline crack spread is the refining margin for gasoline: gasoline price minus crude price. In the US, it is RBOB Gasoline (NYMEX RB) minus [[WTI Crude Oil]] or [[Brent Crude]]. The most seasonal spread in energy markets, driven by US driving season from Memorial Day (late May) to Labor Day (early September). One of the 2 legs of the 3:2:1 [[Crack Spread]] (2 barrels gasoline + 1 barrel diesel from 3 barrels crude). Widens when gasoline demand is strong relative to supply, narrows when demand fades or inventories build.
 
 ## Why it matters (commodities and FX)
 
-US driving season is the strongest and most tradeable seasonal pattern in energy. Gasoline cracks typically start rising in March/April as refiners build inventories ahead of summer, peak in June/July, and then decline through the fall. The RVP (Reid Vapor Pressure) specification transition in September forces refiners to switch blends, further tightening summer grade supply. For traders, the gasoline crack offers a clean seasonal entry with well defined risk parameters. It also drives [[Refinery Utilization]] decisions: wide gasoline cracks incentivize refiners to maximize gasoline yield, which pulls more crude through the system.
+US driving season is the strongest tradeable seasonal pattern in energy. Gasoline cracks rise in March/April as refiners build inventories, peak in June/July, then decline through the fall. The RVP (Reid Vapor Pressure) spec transition in September forces refiners to switch blends, tightening summer grade supply. Clean seasonal entry with defined risk parameters. Wide gasoline cracks drive [[Refinery Utilization]] higher, pulling more crude through the system.
 
 ## Concrete example
 
-In March 2026, a trader buys the July RBOB crack (long July RBOB, short July WTI) at $28/bbl, positioned for the seasonal rise into summer. By June, a combination of strong driving demand and a Gulf Coast refinery outage drives the RBOB crack to $42/bbl. The trader profits $14/bbl. If instead a mild recession had reduced driving demand and gasoline inventories had built above seasonal norms, the crack might have fallen to $22/bbl, losing $6/bbl.
+**Concrete:** March 2026. Trader buys the July RBOB crack (long July RBOB, short July WTI) at $28/bbl, positioned for the seasonal rise into summer. By June, strong driving demand plus a Gulf Coast refinery outage drives the RBOB crack to $42/bbl. Profit $14/bbl. Counter case: mild recession reduces driving demand, gasoline inventories build above seasonal norms, crack falls to $22/bbl. Loss $6/bbl.
+
+**Simplified:** Refineries turn crude into gasoline. The gap between gasoline and crude prices is the refiner's margin. In summer, Americans drive more, so gasoline demand jumps and the gap widens. Buy gasoline futures, sell crude futures, hold from spring to summer. The trade is the seasonal margin expansion.
 
 ## Key mechanics and formulas
 
 **Gasoline crack:** `Gasoline Crack = RBOB Price ($/bbl) - Crude Oil Price ($/bbl)`
 
-**Unit conversion:** RBOB is quoted in cents per gallon. To convert: `$/bbl = $/gal × 42`
+**Unit conversion:** RBOB is quoted in cents per gallon. `$/bbl = $/gal × 42`
 
 **Seasonal pattern:**
 - Rises: March to June (pre summer buildup, RVP spec transition)
@@ -53,11 +55,11 @@ In March 2026, a trader buys the July RBOB crack (long July RBOB, short July WTI
 
 ## Common misconceptions
 
-**"The gasoline crack always rallies into summer."** While the seasonal pattern is strong, it fails in years with demand destruction (recessions), oversupply, or unusually mild weather. The edge is in magnitude and timing, not certainty.
+**"The gasoline crack always rallies into summer."** The seasonal pattern is strong but fails in years with demand destruction (recessions), oversupply, or mild weather. Edge is in magnitude and timing, not certainty.
 
-**"Hurricane season is always bullish for gasoline cracks."** Hurricanes shut refineries (reducing supply, bullish for products) but also reduce demand in affected areas. The net effect depends on which facilities are hit and how quickly they restart.
+**"Hurricane season is always bullish for gasoline cracks."** Hurricanes shut refineries (reducing supply) but also reduce demand in affected areas. Net effect depends on which facilities are hit and how quickly they restart.
 
-**"You can trade the crack in a single instrument."** While CME offers crack spread futures, many traders construct the crack from separate legs for more precise exposure. This requires careful attention to contract sizes and expiry alignment.
+**"You can trade the crack in a single instrument."** CME offers crack spread futures, but many traders construct the crack from separate legs for precise exposure. Requires careful attention to contract sizes and expiry alignment.
 
 ## Sources
 

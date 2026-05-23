@@ -9,23 +9,24 @@ date-added: "2026-03-20"
 # Expiry Pinning
 
 ## Definition
-Expiry pinning is the phenomenon where the spot price of an asset gravitates toward a large option [[strike price]] as [[expiry]] approaches. This occurs because the [[Delta]] hedging activity of options dealers creates a self reinforcing feedback loop. When dealers are long [[Gamma]] at a strike (net long options), their hedging stabilizes spot near the strike: they sell as spot rises above and buy as spot falls below. When dealers are short gamma, the effect reverses and amplifies moves away from the strike. The gravitational pull of large strikes is strongest in the final 24 to 48 hours before expiry, when [[Gamma]] peaks and hedging frequency increases. Pinning is observed across all options markets but is most pronounced in FX due to the concentration of large notional options at round number strikes.
+Expiry pinning is the gravitation of spot toward a large option [[strike price]] as [[expiry]] approaches. [[Delta]] hedging by dealers creates a self reinforcing loop. When dealers are long [[Gamma]] at a strike, their hedging stabilizes spot near it: they sell as spot rises above and buy as spot falls below. Short gamma reverses the effect and amplifies moves away from the strike. The pull is strongest in the final 24 to 48 hours before expiry, when gamma peaks and hedging frequency rises. Pinning happens in all option markets but is most pronounced in FX due to the concentration of large notional options at round number strikes.
 
 ## Why it matters (commodities and FX)
-In FX, trillions of dollars of options expire at the 10 AM New York cut each day. When a disproportionately large notional is concentrated at a single strike (e.g., EUR/USD 1.1000), the delta hedging flow can dominate all other market activity in the hours around the fix. Traders who understand the location and size of major option strikes can anticipate spot behavior near expiry. In commodities, pinning effects are visible around [[WTI Crude Oil]] and [[Gold Futures]] option expiries on NYMEX and COMEX, where the concentration of open interest at round strikes creates measurable gravitational pull. Pinning creates both opportunities (trading toward the pin) and risks (being trapped in a position that cannot escape the magnet zone).
+In FX, trillions of dollars of options expire at the 10 AM New York cut daily. When a disproportionately large notional sits at a single strike (EUR/USD 1.1000), the delta hedging flow can dominate all other activity in the hours around the fix. Traders who know the location and size of major strikes anticipate spot behavior near expiry. In commodities, pinning is visible around [[WTI Crude Oil]] and [[Gold Futures]] option expiries on NYMEX and COMEX, where open interest at round strikes creates measurable pull. Pinning creates opportunities (trading toward the pin) and risks (being trapped in a position that cannot escape the magnet).
 
 ## Concrete example
-**Success:** EUR/USD spot is at 1.0985 at 8 AM New York, and market intelligence indicates EUR 3 billion notional of options expiring at the 1.1000 strike at the 10 AM cut, with dealers net long gamma. The trader buys EUR/USD at 1.0985, expecting the gravitational pull toward 1.1000. Over the next 90 minutes, spot drifts to 1.0998 as dealer hedging activity (buying EUR on dips, selling on rallies) stabilizes spot near the strike. The trader sells at 1.0997 for a 12 pip profit.
 
-**Failure:** A trader is short EUR/USD at 1.1010, expecting a break lower through 1.1000. Despite bearish fundamentals, the massive option expiry at 1.1000 prevents spot from moving significantly below 1.0990 or above 1.1010. Dealer gamma hedging absorbs every attempt to break the range. After the 10 AM expiry, the options roll off and the gamma magnet disappears. Spot immediately drops to 1.0950, but the trader had already covered at 1.1005 for a 5 pip loss, missing the post expiry move.
+**Concrete:** EUR/USD spot at 1.0985 at 8 AM NY. Market intel: EUR 3 billion notional expiring at 1.1000 at the 10 AM cut, dealers net long gamma. Trader buys at 1.0985, expecting pull toward 1.1000. Over 90 minutes spot drifts to 1.0998 as dealer hedging (buying on dips, selling on rallies) stabilizes near the strike. Trader sells at 1.0997 for 12 pips. Failure mirror: trader short at 1.1010 expecting a break lower. Despite bearish fundamentals, the option expiry holds spot between 1.0990 and 1.1010. After 10 AM the options roll off and the magnet disappears. Spot drops to 1.0950, but the trader covered at 1.1005 for 5 pip loss, missing the post expiry move.
+
+**Simplified:** Around a major option expiry, dealers must continuously rebalance hedges as spot moves. If they are long options at a strike, they buy when spot falls and sell when spot rises, pinning spot near the strike. The bigger the option notional, the stronger the magnet. Right after expiry, the options roll off and the magnet vanishes, often releasing a fast move that was suppressed for hours.
 
 ## Key mechanics and formulas
-- **Dealer gamma hedging**: if dealers are long gamma at strike K, they sell as spot rises above K (capping upside) and buy as spot falls below K (supporting downside), creating mean reversion toward K
-- **Pinning strength** is proportional to: net gamma notional at the strike × (1 / time to expiry) × (1 / distance from strike)
-- **Critical mass**: pinning is only observable when the notional at a single strike significantly exceeds normal market turnover in the relevant time window. For EUR/USD, this typically means EUR 2 billion+ at a single strike
-- **Breakout threshold**: if a macro event or data release generates flow that exceeds the gamma hedging capacity, the pin breaks and spot can gap aggressively as dealers are forced to chase
-- **Post expiry release**: after the options expire, the gamma disappears, and spot can move freely. The immediate post expiry period often sees rapid directional moves as the "lid" is removed
-- **Gamma imbalance**: if dealers are short gamma at a strike, the effect reverses: their hedging amplifies moves away from the strike, creating instability rather than pinning
+- **Dealer gamma hedging**: long gamma at strike K means sell as spot > K (caps upside), buy as spot < K (supports downside). Creates mean reversion toward K.
+- **Pinning strength** is proportional to: net gamma notional at strike × (1 / time to expiry) × (1 / distance from strike).
+- **Critical mass**: pinning is observable only when notional at a single strike significantly exceeds normal turnover in the relevant window. For EUR/USD, typically EUR 2 billion+ at one strike.
+- **Breakout threshold**: macro events or data exceeding hedging capacity break the pin; spot can gap as dealers chase.
+- **Post expiry release**: after expiry, gamma disappears and spot moves freely. Post expiry often sees rapid directional moves.
+- **Gamma imbalance**: short gamma at a strike reverses the effect, amplifying moves away from the strike, creating instability.
 
 ## Prerequisites
 - [[Gamma]]
@@ -35,19 +36,23 @@ In FX, trillions of dollars of options expire at the 10 AM New York cut each day
 - [[Market Impact]]
 
 ## Related concepts (learn next)
-- [[Gamma]]: the fundamental driver of pinning; the magnitude and sign of dealer gamma at each strike determines the flow
-- [[Delta]]: delta hedging is the mechanism through which gamma creates spot flow
-- [[Digital Option]]: digital options create extreme gamma near the strike at expiry, amplifying pinning or whipsaw effects
-- [[Barrier Option]]: barrier hedging near trigger levels creates similar "magnet" or "repellent" dynamics to expiry pinning
-- [[Vanna]]: vanna flows interact with pinning, especially when vol is changing as expiry approaches
-- [[Theta]]: the rapid theta decay near expiry is the mirror image of extreme gamma buildup
-- [[Liquidity]]: pinning is strongest in liquid markets where dealers can continuously rehedge; in illiquid markets, gaps break the pin
+- [[Gamma]]: fundamental driver; magnitude and sign of dealer gamma at each strike determines flow.
+- [[Delta]]: hedging is the mechanism through which gamma creates spot flow.
+- [[Digital Option]]: digitals create extreme gamma near strike at expiry, amplifying pinning or whipsaw.
+- [[Barrier Option]]: barrier hedging near triggers creates similar magnet or repellent dynamics.
+- [[Vanna]]: vanna flows interact with pinning, especially when vol shifts as expiry approaches.
+- [[Theta]]: rapid decay near expiry mirrors extreme gamma buildup.
+- [[Liquidity]]: pinning is strongest in liquid markets where dealers can rehedge; illiquid markets gap and break the pin.
 
 ## Common misconceptions
-1. **"Expiry pinning always works."** Pinning requires sufficient gamma concentration and the absence of competing macro flows. A single strong data release or intervention can overwhelm even a massive gamma position.
-2. **"You can always see the pin coming."** Precise option position data is not publicly available. Traders rely on market intelligence, broker commentary, and inference from price action. Estimated strike concentrations are often wrong.
-3. **"Pinning only affects spot at the exact strike."** The gravitational effect creates a range around the strike, typically within 20 to 30 pips in EUR/USD, where spot oscillates. The effect weakens with distance from the strike.
-4. **"Short gamma always causes instability."** Short gamma amplifies moves, but only if the move starts. In a truly quiet market, short gamma has no effect because there is no move to amplify. Pinning and anti pinning require some initial spot movement to trigger the feedback loop.
+
+**"Expiry pinning always works."** Requires gamma concentration and absence of competing macro flows. A strong release or intervention overwhelms even a massive gamma position.
+
+**"You can always see the pin coming."** Position data is not publicly available. Traders rely on intelligence, broker commentary, and inference. Estimated strike concentrations are often wrong.
+
+**"Pinning only affects spot at the exact strike."** The pull creates a range, typically 20 to 30 pips in EUR/USD, where spot oscillates. Weakens with distance.
+
+**"Short gamma always causes instability."** Short gamma amplifies moves only if a move starts. In a quiet market, short gamma has no effect because there is no move to amplify.
 
 ## Sources
 - Taleb, Nassim Nicholas. *Dynamic Hedging: Managing Vanilla and Exotic Options*.
