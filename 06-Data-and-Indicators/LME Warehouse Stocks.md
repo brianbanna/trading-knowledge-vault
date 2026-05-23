@@ -17,7 +17,7 @@ LME stock changes are the highest frequency fundamental signal for base metals. 
 
 ## Concrete example
 
-**Concrete:** LME copper stocks fall from 200,000 to 120,000 tonnes over 8 weeks. Cancelled warrants at 45% (54,000 tonnes requested for withdrawal). Trader reads strong physical demand and buys 20 LME copper 3M at $9,500. Drawdowns continue to 80,000 tonnes. [[Cash to 3 Month Spread]] moves into steep backwardation. Copper rallies $500/tonne to $10,000. Gain: $500 × 25 tonnes × 20 = $250,000. Counter scenario: the draw was a one time Chinese import event. Restocking begins, stocks rebuild to 160,000 tonnes, cancelled warrants drop. Copper sells off $300. Loss: $150,000.
+**Concrete:** LME copper stocks fall from 200,000 to 120,000 tonnes over 8 weeks. Cancelled warrants at 45% (54,000 tonnes requested for withdrawal). Trader reads strong physical demand and buys 20 LME copper 3M at $9,500. Drawdowns continue to 80,000 tonnes. [[Cash to 3 Month Spread]] moves into steep backwardation. Copper rallies $500/tonne to $10,000. Gain: $500 × 25 tonnes × 20 = $250,000.
 
 **Simplified:** LME warehouses hold the metal that backs the futures market. When the metal disappears (falling stocks), it means buyers are taking physical delivery, which signals real demand and supports prices. Cancelled warrants tell you how much metal is on its way out before it actually leaves. Track the trend and the cancellation ratio together; both falling stocks and high cancellations is the strongest signal for an upcoming squeeze.
 

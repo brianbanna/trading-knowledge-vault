@@ -15,7 +15,7 @@ The Dollar Index (DXY) is a weighted geometric mean of USD against a basket of 6
 Commodities are priced in USD, so DXY has an inverse correlation with commodity prices ranging from −0.3 to −0.7 depending on period. Rising DXY makes commodities more expensive in foreign currency terms, dampening demand. Crude, gold, copper, and ags all show negative DXY correlation. For FX traders, DXY separates broad USD moves from pair specific factors. EUR/USD falling with flat DXY is EUR specific (ECB news), not a dollar story.
 
 ## Concrete example
-**Concrete:** September 2022, DXY surges to a 20 year high of 114.78 as the Fed hikes aggressively while other central banks lag. WTI drops from $120 to $80, gold from $2,050 to $1,620. Macro trader long 10 DXY futures from 105 in June holds to 114 = 9 points × $1,000/point × 10 contracts = $90,000. Counter scenario: same trader buys 10 contracts at 114 expecting continued strength. Fed signals a pause July 2023. DXY reverses to 101. Loss: 13 points × $1,000 × 10 = $130,000.
+**Concrete:** September 2022, DXY surges to a 20 year high of 114.78 as the Fed hikes aggressively while other central banks lag. WTI drops from $120 to $80, gold from $2,050 to $1,620. Macro trader long 10 DXY futures from 105 in June holds to 114 = 9 points × $1,000/point × 10 contracts = $90,000.
 
 **Simplified:** DXY is one number that summarizes how strong the dollar is against a basket of major currencies. When it rises, the dollar is broadly strong; commodities priced in dollars get more expensive in local currency and demand falls. When it drops, commodities get cheaper globally and prices rise. Most macro traders glance at DXY every morning to decide if the day is a USD up day or a USD down day.
 

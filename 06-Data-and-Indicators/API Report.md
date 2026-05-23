@@ -17,7 +17,7 @@ Traders position into the EIA on the API number. A large surprise draw triggers 
 
 ## Concrete example
 
-**Concrete:** Tuesday 4:30 PM ET. API prints a 6.0 million barrel crude draw vs consensus 1.5 million draw. WTI front month rallies $0.80 in electronic trading. Trader buys 10 lots at $78.20 overnight. Wednesday 10:30 AM ET, EIA confirms with a 5.5 million draw. WTI rallies another $0.70. Trader exits at $79.70 for $1.50/bbl or $15,000. Counter scenario: EIA prints only a 0.5 million draw. WTI gives back overnight gains and drops $0.50 below entry. Loss: $1.30/bbl or $13,000.
+**Concrete:** Tuesday 4:30 PM ET. API prints a 6.0 million barrel crude draw vs consensus 1.5 million draw. WTI front month rallies $0.80 in electronic trading. Trader buys 10 lots at $78.20 overnight. Wednesday 10:30 AM ET, EIA confirms with a 5.5 million draw. WTI rallies another $0.70. Trader exits at $79.70 for $1.50/bbl or $15,000.
 
 **Simplified:** API gives a Tuesday night preview of Wednesday's official oil inventory number. If the API shows a surprise drawdown, prices jump overnight. If the EIA the next morning agrees, the rally extends. If the EIA disagrees, the overnight move reverses. Trading API alone is a coin flip with edge; waiting for EIA confirmation is safer.
 

@@ -18,7 +18,7 @@ Base metals are highly sensitive to China PMI because China consumes ~50% of glo
 
 ## Concrete example
 
-**Concrete:** Consensus for January 2026 NBS Manufacturing PMI is 49.5. Actual prints at 51.2, a 1.7 point beat. Within the hour, LME copper rallies $200/tonne (3M from $9,400 to $9,600), AUD/USD jumps 40 pips, SGX iron ore rises 3%. A trader long 50 lots of LME copper and AUD 5M of AUD/USD into the print captures $250,000 on copper plus $20,000 on FX. Counter scenario: PMI prints 48.0 (1.5 point miss). Copper drops $300/tonne to $9,100, AUD/USD falls 60 pips. Same position loses ~$405,000.
+**Concrete:** Consensus for January 2026 NBS Manufacturing PMI is 49.5. Actual prints at 51.2, a 1.7 point beat. Within the hour, LME copper rallies $200/tonne (3M from $9,400 to $9,600), AUD/USD jumps 40 pips, SGX iron ore rises 3%. A trader long 50 lots of LME copper and AUD 5M of AUD/USD into the print captures $250,000 on copper plus $20,000 on FX.
 
 **Simplified:** China makes and consumes most of the world's industrial metals. PMI is a monthly survey asking factory managers if business is getting better. A surprise beat means stronger demand than priced in, so copper, AUD, and iron ore jump. A miss does the reverse. Trade the gap between what printed and what the market expected, not the headline level.
 

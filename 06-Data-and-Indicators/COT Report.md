@@ -18,7 +18,7 @@ The COT is the most widely used positioning indicator in commodity and FX market
 
 ## Concrete example
 
-**Concrete:** COT prints managed money net long 300,000 contracts in [[Brent Crude]], a 2 year high. Trader reads crowded long, buys 50 contracts of $5 OTM puts expiring in 6 weeks at $1.20 (cost $60,000). 2 weeks later OPEC announces a quota overshoot. MM liquidates 100,000 contracts. Brent drops $8/bbl. Puts trade to $4.50, exit for $225,000 (net +$165,000). Counter scenario: geopolitical escalation extends the net long to 350,000. Puts decay and expire worthless. Loss: full $60,000 premium.
+**Concrete:** COT prints managed money net long 300,000 contracts in [[Brent Crude]], a 2 year high. Trader reads crowded long, buys 50 contracts of $5 OTM puts expiring in 6 weeks at $1.20 (cost $60,000). 2 weeks later OPEC announces a quota overshoot. MM liquidates 100,000 contracts. Brent drops $8/bbl. Puts trade to $4.50, exit for $225,000 (net +$165,000).
 
 **Simplified:** Speculators tend to pile into the same direction. When they are extremely long, there are few new buyers left and any bad news triggers a rush for the exit. When they are extremely short, the opposite. The COT report tells you, with a 3 day delay, where they are positioned. You buy puts or sell into extreme longs, and buy or sell calls into extreme shorts, but only when a catalyst is in sight.
 

@@ -18,7 +18,7 @@ COMEX is where price discovery happens for precious metals in US hours. [[COT Re
 
 ## Concrete example
 
-**Concrete:** COMEX gold OI reaches 600,000 contracts. [[COT Report]] shows MM net long 250,000 contracts, the highest in 3 years. Gold at $2,500/oz. Contrarian trader reads extreme positioning as vulnerable to liquidation. Shorts 20 COMEX gold contracts at $2,500. Hawkish Fed surprise triggers MM liquidation. 50,000 contracts unwind in 2 weeks. Gold drops to $2,400. Gain: $100 × 100 oz × 20 = $200,000. Counter scenario: geopolitical escalation triggers safe haven flows above the crowded long. Gold rallies to $2,650. Loss: $150 × 100 × 20 = $300,000.
+**Concrete:** COMEX gold OI reaches 600,000 contracts. [[COT Report]] shows MM net long 250,000 contracts, the highest in 3 years. Gold at $2,500/oz. Contrarian trader reads extreme positioning as vulnerable to liquidation. Shorts 20 COMEX gold contracts at $2,500. Hawkish Fed surprise triggers MM liquidation. 50,000 contracts unwind in 2 weeks. Gold drops to $2,400. Gain: $100 × 100 oz × 20 = $200,000.
 
 **Simplified:** COMEX is where the gold and silver futures market lives in US hours. The most important number to watch is not the price but the COT positioning: how aggressively hedge funds are positioned. When they are extremely long, the trade is fragile; even small bad news triggers a flush. When they are extremely short, the opposite. COMEX warehouse stocks tell you the same story for the physical market: low stocks mean tight, high stocks mean loose.
 

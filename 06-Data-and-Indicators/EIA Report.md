@@ -17,7 +17,7 @@ EIA moves oil within seconds. Surprise builds are bearish, surprise draws bullis
 
 ## Concrete example
 
-**Concrete:** Wednesday 10:30 AM ET. Consensus crude draw 2.0 million barrels. EIA prints a 7.0 million draw, a 5.0 million surprise. WTI front month jumps $1.50 within 30 seconds. Gasoline draws 3.0 million vs 1.0 million expected. Trader long 20 WTI contracts going in gains 20 × 1,000 × $1.50 = $30,000. Counter scenario: EIA prints a 3.0 million build (5.0 million surprise build). WTI drops $1.50. Same long loses $30,000.
+**Concrete:** Wednesday 10:30 AM ET. Consensus crude draw 2.0 million barrels. EIA prints a 7.0 million draw, a 5.0 million surprise. WTI front month jumps $1.50 within 30 seconds. Gasoline draws 3.0 million vs 1.0 million expected. Trader long 20 WTI contracts going in gains 20 × 1,000 × $1.50 = $30,000.
 
 **Simplified:** Every Wednesday, the US government publishes how much oil sits in storage. If inventories drew down more than analysts expected, the world is consuming more oil than supplying, so prices jump. If inventories built up more than expected, the opposite. The market reacts in seconds. Most active oil traders trade nothing else that morning except positioning into and out of the print.
 

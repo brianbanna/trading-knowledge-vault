@@ -17,7 +17,7 @@ LME prices are the global reference for industrial metals. Virtually every physi
 
 ## Concrete example
 
-**Concrete:** Metals trader observes LME copper cash at $9,850/tonne while 3M is at $9,780, a $70 backwardation. [[Cancelled Warrants]] rising (physical demand). Buys 10 cash/3M spreads expecting tightness to widen the backwardation. Major Chilean smelter goes offline. Backwardation widens to $150. Gain: $80 × 25 tonnes × 10 = $20,000. Counter scenario: Chinese demand disappoints, metal flows into LME warehouses, spread flips to $30 contango. Loss: $100 × 25 × 10 = $25,000.
+**Concrete:** Metals trader observes LME copper cash at $9,850/tonne while 3M is at $9,780, a $70 backwardation. [[Cancelled Warrants]] rising (physical demand). Buys 10 cash/3M spreads expecting tightness to widen the backwardation. Major Chilean smelter goes offline. Backwardation widens to $150. Gain: $80 × 25 tonnes × 10 = $20,000.
 
 **Simplified:** LME is the global pricing hub for industrial metals. Unlike US exchanges, it uses a daily prompt date system, so you can trade copper for delivery on any business day out to 3 months. The cash to 3 month spread tells you how tight the physical market is: backwardation means buyers are scrambling for nearby metal; contango means metal is sitting in warehouses with no urgency. Most physical contracts globally price off LME plus a regional premium.
 

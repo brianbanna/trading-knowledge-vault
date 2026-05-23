@@ -18,7 +18,7 @@ The heating crack is one of the most important margin indicators in energy. Dies
 
 ## Concrete example
 
-**Concrete:** October 2025. Trader goes long the European gasoil crack (long ICE Gasoil, short Brent) at $22/bbl, expecting cold winter to boost heating demand. By January 2026, severe cold snap across Northern Europe drives heating oil demand to multi year highs. Gasoil crack widens to $34/bbl. Profit $12/bbl. Counter case: mild winter, demand disappoints, crack narrows to $17/bbl. Loss $5/bbl.
+**Concrete:** October 2025. Trader goes long the European gasoil crack (long ICE Gasoil, short Brent) at $22/bbl, expecting cold winter to boost heating demand. By January 2026, severe cold snap across Northern Europe drives heating oil demand to multi year highs. Gasoil crack widens to $34/bbl. Profit $12/bbl.
 
 **Simplified:** Refineries turn crude into diesel and heating oil. The gap between distillate and crude prices is the refiner's margin on those products. Winter heating in Europe and the US Northeast spikes demand. Buy distillate futures, sell crude, hold from autumn to mid winter. The trade is the seasonal margin expansion in middle distillates.
 

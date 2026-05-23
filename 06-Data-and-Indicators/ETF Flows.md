@@ -18,7 +18,7 @@ ETF flows are the most visible investment demand indicator for precious metals. 
 
 ## Concrete example
 
-**Concrete:** Gold rallies $200 from $2,200 to $2,400 over 2 months. Trader checks GLD: holdings up just 5 tonnes (minimal inflow). [[COT Report]] shows MM adding 80,000 contracts. Rally is speculative futures, not physical. Trader shorts 30 COMEX gold contracts at $2,400. Specs liquidate over 3 weeks, gold drops to $2,300. Gain: $100/oz × 100 oz × 30 = $300,000. Counter scenario: belated physical ETF buying validates the move and gold pushes to $2,500. Same short loses $300,000.
+**Concrete:** Gold rallies $200 from $2,200 to $2,400 over 2 months. Trader checks GLD: holdings up just 5 tonnes (minimal inflow). [[COT Report]] shows MM adding 80,000 contracts. Rally is speculative futures, not physical. Trader shorts 30 COMEX gold contracts at $2,400. Specs liquidate over 3 weeks, gold drops to $2,300. Gain: $100/oz × 100 oz × 30 = $300,000.
 
 **Simplified:** When investors buy gold ETFs, the fund must buy physical gold to back the shares. The daily change in ETF holdings tells you how much real money is being put into gold. Speculative futures rallies look identical on a price chart but lack ETF inflows. If futures positioning is bullish but ETF flows are flat or negative, the rally is fragile and likely to fade.
 

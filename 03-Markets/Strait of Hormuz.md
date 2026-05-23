@@ -18,7 +18,7 @@ Any disruption, actual or threatened, causes immediate spikes in [[Brent Crude]]
 
 ## Concrete example
 
-**Concrete:** Iran threatens to close the strait following new sanctions. [[Brent Crude]] at $78/barrel. Iran's Revolutionary Guard announces naval exercises near the strait and threatens consequences if sanctions tighten. Trader buys 10 Brent contracts at $78. Over 3 days the risk premium pushes Brent to $86. Trader sells at $85. Gain: $7 × 1,000 bbl × 10 = $70,000. Counter scenario: US and Iran quietly resume negotiations the next day. Risk premium evaporates. Brent drops to $75. Loss: $3 × 1,000 × 10 = $30,000. Historical: January 2020, after the Soleimani killing, Brent spiked from $66 to $71 overnight (7.6%), then reversed most of the move within a week as tensions de escalated.
+**Concrete:** Iran threatens to close the strait following new sanctions. [[Brent Crude]] at $78/barrel. Iran's Revolutionary Guard announces naval exercises near the strait and threatens consequences if sanctions tighten. Trader buys 10 Brent contracts at $78. Over 3 days the risk premium pushes Brent to $86. Trader sells at $85. Gain: $7 × 1,000 bbl × 10 = $70,000.
 
 **Simplified:** A fifth of the world's oil travels through a strip of water 33 km wide between Iran and Oman. Every time Iran rattles a saber or seizes a tanker, traders price in a small probability that the strait closes. Crude jumps $5 to $15 within hours. If the threat fades, the premium evaporates. Trading Hormuz is binary and fast: get in quickly on credible threats, exit quickly when tensions cool, do not hold through resolution.
 

@@ -18,7 +18,7 @@ The [[EIA Report]] drives weekly trading; the IEA OMR drives medium term positio
 
 ## Concrete example
 
-**Concrete:** March 2026 IEA OMR raises 2026 global oil demand growth from 1.0 mb/d to 1.3 mb/d, citing stronger Chinese recovery. Dec 2026 Brent calendar spread tightens from $1.50 contango to $0.50 contango as the H2 balance reprices. Trader long 20 Dec 26/Dec 27 spreads gains $1.00/bbl × 1,000 bbl × 20 = $20,000. Counter scenario: IEA cuts to 0.7 mb/d. Spread widens to $2.00 contango. Same position loses $10,000.
+**Concrete:** March 2026 IEA OMR raises 2026 global oil demand growth from 1.0 mb/d to 1.3 mb/d, citing stronger Chinese recovery. Dec 2026 Brent calendar spread tightens from $1.50 contango to $0.50 contango as the H2 balance reprices. Trader long 20 Dec 26/Dec 27 spreads gains $1.00/bbl × 1,000 bbl × 20 = $20,000.
 
 **Simplified:** Once a month the IEA publishes its view on how much oil the world will consume and how much will be produced. If they raise demand or cut supply forecasts, future oil contracts repricing the new balance see prices firm up at the back end of the curve. The reaction is concentrated in calendar spreads (6 to 24 months out), not the front month, because the changes apply to the medium term, not next week's barrels.
 

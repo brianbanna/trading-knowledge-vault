@@ -17,7 +17,7 @@ Port arrivals are the single most important weekly data point for cocoa. The dat
 
 ## Concrete example
 
-**Concrete:** Week 20 of the Ivory Coast main crop season (mid February). Cumulative arrivals at Abidjan + San Pedro total 1,350,000 tonnes. Last season at the same point was 1,520,000 tonnes. An 11% shortfall vs market expectations of a 5% decline based on early season estimates. Shortfall accelerating (7% in week 16). Trader buys 10 CC contracts at $8,200/tonne. By Friday, analyst reports pick up the trend and revise Ivory Coast production lower. CC rallies to $8,600. Gain: $400 × 10 tonnes × 10 = $40,000. Counter scenario: arrivals print 1,480,000 tonnes (only 3% shortfall, better than expected). CC sells off as the supply scare eases. Loss: $25,000.
+**Concrete:** Week 20 of the Ivory Coast main crop season (mid February). Cumulative arrivals at Abidjan + San Pedro total 1,350,000 tonnes. Last season at the same point was 1,520,000 tonnes. An 11% shortfall vs market expectations of a 5% decline based on early season estimates. Shortfall accelerating (7% in week 16). Trader buys 10 CC contracts at $8,200/tonne. By Friday, analyst reports pick up the trend and revise Ivory Coast production lower. CC rallies to $8,600. Gain: $400 × 10 tonnes × 10 = $40,000.
 
 **Simplified:** Most of the world's cocoa comes off farms in Ivory Coast and Ghana and gets trucked to a few coastal ports. Once a week, exporters publish how much has arrived. Compare cumulative arrivals against the same week last year and a few years back. If this year is tracking 5 to 10% behind, the harvest is short and prices should be supported. If it is tracking even, fundamentals are stable. The signal is mechanical, weekly, and easy to monitor.
 

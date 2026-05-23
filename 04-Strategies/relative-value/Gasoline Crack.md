@@ -18,7 +18,7 @@ US driving season is the strongest tradeable seasonal pattern in energy. Gasolin
 
 ## Concrete example
 
-**Concrete:** March 2026. Trader buys the July RBOB crack (long July RBOB, short July WTI) at $28/bbl, positioned for the seasonal rise into summer. By June, strong driving demand plus a Gulf Coast refinery outage drives the RBOB crack to $42/bbl. Profit $14/bbl. Counter case: mild recession reduces driving demand, gasoline inventories build above seasonal norms, crack falls to $22/bbl. Loss $6/bbl.
+**Concrete:** March 2026. Trader buys the July RBOB crack (long July RBOB, short July WTI) at $28/bbl, positioned for the seasonal rise into summer. By June, strong driving demand plus a Gulf Coast refinery outage drives the RBOB crack to $42/bbl. Profit $14/bbl.
 
 **Simplified:** Refineries turn crude into gasoline. The gap between gasoline and crude prices is the refiner's margin. In summer, Americans drive more, so gasoline demand jumps and the gap widens. Buy gasoline futures, sell crude futures, hold from spring to summer. The trade is the seasonal margin expansion.
 
