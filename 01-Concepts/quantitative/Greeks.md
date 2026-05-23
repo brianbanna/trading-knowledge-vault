@@ -47,7 +47,7 @@ These measure direct sensitivity to a single variable.
 | [[Delta]] | dOption/dSpot | N(d1) for calls | Change in option price per $1 spot move |
 | [[Vega]] | dOption/dVol | S x N'(d1) x sqrt(T) | Change in option price per 1% vol change |
 | [[Theta]] | dOption/dTime | Complex (negative for long options) | Daily time decay in dollars |
-| Rho | dOption/dRate | K x T x e^(-rT) x N(d2) for calls | Change per 1% rate change |
+| [[Rho]] | dOption/dRate | K x T x e^(-rT) x N(d2) for calls | Change per 1% rate change |
 
 ### Second Order Greeks
 
@@ -58,15 +58,17 @@ These measure how first order Greeks change, capturing curvature and cross effec
 | [[Gamma]] | dDelta/dSpot | How fast your directional exposure shifts as spot moves. The source of [[Convexity]]. |
 | [[Vanna]] | dDelta/dVol (= dVega/dSpot) | How your directional exposure changes when vol moves, OR how your vol exposure changes when spot moves. Critical for [[Risk Reversal]] positions. |
 | [[Volga]] | dVega/dVol | How your vol exposure changes when vol itself moves. Dominates pricing of OTM options and [[Butterfly]] positions. |
-| Charm | dDelta/dTime | How delta drifts as time passes (delta bleed). Critical near expiry. |
+| [[Charm]] | dDelta/dTime | How delta drifts as time passes (delta bleed). Critical near expiry. |
+| [[Veta]] | dVega/dTime | How vega itself decays as time passes (vega bleed). Critical for long vol books and tail hedges. |
 
 ### Third Order Greeks (rarely traded directly)
 
 | Greek | Measures | When It Matters |
 |-------|----------|-----------------|
-| Speed | dGamma/dSpot | Extreme gamma positions near barriers |
-| Color | dGamma/dTime | Gamma exposure evolution into expiry |
-| Ultima | dVolga/dVol | Deeply OTM option pricing in stressed markets |
+| [[Speed]] | dGamma/dSpot | Extreme gamma positions near barriers, hedging cost forecasting |
+| [[Color]] | dGamma/dTime | Gamma exposure evolution into expiry, especially [[0DTE]] |
+| [[Zomma]] | dGamma/dVol | Wing gamma redistribution during vol regime shifts |
+| [[Ultima]] | dVolga/dVol | Deeply OTM option pricing in stressed markets, exotic books |
 
 ### The Greek Hierarchy
 
@@ -108,6 +110,10 @@ Cross Sensitivities:
 - [[Volga]] because it drives OTM option pricing and the cost of tail protection.
 - [[Vol Surface]] because the surface is the organizing framework for all Greeks across strikes and tenors.
 - [[Convexity]] because Greeks quantify the non-linearity that makes options fundamentally different from linear instruments.
+- [[Rho]] for long dated FX and rates exposure where the otherwise ignored first order rate greek becomes material.
+- [[Charm]], [[Veta]], [[Color]] as the time bleed family of greeks. Charm bleeds delta, veta bleeds vega, color bleeds gamma.
+- [[Speed]] and [[Zomma]] as the spot and vol derivatives of gamma, dominant for near expiry hedging cost and wing gamma dynamics.
+- [[Ultima]] for third order vol convexity, the deepest vol greek encountered in tail hedge and exotic books.
 
 ## Common misconceptions
 
