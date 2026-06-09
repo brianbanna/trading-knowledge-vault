@@ -104,6 +104,13 @@ FROM #fx/g10 OR #fx/em OR #fx/structure
 SORT file.name ASC
 ```
 
+### Freight and shipping domain
+```dataview
+TABLE WITHOUT ID file.link AS "Note", date-added AS "Added"
+FROM #freight/dry OR #freight/wet OR #freight/ffa OR #freight/routes OR #freight/contracts OR #freight
+SORT file.name ASC
+```
+
 ---
 
 ## Weekly Review Checklist

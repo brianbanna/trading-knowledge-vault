@@ -2,7 +2,7 @@
 
 An open source, structured knowledge base for commodity and FX trading. Built as an [Obsidian](https://obsidian.md) vault with bidirectional links, domain tagging, and a visual knowledge graph.
 
-Covers energy, metals, agriculture, softs, FX, rates, macro, and quantitative concepts. Every note links to prerequisites, related concepts, and concrete examples using real instruments and real market logic.
+Covers energy, metals, agriculture, softs, FX, rates, freight and shipping, macro, and quantitative concepts. Every note links to prerequisites, related concepts, and concrete examples using real instruments and real market logic.
 
 ---
 
@@ -53,6 +53,7 @@ _hubs/                    → Domain hub notes (graph cluster anchors)
 05-People-and-Firms/      → Notable traders, firms, researchers
 06-Data-and-Indicators/   → Economic releases, reports, data sources
 09-Resources/             → Books, papers, courses
+Physical commodities/     → Curriculum tracker organised by commodity, 01 Crude oil through 08 Freight and shipping. Each commodity index links back into the numbered tree.
 ```
 
 ## Domain Tags
@@ -66,6 +67,7 @@ Notes are tagged by domain for filtering and graph coloring. Tags are hierarchic
 | Agriculture | `#agri/grains/corn`, `#agri/softs/cocoa`, `#agri/oilseeds/soybeans` |
 | FX | `#fx/g10/eurusd`, `#fx/em/usdbrl`, `#fx/structure` |
 | Rates | `#rates/govies/ust`, `#rates/swaps`, `#rates/credit` |
+| Freight | `#freight/dry`, `#freight/wet`, `#freight/ffa`, `#freight/routes`, `#freight/contracts` |
 | Cross cutting | `#macro`, `#quant`, `#risk`, `#execution`, `#microstructure` |
 
 Searching `#energy` returns all energy notes. Searching `#energy/natgas` returns only natural gas notes.
