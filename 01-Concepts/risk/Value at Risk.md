@@ -26,6 +26,12 @@ In FX, VaR works better for G10 pairs (closer to normal) but breaks down for EM 
 
 **Simplified:** VaR estimates a loss threshold you should not breach more than X% of the time. It depends on your assumed distribution, lookback window, and correlations. The number is useful for comparing risk across positions and meeting regulatory requirements. It is dangerous when treated as a worst case. The worst case is unbounded; VaR only describes the boundary of "normal."
 
+### Freight book VaR
+
+A freight book carries different risk factors from a flat price book: route rates ([[Baltic Route Codes]] such as C5 and P2A), vessel classes ([[Vessel Classes and Deadweight Tonnage]]), and the [[Forward Freight Agreement]] forward curve by maturity (front month, quarters, calendar years), plus a [[Bunkers, IFO versus MGO, and the Bunker Hedge|bunker]] leg and an FX leg when hire is earned in one currency while costs fall in another.
+
+**Concrete:** An operator is long 10 Capesize C5 FFA lots for the coming quarter at 18,000 USD per day and short 6 Panamax P2A lots. Daily vol of the C5 rate is 4.5 percent, P2A 3.8 percent, correlation 0.7. Aggregating the two route legs gives a 1 day 95 percent VaR near 95,000 USD. Adding the bunker leg (hedged with gasoil futures) and a small EUR/USD leg lifts the diversified VaR to roughly 110,000 USD, less than the sum of the legs because freight, fuel, and FX are imperfectly correlated. The trap is the same as flat price VaR: if one load region such as Brazilian iron ore drives C5 and P2A together, realised correlation jumps toward 1 and the loss runs well past the estimate. Freight VaR must be run on the [[Forward Freight Agreement|FFA]] curve by maturity, not the front month alone, because a long front and short deferred book can show low flat VaR while carrying large curve risk.
+
 ## Key mechanics and formulas
 
 ### 3 Methods of Calculating VaR

@@ -22,6 +22,12 @@ Seasonal patterns are the baseline against which commodity traders measure norma
 
 **Simplified:** Some commodities have demand patterns that repeat every year. Winter needs heat, summer needs gasoline, autumn means crops getting harvested. These patterns show up in spreads between contract months. You buy the spread before the seasonal pressure hits and exit when the pattern plays out. It works most years because the cause is physical. It fails in years when weather or supply deviates from the norm.
 
+### Freight rate seasonality
+
+Dry bulk freight has its own seasonal calendar, driven by harvests, weather, and restocking rather than by heating or driving demand. Grain shipments lift Panamax and Supramax rates after the North and South American harvests (roughly Q3 to Q4 and Q1 to Q2 respectively). Capesize iron ore and coal demand tends to firm into the fourth quarter as Chinese mills restock before winter, while the Atlantic winter and the Brazilian rainy season disrupt loading and reroute tonnage. Monsoon and typhoon seasons slow Pacific routes.
+
+**Concrete:** An operator buys Q4 Panamax [[Forward Freight Agreement|FFAs]] in August at 13,000 USD per day, expecting the grain programs and pre winter coal restocking to lift rates, a pattern that has held in most years. By October rates run to 16,000 and the operator closes the position for 3,000 per day of gain. Reverse case: a year with a weak harvest and high Chinese port [[Port Congestion and Waiting Time|inventories]] leaves Q4 rates flat at 13,000, and the seasonal long bleeds the cost of holding it. As with commodity seasonals, the freight pattern is a high probability tendency, not a certainty, and must be sized for the year it fails.
+
 ## Key mechanics and formulas
 
 **Seasonal index:**
