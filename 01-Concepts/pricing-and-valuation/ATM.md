@@ -35,6 +35,7 @@ ATM IV is the baseline from which [[Risk Reversal]] and [[Butterfly]] adjustment
 - [[Strike Price]]
 
 ## Related concepts (learn next)
+- [[Moneyness]]: the umbrella concept; ATM is its midpoint between ITM and OTM.
 - [[ITM]]: strikes with intrinsic value, where the option starts behaving like the underlying.
 - [[OTM]]: strikes with only time value, the cheap convex side ATM sits above.
 - [[Risk Reversal]]: skew relative to ATM, quoted as 25D call vol minus 25D put vol
