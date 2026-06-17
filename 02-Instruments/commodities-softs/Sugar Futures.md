@@ -41,6 +41,7 @@ Sugar is one of the most actively traded softs, with deep liquidity and high ann
 - [[Basis Risk]] exists between the No. 11 benchmark and domestic physical sugar prices in producing countries.
 - [[Stocks to Use Ratio]] for sugar globally determines whether the market is in structural surplus or deficit.
 - [[Crush Spread]] is conceptually analogous: the white premium serves a similar role to processing margins in oilseeds.
+- [[Sugar-Ethanol Spread]] is the production switching option that sets how much Brazilian cane becomes exportable sugar, the single most mobile variable in the global supply balance.
 
 ## Common misconceptions
 - **"Sugar is just a food commodity."** Brazil's flex fuel vehicle fleet means 40 to 50% of Brazilian cane can be directed to ethanol rather than sugar. Sugar is as much an energy commodity as a food one, and crude oil prices directly affect sugar supply.
