@@ -44,6 +44,9 @@ This is the core mechanism by which dry bulk and tanker operators make money wit
 - [[Bunkers, IFO versus MGO, and the Bunker Hedge]] because fuel cost sits between the TC in and the voyages you run on TC out.
 - [[Laytime, Demurrage and Despatch]] which determines extra earnings or costs when you run voyages on a chartered in ship.
 - [[Basis Risk]] the gap between your physical TC position and any paper hedge used against it.
+- [[Relet]] the operator strategy of taking a ship in on TC and employing it out on voyages to capture the spread.
+- [[Market Hire]] the prevailing daily rate you mark an open period position against.
+- [[Physical vs Paper Freight]] because the TC book is the physical leg traded against paper FFA positions.
 
 ## Common misconceptions
 - **"TC in means the operator owns the ship."** Wrong. TC in is renting the vessel from an owner for a period under a [[Time Charter]]. The operator controls the ship's employment but the owner keeps title, crews her, and maintains her. The operator is buying time, not steel.

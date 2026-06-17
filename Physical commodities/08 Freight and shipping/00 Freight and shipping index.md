@@ -24,6 +24,15 @@ created: 2026-05-14
 - [x] [[Basis#Freight physical to paper basis|Freight physical to paper basis]]
 - [x] [[Value at Risk#Freight book VaR|VaR for a freight book]]
 - [x] [[Forward Curve#Freight forward curve|Freight forward curve]]
+- [x] [[Time Charter Equivalent|TCE (time charter equivalent)]]
+- [x] [[Voyage Charter vs Time Charter]]
+- [x] [[Relet|Relet (TC in, voyage out)]]
+- [x] [[Physical vs Paper Freight]]
+- [x] [[Freight Rate Risk|Freight rate and its risk]]
+- [x] [[Market Hire|Market hire and its risk]]
+- [x] [[Bunker Risk]]
+- [x] [[Scrubber Spread|Scrubber spread (VLSFO over HSFO)]]
+- [x] [[Freight Basis Risk|Basis risk in freight]]
 
 ## Open questions
 

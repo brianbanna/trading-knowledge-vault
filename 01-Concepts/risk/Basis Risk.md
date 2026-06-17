@@ -43,6 +43,7 @@ Basis risk determines whether a hedge actually reduces total risk or simply conv
 - [[Old Crop New Crop]] spread is a temporal basis between crop years.
 - [[Implied Volatility]] on basis spread options reflects uncertainty about the hedging relationship.
 - [[Margin]] requirements do not account for basis, so true P&L of a hedged position can deviate from margin implications.
+- [[Freight Basis Risk]] is the freight specific application: hedging a physical voyage with a Baltic index FFA leaves route, timing, and basket basis.
 
 ## Common misconceptions
 - **"Hedging eliminates risk."** Hedging converts flat price risk into basis risk. Total risk falls but does not vanish. A poor instrument can raise total risk.

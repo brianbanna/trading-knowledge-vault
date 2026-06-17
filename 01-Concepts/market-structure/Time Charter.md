@@ -49,6 +49,9 @@ A time charter is the central tool for taking a directional or relative value vi
 - [[Bunkers, IFO versus MGO, and the Bunker Hedge]]: the largest voyage cost the charterer carries under a time charter and a key risk to hedge.
 - [[Baltic Exchange and the Dry Indices]]: the source of the period and spot assessments used to mark a time charter to market.
 - [[Ballast Leg Economics]]: matters because the charterer pays for repositioning days even when no cargo is on board.
+- [[Voyage Charter vs Time Charter]]: the side by side of who bears bunker, speed, and time risk under each structure.
+- [[Market Hire]]: the prevailing daily rate the fixed hire is marked against to value a period position.
+- [[Relet]]: the operator play built on taking a vessel in on time charter and employing it out.
 
 ## Common misconceptions
 

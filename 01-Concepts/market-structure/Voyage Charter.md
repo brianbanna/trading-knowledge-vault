@@ -45,6 +45,8 @@ Now the failure case. Suppose VLSFO spikes to USD 780 per tonne after the fixtur
 - [[Forward Freight Agreement]] because FFAs let you hedge the voyage rate you will pay or receive in the future.
 - [[TC In and TC Out]] because relet and operator economics depend on comparing voyage earnings against time charter hire.
 - [[Bunkers, IFO versus MGO, and the Bunker Hedge]] because owner profit on a voyage charter lives or dies on the fuel bill.
+- [[Voyage Charter vs Time Charter]] because the side by side comparison pins down exactly which risks shift between the two structures.
+- [[Time Charter Equivalent]] because converting the voyage rate to a daily figure is how you compare it against a time charter hire.
 
 ## Common misconceptions
 - **"Under a voyage charter the charterer pays for fuel."** Wrong. The owner pays for bunkers on a voyage charter and absorbs any price spike, which is precisely why the time charter exists as the contract where the charterer takes on fuel and speed risk in exchange for paying daily hire.

@@ -50,6 +50,8 @@ Fuel is typically 40 to 60 percent of the cash cost of a spot voyage, so a freig
 - [[Bunkers, IFO versus MGO, and the Bunker Hedge]] feeds [[Forward Curve]] reading, since [[Contango]] or [[Backwardation]] in the gasoil curve changes the cost of carrying a hedge.
 - [[Strait of Hormuz]] because a chokepoint scare is a classic trigger for the bunker spikes that the hedge is meant to absorb.
 - [[Value at Risk]] because sizing unhedged bunker exposure across a fleet is a portfolio risk question.
+- [[Bunker Risk]] because the risk view of this exposure, who bears it and how to size it, sits separately from the pricing and hedge mechanics here.
+- [[Scrubber Spread]] because the VLSFO over HSFO premium decides whether burning the cheap grade behind a scrubber pays.
 
 ## Common misconceptions
 - **"The charterer always pays for fuel, so the owner has no bunker risk."** Wrong, it depends on the charter type. Under a [[Voyage Charter]] the owner buys and pays for bunkers and carries the full price risk, while only under a [[Time Charter]] does the charterer take over the fuel cost. The party exposed is set by the [[Charter Party]], not by habit.

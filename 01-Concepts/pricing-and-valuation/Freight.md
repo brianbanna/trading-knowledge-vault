@@ -50,6 +50,8 @@ Freight is the gatekeeper for trade flow arbitrage. A Brent/Dubai [[EFS]] spread
 - [[Chokepoint]]: chokepoint disruptions create freight spikes and rerouting costs.
 - [[Contango]]: contango width relative to freight determines storage trade viability.
 - [[Dubai Crude]]: Asian crude pricing is heavily influenced by freight dynamics.
+- [[Freight Rate Risk]]: the risk view of freight exposure, who is long or short it and how to hedge.
+- [[Time Charter Equivalent]]: converts a voyage rate into a daily figure comparable to a time charter hire.
 
 ## Common misconceptions
 
