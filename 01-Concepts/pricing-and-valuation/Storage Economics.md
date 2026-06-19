@@ -28,7 +28,7 @@ Storage is why [[Contango]] has an upper bound and why [[Backwardation]] signals
 `Max Contango = Storage Cost + Insurance + Financing`
 `F_max = S x e^((r + c)(T-t))`
 
-Above this, cash and carry arbitrage is profitable.
+Above this, [[Cash and Carry Arbitrage|cash and carry arbitrage]] is profitable.
 
 **Storage utilization and cost:**
 Rental rates are convex in utilization:
