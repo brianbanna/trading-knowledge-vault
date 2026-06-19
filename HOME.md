@@ -23,7 +23,7 @@
 | `01-Concepts` | Trading concepts with full writeups |
 | `02-Instruments` | Specific contracts, their specs, fundamentals, spreads |
 | `03-Markets` | Exchanges, venues, regulation, microstructure |
-| `04-Strategies` | Trading strategies and playbooks |
+| `04-Strategies` | Trading strategies and playbooks. See [[04-Strategies/00 Strategies index\|Strategies Index]] |
 | `05-People-and-Firms` | Traders, firms, researchers |
 | `06-Data-and-Indicators` | Economic data, reports, releases |
 | `07-Infrastructure` | Tools, platforms, code, APIs |
@@ -126,5 +126,6 @@ SORT file.name ASC
 ## Key References
 
 - [[SYSTEM]] | Full tag taxonomy, master prompt, graph instructions
+- [[04-Strategies/00 Strategies index|Strategies Index]] | MOC hub for every trading strategy, grouped by type
 - `_templates/` | Note templates for Templater plugin
 

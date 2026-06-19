@@ -44,7 +44,8 @@ _hubs/                    → Domain hub notes (graph cluster anchors)
   crypto/                   BTC, ETH, DeFi
 03-Markets/               → Exchanges, venues, regulation
 04-Strategies/            → Trading strategies and playbooks
-  relative-value/           Brent/WTI spread, crack spread, calendar spreads
+  00 Strategies index.md    MOC hub linking every strategy, grouped by type (anchors the graph cluster)
+  relative-value/           Brent/WTI spread, crack spread, calendar spreads, cash and carry
   mean-reversion/           Pairs trading, z-score strategies
   trend-following/          Momentum, breakout systems
   volatility/               Vol selling, straddles
