@@ -1,0 +1,68 @@
+---
+tags:
+  - "#energy"
+date-added: "2026-06-21"
+---
+
+# Energy
+
+Hub note. Links every note in the Energy cluster so its title labels the cluster in the graph. Add a [[link]] here when a new note joins this cluster.
+
+## Notes in this cluster
+
+- [[API Gravity]]
+- [[API Report]]
+- [[Backwardation]]
+- [[Basis]]
+- [[Brent Crude]]
+- [[Brent-WTI Spread]]
+- [[Bunkers, IFO versus MGO, and the Bunker Hedge]]
+- [[CFD Crude]]
+- [[Calendar Spread]]
+- [[Cash and Carry Arbitrage]]
+- [[Chokepoint]]
+- [[Contango]]
+- [[Contango Roll Cost]]
+- [[Convenience Yield]]
+- [[Cost of Carry]]
+- [[Crack Spread]]
+- [[Crude Quality]]
+- [[Dated Brent]]
+- [[Dubai Crude]]
+- [[EFS]]
+- [[EIA Report]]
+- [[Floating Storage]]
+- [[Forward Curve]]
+- [[Freight]]
+- [[Front Month]]
+- [[Gasoline Crack]]
+- [[Geopolitical Risk]]
+- [[Hard Commodities]]
+- [[Heating Crack]]
+- [[Henry Hub Natural Gas]]
+- [[Henry Hub-TTF Spread]]
+- [[IEA]]
+- [[Inter-Commodity Spread]]
+- [[Location Arbitrage]]
+- [[OPEC]]
+- [[OPEC+]]
+- [[Petrocurrency]]
+- [[Platts Window]]
+- [[Quality Spread]]
+- [[Refinery Utilization]]
+- [[Relative Value Trade]]
+- [[Roll Yield]]
+- [[Scrubber Spread]]
+- [[Seasonality]]
+- [[Spare Capacity]]
+- [[Storage Economics]]
+- [[Strait of Hormuz]]
+- [[Sugar-Ethanol Spread]]
+- [[Supply Shock]]
+- [[Sweet vs Sour]]
+- [[TTF Natural Gas]]
+- [[Tank Tops]]
+- [[Time Spread]]
+- [[Turnaround Season]]
+- [[Urals Crude]]
+- [[WTI Crude Oil]]
