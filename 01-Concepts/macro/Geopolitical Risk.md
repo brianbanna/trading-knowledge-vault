@@ -50,6 +50,7 @@ Expected value of geopolitical risk in oil = Probability x Magnitude. A 5% chanc
 - [[Commodity Currencies]] - currencies of geopolitically exposed nations (RUB, IQD, NGN) are directly affected. Beneficiary nations (US shale = bullish CAD/USD) can strengthen.
 - [[Brent Crude]] - the most geopolitically sensitive major benchmark due to seaborne exposure.
 - [[Volatility]] - geopolitical risk spikes implied vol in energy options, creating vol trade opportunities.
+- [[Geopolitical Repricing Sequence]] - how the premium reprices layer by layer (vol, skew, flat price, curve) and how to tell a real disruption from a headline.
 
 ## Common misconceptions
 
