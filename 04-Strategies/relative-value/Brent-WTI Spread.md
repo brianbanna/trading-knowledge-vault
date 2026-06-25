@@ -1,5 +1,5 @@
 ---
-aliases: [Brent WTI spread, Brent WTI arb, transatlantic crude spread, BZ-CL spread]
+aliases: [Brent WTI spread, Brent WTI arb, transatlantic crude spread, BZ-CL spread, WTI Brent Spread]
 tags:
   - "#energy/crude/brent"
   - "#energy/crude/wti"

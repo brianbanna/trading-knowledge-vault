@@ -1,5 +1,5 @@
 ---
-aliases: [Put, Puts, Long Put, Short Put, Protective Put]
+aliases: [Put, Puts, Long Put, Short Put, Protective Put, put options]
 tags:
   - "#quant"
 date-added: "2026-06-18"

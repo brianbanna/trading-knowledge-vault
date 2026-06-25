@@ -1,5 +1,5 @@
 ---
-aliases: [bid-ask spread, bid-offer spread, spread, tick spread, bid offer]
+aliases: [bid-ask spread, bid-offer spread, spread, tick spread, bid offer, Bid Ask Spread]
 tags:
   - "#microstructure"
 date-added: "2026-03-20"

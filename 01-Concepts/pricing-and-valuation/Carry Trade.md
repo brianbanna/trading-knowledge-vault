@@ -1,5 +1,5 @@
 ---
-aliases: [carry trade, FX carry, interest rate carry]
+aliases: [carry trade, FX carry, interest rate carry, FX Carry Trade]
 tags:
   - "#fx/g10"
   - "#fx/em"

@@ -1,5 +1,5 @@
 ---
-aliases: [uncovered interest parity, UIP]
+aliases: [uncovered interest parity, UIP, Uncovered Interest Rate Parity]
 tags:
   - "#fx"
   - "#quant"

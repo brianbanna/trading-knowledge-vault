@@ -1,5 +1,5 @@
 ---
-aliases: [WASDE, World Agricultural Supply and Demand Estimates, USDA WASDE, USDA report]
+aliases: [WASDE, World Agricultural Supply and Demand Estimates, USDA WASDE, USDA report, WASDE Report]
 tags:
   - "#agri/grains"
   - "#agri/oilseeds"

@@ -1,5 +1,5 @@
 ---
-aliases: [futures contract, futures, exchange traded futures]
+aliases: [futures contract, futures, exchange traded futures, Futures Contract Mechanics]
 tags:
   - "#quant"
   - "#microstructure"
