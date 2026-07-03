@@ -32,7 +32,8 @@ For a freight or shipping trader the scrubber spread is two things at once. Firs
 [[Bunker Risk]]
 
 ## Related concepts (learn next)
-- [[Bunker Risk]] — the scrubber spread is the specific risk that decides whether a scrubber retrofit hedges or amplifies your fuel exposure.
+- [[Process Margin]] the scrubber spread is the marine fuel instance of a process margin, refined product economics landing straight on the bunker bill.
+- [[Bunker Risk]] the scrubber spread is the specific risk that decides whether a scrubber retrofit hedges or amplifies your fuel exposure.
 - [[Basis Risk]] — a scrubber spread hedge can drift from your actual port and grade, leaving residual basis between the swap and the physical bunker bill.
 - [[EEXI and CII Regulations]] — emissions rules interact with scrubber economics because wash water bans and carbon intensity scoring change where and whether a scrubber helps.
 - [[Freight Rate Risk]] — scrubber savings flow into the vessel's earnings, so the spread feeds directly into freight and [[Time Charter Equivalent|TCE]] competitiveness.

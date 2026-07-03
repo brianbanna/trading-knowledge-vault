@@ -12,7 +12,7 @@ created: 2026-05-14
 - [ ] Crude futures term structure (contango vs backwardation)
 - [ ] OPEC+ structure and quota mechanics
 - [ ] Strategic Petroleum Reserve dynamics
-- [ ] Refining margin and crack spread basics
+- [x] [[Crack Spread|Refining margin and crack spread basics]]
 - [ ] Floating storage economics
 - [ ] WTI Brent spread drivers
 

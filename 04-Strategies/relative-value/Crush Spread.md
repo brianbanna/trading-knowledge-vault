@@ -34,6 +34,7 @@ The crush spread determines soybean processing economics and drives global deman
 - [[WASDE]]
 
 ## Related concepts (learn next)
+- [[Process Margin]] is the general family, outputs minus inputs earned by the converter, that the crush is the agricultural instance of.
 - [[Spread Trade]] is the general framework for relative value positions like the crush.
 - [[Stocks to Use Ratio]] for soybeans, meal, and oil individually affects crush spread levels.
 - [[WASDE]] provides soybean crush demand estimates that drive future processing margins.
