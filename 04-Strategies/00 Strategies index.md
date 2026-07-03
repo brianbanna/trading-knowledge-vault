@@ -52,6 +52,7 @@ Vol selling, straddles, gamma trading.
 
 - [[Straddle]]
 - [[Strangle]]
+- [[Variance Swap]]
 
 ## Event driven
 
