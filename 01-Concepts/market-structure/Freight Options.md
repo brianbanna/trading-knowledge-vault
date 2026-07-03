@@ -36,6 +36,7 @@ Freight is one of the most volatile cost components a commodity flow carries, an
 - [[Value at Risk]] shows how option positions reshape the tail of a freight book, since a bought option caps downside while a sold option opens it.
 - [[Time Charter]] is the physical contract whose floating earnings an owner is often hedging with a put on the time charter basket.
 - [[Voyage Charter]] is the physical contract whose cost a charterer is often capping with a call on the relevant voyage route.
+- [[Variance Swap]] is the pure realised variance instrument that does not trade on freight routes, which is exactly why route vol exposure stays in this Asian option form.
 ## Common misconceptions
 - **"A freight option settles against the spot rate on expiry day like a stock option."** Wrong. Freight options are Asian style and settle against the average Baltic assessment across the whole settlement period, usually a calendar month or quarter. A single bad day near expiry does not blow up or rescue the position, which dampens the payoff and lowers the premium versus a European single fixing option.
 - **"Buying a freight option is the same as taking an FFA position."** Wrong. An FFA is a symmetric obligation that gains and loses linearly and can produce margin calls against you, whereas an option costs a fixed premium, has capped loss for the buyer, and never demands more cash once the premium is paid. The option buyer keeps favourable moves entirely while shedding the unfavourable tail.

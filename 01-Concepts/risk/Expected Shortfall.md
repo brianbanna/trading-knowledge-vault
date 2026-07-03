@@ -94,6 +94,7 @@ ES is **subadditive**: ES(A + B) ≤ ES(A) + ES(B). Diversification always reduc
 - [[Kurtosis]] because fat tails drive the ES/VaR ratio above 1.13.
 - [[Skewness]] because negative skew makes the left tail heavier, raising ES relative to VaR.
 - [[Margin]] because exchange models increasingly use ES type calculations for initial margin.
+- [[Variance Swap]] because short variance is the cleanest position that reads as a steady premium yet is secretly short the tail, the exact shape ES sizes for and VaR misses.
 
 ## Common misconceptions
 
