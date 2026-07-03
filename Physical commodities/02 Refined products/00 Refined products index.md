@@ -5,8 +5,8 @@ created: 2026-05-14
 # Refined products
 
 ## Starter concept checklist
-- [ ] Gasoline (RBOB vs EBOB)
-- [ ] Diesel and gasoil (HO vs ICE Gasoil)
+- [x] [[RBOB Gasoline Futures|Gasoline (RBOB vs EBOB)]]
+- [x] [[ULSD Heating Oil Futures|Diesel and gasoil (HO vs ICE Gasoil)]]
 - [ ] Jet fuel pricing
 - [ ] Naphtha and petrochemical feedstock
 - [ ] LPG and propane

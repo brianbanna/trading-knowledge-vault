@@ -5,9 +5,9 @@ created: 2026-05-14
 # Agricultural
 
 ## Starter concept checklist
-- [ ] Corn, wheat, soybeans fundamentals
+- [x] [[Corn Futures|Corn]], [[Wheat Futures|wheat]], [[Soybean Futures|soybeans]] fundamentals
 - [ ] Coffee, cocoa, sugar, cotton fundamentals
-- [ ] Crush spread (soybean meal and oil)
+- [x] [[Crush Spread|Crush spread (soybean meal and oil)]]
 - [ ] Basis (cash vs futures)
 - [ ] CBOT vs Matif vs other regional exchanges
 - [ ] USDA WASDE report structure
@@ -16,6 +16,7 @@ created: 2026-05-14
 - [x] [[Sugar-Ethanol Spread|Biofuel demand (ethanol, biodiesel)]]
 - [ ] Export flows (Black Sea, Brazil, US Gulf)
 - [x] [[Sugar-Ethanol Spread]]
+- [x] [[KC-Chicago Wheat Spread]]
 
 ## Open questions
 

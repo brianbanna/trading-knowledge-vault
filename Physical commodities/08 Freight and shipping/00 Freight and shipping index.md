@@ -33,6 +33,8 @@ created: 2026-05-14
 - [x] [[Bunker Risk]]
 - [x] [[Scrubber Spread|Scrubber spread (VLSFO over HSFO)]]
 - [x] [[Freight Basis Risk|Basis risk in freight]]
+- [x] [[Shadow Fleet]]
+- [x] [[War Risk Premium]]
 
 ## Open questions
 

@@ -26,6 +26,7 @@ Spread trades, arbitrage, and any trade that is long one thing and short another
 - [[Henry Hub-TTF Spread]]
 - [[Crush Spread]]
 - [[Soybean-Corn Spread]]
+- [[KC-Chicago Wheat Spread]]
 - [[Sugar-Ethanol Spread]]
 - [[Arabica-Robusta Spread]]
 - [[Cocoa NY-London Spread]]
