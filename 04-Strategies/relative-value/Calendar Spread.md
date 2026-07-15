@@ -93,6 +93,7 @@ Fundamental: inventory cycles, seasonal patterns, and storage economics are anal
 - [[Seasonality]]
 - [[Z-Score]]
 - [[Storage Economics]]
+- [[Full Carry]] — the ceiling test for whether a contango spread has room left to trade or is already pinned against arbitrage.
 
 ---
 *Status: #solid | Last reviewed: 2026-03-20*

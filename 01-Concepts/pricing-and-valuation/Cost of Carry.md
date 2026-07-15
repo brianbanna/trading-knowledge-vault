@@ -1,5 +1,5 @@
 ---
-aliases: [cost of carry, carry model, cost of carry model, full carry]
+aliases: [cost of carry, carry model, cost of carry model]
 tags:
   - "#energy"
   - "#metals"
@@ -36,7 +36,7 @@ Where:
 - y = [[Convenience Yield]] (annualized, % of spot)
 - T−t = time to maturity in years
 
-**Full carry condition:** When F = S × e^((r+c)(T−t)), market at full carry (y = 0). Futures reflect full storage + financing.
+**Full carry condition:** When F = S × e^((r+c)(T−t)), market at [[Full Carry]] (y = 0). Futures reflect full storage + financing.
 
 **Backwardation condition:** F < S × e^((r+c)(T−t)) → convenience yield exceeds carry.
 
@@ -57,6 +57,7 @@ Where:
 - [[Roll Yield]] — P&L consequence of carry for futures holders.
 - [[Calendar Spread]] — trades the cost of carry relationship directly.
 - [[Cash and Carry Arbitrage]] — enforces the upper bound of contango.
+- [[Full Carry]] — the specific ceiling condition (0 convenience yield) inside this model, and why it behaves as a hard bound rather than a soft tendency.
 - [[Carry Trade]] — FX analogue. Rate differentials in FX are the equivalent of storage + convenience yield in commodities.
 - [[Equilibrium Price]] — cost of carry defines the equilibrium between spot and futures.
 

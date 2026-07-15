@@ -33,6 +33,7 @@ WTI crude June 2026 at $72, July 2026 at $73: contango of $1. Rolling long June 
 - [[Convenience Yield]]
 - [[Calendar Spread]]
 - [[Relative Value Trade]]
+- [[Full Carry]] — the arbitrage-enforced ceiling on how far contango can widen.
 
 ## Key Mechanics / Formulas
 

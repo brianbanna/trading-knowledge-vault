@@ -58,6 +58,7 @@ Storage has rate constraints. A salt cavern natgas facility might inject 200 MMc
 - [[Cost of Carry]] - storage cost is the "c" in the carry formula.
 - [[Seasonality]] - injection/withdrawal cycles create seasonal patterns in inventories and spreads.
 - [[Location Arbitrage]] - storage availability at different locations creates locational differentials.
+- [[Full Carry]] - the ceiling this note's "c" feeds into; storage capacity and utilization determine whether the ceiling can actually be enforced.
 
 ## Common misconceptions
 
