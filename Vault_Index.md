@@ -1,11 +1,11 @@
 # Vault Index
 
-Generated: 2026-07-08
-Total notes: 391
+Generated: 2026-08-19
+Total notes: 393
 
 Counts by subdomain:
 - Market structure: 89
-- Pricing and valuation: 69
+- Pricing and valuation: 71
 - Microstructure: 26
 - Risk: 27
 - Macro: 23
@@ -112,7 +112,7 @@ Counts by subdomain:
 - Warrant — LME document of title to a warehouse metal lot; cancellations signal physical buyers pulling metal and anchor futures prices to the physical market
 - Wet Tanker Classes — The tanker size ladder from MR to VLCC crossed with the dirty versus clean split, fixing which cargoes a ship lifts and which freight market prices it
 
-## Pricing and valuation (69)
+## Pricing and valuation (71)
 
 - API Gravity — Inverted density scale for crude where higher means lighter oil; drives refined product yield, refinery fit, and grade price differentials
 - ATM — Option strike set at the forward rate, carrying maximum time value and zero intrinsic; the headline vol that anchors the entire FX surface
@@ -145,9 +145,11 @@ Counts by subdomain:
 - Forward Curve — The strip of futures prices across all delivery dates; the market's pricing of time and the substrate for every commodity relative value trade
 - Forward Points — Pips added to spot to build the FX forward rate from the interest rate differential; they are the carry a hedger or carry trader pays or receives
 - Freight — Seaborne shipping cost quoted in Worldscale; the gating variable deciding whether cross basin crude arbitrage is economic, and one of the most volatile inputs in commodities
+- Full Carry — Full carry is the maximum contango a forward curve can sustain before it becomes profitable to arbitrage away: futures price = spot + storage cost + insurance + financing, with 0 Convenience Yield.
 - Geopolitical Repricing Sequence — Oil shocks reprice in a fixed order of vol, skew, flat price, then curve; reading the sequence separates real disruption from headline noise and times the trade
 - GOFO — Gold dollar swap rate equal to the dollar rate minus the gold lease rate; rare negative readings signal extreme physical gold scarcity and mark turning points
 - Gold Silver Ratio — Gold price divided by silver, the classic precious metals relative value metric; readings above 80 favor a long silver short gold reversion over 6 to 18 months
+- Harvest Pressure — Harvest pressure is concentrated forced selling that hits a grain market during the annual harvest window: farmers with more grain than bin space truck it straight to the elevator and sell because they have nowhere else to put it, and elevators, now long a wall of physical grain, hedge that inventory by shorting futures.
 - Interest Rate Differential — The gap between two countries' benchmark rates, the main driver of FX forward pricing and carry; its expected direction moves spot more than its level
 - Intrinsic Value — The cash immediate exercise would yield, max(S minus K, 0) for a call; the premium's hard floor that survives to expiry, with the remainder being time value
 - ITM — An option whose immediate exercise pays, carrying intrinsic value; deep ITM tracks the underlying near delta 100 and decays slowly, a financed substitute for owning it
@@ -462,27 +464,27 @@ Top 30 notes by length (load these in full when needed):
 4. Charter Party (1761 words)
 5. Bunkers, IFO versus MGO, and the Bunker Hedge (1713 words)
 6. Time Charter (1663 words)
-7. EEXI and CII Regulations (1505 words)
-8. Time Charter Equivalent (1504 words)
-9. Physical vs Paper Freight (1500 words)
-10. Freight Options (1492 words)
-11. Voyage Charter (1492 words)
-12. Wet Tanker Classes (1492 words)
-13. KC-Chicago Wheat Spread (1480 words)
-14. Laytime, Demurrage and Despatch (1478 words)
-15. Dry Bulk versus Wet Bulk (1461 words)
-16. Baltic Exchange and the Dry Indices (1459 words)
-17. Voyage Charter vs Time Charter (1442 words)
-18. Scrubber Spread (1436 words)
-19. Forward Freight Agreement (1435 words)
-20. Port Congestion and Waiting Time (1433 words)
-21. Relet (1433 words)
-22. Vessel Classes and Deadweight Tonnage (1431 words)
-23. Baltic Route Codes (1403 words)
-24. War Risk Premium (1385 words)
-25. Ballast Leg Economics (1367 words)
-26. Market Hire (1360 words)
-27. Bunker Risk (1344 words)
-28. Zomma (1343 words)
-29. Vol of Vol (1326 words)
-30. Observation Date vs Forward Date (1325 words)
+7. Harvest Pressure (1650 words)
+8. EEXI and CII Regulations (1505 words)
+9. Time Charter Equivalent (1504 words)
+10. Physical vs Paper Freight (1500 words)
+11. Freight Options (1492 words)
+12. Voyage Charter (1492 words)
+13. Wet Tanker Classes (1492 words)
+14. KC-Chicago Wheat Spread (1480 words)
+15. Laytime, Demurrage and Despatch (1478 words)
+16. Dry Bulk versus Wet Bulk (1461 words)
+17. Baltic Exchange and the Dry Indices (1459 words)
+18. Voyage Charter vs Time Charter (1442 words)
+19. Full Carry (1439 words)
+20. Scrubber Spread (1436 words)
+21. Forward Freight Agreement (1435 words)
+22. Port Congestion and Waiting Time (1433 words)
+23. Relet (1433 words)
+24. Vessel Classes and Deadweight Tonnage (1431 words)
+25. Baltic Route Codes (1403 words)
+26. War Risk Premium (1385 words)
+27. Ballast Leg Economics (1367 words)
+28. Market Hire (1360 words)
+29. Bunker Risk (1344 words)
+30. Zomma (1343 words)
