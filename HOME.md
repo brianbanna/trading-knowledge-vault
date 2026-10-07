@@ -29,6 +29,7 @@
 | `07-Infrastructure` | Tools, platforms, code, APIs |
 | `08-Journal` | Daily notes, weekly reviews, trade log |
 | `09-Resources` | Books, papers, courses |
+| `10-Cases` | Case cards: 1 real deal or episode per card, linked to the concept it shows. See [[10-Cases/00 Cases index\|Cases Index]] |
 
 ---
 
@@ -37,20 +38,27 @@
 Concepts I know I need to learn:
 
 - [ ] [[Cointegration]]
-- [ ] [[Roll Yield]]
-- [ ] [[Basis Risk]]
-- [ ] [[Convenience Yield]]
-- [ ] [[Cost of Carry Model]]
-- [ ] [[FX Forward Points]]
-- [ ] [[LME Warrant System]]
-- [ ] [[WASDE Report]]
-- [ ] [[Commitment of Traders Report]]
-- [ ] [[Volatility Surface]]
+- [x] [[Roll Yield]]
+- [x] [[Basis Risk]]
+- [x] [[Convenience Yield]]
+- [x] [[Cost of Carry|Cost of Carry Model]]
+- [x] [[Forward Points|FX Forward Points]]
+- [x] [[Warrant|LME Warrant System]]
+- [x] [[WASDE|WASDE Report]]
+- [x] [[COT Report|Commitment of Traders Report]]
+- [x] [[Vol Surface|Volatility Surface]]
 - [ ] [[Delta Hedging]]
-- [ ] [[Crush Spread]]
+- [x] [[Crush Spread]]
 - [ ] [[Spark Spread]]
-- [ ] [[Carry Trade]]
-- [ ] [[Funding Rate Arbitrage]]
+- [x] [[Carry Trade]]
+- [ ] [[Johansen Test]]
+- [ ] [[VECM]]
+- [ ] [[Merit Order]]
+- [ ] [[Variance Risk Premium]]
+- [ ] [[HAR Model]]
+- [ ] [[FFA Curve]]
+- [ ] [[FFA Settlement and Rolls]]
+- [ ] [[Open Interest by Contract Month]]
 
 ---
 
@@ -111,6 +119,13 @@ FROM #freight/dry OR #freight/wet OR #freight/ffa OR #freight/routes OR #freight
 SORT file.name ASC
 ```
 
+### Physical trading domain
+```dataview
+TABLE WITHOUT ID file.link AS "Note", date-added AS "Added"
+FROM #physical-trading
+SORT file.name ASC
+```
+
 ---
 
 ## Weekly Review Checklist
@@ -127,5 +142,6 @@ SORT file.name ASC
 
 - [[SYSTEM]] | Full tag taxonomy, master prompt, graph instructions
 - [[04-Strategies/00 Strategies index|Strategies Index]] | MOC hub for every trading strategy, grouped by type
+- [[10-Cases/00 Cases index|Cases Index]] | MOC hub for every case card, grouped by market
 - `_templates/` | Note templates for Templater plugin
 

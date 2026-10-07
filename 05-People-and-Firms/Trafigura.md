@@ -3,6 +3,7 @@ aliases: [Trafigura Group, Trafigura Pte Ltd]
 tags:
   - "#energy/crude"
   - "#metals/base"
+  - "#physical-trading"
 date-added: "2026-06-24"
 ---
 

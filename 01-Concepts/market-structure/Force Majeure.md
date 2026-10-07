@@ -2,6 +2,7 @@
 aliases: [force majeure, FM, act of god clause]
 tags:
   - "#regulation"
+  - "#physical-trading"
 date-added: "2026-07-03"
 ---
 

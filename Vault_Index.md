@@ -1,7 +1,7 @@
 # Vault Index
 
-Generated: 2026-08-19
-Total notes: 393
+Generated: 2026-10-07
+Total notes: 394
 
 Counts by subdomain:
 - Market structure: 89
@@ -16,6 +16,7 @@ Counts by subdomain:
 - People and firms: 4
 - Data and indicators: 18
 - Infrastructure: 24
+- Cases: 1
 - Physical commodities: 10
 
 ---
@@ -439,6 +440,10 @@ Counts by subdomain:
 - TWAP — Execution algorithm that slices an order into equal pieces at fixed time intervals ignoring volume; preferred for lumpy commodity liquidity and 24 hour FX where it resists gaming
 - VWAP — Volume weighted average price serving as both the standard institutional execution benchmark and an algorithm that paces child orders proportional to expected volume per bucket
 
+## Cases (1)
+
+- Cases — Map of content for every case card in the vault.
+
 ## Physical commodities (10)
 
 - Agricultural — Index and starter concept checklist for Agricultural.
@@ -460,7 +465,7 @@ Top 30 notes by length (load these in full when needed):
 
 1. Sugar-Ethanol Spread (2020 words)
 2. Crack Spread (1836 words)
-3. Trading Taxonomy (1784 words)
+3. Trading Taxonomy (1786 words)
 4. Charter Party (1761 words)
 5. Bunkers, IFO versus MGO, and the Bunker Hedge (1713 words)
 6. Time Charter (1663 words)

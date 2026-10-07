@@ -53,7 +53,9 @@ _hubs/                    → Domain hub notes (graph cluster anchors)
   execution/                VWAP, TWAP, algo strategies
 05-People-and-Firms/      → Notable traders, firms, researchers
 06-Data-and-Indicators/   → Economic releases, reports, data sources
+07-Infrastructure/        → Tools, platforms, code, APIs
 09-Resources/             → Books, papers, courses
+10-Cases/                 → Case cards: 1 real deal or episode per card, linked to the concept it shows
 Physical commodities/     → Curriculum tracker organised by commodity, 01 Crude oil through 08 Freight and shipping. Each commodity index links back into the numbered tree.
 ```
 
@@ -69,6 +71,7 @@ Notes are tagged by domain for filtering and graph coloring. Tags are hierarchic
 | FX | `#fx/g10/eurusd`, `#fx/em/usdbrl`, `#fx/structure` |
 | Rates | `#rates/govies/ust`, `#rates/swaps`, `#rates/credit` |
 | Freight | `#freight/dry`, `#freight/wet`, `#freight/ffa`, `#freight/routes`, `#freight/contracts` |
+| Physical trading | `#physical-trading/contracts`, `#physical-trading/finance`, `#physical-trading/logistics` |
 | Cross cutting | `#macro`, `#quant`, `#risk`, `#execution`, `#microstructure` |
 
 Searching `#energy` returns all energy notes. Searching `#energy/natgas` returns only natural gas notes.

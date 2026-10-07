@@ -6,7 +6,7 @@ date-added: "2026-06-21"
 
 # Metals
 
-Hub note. Links every note in the Metals cluster so its title labels the cluster in the graph. Add a [[link]] here when a new note joins this cluster.
+Hub note. Links every note in the Metals cluster so its title labels the cluster in the graph. Add a `[[link]]` here when a new note joins this cluster.
 
 ## Notes in this cluster
 
@@ -18,23 +18,28 @@ Hub note. Links every note in the Metals cluster so its title labels the cluster
 - [[Cathode]]
 - [[Central Bank Buying]]
 - [[China PMI]]
+- [[Cobalt]]
 - [[Concentrate]]
 - [[Contango Carry Metals]]
 - [[Copper Futures]]
+- [[Cost Curve]]
 - [[ETF Flows]]
 - [[GOFO]]
 - [[Gold Futures]]
 - [[Gold Silver Ratio]]
 - [[Gold-Copper Ratio]]
 - [[Green Metals]]
+- [[Iron Ore]]
 - [[LBMA]]
 - [[LME]]
 - [[LME Prompt Date]]
 - [[LME Warehouse Stocks]]
 - [[Lead Futures]]
 - [[Lease Rate]]
+- [[Lithium]]
 - [[London Fix]]
 - [[Nickel Futures]]
+- [[Ore Grade]]
 - [[Palladium Futures]]
 - [[Physical Premium]]
 - [[Platinum Futures]]

@@ -4,6 +4,7 @@ tags:
   - "#microstructure"
   - "#quant"
   - "#regulation"
+  - "#physical-trading"
 date-added: "2026-06-24"
 ---
 

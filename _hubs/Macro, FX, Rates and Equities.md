@@ -6,10 +6,11 @@ date-added: "2026-06-21"
 
 # Macro, FX, Rates and Equities
 
-Hub note. Links every note in the Macro, FX, Rates and Equities cluster so its title labels the cluster in the graph. Add a [[link]] here when a new note joins this cluster.
+Hub note. Links every note in the Macro, FX, Rates and Equities cluster so its title labels the cluster in the graph. Add a `[[link]]` here when a new note joins this cluster.
 
 ## Notes in this cluster
 
+- [[AUD USD]]
 - [[Big Figure]]
 - [[CLS]]
 - [[Cable]]
@@ -44,13 +45,24 @@ Hub note. Links every note in the Macro, FX, Rates and Equities cluster so its t
 - [[Monetary Policy Divergence]]
 - [[Multi Dealer Platform]]
 - [[NDF]]
+- [[NZD USD]]
 - [[Pip]]
 - [[Purchasing Power Parity]]
 - [[Real Effective Exchange Rate]]
 - [[Real Rates Regime]]
 - [[Risk-On Risk-Off]]
+- [[S&P 500]]
 - [[Single Dealer Platform]]
 - [[Spot Rate]]
 - [[TIPS Breakeven]]
 - [[Terms of Trade]]
 - [[Terms of Trade Shock]]
+- [[US 10Y Treasury]]
+- [[US 2Y Treasury]]
+- [[USD BRL]]
+- [[USD CAD]]
+- [[USD CHF]]
+- [[USD CLP]]
+- [[USD NOK]]
+- [[USD ZAR]]
+- [[Yield Curve Slope]]

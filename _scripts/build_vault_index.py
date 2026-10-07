@@ -5,7 +5,7 @@ Catalogue every note in the trading vault into a single markdown index.
 Usage:
     python3 _scripts/build_vault_index.py [output_path]
 
-Default output: ~/Downloads/Vault_Index.md
+Default output: Vault_Index.md at the vault root (the parent of _scripts/)
 The script walks only the numbered concept/instrument folders plus the
 "Physical commodities" tree, so it never catalogues itself, templates, or hubs.
 Regenerate after adding notes; the index rebuilds in place.
@@ -42,6 +42,7 @@ GROUPS = [
     ("05-People-and-Firms", "People and firms"),
     ("06-Data-and-Indicators", "Data and indicators"),
     ("07-Infrastructure", "Infrastructure"),
+    ("10-Cases", "Cases"),
     ("Physical commodities", "Physical commodities"),
 ]
 

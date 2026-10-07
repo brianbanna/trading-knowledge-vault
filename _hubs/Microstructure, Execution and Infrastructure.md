@@ -6,7 +6,7 @@ date-added: "2026-06-21"
 
 # Microstructure, Execution and Infrastructure
 
-Hub note. Links every note in the Microstructure, Execution and Infrastructure cluster so its title labels the cluster in the graph. Add a [[link]] here when a new note joins this cluster.
+Hub note. Links every note in the Microstructure, Execution and Infrastructure cluster so its title labels the cluster in the graph. Add a `[[link]]` here when a new note joins this cluster.
 
 ## Notes in this cluster
 

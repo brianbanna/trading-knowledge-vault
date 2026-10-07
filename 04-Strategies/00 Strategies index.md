@@ -15,6 +15,7 @@ Spread trades, arbitrage, and any trade that is long one thing and short another
 
 - [[Spread Trade]]
 - [[Calendar Spread]]
+- [[Curve Butterfly]]
 - [[Inter-Commodity Spread]]
 - [[Cash and Carry Arbitrage]]
 - [[Location Arbitrage]]
@@ -22,6 +23,7 @@ Spread trades, arbitrage, and any trade that is long one thing and short another
 - [[Crack Spread]]
 - [[Gasoline Crack]]
 - [[Heating Crack]]
+- [[Spark Spread]]
 - [[Scrubber Spread]]
 - [[Henry Hub-TTF Spread]]
 - [[Crush Spread]]
