@@ -41,7 +41,7 @@ A card carries the domain tag of its market, so it takes the colour of that doma
 
 ## Metals
 
-*No cases yet.*
+- [[Hunt Brothers Silver Corner 1980]]: a corner on deliverable silver broken by rule changes, scrap and margin calls
 
 ## Agriculture and softs
 
