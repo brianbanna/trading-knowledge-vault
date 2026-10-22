@@ -6,6 +6,9 @@ created: 2026-05-14
 
 Learning area structured by commodity, complementing the concept based notes in the rest of the vault.
 
+## Map
+- [[00 Market and Desk Map]]: every hub, sub hub and trading seat in 1 page
+
 ## Sub areas
 - [[01 Crude oil/00 Crude oil index]]
 - [[02 Refined products/00 Refined products index]]
