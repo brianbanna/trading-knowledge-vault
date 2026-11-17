@@ -37,7 +37,7 @@ A card carries the domain tag of its market, so it takes the colour of that doma
 
 ## Energy
 
-*No cases yet.*
+- [[2022 European Gas Crisis and US LNG]]: flexible US offtake captured the TTF to Henry Hub gap while new supply could not enter
 
 ## Metals
 

@@ -21,6 +21,7 @@ Hub note. Links every note in the Physical Trading cluster so its title labels t
 - [[Offtake Agreement]]
 - [[Operational Risk]]
 - [[Prepayment]]
+- [[Sources of Trading House Edge]]
 - [[Supply and Demand Balance]]
 - [[Three Transformations]]
 - [[Tolling]]
